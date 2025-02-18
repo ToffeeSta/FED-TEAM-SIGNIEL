@@ -1,7 +1,15 @@
+@import "./common/reset";
 img {
 }
 main {
     width: 100%;
+}
+main>div{
+    
+    overflow: hidden;
+   
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .main_0 {
     margin-bottom: 15%;
@@ -12,7 +20,8 @@ header {
 }
 .main_01 {
     img {
-    max-width: 1920px;
+    // max-width: 1920px;
+    max-width : auto;
     width: 100%;
     }
     div {
@@ -37,40 +46,50 @@ header {
     img {
         transform: translate(-25%);
         max-width: 1920px;
-        width: 100%;
+        width: 70%;
     }
     div {
         border-left: 4px solid #ddd;
         margin: 12% 0 ;
         padding-left:5%;
         transform: translate(-50%);
+        width: 30%;
     }
 }
 .main_03 {
     display: flex;
     img {
         margin-left: 10%;
-        // width: 40%;
+        width: 45%;
     }
     div {
         margin-left: 5%;
+        padding-top: 10%;
+        width: 55%;
     }
 }
 .main_04 {
     display: flex;
     img {
         transform: translate(25%);
+        width: 70%;
     }
     span {
         border-right: 4px solid #ddd;
         margin: 10% 0;
         transform: translate(50%, 0%);
+        width: 30%;
+        text-align: right;
+        padding-right: 3%;
     }
 }
 .main_05 {
     ul {
         display: flex;
         text-align: center;
+        li {
+            width: 33.3%;
+        }
     }
     h1 {
         text-align: center;
@@ -86,6 +105,9 @@ header {
 }
 .main_06 {
     .rel {
+        .swiper {
+            width: 100%;
+        }
         position: relative;
         div {
             position: absolute;
@@ -109,6 +131,20 @@ header {
         }
     }
 }
+
+
+
+@media screen and (min-width: 1024px) {
+    .main_05 {
+            li {
+                img {
+                    width:90%;
+                }
+            }
+        }
+}
+
+
 
 
 // user
