@@ -1,0 +1,183 @@
+main {
+    width: 100%;
+}
+.main_0 {
+    margin-bottom: 15%;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+.main_01 {
+    .maing_img {
+        max-width: 1920px;
+        width: 100%;
+    }
+    div {
+        color: #998465;
+        position: relative;
+        p {
+            position: absolute;
+            top:0;
+        }
+        .care {
+            position: absolute;
+            bottom: 5%;
+            right: 3%;
+            text-align: right;
+            color: #fff;
+        }
+    
+    }
+}
+.main_02 {
+    display: flex;
+    img {
+        transform: translate(-25%);
+    }
+    div {
+        border-left: 4px solid #ddd;
+        margin: 12% 0 ;
+        padding-left:5%;
+        transform: translate(-100%);
+    }
+}
+.main_03 {
+    display: flex;
+    img {
+        margin-left: 10%;
+    }
+    div {
+        margin-left: 5%;
+    }
+}
+.main_04 {
+    display: flex;
+    img {
+        transform: translate(25%);
+    }
+    span {
+        border-left: 1px solid;
+        margin: 10% 0;
+    }
+}
+.main_05 {
+    ul {
+        display: flex;
+        
+    }
+    h1::after {
+        content: "";
+        display: block;
+        width: 10px;
+        border-bottom: 1px solid #000000;    
+    }
+}
+.main_06 {
+    .rel {
+        position: relative;
+        div {
+            position: absolute;
+            width: 20%;
+            height: 50%;
+            background-color: #fff;
+            margin-left: 10%;
+            top:0
+        }
+        .left {
+            position: absolute;
+            left:0;
+            top:50%;
+            transform: translate(0%, -50%);
+        }
+        .right {
+            position: absolute;
+            right:0;
+            top:50%;
+            transform: translate(0%, -50%);
+        }
+    }
+}
+
+
+// user
+
+.user {
+    width: 100%;
+    display: flex;
+    .user_l {
+    display: flex;
+    flex-direction: column;
+    }
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #998465;
+    }
+    .user_r {
+        div {
+            display: flex;
+        }
+        .reser {
+            flex-direction: column;
+            width: 20%;
+            height: 30%;
+            background-color: #998465;
+            margin-right: 5px;
+            border-top: 5px solid #000;
+        }
+    }
+    .user_l {
+        width: 30%;
+    }
+    .user_r {
+        width: 70%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.login {
+    h1 {
+        width: 40%;
+        height:5%;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        div {
+            flex-direction: row;
+        }
+    }
+}
+
+
+
+
+
+
+// post
+
+
+// login
+
+
+
+
+
+
+
+
+
+
+// join

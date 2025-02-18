@@ -1,0 +1,144 @@
+main {
+  width: 100%;
+}
+
+.main_0 {
+  margin-bottom: 15%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main_01 .maing_img {
+  max-width: 1920px;
+  width: 100%;
+}
+.main_01 div {
+  color: #998465;
+  position: relative;
+}
+.main_01 div p {
+  position: absolute;
+  top: 0;
+}
+.main_01 div .care {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  text-align: right;
+  color: #fff;
+}
+
+.main_02 {
+  display: flex;
+}
+.main_02 img {
+  transform: translate(-25%);
+}
+.main_02 div {
+  border-left: 4px solid #ddd;
+  margin: 12% 0;
+  padding-left: 5%;
+  transform: translate(-100%);
+}
+
+.main_03 {
+  display: flex;
+}
+.main_03 img {
+  margin-left: 10%;
+}
+.main_03 div {
+  margin-left: 5%;
+}
+
+.main_04 {
+  display: flex;
+}
+.main_04 img {
+  transform: translate(25%);
+}
+.main_04 span {
+  border-left: 1px solid;
+  margin: 10% 0;
+}
+
+.main_05 ul {
+  display: flex;
+}
+.main_05 h1::after {
+  content: "";
+  display: block;
+  width: 10px;
+  border-bottom: 1px solid #000000;
+}
+
+.main_06 .rel {
+  position: relative;
+}
+.main_06 .rel div {
+  position: absolute;
+  width: 20%;
+  height: 50%;
+  background-color: #fff;
+  margin-left: 10%;
+  top: 0;
+}
+.main_06 .rel .left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.main_06 .rel .right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.user {
+  width: 100%;
+  display: flex;
+}
+.user .user_l {
+  display: flex;
+  flex-direction: column;
+}
+.user .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #998465;
+}
+.user .user_r div {
+  display: flex;
+}
+.user .user_r .reser {
+  flex-direction: column;
+  width: 20%;
+  height: 30%;
+  background-color: #998465;
+  margin-right: 5px;
+  border-top: 5px solid #000;
+}
+.user .user_l {
+  width: 30%;
+}
+.user .user_r {
+  width: 70%;
+}
+
+.login h1 {
+  width: 40%;
+  height: 5%;
+}
+.login div {
+  display: flex;
+  flex-direction: column;
+}
+.login div div {
+  flex-direction: row;
+}/*# sourceMappingURL=mai.css.map */
