@@ -68,6 +68,10 @@ header {
   justify-content: flex-end;
 }
 
+.main_01 {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
 .main_01 img {
   max-width: auto;
   width: 100%;
@@ -198,21 +202,22 @@ main > div {
   display: flex;
   flex-direction: column;
   color: #998465;
+  /* 
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #998465;
+    display: flex;
+    justify-content: center;
+    margin: 15% 0;
+  } */
 }
 .user .user_l h2 {
   font-size: 4rem;
 }
 .user .user_l p {
   font-size: 3rem;
-}
-.user .user_l .circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #998465;
-  display: flex;
-  justify-content: center;
-  margin: 15% 0;
 }
 .user .user_l .username {
   text-align: center;
@@ -222,6 +227,13 @@ main > div {
 }
 .user .user_l .username figure, .user .user_l .username figcaption {
   font-size: 2.5rem;
+}
+.user .user_l .username img {
+  border-radius: 100%;
+  margin: 20% 0;
+}
+.user .user_r {
+  height: 100vh;
 }
 .user .user_r h1 {
   font-size: 3.5rem;
@@ -236,11 +248,12 @@ main > div {
   height: 30%;
   background-color: #e7ded0;
   margin-right: 5px;
-  border-top: 5px solid #000;
+  border-top: 15px solid #000;
 }
 .user .user_l {
   width: 30%;
   border-right: 1px solid;
+  box-shadow: 1px 1px 3px 0px #000;
 }
 .user .user_r {
   width: 70%;
