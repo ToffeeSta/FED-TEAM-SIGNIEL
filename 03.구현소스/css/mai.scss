@@ -392,5 +392,14 @@ div {
     tr td:nth-of-type(3) {
       width: 20%;
     }
+    td {
+      border-top: 1px solid #998465;
+      border-bottom: 1px solid #998465;
+    }
+    border-collapse: collapse;
+    th {
+      border-top: 1px solid #5d492c;
+      background-color: #E0D8C6;
+    }
   }
 }
