@@ -45,6 +45,10 @@ img {
   값으로 top, middle등 도 효과있음! */
 }
 
+body {
+  font-size: 10px;
+}
+
 main {
   width: 100%;
 }
@@ -193,12 +197,35 @@ main > div {
 .user .user_l {
   display: flex;
   flex-direction: column;
+  color: #998465;
 }
-.user .circle {
+.user .user_l h2 {
+  font-size: 4rem;
+}
+.user .user_l p {
+  font-size: 3rem;
+}
+.user .user_l .circle {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: #998465;
+  display: flex;
+  justify-content: center;
+  margin: 15% 0;
+}
+.user .user_l .username {
+  text-align: center;
+}
+.user .user_l .username h1 {
+  font-size: 3.5rem;
+}
+.user .user_l .username figure, .user .user_l .username figcaption {
+  font-size: 2.5rem;
+}
+.user .user_r h1 {
+  font-size: 3.5rem;
+  color: #5D492C;
 }
 .user .user_r div {
   display: flex;
@@ -207,15 +234,51 @@ main > div {
   flex-direction: column;
   width: 20%;
   height: 30%;
-  background-color: #998465;
+  background-color: #e7ded0;
   margin-right: 5px;
   border-top: 5px solid #000;
 }
 .user .user_l {
   width: 30%;
+  border-right: 1px solid;
 }
 .user .user_r {
   width: 70%;
+  margin-left: 5%;
+}
+.user .user_r h1 {
+  margin: 5% 0;
+}
+.user .user_r .reser {
+  width: 30%;
+}
+.user .user_r .reser p {
+  margin: 7% 0;
+  font-size: 2.2rem;
+}
+.user .user_r .reser p img {
+  margin: 0 10%;
+}
+.user .user_r ul {
+  color: #998465;
+  font-size: 2rem;
+}
+.user .user_r ul li:nth-of-type(1) {
+  background-color: #E0D8C6;
+  color: #998465;
+  font-weight: bold;
+  text-align: center;
+}
+.user .user_r ul li {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 5px 10px;
+}
+.user .user_r ul li a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .login h1 {
