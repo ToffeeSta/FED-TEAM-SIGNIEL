@@ -144,15 +144,18 @@ header {
 .main_05 ul li {
   width: 33.3%;
 }
+.main_05 ul li img {
+  width: 100%;
+}
 .main_05 h1 {
   text-align: center;
 }
 .main_05 h1::after {
   content: "";
-  margin-top: 20px;
-  margin-left: 50%;
+  transform: translate(-50%, 0);
+  margin: 10px 0 10% 50%;
   display: block;
-  width: 80px;
+  width: 10%;
   border-bottom: 1px solid #000000;
 }
 
@@ -172,20 +175,64 @@ header {
 }
 .main_06 .rel .left {
   position: absolute;
-  left: 0;
+  left: 1%;
   top: 50%;
   transform: translate(0%, -50%);
+  width: 3%;
 }
 .main_06 .rel .right {
   position: absolute;
-  right: 0;
+  right: 1%;
   top: 50%;
   transform: translate(0%, -50%);
+  width: 3%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .main_05 li img {
     width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_05 li img {
+    width: 90%;
+  }
+  .main_06 .rel div {
+    width: 40%;
+    height: 65%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_05 ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .main_05 ul li {
+    width: 100%;
+    margin-bottom: 7%;
+  }
+  .main_05 ul li img {
+    margin-bottom: 3%;
+  }
+  .main_06 .rel div {
+    width: 40%;
+    height: 70%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main_05 ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .main_05 ul li {
+    width: 100%;
+    margin-bottom: 7%;
+  }
+  .main_05 ul li img {
+    margin-bottom: 3%;
+  }
+  .main_06 .rel div {
+    display: none;
   }
 }
 main > div {
@@ -225,7 +272,8 @@ main > div {
 .user .user_l .username h1 {
   font-size: 3.5rem;
 }
-.user .user_l .username figure, .user .user_l .username figcaption {
+.user .user_l .username figure,
+.user .user_l .username figcaption {
   font-size: 2.5rem;
 }
 .user .user_l .username img {
@@ -237,7 +285,7 @@ main > div {
 }
 .user .user_r h1 {
   font-size: 3.5rem;
-  color: #5D492C;
+  color: #5d492c;
 }
 .user .user_r div {
   display: flex;
@@ -277,7 +325,7 @@ main > div {
   font-size: 2rem;
 }
 .user .user_r ul li:nth-of-type(1) {
-  background-color: #E0D8C6;
+  background-color: #e0d8c6;
   color: #998465;
   font-weight: bold;
   text-align: center;
@@ -305,4 +353,42 @@ main > div {
 }
 .login div div {
   flex-direction: row;
+}
+
+div {
+  color: #998465;
+}
+div h1 {
+  font-size: 4rem;
+}
+div p {
+  font-size: 3rem;
+}
+div div {
+  margin: 5% 5%;
+  font-size: 2.2rem;
+  display: flex;
+}
+div div span:nth-child(2) {
+  margin-left: 5%;
+}
+div div span:nth-child(1)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid;
+}
+div table {
+  font-size: 2.5rem;
+  margin-left: 5%;
+  width: 100%;
+}
+div table tr td:nth-of-type(1) {
+  width: 20%;
+}
+div table tr td:nth-of-type(2) {
+  width: 60%;
+}
+div table tr td:nth-of-type(3) {
+  width: 20%;
 }/*# sourceMappingURL=mai.css.map */
