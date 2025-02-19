@@ -369,7 +369,7 @@ main > div {
       width: 40%;
       background: #998465;
       text-align: center;
-      line-height: 8rem;
+      line-height: 9rem;
     }
   }
 
@@ -382,12 +382,6 @@ main > div {
     color: #998465;
   }
 }
-
-
-// join
-
-
-
 
 
 
@@ -451,5 +445,56 @@ main > div {
       border-top: 1px solid #5d492c;
       background-color: #E0D8C6;
     }
+  }
+}
+
+
+
+
+
+
+
+// join
+
+
+.join {
+  margin-top:10%;
+  h1 {
+    font-size: 3rem;
+    color: #998465;
+  }
+  h1::after {
+    content:"";
+    display: block;
+    height: 2px;
+    width: 50%;
+    background-color: #5d492c;
+  }
+  p {
+    color: #998465;
+    margin-top: 3%;
+  }
+  input {
+    margin: 1% 0;
+    height: 30px;
+    width: 30%;
+  }
+  [type="radio"] {
+    width: 10px;
+    height: 10px;
+  }
+  #btnj {
+    background-color: #fff;
+    border: none;
+    width: 5%;
+  }
+  ul li:nth-of-type(6) {
+    display: flex;
+    justify-content: space-around;
+    width: 31.2%;
+  }
+  ul li:nth-of-type(6) input{
+    width: 33%;
+    gap: 0;
   }
 }
