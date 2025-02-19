@@ -335,6 +335,7 @@ main > div {
   border-top: 1px solid;
   border-bottom: 1px solid;
   padding: 5px 10px;
+  white-space: nowrap;
 }
 .user .user_r ul li a {
   display: block;
@@ -349,51 +350,60 @@ main > div {
   background-color: #998465;
 }
 
-div {
+.post {
   color: #998465;
 }
-div h1 {
+.post h1 {
   font-size: 4rem;
 }
-div p {
+.post p {
   font-size: 3rem;
 }
-div div {
+.post div {
   margin: 5% 5%;
   font-size: 2.2rem;
+  display: flex;
+  position: relative;
 }
-div div span:nth-child(2) {
+.post div span:nth-child(2) {
   margin-left: 5%;
 }
-div div span:nth-child(1)::after {
+.post div span:nth-child(3) {
+  height: 1px;
+  width: 20%;
+  background-color: #998465;
+  position: absolute;
+  bottom: 0;
+}
+.post div span:nth-child(1)::after {
   content: "";
   display: block;
   width: 100%;
   border-bottom: 2px solid;
 }
-div table {
+.post table {
   font-size: 2.5rem;
   margin-left: 5%;
   width: 100%;
   border-collapse: collapse;
 }
-div table tr td:nth-of-type(1) {
-  width: 10%;
-}
-div table tr td:nth-of-type(2) {
-  width: 50%;
-}
-div table tr td:nth-of-type(3) {
+.post table tr td:nth-of-type(1) {
   width: 20%;
 }
-div table tr td:nth-of-type(3) {
+.post table tr td:nth-of-type(2) {
+  width: 40%;
+}
+.post table tr td:nth-of-type(3) {
   width: 20%;
 }
-div table td {
+.post table tr td:nth-of-type(3) {
+  width: 20%;
+}
+.post table td {
   border-top: 1px solid #998465;
   border-bottom: 1px solid #998465;
 }
-div table th {
+.post table th {
   border-top: 1px solid #5d492c;
   background-color: #E0D8C6;
 }/*# sourceMappingURL=mai.css.map */
