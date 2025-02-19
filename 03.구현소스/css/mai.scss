@@ -248,7 +248,9 @@ main > div {
       margin: 15% 0;
     } */
     .username {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      // text-align: center;
       h1 {
         font-size: 3.5rem;
       }
@@ -283,7 +285,7 @@ main > div {
   .user_l {
     width: 30%;
     border-right: 1px solid;
-    box-shadow: 1px 1px 3px 0px #000;
+    box-shadow: 1px 0px 0px 0px #000;
   }
   //   오른쪽
   .user_r {
@@ -336,7 +338,7 @@ main > div {
   h1 {
     width: 10%;
     background-color: #998465;
-    
+
   }
 }
 
@@ -363,7 +365,7 @@ div {
   div {
     margin: 5% 5%;
     font-size: 2.2rem;
-    display: flex;
+    // display: flex;
   }
   div span:nth-child(2) {
     margin-left: 5%;
