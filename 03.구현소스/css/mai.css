@@ -365,7 +365,9 @@ main > div {
   flex-direction: column;
   width: 70%;
 }
-
+.login .lr {
+  display: flex;
+}
 .post {
   color: #998465;
 }

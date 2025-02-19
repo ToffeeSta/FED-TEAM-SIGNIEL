@@ -354,7 +354,12 @@ main > div {
     flex-direction: column;
     width: 70%;
   }
-
+  .lr {
+    display: flex;
+    .btn {
+      
+    }
+  }
 }
 
 
