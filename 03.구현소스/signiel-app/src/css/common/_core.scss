@@ -1,1 +1,44 @@
 /* SIGNIEL.com 핵심공통 CSS - core.css */
+
+//폰트
+@font-face {
+  font-family: "Pretendard Black";
+  src: url("../../static/fonts/Pretendard-Black.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard ExtraBold";
+  src: url("../../static/fonts/Pretendard-ExtraBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard ExtraLight";
+  src: url("../../static/fonts/Pretendard-ExtraLight.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard Light";
+  src: url("../../static/fonts/Pretendard-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard Medium";
+  src: url("../../static/fonts/Pretendard-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard Regular";
+  src: url("../../static/fonts/Pretendard-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard SemiBold";
+  src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard Thin";
+  src: url("../../static/fonts/Pretendard-Thin.ttf") format("ttf");
+}
+
+.h1 {
+  font-family: "Pretendard ExtraBold", sans-serif;
+  font-size: 40px;
+}
