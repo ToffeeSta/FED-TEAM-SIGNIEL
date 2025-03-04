@@ -1,0 +1,39 @@
+1. users (회원)
+* id(PK): 사용자 고유 ID
+* name: 사용자 이름
+* email: 사용자 이메일
+* password: 비밀번호
+
+2. hotels (호텔)
+* id(PK): 호텔 고유 ID
+* name: 지점 이름
+* price_range: 1박 평균 가격
+* 부가적인 호텔에 필요한 데이터
+* 
+3. rooms (객실)
+* id(PK): 객실 고유 ID (호텔 고유 ID + 객실번호)
+* hotel_id(FK): 해당 호텔 고유 ID (hotels의 id와 연결)
+* room_num: 객실 번호
+* room_type: 객실 유형
+* price_per_night: 1박 가격
+* base_guests: 기본 인원
+* max_guests: 최대 인원
+
+4. reservations (예약 정보)
+* id(PK): 예약 고유 ID (객실 고유 ID + 예약 날짜)
+* user_id(FK): 예약을 한 사용자의 고유 ID (user의 id와 연결)
+* room_id(FK): 예약된 객실의 고유 ID (room의 id와 연결)
+* check_in: 체크인 날짜
+* check_out: 체크아웃 날짜
+* status: 예약 상태
+* guest_count: 예약 인원
+
+5. posts (리뷰 및 Q&A 게시글)
+* id(PK): 게시글 고유 ID
+* user_id(FK): 작성자 ID
+* hotel_id(FK): 해당 호텔 ID (hotels의 id와 연결)
+* post_type: 게시글 유형 (review 또는 Q&A)
+* rating: 평점 (리뷰일 경우만 작성 Q&A는 null처리)
+* title: 게시글 제목
+* content: 게시글 내용
+* created_at: 게시글 작성 날짜
