@@ -420,14 +420,15 @@ main > div {
   .join #btnj {
     background-color: #fff;
     border: none;
-    width: 5%;
+    width: 10%;
   }
   .join ul li:nth-of-type(6) {
     display: flex;
-    justify-content: space-around;
-    width: 31.2%;
+    // justify-content: space-around;
+    // justify-content: space-between;
+    width: 92.5%;
   }
   .join ul li:nth-of-type(6) input {
-    width: 33%;
+    width: 100%;
     gap: 0;
   }/*# sourceMappingURL=mai.css.map */
