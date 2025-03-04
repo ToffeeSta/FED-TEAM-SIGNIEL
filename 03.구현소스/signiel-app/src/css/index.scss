@@ -5,3 +5,8 @@
 @import '../css/common/reset';
 @import '../css/common/core';
 
+// 메인 영역 기본 높이값 설정하기 ///
+main.cont{
+    min-height: 
+    calc(100vh - $top-area-height - $footer-area-height);
+}

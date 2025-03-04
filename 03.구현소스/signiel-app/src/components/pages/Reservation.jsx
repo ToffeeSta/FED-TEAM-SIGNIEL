@@ -1,6 +1,6 @@
 import React from "react";
 
-const Reservation = (props) => {
+function Reservation(props) {
   return (
     <div>
       <h1>Reservation</h1>
