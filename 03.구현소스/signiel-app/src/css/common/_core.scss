@@ -6,7 +6,15 @@
   font-weight: normal;
   src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
 }
+@font-face{
+  font-family: "Pretendard-Bold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
+}
 
 body{
   font-family: "Pretendard-Regular";
+}
+.tit{
+  font-family: "Pretendard-Bold";
 }
