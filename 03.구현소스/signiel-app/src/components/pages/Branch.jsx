@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Branch = () => {
+const Branch = (props) => {
   return (
-    <div>Branch</div>
+    <div>
+      <h1>Branch</h1>
+    </div>
   )
 }
 

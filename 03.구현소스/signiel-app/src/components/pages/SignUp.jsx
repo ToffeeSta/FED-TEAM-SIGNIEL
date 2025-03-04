@@ -1,8 +1,10 @@
 import React from 'react'
 
-const SignUp = () => {
+const SignUp = (props) => {
   return (
-    <div>SignUp</div>
+    <div>
+      <h1>Sign Up</h1>
+    </div>
   )
 }
 
