@@ -2,10 +2,13 @@
 
 import React from 'react';
 
+import "../../css/pages/main.scss";
+
 const Main = () => {
     return (
         <div>
-            <h1>메인 페이지</h1>
+            <h1 className='tit'>메인 페이지</h1>
+            <img src="./images/logo.png" alt="로고" />
         </div>
     );
 };
