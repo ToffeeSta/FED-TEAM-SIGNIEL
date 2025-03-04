@@ -29,7 +29,6 @@ export default function MainComponent(){
                     <Route path="User" element={<User/>}/>
                     <Route path="Login" element={<Login/>}/>
                     <Route path="SignUp" element={<SignUp/>}/>
-
                 </Route>
             </Routes>
         </BrowserRouter>
