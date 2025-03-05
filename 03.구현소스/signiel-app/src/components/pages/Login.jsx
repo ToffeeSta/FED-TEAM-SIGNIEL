@@ -1,7 +1,7 @@
 import React from 'react'
 
 // 모듈 CSS 불러오기 /////
-import '../../css/pages/login.scss';
+import '../../css/pages/main.scss';
 
 function SignUp(props) {
   return (

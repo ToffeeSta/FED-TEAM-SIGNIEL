@@ -2,9 +2,6 @@
 
 import React from 'react';
 
-// 모듈 CSS 불러오기 /////
-import '../../css/pages/login.scss';
-
 function Main() {
     return (
         <div>

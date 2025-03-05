@@ -1,7 +1,7 @@
 import React from "react";
 
 // 모듈 CSS 불러오기 /////
-import '../../css/pages/join.scss';
+import '../../css/pages/main.scss';
 
 function Login(props) {
 
