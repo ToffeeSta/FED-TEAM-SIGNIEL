@@ -1,0 +1,72 @@
+@import "../common/reset";
+body {
+  font-size: 10px;
+}
+main {
+  width: 100%;
+}
+main > div {
+  overflow: hidden;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+.post {
+    color: #998465;
+  }
+  .post h1 {
+    font-size: 4rem;
+  }
+  .post p {
+    font-size: 3rem;
+  }
+  .post div {
+    margin: 5% 5%;
+    font-size: 2.2rem;
+    display: flex;
+    position: relative;
+  }
+  .post div span:nth-child(2) {
+    margin-left: 5%;
+  }
+  .post div span:nth-child(3) {
+    height: 1px;
+    width: 20%;
+    background-color: #998465;
+    position: absolute;
+    bottom: 0;
+  }
+  .post div span:nth-child(1)::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid;
+  }
+  .post table {
+    font-size: 2.5rem;
+    margin-left: 5%;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .post table tr td:nth-of-type(1) {
+    width: 20%;
+  }
+  .post table tr td:nth-of-type(2) {
+    width: 40%;
+  }
+  .post table tr td:nth-of-type(3) {
+    width: 20%;
+  }
+  .post table tr td:nth-of-type(3) {
+    width: 20%;
+  }
+  .post table td {
+    border-top: 1px solid #998465;
+    border-bottom: 1px solid #998465;
+  }
+  .post table th {
+    border-top: 1px solid #5d492c;
+    background-color: #E0D8C6;
+  }
