@@ -8,7 +8,6 @@ const Main = () => {
     return (
         <div>
             <h1 className='tit'>메인 페이지</h1>
-            <img src="./images/logo.png" alt="로고" />
         </div>
     );
 };
