@@ -18,3 +18,14 @@ body{
 .tit{
   font-family: "Pretendard-Bold";
 }
+
+/////// 컬러 ///////
+$color-main : #867868;
+
+//믹스인
+@mixin flex($x: flex-start, $y: flex-end) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+  @content;
+}
