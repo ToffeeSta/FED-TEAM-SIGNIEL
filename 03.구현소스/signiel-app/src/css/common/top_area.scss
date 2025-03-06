@@ -138,6 +138,11 @@ body::-webkit-scrollbar {
         left: 50%;
         transform: translateX(-50%);
         order: 2;
+        order: 1;
+        width: 170px;
+        img{
+          width: 100%;
+        }
       }
 
       .header-nav {
@@ -150,7 +155,7 @@ body::-webkit-scrollbar {
 
         ul {
           @include flex(flex-end, center) {
-            gap: 15px;
+            gap: 10px;
           }
         }
       }
