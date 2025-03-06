@@ -3,12 +3,14 @@
 import React from 'react';
 
 import "../../css/pages/main.scss";
+import Banner from '../modules/Banner';
 
 const Main = () => {
     return (
-        <div>
-            <h1 className='tit'>메인 페이지</h1>
-        </div>
+        <>
+            {/* 1. 메인배너 */}
+            <Banner />
+        </>
     );
 };
 

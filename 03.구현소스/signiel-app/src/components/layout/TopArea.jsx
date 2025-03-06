@@ -22,7 +22,7 @@ export default function TopArea() {
             {/* 로고 */}
             <li>
               <Link to="/">
-                <img src="/images/logo.png" alt="Logo" />
+                <img src="/images/logo/logo.png" alt="Logo" />
               </Link>
             </li>
             {/* 2. GNB 메뉴 데이터로 map 바인딩 */}
