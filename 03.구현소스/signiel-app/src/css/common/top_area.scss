@@ -1,4 +1,4 @@
-//// 공통 import ////
+/* 공통 import */
 @import "reset";
 @import "core";
 @import "variables";
@@ -7,74 +7,271 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-@media (min-width: 1024px) {
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 58px;
+  z-index: 1000;
+  background-color: #fff;
+  transition: 0.5s;
+
+  .top-area {
+    width: 100%;
+    @include flex(space-between, center);
+    max-width: 1400px;
+    padding: 0 17px;
+    margin: 0 auto;
+
+    .logo {
+      img {
+        width: 200px;
+      }
+    }
+
+    .header-nav {
+      position: relative;
+      display: flex;
+
+      ul {
+        @include flex(space-between, center);
+
+        li {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 25px 30px;
+
+          a {
+            color: #1c1c1c;
+            font-size: 20px;
+          }
+
+          &:hover {
+            background-color: $color-main;
+
+            a {
+              color: #fff;
+            }
+          }
+
+          .smenu {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+
+            ol {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              li {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                a {
+                  color: #000;
+                  font-size: 15px;
+                  display: block;
+                  padding: 8px 12px;
+                }
+                &:hover a{
+                  color: #fff;
+                }
+              }
+            }
+          }
+
+          /* 마우스 오버 시 서브메뉴 확장 */
+          &:hover .smenu {
+            max-height: 200px;
+          }
+        }
+      }
+    }
+
+    .log-wrap {
+      width: 120px;
+      ul {
+        @include flex(flex-end, center) {
+          gap: 15px;
+        }
+        li {
+          a {
+            color: #797979;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .hambtn {
+      display: none;
+    }
+  }
+}
+
+// 모바일 & 태블릿 미디어쿼리
+@media (max-width: 1023px) {
   #header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 58px;
-    z-index: 9999;
-    background-color: #ffffff00;
+    height: 50px;
+    z-index: 1000;
+    background-color: #fff;
     transition: 0.5s;
 
     .top-area {
-      @include flex(space-between, center);
-      max-width: 1400px;
-      padding: 0 17px;
-      margin: 0 auto;
+      position: relative;
+
       .logo {
-        img {
-          width: 200px;
-        }
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        order: 2;
       }
+
       .header-nav {
-        position: relative;
-        display: flex;
-        ul {
-          @include flex(space-between, center);
-          li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 25px 20px;
-            .smenu {
-              display: none;
-            }
-            a {
-              color: #1c1c1c;
-              font-size: 15px;
-            }
-            &:hover {
-              background-color: $color-main;
-              a {
-                color: #fff;
-              }
-            }
-          }
-        }
+        display: none;
       }
+
       .log-wrap {
-        width: 120px;
+        width: 100px;
+        order: 2;
+
         ul {
           @include flex(flex-end, center) {
             gap: 15px;
           }
-          li {
-            a {
-              color: #797979;
-              font-size: 15px;
+        }
+      }
+
+      .hambtn {
+        display: block;
+
+        .hammenu {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 40px;
+          z-index: 12;
+          cursor: pointer;
+          order: 1;
+
+          .ham {
+            width: 20px;
+            height: 14px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            span {
+              transition: all 0.2s linear;
+              position: absolute;
+              width: 20px;
+              height: 2px;
+              display: block;
+              background-color: #000000;
+
+              &:nth-of-type(1) {
+                top: 0%;
+              }
+
+              &:nth-of-type(2) {
+                top: 50%;
+              }
+
+              &:nth-of-type(3) {
+                top: 100%;
+              }
             }
           }
         }
-      }
-      .ham-wrap {
-        display: none;
+
+        /* 햄버거 메뉴 드롭박스 */
+        .ham-drop-box {
+          background-color: $color-main;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100vh;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          transition: all 0.3s ease-in-out;
+
+          .ham-drop {
+            margin-top: 50px;
+            @include flex() {
+              flex-direction: column;
+            }
+
+            > li {
+              width: 100%;
+              > a {
+                color: #fff;
+                display: block;
+                position: relative;
+                font-size: 23px;
+                padding: 15px 0;
+                margin: 0 20px;
+                border-bottom: 1px solid #fff;
+              }
+            }
+
+            .smenu {
+              display: block;
+              padding: 10px 0;
+              margin: 0 20px;
+
+              li {
+                a {
+                  color: #fff;
+                  display: block;
+                  position: relative;
+                  font-size: 20px;
+                  padding: 15px 0;
+                  margin: 0 20px;
+                  border-bottom: 1px solid #fff;
+                }
+              }
+            }
+          }
+        }
+
+        /* 메뉴 열렸을 때 */
+        &.open .ham-drop-box {
+          left: 0;
+        }
+        &.open .ham {
+          span:nth-of-type(1) {
+            transform: rotate(45deg);
+            top: 6px;
+            background-color: #fff;
+          }
+          span:nth-of-type(2) {
+            opacity: 0;
+          }
+          span:nth-of-type(3) {
+            transform: rotate(-45deg);
+            top: 6px;
+            background-color: #fff;
+          }
+        }
       }
     }
   }
-}
-
-////////// 모바일 & 태블릿 미디어쿼리 /////////
-@media (max-width: 1023px) {
 }
