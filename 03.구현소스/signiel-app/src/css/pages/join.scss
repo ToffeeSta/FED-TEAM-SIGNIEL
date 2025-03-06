@@ -12,52 +12,47 @@ main > div {
   margin: 0 auto;
 }
 
+.join {
+  margin-top: 10%;
+  width: 30%;
+}
+.join h1 {
+  font-size: 3rem;
+  color: #998465;
+}
+.join h1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #5d492c;
+}
+.join p {
+  color: #998465;
+  margin-top: 3%;
+}
+.join input {
+  margin: 1% 0;
+  height: 30px;
+  width: 90%;
+}
+.join [type="radio"] {
+  width: 10px;
+  height: 10px;
+}
 
- 
-
-
-  
-  .join {
-    margin-top: 10%;
-    width: 30%;
-  }
-  .join h1 {
-    font-size: 3rem;
-    color: #998465;
-  }
-  .join h1::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: #5d492c;
-  }
-  .join p {
-    color: #998465;
-    margin-top: 3%;
-  }
-  .join input {
-    margin: 1% 0;
-    height: 30px;
-    width: 90%;
-  }
-  .join [type=radio] {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .join #btnj {
-    background-color: #fff;
-    border: none;
-    width: 10%;
-  }
-  .join ul li:nth-of-type(6) {
-    display: flex;
-    // justify-content: space-around;
-    // justify-content: space-between;
-    width: 92.5%;
-  }
-  .join ul li:nth-of-type(6) input {
-    width: 100%;
-    gap: 0;
-  }/*# sourceMappingURL=mai.css.map */
+.join #btnj {
+  background-color: #fff;
+  border: none;
+  width: 10%;
+}
+.join ul li:nth-of-type(6) {
+  display: flex;
+  // justify-content: space-around;
+  // justify-content: space-between;
+  width: 92.5%;
+}
+.join ul li:nth-of-type(6) input {
+  width: 100%;
+  gap: 0;
+} /*# sourceMappingURL=mai.css.map */
