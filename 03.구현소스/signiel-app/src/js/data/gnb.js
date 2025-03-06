@@ -7,14 +7,17 @@ export const menu = [
             {
                 txt: "지점1",
                 link: "/branch",
+                local: "seoul",
             },
             {
                 txt: "지점2",
                 link: "/branch",
+                local: "pusan",
             },
             {
                 txt: "지점3",
                 link: "/branch",
+                local: "daegu",
             },
            
         ],
