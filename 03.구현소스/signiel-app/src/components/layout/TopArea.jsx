@@ -20,7 +20,7 @@ export default function TopArea() {
           {/* 로고 */}
           <div className="logo">
             <Link to="/">
-              <img src="/images/logo.png" alt="Logo" />
+              <img src="/images/logo/logo.png" alt="Logo" />
             </Link>
           </div>
           {/* 네비게이션 GNB파트 */}
