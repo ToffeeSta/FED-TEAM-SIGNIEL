@@ -13,12 +13,12 @@ export const banData = {
   },
   main3: {
     isrc: "/images/banner/banner3.jpg",
-    mTit: "MOUNTAIN RETREAT",
-    sTit: "산속에서의 평온한 휴식^하하하하하하하하하",
+    mTit: "JEJU LOTTE HOTEL",
+    sTit: "설계되어 천혜의 제주 자연과^어우러진 이국적인 분위기를 느껴보세요.",
   },
   main4: {
     isrc: "/images/banner/banner4.jpg",
-    mTit: "CITY CENTER HOTEL",
-    sTit: "도심 속 편리한 호텔^하하하하하하하하하",
+    mTit: "HOTEL LOTTE",
+    sTit: "호텔롯데는 최상의 Care를^제공하여 고객의 가치 있는 여정에 함께합니다.",
   },
 };
