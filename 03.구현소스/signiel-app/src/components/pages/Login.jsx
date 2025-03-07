@@ -3,7 +3,7 @@ import React from 'react'
 // 모듈 CSS 불러오기 /////
 import '../../css/pages/login.scss';
 
-function SignUp(props) {
+function Login(props) {
   return (
 <div className="login">
   <h1>롯데 시그니엘</h1>
@@ -23,4 +23,4 @@ function SignUp(props) {
   )
 }
 
-export default SignUp
+export default Login;
