@@ -9,7 +9,7 @@
 main.cont{
     min-height: 
     calc(100vh - $top-area-height - $footer-area-height);
-    padding: 0 15px;
+    padding: 0;
     margin: 0 auto;
     margin-top: $top-area-height;
 }
