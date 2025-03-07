@@ -20,7 +20,7 @@ export const branchData = {
         tit03: "Vision Engrave iconic experience in the guest's heart",
         cont03: "우리만의 차별화된 경험을 선사하여 고객의 마음속에 오래 남을 브랜드가 되고자 합니다",
     },
-    pusan: {
+    busan: {
         main_img:"../../../images/branch/busan/main.jpg' alt='메인02'",
         name: "부산점",
         img01:"../../../images/branch/busan/main_02.png' alt='메인02'",

@@ -1,7 +1,9 @@
 @import "../common/reset";
+
 body {
-  font-size: 10px;
+  font-size: 22px !important;
 }
+
 main {
   width: 100%;
 }
@@ -197,11 +199,18 @@ main > div {
 
   .main_07 {
     ul {
+      width: 80%;
       display: flex;
       justify-content: center;
+      margin: 0 auto;
       li {
-        gap: 10%;
-        width: 30%;
+        flex: 1;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
