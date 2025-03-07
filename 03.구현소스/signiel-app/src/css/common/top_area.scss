@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
     width: 100%;
     @include flex(space-between, center);
     max-width: 1400px;
-    padding: 0 17px;
+    padding: 0 15px;
     margin: 0 auto;
 
     .logo {
@@ -78,7 +78,7 @@ body::-webkit-scrollbar {
                 padding: 10px;
                 border-bottom: 1px solid #ddd;
                 a {
-                  color: #000;
+                  color: #333;
                   font-size: 15px;
                   display: block;
                   padding: 8px 12px;

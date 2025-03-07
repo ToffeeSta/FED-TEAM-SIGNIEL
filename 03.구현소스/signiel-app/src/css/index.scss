@@ -7,7 +7,9 @@
 
 // 메인 영역 기본 높이값 설정하기 ///
 main.cont{
-    margin-top: $top-area-height + 10px;
     min-height: 
     calc(100vh - $top-area-height - $footer-area-height);
+    padding: 0 15px;
+    margin: 0 auto;
+    margin-top: $top-area-height;
 }
