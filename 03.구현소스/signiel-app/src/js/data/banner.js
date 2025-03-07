@@ -1,15 +1,15 @@
-// 배너 데이터 - banner.js
+// 메인 배너 데이터 - banner.js
 
 export const banData = {
   main1: {
     isrc: "/images/banner/banner1.jpg",
-    mTit: "GRAND PALACE",
-    sTit: "럭셔리한 경험을 누려보세요^하하하하하하하하하",
+    mTit: "SIGNIEL SEOUL",
+    sTit: "서울의 파노라믹한 스카이라인과 환상적인 야경,^일몰과 일출을 한 자리에서 감상해보세요.",
   },
   main2: {
     isrc: "/images/banner/banner2.jpg",
-    mTit: "OCEAN VIEW RESORT",
-    sTit: "바다가 보이는 멋진 리조트^하하하하하하하하하",
+    mTit: "SIGNIEL BUSAN",
+    sTit: "여유를 누릴 수 있는 완벽한 여정^부산에서 볼 수 없었던 새로운 가치를 전합니다.",
   },
   main3: {
     isrc: "/images/banner/banner3.jpg",
