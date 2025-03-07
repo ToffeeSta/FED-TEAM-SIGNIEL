@@ -24,7 +24,7 @@ function Branch(props) {
 
                 <div className="main_01 main_0">
                     <div>
-                        <img className="maing_img" src="./img/main.png" alt="메인" />
+                        <img className="maing_img" src="../../../images/branch/seoul/main.png" alt="메인" />
 
                         <p><strong>LOTTE</strong> HOTELS & RESORTS</p>
                         <span className="care">
@@ -48,23 +48,16 @@ function Branch(props) {
                     <img src="../../../images/branch/seoul/main_03.png" alt="의자" />
 
                     <div>
-                        <h1><strong>LOTTE</strong>HOTELS&RESORTS</h1>
-                        <p>편안하고 안락한 <strong>휴식형 객실,</strong>다양한
-                            레스토랑과 화려한 <strong>연회시설,<br /></strong> 비즈니스와 레저를
-                            모두 만족시킬 수 있는 <strong>편의시설,<br /></strong> 이 모두를 갖춘 멀티공간 <strong>롯데호텔</strong>이,
-                            품격 높은 삶을 즐길 줄 아는 <br />당신의 여유와 자긍심을 위해<strong>최상의 서비스</strong>로 충족시켜 드리겠습니다 </p>
+                        <h1>{selData.tit02}</h1>
+                        <p>{selData.cont02}</p>
                     </div>
 
                 </div>
                 <div className="main_04 main_0">
                     <span>
-                        <h1>Vision<br />
-                            Engrave iconic experience<br />
-                            in the guest's heart
+                        <h1>{selData.tit03}
                         </h1>
-                        <p>우리만의 차별화된 경험을 선사하여<br />
-                            고객의 마음속에 오래 남을<br />
-                            브랜드가 되고자 합니다</p>
+                        <p>{selData.cont03}</p>
                     </span>
                     <img src="../../../images/branch/seoul/main_04.png" alt="메인4" />
                 </div>
@@ -89,9 +82,8 @@ function Branch(props) {
                         </li>
                     </ul>
                 </div>
-                <div className="main_06 main_0">
+                {/* <div className="main_06 main_0">
                     <div className="rel">
-                        {/* <!-- 스와이퍼 --> */}
                         <img className="swiper" src="./img/slide_01.png" alt="스와이퍼" />
                         <div>
                             <h1>시그니엘 서울</h1>
@@ -106,7 +98,7 @@ function Branch(props) {
                         <img className="left" src="./img/left.png" alt="왼쪽" />
                         <img className="right" src="./img/right.png" alt="오른쪽" />
                     </div>
-                </div>
+                </div> */}
 
             </main>
         </>
