@@ -49,7 +49,7 @@ function Branch(props) {
                     </div>
                 </div>
                 <div className="main_03 main_0">
-                    <img src="./img/chair.png" alt="의자" />
+                    <img src="./img/main_03.png" alt="의자" />
 
                     <div>
                         <h1><strong>LOTTE</strong>HOTELS&RESORTS</h1>

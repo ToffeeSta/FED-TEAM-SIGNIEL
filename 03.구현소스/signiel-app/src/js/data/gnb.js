@@ -12,12 +12,12 @@ export const menu = [
             {
                 txt: "지점2",
                 link: "/branch",
-                local: "pusan",
+                local: "busan",
             },
             {
                 txt: "지점3",
                 link: "/branch",
-                local: "daegu",
+                local: "jeju",
             },
            
         ],
