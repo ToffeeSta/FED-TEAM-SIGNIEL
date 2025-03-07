@@ -1,1 +1,62 @@
 // 하단영역 CSS - footer_area.scss
+@import "reset";
+@import "core";
+@import "variables";
+
+#footer {
+  height: 100%;
+  background-color: $color-main;
+  border-top: 1px solid #a8a8a8;
+  .bottom-area {
+    max-width: 1000px;
+    margin: 0 auto;
+    @include flex(space-between, center);
+    .left-con {
+      padding-top: 30px;
+      .bottom-logo {
+        img {
+          height: 100px;
+        }
+        padding-bottom: 50px;
+      }
+      .info {
+        padding-bottom: 30px;
+        font-size: 13px;
+        text-align: left;
+        color: #efefef;
+      }
+    }
+    .right-con {
+      .sns-wrap {
+        height: 60px;
+        ul {
+          @include flex(space-between, center);
+          gap: 10px;
+          li {
+            margin-top: 5px;
+            width: 47px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .bottom-nav {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        ul {
+          @include flex(flex-end, center);
+          width: 100%;
+          margin: 0 auto;
+          gap: 10px;
+          li {
+            a {
+              color: #c8c8c8;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
