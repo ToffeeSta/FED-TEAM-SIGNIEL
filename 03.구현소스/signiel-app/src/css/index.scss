@@ -5,3 +5,11 @@
 @import '../css/common/reset';
 @import '../css/common/core';
 
+// 메인 영역 기본 상하좌우 패딩 마진 설정 ///
+main.cont{
+    min-height: 
+    calc(100vh - $top-area-height - $footer-area-height);
+    padding: 0 15px;
+    margin: 0 auto;
+    margin-top: $top-area-height;
+}

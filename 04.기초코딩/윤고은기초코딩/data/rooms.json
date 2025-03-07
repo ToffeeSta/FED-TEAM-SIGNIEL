@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1101,
+    "hotel_id": 1,
+    "room_num": 101,
+    "room_type": "스탠다드",
+    "price_per_night": 120000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 1102,
+    "hotel_id": 1,
+    "room_num": 102,
+    "room_type": "디럭스",
+    "price_per_night": 150000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 1201,
+    "hotel_id": 1,
+    "room_num": 201,
+    "room_type": "스탠다드",
+    "price_per_night": 120000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 1202,
+    "hotel_id": 1,
+    "room_num": 202,
+    "room_type": "디럭스",
+    "price_per_night": 150000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 2101,
+    "hotel_id": 2,
+    "room_num": 101,
+    "room_type": "스위트",
+    "price_per_night": 250000,
+    "base_guests": 3,
+    "max_guests": 6
+  },
+  {
+    "id": 2102,
+    "hotel_id": 2,
+    "room_num": 102,
+    "room_type": "패밀리",
+    "price_per_night": 180000,
+    "base_guests": 4,
+    "max_guests": 6
+  },
+  {
+    "id": 2201,
+    "hotel_id": 2,
+    "room_num": 201,
+    "room_type": "스위트",
+    "price_per_night": 250000,
+    "base_guests": 3,
+    "max_guests": 6
+  },
+  {
+    "id": 2202,
+    "hotel_id": 2,
+    "room_num": 202,
+    "room_type": "패밀리",
+    "price_per_night": 180000,
+    "base_guests": 4,
+    "max_guests": 6
+  },
+  {
+    "id": 3101,
+    "hotel_id": 3,
+    "room_num": 101,
+    "room_type": "오션뷰",
+    "price_per_night": 300000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 3102,
+    "hotel_id": 3,
+    "room_num": 102,
+    "room_type": "오션뷰",
+    "price_per_night": 300000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 3201,
+    "hotel_id": 3,
+    "room_num": 201,
+    "room_type": "오션뷰",
+    "price_per_night": 300000,
+    "base_guests": 2,
+    "max_guests": 4
+  },
+  {
+    "id": 3202,
+    "hotel_id": 3,
+    "room_num": 202,
+    "room_type": "오션뷰",
+    "price_per_night": 300000,
+    "base_guests": 2,
+    "max_guests": 4
+  }
+]

@@ -1,66 +1,117 @@
-/// 상단영역 컴포넌트 : TopArea.jsx /////
-
 import { Link } from "react-router-dom";
-
-// GNB 데이터 불러오기 ////////
-import { menu } from "../../js/data/gnb";
-
-// 상단영역 CSS 불러오기 ///
-import "../../css/common/top_area.scss";
+import { menu } from "../../js/data/gnb"; // GNB 데이터 불러오기
+import "../../css/common/top_area.scss"; // CSS 불러오기
+import { useState } from "react"; // React useState 훅 추가
 
 export default function TopArea() {
-  /// 리턴 코드구역 ////////
+  const [isOpen, setIsOpen] = useState(false); // 햄버거 메뉴 상태 관리
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen); // 햄버거 메뉴 열기/닫기 토글
+  };
+
   return (
     <>
-      {/* 1.상단영역 */}
-      <header className="top-area">
-        {/* 로그인 환영메시지 박스 */}
-        <div className="logmsg"></div>
-        {/* 네비게이션 GNB파트 */}
-        <nav className="gnb">
-          <ul>
-            {/* 로고 */}
-            <li>
-              <Link to="/">
-                <img src="/images/logo/logo.png" alt="Logo" />
-              </Link>
-            </li>
-            {/* 2. GNB 메뉴 데이터로 map 바인딩 */}
-            {menu.map((v, i) => (
-              <li key={i}>
-                {
-                  // 하위메뉴가 있는 상위메뉴는 일반링크로!
-                  // 없으면 라우터 이동 메뉴로 만들기!
-                  v.sub ? (
+      {/* 1. 상단영역 */}
+      <header id="header">
+        <div className="top-area">
+          {/* 로고 */}
+          <div className="logo">
+            <Link to="/">
+              <img src="/images/logo/logo.png" alt="Logo" />
+            </Link>
+          </div>
+          {/* 네비게이션 GNB파트 */}
+          <div className="header-nav">
+            {/* 중앙 GNB 버튼 (앞 4개) */}
+            <ul>
+              {menu.slice(0, 4).map((v, i) => (
+                <li key={i}>
+                  {v.sub ? (
                     <a href="#" onClick={(e) => e.preventDefault()}>
                       {v.txt}
                     </a>
                   ) : (
                     <Link to={v.link}>{v.txt}</Link>
-                  )
-                }
-
-                {
-                  // 서브메뉴가 있는 경우 출력하기
-                  v.sub && (
+                  )}
+                  {v.sub && (
                     <div className="smenu">
                       <ol>
                         {v.sub.map((v, i) => (
                           <li key={i}>
-                            <Link to={v.link}>{v.txt}</Link>
+                            <Link to={v.link} state={{ local: v.local }}>
+                              {v.txt}
+                            </Link>
                           </li>
                         ))}
                       </ol>
                     </div>
-                  )
-                }
-              </li>
-            ))}
-          </ul>
-        </nav>
-        {/* 모바일용 햄버거 버튼 */}
-        <button className="hambtn"></button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 우측 GNB 버튼 (뒤 2개) */}
+          <div className="log-wrap">
+            <ul>
+              {menu.slice(4).map((v, i) => (
+                <li key={i}>
+                  {v.sub ? (
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      {v.txt}
+                    </a>
+                  ) : (
+                    <Link to={v.link}>{v.txt}</Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 모바일용 햄버거 버튼 */}
+          <div
+            className={`hambtn ${isOpen ? "open" : ""}`}
+            onClick={toggleMenu}
+          >
+            <div className="hammenu">
+              <div className="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div className="ham-drop-box">
+              <ul className="ham-drop">
+                {menu.slice(0, 4).map((v, i) => (
+                  <li key={i}>
+                    {v.sub ? (
+                      <a href="#" onClick={(e) => e.preventDefault()}>
+                        {v.txt}
+                      </a>
+                    ) : (
+                      <Link to={v.link}>{v.txt}</Link>
+                    )}
+                    {v.sub && (
+                      <div className="smenu">
+                        <ol>
+                          {v.sub.map((v, i) => (
+                            <li key={i}>
+                              <Link to={v.link} state={{ local: v.local }}>
+                                {v.txt}
+                              </Link>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </header>
     </>
   );
-} //////////// TopArea 컴포넌트 ///////////
+}

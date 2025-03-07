@@ -1,6 +1,9 @@
 import React from "react";
 
-const Post = (props) => {
+// 모듈 CSS 불러오기 /////
+import '../../css/pages/post.scss';
+
+function Post(props) {
   return (
     <div>
       <h1>Post</h1>

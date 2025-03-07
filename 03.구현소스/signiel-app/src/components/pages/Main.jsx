@@ -2,15 +2,12 @@
 
 import React from 'react';
 
-import "../../css/pages/main.scss";
-import Banner from '../modules/Banner';
 
-const Main = () => {
+function Main() {
     return (
-        <>
-            {/* 1. 메인배너 */}
-            <Banner />
-        </>
+        <div>
+           
+        </div>
     );
 };
 
