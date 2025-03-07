@@ -3,7 +3,7 @@ import React from "react";
 // 모듈 CSS 불러오기 /////
 import '../../css/pages/join.scss';
 
-function Login(props) {
+function SignUp(props) {
 
   // 리턴 코드구역 //////////////
   return (
@@ -116,4 +116,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default SignUp;
