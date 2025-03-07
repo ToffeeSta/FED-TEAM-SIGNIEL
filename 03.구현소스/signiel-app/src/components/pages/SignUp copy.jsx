@@ -1,9 +1,6 @@
 // DC.com - 회원가입 페이지 컴포넌트 - Member.jsx
 
 import React, { useState } from "react";
-
-// 모듈 CSS 불러오기 ///
-import "../../css/pages/join.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 // 로컬스토리지 생성 JS ////
@@ -12,7 +9,10 @@ import { initData } from "../../js/func/mem_fn";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function SignUp() {
+// 모듈 CSS 불러오기 /////
+import "../../css/pages/join.scss";
+
+function SignUp(props) {
   // 라우터이동 객체 생성하기 ///
   const goPage = useNavigate();
   // 사용시: goPage(라우터주소,state변수)
@@ -27,13 +27,6 @@ function SignUp() {
   const [chkPwd, setChkPwd] = useState("");
   // 4. 사용자이름변수
   const [userName, setUserName] = useState("");
-  // 5. 이메일변수
-  const [email, setEmail] = useState("");
-  // 6. 주소변수
-  // const [addr, setAddr] = useState("");
-  // 7. 우편번호변수
-  // const [zipcode, setZipcode] = useState("");
-
   // [2] 에러상태관리 변수
   // -> 에러상태값 초기값은 에러아님(false)
   // 1. 아이디변수
@@ -44,13 +37,6 @@ function SignUp() {
   const [chkPwdError, setChkPwdError] = useState(false);
   // 4. 사용자이름변수
   const [userNameError, setUserNameError] = useState(false);
-  // 5. 이메일변수
-  const [emailError, setEmailError] = useState(false);
-  // 6. 주소변수
-  // const [addrError, setAddrError] = useState("");
-
-  // console.log(">>>>", userIdError);
-
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
     // 1. 최소 5글자 이상 입력할것
@@ -72,46 +58,18 @@ function SignUp() {
     // 이메일
     email: "Please enter a valid email format",
   }; ///// msgEtc ///////
-
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]
   // -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
-
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
   const changeUserId = (e) => {
     // 입력된 값읽기
     let val = e.target.value;
 
-// 
-  // 5. 이메일 유효성 검사 ///////////
-  // const changeEmail = (e) => {
-  //   // 입력된 값읽기
-  //   let val = e.target.value;
-
-  //   // 1. 이메일 유효성 검사식(따옴표로 싸지 말것!)
-  //   const valid =
-  //     /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-
-  //   // 2. 입력값 확인 : e.target -> 이벤트가 발생한 요소
-  //   // console.log(val);
-
-  //   // 3. 에러에 따른 상태값 변경
-  //   if (valid.test(val)) setEmailError(false);
-  //   else setEmailError(true);
-
-  //   // 4. 기존입력값 반영하기
-  //   setEmail(val);
-  // }; ///////// changeEmail 함수 //////////
-
-
-
-
-
-    // 1. 아이디 유효성 검사식(따옴표로 싸지 말것!)
+    // 1. 이메일 유효성 검사식(따옴표로 싸지 말것!)
     const valid =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-    // 유효성 검사방법: 정규식.test(값)
 
     // 2. 입력값 확인 : e.target
     // console.log(val);
@@ -126,12 +84,25 @@ function SignUp() {
 
       // 이제 중복 아이디 검사를 실행한다!!!
       // 1. 로컬스 변수할당
-      let memData = localStorage.getItem("mem-data");
-      console.log(memData);
+let memData = localStorage.getItem("mem-data");
 
-      // 2. 로컬스 객체변환 (왜? 문자형이니까!)
-      memData = JSON.parse(memData);
-      console.log(memData);
+// 'mem-data'가 없을 경우 기본 빈 배열 설정
+if (!memData) {
+  memData = [];
+} else {
+  try {
+    // JSON 파싱 시도
+    memData = JSON.parse(memData);
+  } catch (error) {
+    // 파싱 오류 발생 시 기본 빈 배열로 초기화
+    console.error("JSON 파싱 오류 발생:", error);
+    console.error("잘못된 데이터:", memData); // 잘못된 데이터를 출력하여 무엇이 잘못되었는지 확인
+    memData = [];
+  }
+}
+
+console.log("현재 로컬스토리지 데이터:", memData);
+console.log("현재 로컬스토리지 데이터:", memData);
       // -> 배열데이터로 변환!
       // 주의: JSON 파싱할때 원본형식이 제이슨 파일형식으로
       // 엄격하게 작성되어야 에러가 없음(마지막콤마 불허용 등)
@@ -255,29 +226,33 @@ function SignUp() {
 
   // [ 서브밋 기능함수 ] ////////////////
   const onSubmit = (e) => {
-    // 1. 기본서브밋 막기
     e.preventDefault();
-
-    console.log("최종검사:", totalValid());
+  
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
       console.log("모두통과! 저장!");
-
+  
       // [회원정보를 로컬스토리지에 저장하기]
-
+  
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
-
+  
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
-
+  
       // 3. 로컬스 객체변환
-      memData = JSON.parse(memData);
+      try {
+        memData = JSON.parse(memData);
+      } catch (error) {
+        console.error("로컬스토리지에서 잘못된 데이터가 있습니다. 초기화합니다.");
+        memData = []; // 잘못된 데이터가 있으면 빈 배열로 초기화
+      }
+  
       // 최대수를 위한 배열값 뽑기 (idx항목)
-      let temp = memData.map((v) => v.id);
+      let temp = memData.map((v) => v.idx);
       // 다음 번호는 항상 최대수+1이다!
       console.log("다음번호:", Math.max(...temp) + 1);
-
+  
       // 4. 새로운 데이터 구성하기
       let newData = {
         id: Math.max(...temp) + 1,
@@ -285,168 +260,179 @@ function SignUp() {
         password: pwd,
         name: userName,
       };
-
+  
       // 5. 데이터 추가하기 : 배열에 데이터 추가 push()
       memData.push(newData);
-
-      // 6. 로컬스에 반영하기 : 문자화해서 넣어야함!
-      localStorage.setItem("mem-data", JSON.stringify(memData));
-
+  
+      // 6. 로컬스토리지에 반영하기 : 문자화해서 넣어야함!
+      localStorage.setItem("mem-data", JSON.stringify(memData));  // 수정된 부분
+  
       // 7. 회원가입 환영메시지 + 로그인 페이지 이동
-      // 버튼 텍스트에 환영메시지
       document.querySelector(".sbtn").innerText = "Thank you for joining us!";
-      // 1초후 페이지 이동 : 라우터 Navigate로 이동함
       setTimeout(() => {
         goPage("/login");
-        // 주의: 경로앞에 슬래쉬(/) 안쓰면
-        // 현재 Memeber 경로 하위 경로를 불러옴
       }, 1000);
-    } ///////// if /////////
-    // 3. 불통과시 /////
-    else {
-      console.log($(".msg").eq(0).text());
+    } else {
       alert("Change your input!");
-      // showModal();
-    } //// else ///////////
-  }; /////////// onSubmit 함수 //////////
+    }
+  };
 
-  // 리턴 코드구역 ///////////////
+  // 리턴 코드구역 //////////////
   return (
-    <div className="outbx">
-      <section className="membx">
-        <h2>Join Us</h2>
-        <form action="process.php" method="post">
-          <ul>
-            <li>
-              {/* 1. 아이디 */}
-              <label>ID(이메일) : </label>
-              <input
-                type="text"
-                maxLength="20"
-                placeholder="Please enter your ID"
-                value={userId}
-                onChange={changeUserId}
-                onBlur={changeUserId}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                userIdError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {idMsg}
-                    </small>
-                  </div>
-                )
-              }
-              {
-                // 통과시 메시지 출력
-                // 조건문 && 출력요소
-                // 조건추가 : userId가 입력전일때 안보임처리
-                // userId가 입력전엔 false로 리턴됨!
-                !userIdError && userId && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "green",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {msgId[2]}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li>
-              <label>Password : </label>
-              <input
-                type="password"
-                maxLength="20"
-                placeholder="Please enter your Password"
-                value={pwd}
-                onChange={changePwd}
-                onBlur={changePwd}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                pwdError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {msgEtc.pwd}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li>
-              <label>Confirm Password : </label>
-              <input
-                type="password"
-                maxLength="20"
-                placeholder="Please enter your Confirm Password"
-                value={chkPwd}
-                onChange={changeChkPwd}
-                onBlur={changeChkPwd}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                chkPwdError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {msgEtc.confPwd}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li>
-              <label>User Name : </label>
-              <input
-                type="text"
-                maxLength="20"
-                placeholder="Please enter your Name"
-                value={userName}
-                onChange={changeUserName}
-                onBlur={changeUserName}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                userNameError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {msgEtc.req}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
+    <div className="join">
+      <h1>회원가입</h1>
+      <span></span>
+      <p>*필수항목</p>
+      <ul>
+        {/* <!-- 아이디 --> */}
+        <li>
+          <label htmlFor="mid" className="itit">
+            *
+          </label>
+          <input
+            type="text"
+            name="mid"
+            id="mid"
+            maxLength="20"
+            placeholder=" 아이디"
+            value={userId}
+            onChange={changeUserId}
+            onBlur={changeUserId}
+          />
+          {
+            // 에러일 경우 메시지 출력
+            // 조건문 && 출력요소
+            userIdError && (
+              <div className="msg">
+                <small
+                  style={{
+                    color: "red",
+                    fontSize: "10px",
+                  }}
+                >
+                  {idMsg}
+                </small>
+              </div>
+            )
+          }
+          {
+            // 통과시 메시지 출력
+            // 조건문 && 출력요소
+            // 조건추가 : userId가 입력전일때 안보임처리
+            // userId가 입력전엔 false로 리턴됨!
+            !userIdError && userId && (
+              <div className="msg">
+                <small
+                  style={{
+                    color: "green",
+                    fontSize: "10px",
+                  }}
+                >
+                  {msgId[2]}
+                </small>
+              </div>
+            )
+          }
+        </li>
+        {/* <!-- 비밀번호 --> */}
+        <li className="eyeli">
+          <label htmlFor="mpw" className="itit">
+            *
+          </label>
+          <input
+            type="password"
+            name="mpw"
+            id="mpw"
+            maxLength="15"
+            placeholder=" 비밀번호"
+            value={pwd}
+            onChange={changePwd}
+            onBlur={changePwd}
+          />
+          {
+            // 에러일 경우 메시지 출력
+            // 조건문 && 출력요소
+            pwdError && (
+              <div className="msg">
+                <small
+                  style={{
+                    color: "red",
+                    fontSize: "10px",
+                  }}
+                >
+                  {msgEtc.pwd}
+                </small>
+              </div>
+            )
+          }
+        </li>
+        {/* <!-- 비밀번호확인 --> */}
+        <li>
+          <label htmlFor="mpw2" className="itit">
+            *
+          </label>
+          <input
+            type="password"
+            name="mpw2"
+            id="mpw2"
+            maxLength="20"
+            placeholder=" 비밀번호 확인"
+            value={chkPwd}
+            onChange={changeChkPwd}
+            onBlur={changeChkPwd}
+          />
+          {
+            // 에러일 경우 메시지 출력
+            // 조건문 && 출력요소
+            chkPwdError && (
+              <div className="msg">
+                <small
+                  style={{
+                    color: "red",
+                    fontSize: "10px",
+                  }}
+                >
+                  {msgEtc.confPwd}
+                </small>
+              </div>
+            )
+          }
+        </li>
+        {/* <!-- 이름 --> */}
+        <li>
+          <label htmlFor="mnm" className="itit">
+            *
+          </label>
+          <input
+            type="text"
+            name="mnm"
+            id="mnm"
+            maxLength="20"
+            placeholder=" 이름"
+            value={userName}
+            onChange={changeUserName}
+            onBlur={changeUserName}
+          />
+          {
+            // 에러일 경우 메시지 출력
+            // 조건문 && 출력요소
+            userNameError && (
+              <div className="msg">
+                <small
+                  style={{
+                    color: "red",
+                    fontSize: "10px",
+                  }}
+                >
+                  {msgEtc.req}
+                </small>
+              </div>
+            )
+          }
+        </li>
 
 
-            <li style={{ overflow: "hidden" }}>
+        <li style={{ overflow: "hidden" }}>
               <button className="sbtn" onClick={onSubmit}>
                 Submit
               </button>
@@ -455,9 +441,7 @@ function SignUp() {
               Are you already a Member?
               <Link to="/login">Log In</Link>
             </li>
-          </ul>
-        </form>
-      </section>
+      </ul>
     </div>
   );
 }
