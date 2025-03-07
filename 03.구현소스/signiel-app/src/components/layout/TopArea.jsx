@@ -39,7 +39,9 @@ export default function TopArea() {
                       <ol>
                         {v.sub.map((v, i) => (
                           <li key={i}>
-                            <Link to={v.link}>{v.txt}</Link>
+                            <Link to={v.link} state={{ local: v.local }}>
+                              {v.txt}
+                            </Link>
                           </li>
                         ))}
                       </ol>
@@ -68,7 +70,10 @@ export default function TopArea() {
           </div>
 
           {/* 모바일용 햄버거 버튼 */}
-          <div className={`hambtn ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+          <div
+            className={`hambtn ${isOpen ? "open" : ""}`}
+            onClick={toggleMenu}
+          >
             <div className="hammenu">
               <div className="ham">
                 <span></span>
@@ -92,7 +97,9 @@ export default function TopArea() {
                         <ol>
                           {v.sub.map((v, i) => (
                             <li key={i}>
-                              <Link to={v.link}>{v.txt}</Link>
+                              <Link to={v.link} state={{ local: v.local }}>
+                                {v.txt}
+                              </Link>
                             </li>
                           ))}
                         </ol>
