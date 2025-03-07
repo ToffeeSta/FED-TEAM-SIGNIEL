@@ -4,23 +4,23 @@
 @import "variables";
 
 #footer {
-  height: 100%;
+  height: $footer-area-height;
   background-color: $color-main;
-  border-top: 1px solid #a8a8a8;
   .bottom-area {
     max-width: 1000px;
+    padding: 0 15px;
     margin: 0 auto;
     @include flex(space-between, center);
     .left-con {
-      padding-top: 30px;
+      padding-top: 20px;
       .bottom-logo {
         img {
-          height: 100px;
+          height: 90px;
         }
-        padding-bottom: 50px;
+        padding-bottom: 25px;
       }
       .info {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         font-size: 13px;
         text-align: left;
         color: #efefef;
@@ -42,8 +42,8 @@
         }
       }
       .bottom-nav {
-        padding-top: 40px;
-        padding-bottom: 30px;
+        padding-top: 30px;
+        padding-bottom: 20px;
         ul {
           @include flex(flex-end, center);
           width: 100%;
