@@ -7,14 +7,17 @@ export const menu = [
             {
                 txt: "시그니엘 서울",
                 link: "/branch",
+                local: "seoul",
             },
             {
                 txt: "시그니엘 부산",
                 link: "/branch",
+                local: "pusan",
             },
             {
                 txt: "롯데호텔 제주",
                 link: "/branch",
+                local: "daegu",
             },
            
         ],
