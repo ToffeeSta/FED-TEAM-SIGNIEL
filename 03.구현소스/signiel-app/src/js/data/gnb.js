@@ -5,17 +5,17 @@ export const menu = [
         link:"/branch",
         sub:[
             {
-                txt: "지점1",
+                txt: "시그니엘 서울",
                 link: "/branch",
                 local: "seoul",
             },
             {
-                txt: "지점2",
+                txt: "시그니엘 부산",
                 link: "/branch",
                 local: "busan",
             },
             {
-                txt: "지점3",
+                txt: "롯데호텔 제주",
                 link: "/branch",
                 local: "jeju",
             },
