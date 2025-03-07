@@ -84,25 +84,12 @@ function SignUp(props) {
 
       // 이제 중복 아이디 검사를 실행한다!!!
       // 1. 로컬스 변수할당
-let memData = localStorage.getItem("mem-data");
+      let memData = localStorage.getItem("mem-data");
+      console.log(memData);
 
-// 'mem-data'가 없을 경우 기본 빈 배열 설정
-if (!memData) {
-  memData = [];
-} else {
-  try {
-    // JSON 파싱 시도
-    memData = JSON.parse(memData);
-  } catch (error) {
-    // 파싱 오류 발생 시 기본 빈 배열로 초기화
-    console.error("JSON 파싱 오류 발생:", error);
-    console.error("잘못된 데이터:", memData); // 잘못된 데이터를 출력하여 무엇이 잘못되었는지 확인
-    memData = [];
-  }
-}
-
-console.log("현재 로컬스토리지 데이터:", memData);
-console.log("현재 로컬스토리지 데이터:", memData);
+      // 2. 로컬스 객체변환 (왜? 문자형이니까!)
+      memData = JSON.parse(memData);
+      console.log(memData);
       // -> 배열데이터로 변환!
       // 주의: JSON 파싱할때 원본형식이 제이슨 파일형식으로
       // 엄격하게 작성되어야 에러가 없음(마지막콤마 불허용 등)
@@ -226,33 +213,29 @@ console.log("현재 로컬스토리지 데이터:", memData);
 
   // [ 서브밋 기능함수 ] ////////////////
   const onSubmit = (e) => {
+    // 1. 기본서브밋 막기
     e.preventDefault();
-  
+
+    console.log("최종검사:", totalValid());
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
       console.log("모두통과! 저장!");
-  
+
       // [회원정보를 로컬스토리지에 저장하기]
-  
+
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
-  
+
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
-  
+
       // 3. 로컬스 객체변환
-      try {
-        memData = JSON.parse(memData);
-      } catch (error) {
-        console.error("로컬스토리지에서 잘못된 데이터가 있습니다. 초기화합니다.");
-        memData = []; // 잘못된 데이터가 있으면 빈 배열로 초기화
-      }
-  
+      memData = JSON.parse(memData);
       // 최대수를 위한 배열값 뽑기 (idx항목)
       let temp = memData.map((v) => v.idx);
       // 다음 번호는 항상 최대수+1이다!
       console.log("다음번호:", Math.max(...temp) + 1);
-  
+
       // 4. 새로운 데이터 구성하기
       let newData = {
         id: Math.max(...temp) + 1,
@@ -260,22 +243,30 @@ console.log("현재 로컬스토리지 데이터:", memData);
         password: pwd,
         name: userName,
       };
-  
+
       // 5. 데이터 추가하기 : 배열에 데이터 추가 push()
       memData.push(newData);
-  
-      // 6. 로컬스토리지에 반영하기 : 문자화해서 넣어야함!
-      localStorage.setItem("mem-data", JSON.stringify(memData));  // 수정된 부분
-  
+
+      // 6. 로컬스에 반영하기 : 문자화해서 넣어야함!
+      localStorage.setItem("mem-data", JSON.stringify(memData));
+
       // 7. 회원가입 환영메시지 + 로그인 페이지 이동
+      // 버튼 텍스트에 환영메시지
       document.querySelector(".sbtn").innerText = "Thank you for joining us!";
+      // 1초후 페이지 이동 : 라우터 Navigate로 이동함
       setTimeout(() => {
         goPage("/login");
+        // 주의: 경로앞에 슬래쉬(/) 안쓰면
+        // 현재 Memeber 경로 하위 경로를 불러옴
       }, 1000);
-    } else {
+    } ///////// if /////////
+    // 3. 불통과시 /////
+    else {
+      console.log($(".msg").eq(0).text());
       alert("Change your input!");
-    }
-  };
+      // showModal();
+    } //// else ///////////
+  }; /////////// onSubmit 함수 //////////
 
   // 리턴 코드구역 //////////////
   return (
@@ -431,16 +422,10 @@ console.log("현재 로컬스토리지 데이터:", memData);
           }
         </li>
 
-
-        <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>
-                Submit
-              </button>
-            </li>
-            <li>
-              Are you already a Member?
-              <Link to="/login">Log In</Link>
-            </li>
+        <li>
+          <span className="noneid">아이디가 없으신가요? </span>
+          <input type="submit" value="가입하기" id="btnj" />
+        </li>
       </ul>
     </div>
   );
