@@ -17,7 +17,7 @@ export const menu = [
             {
                 txt: "롯데호텔 제주",
                 link: "/branch",
-                local: "daegu",
+                local: "jeju",
             },
            
         ],

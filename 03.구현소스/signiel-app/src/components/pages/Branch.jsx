@@ -36,20 +36,16 @@ function Branch(props) {
                     </div>
                 </div>
                 <div className="main_02 main_0">
-                    <img src="./img/main_02.png" alt="메인02" />
+                    <img src={selData.img01} />
                     <div>
 
-                        <h1>Mission<br />
-                            Make every moment<br />
-                            of life delightful</h1>
-                        <p>인류의 매 순간을 아름답고 찬란하게<br />
-                            만들어 주는 것이 곳<br />
-                            우리의 사명입니다</p>
+                        <h1>{selData.tit}</h1>
+                        <p>{selData.cont}</p>
 
                     </div>
                 </div>
                 <div className="main_03 main_0">
-                    <img src="./img/chair.png" alt="의자" />
+                    <img src="../../../images/branch/seoul/main_03.png" alt="의자" />
 
                     <div>
                         <h1><strong>LOTTE</strong>HOTELS&RESORTS</h1>
@@ -70,24 +66,24 @@ function Branch(props) {
                             고객의 마음속에 오래 남을<br />
                             브랜드가 되고자 합니다</p>
                     </span>
-                    <img src="./img/main_04.png" alt="메인4" />
+                    <img src="../../../images/branch/seoul/main_04.png" alt="메인4" />
                 </div>
                 <div className="main_05 main_0">
                     <h1>Room Packages & Offers</h1>
                     <ul>
                         <li>
-                            <img src="./img/main_05_01.png" alt="메인5_1" />
+                            <img src="../../../images/branch/seoul/main_05_01.png" alt="메인5_1" />
                             <h2>LOCAL BLISS<br />
                                 TRIP</h2>
                             <p>국내여행에서의 특별한 추억을<br />롯데호텔과 함께 만들어보세요</p>
                         </li>
                         <li>
-                            <img src="./img/main_05_02.png" alt="메인5_2" />
+                            <img src="../../../images/branch/seoul/main_05_02.png" alt="메인5_2" />
                             <h2>BED & BR /EAKFAST<br />PACKAGE</h2>
                             <p>고객님의 여유로운 호텔스테이를 위해<br />조식포함 상품을 준비하였습니다</p>
                         </li>
                         <li>
-                            <img src="./img/main_05_03.png" alt="메인5_3" />
+                            <img src="../../../images/branch/seoul/main_05_03.png" alt="메인5_3" />
                             <h2>LOTTE HOTEL<br />REWARDS ONLY</h2>
                             <p>전 세계 롯데호텔앤리조트의 객실을<br />리워즈 회원 전용 가격으로 만나보세요</p>
                         </li>
