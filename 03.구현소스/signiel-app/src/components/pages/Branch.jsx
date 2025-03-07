@@ -100,6 +100,20 @@ function Branch(props) {
                     </div>
                 </div> */}
 
+                <div>
+                    <class className="main_07">
+                        <ul>
+                            <li>
+                            <img src="../../../images/branch/busan/hotel_busan.jpg" alt="호텔부산" />
+                            <p>호텔제주</p>
+                            </li>
+                            <li>
+                            <img src="../../../images/branch/jeju/hotel_jeju.jpg" alt="호텔제주" />
+                            <p>호텔부산</p>
+                            </li>
+                        </ul>
+                    </class>
+                </div>
             </main>
         </>
     )

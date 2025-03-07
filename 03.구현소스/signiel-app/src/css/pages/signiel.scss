@@ -194,3 +194,14 @@ main > div {
       display: none;
     }
   }
+
+  .main_07 {
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        gap: 10%;
+        width: 30%;
+      }
+    }
+  }
