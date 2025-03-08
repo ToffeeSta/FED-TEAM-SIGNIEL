@@ -64,83 +64,49 @@ function SignUp(props) {
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
   const changeUserId = (e) => {
-    // 입력된 값읽기
     let val = e.target.value;
-
-    // 1. 이메일 유효성 검사식(따옴표로 싸지 말것!)
+  
+    // 이메일 유효성 검사 정규식
     const valid =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-
-    // 2. 입력값 확인 : e.target
-    // console.log(val);
-
-    // 3. 에러상태 분기하기
-    // 3-1. 에러 아닐때 (유효성검사만 통과한 경우)
+  
+    // 1. 이메일 형식 유효성 검사
     if (valid.test(val)) {
-      console.log("통과했지만...!");
-      // 아이디 검사를 위해 기본 데이터 생성호출!
-      initData();
-      // 로컬스토리지에 "mem-data"가 없으면 초기셋팅함!
-
-      // 이제 중복 아이디 검사를 실행한다!!!
-      // 1. 로컬스 변수할당
+      console.log("아이디 유효성 검사 통과!");
+  
+      // 2. 로컬스토리지에서 mem-data 읽기
       let memData = localStorage.getItem("mem-data");
-      console.log(memData);
-
-      // 2. 로컬스 객체변환 (왜? 문자형이니까!)
-      memData = JSON.parse(memData);
-      console.log(memData);
-      // -> 배열데이터로 변환!
-      // 주의: JSON 파싱할때 원본형식이 제이슨 파일형식으로
-      // 엄격하게 작성되어야 에러가 없음(마지막콤마 불허용 등)
-
-      // 3. 배열이니까 현재 입력데이터의 아이디가
-      // 기존 배열값으로 있는지 검사함!
-      // 있으면 true, 없으면 false
-      let isT = memData.some((v) => v.uid === val);
-      console.log("중복id있어?", isT);
-
-      // 4. true 일 경우 중복데이터 메시지 표시
+  
+      // memData가 null이면 초기화
+      if (!memData) {
+        memData = [];
+        localStorage.setItem("mem-data", JSON.stringify(memData)); // 로컬스토리지에 빈 배열 저장
+      } else {
+        memData = JSON.parse(memData); // 데이터 파싱
+      }
+  
+      // 3. 중복된 아이디가 있는지 확인
+      let isT = memData.some((v) => v.email === val);
+      console.log("중복 아이디 있나요?", isT);
+  
       if (isT) {
-        // 에러 메시지 업데이트
+        // 중복된 아이디가 있으면 오류 메시지
         setIdMsg(msgId[1]);
-        // 에러상태값 업데이트
         setUserIdError(true);
-      } ///// if /////
-      // 5. false 일 경우 [성공 메시지] 표시
-      else {
-        // 에러상태값 업데이트 : 에러가 아님!(false)
+      } else {
+        // 중복된 아이디가 없으면 성공 메시지
+        setIdMsg(msgId[2]);
         setUserIdError(false);
-      } ///// else //////
-
-      // [ 새로운 배열메서드 : some() ]
-      // -> 조건에 맞는 값이 하나만 나오면 true처리함
-      // 비교참고) every() 는 하나만 false이면 false리턴
-      // let isT = memData.some(v=>{
-      //     console.log("돌아!",v.uid);
-      //     return v.uid===val;
-      // });
-      // let isT = memData.every(v=>{
-      //     console.log("돌아!",v.uid);
-      //     return v.uid===val;
-      // });
-
-      // 아이디 에러상태 업데이트(false)
-      //   setUserIdError(false);
-    } /// if /////////////////////////
-    // 3-2. 에러일때 : 유효성 검사 에러
-    else {
-      console.log("에러~!");
-      // 에러 메시지 업데이트
+      }
+    } else {
+      // 이메일 형식이 아니면 오류 메시지
+      console.log("이메일 형식 오류");
       setIdMsg(msgId[0]);
-      // 아이디 에러상태 업데이트(true)
       setUserIdError(true);
-    } /// else ///
-
-    // 실제 userId 상태변수값이 업데이트 돼야만
-    // 화면에 출력된다!
+    }
+  
     setUserId(val);
-  }; ////////// changeUserId 함수 ////////////
+  };
 
   // 2. 비밀번호 유효성 검사 ///////////
   const changePwd = (e) => {
