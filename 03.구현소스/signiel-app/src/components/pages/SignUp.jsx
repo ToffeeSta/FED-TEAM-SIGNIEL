@@ -64,49 +64,49 @@ function SignUp(props) {
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
   const changeUserId = (e) => {
-    let val = e.target.value;
-  
-    // 이메일 유효성 검사 정규식
-    const valid =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-  
-    // 1. 이메일 형식 유효성 검사
-    if (valid.test(val)) {
-      console.log("아이디 유효성 검사 통과!");
-  
-      // 2. 로컬스토리지에서 mem-data 읽기
-      let memData = localStorage.getItem("mem-data");
-  
-      // memData가 null이면 초기화
-      if (!memData) {
-        memData = [];
-        localStorage.setItem("mem-data", JSON.stringify(memData)); // 로컬스토리지에 빈 배열 저장
-      } else {
-        memData = JSON.parse(memData); // 데이터 파싱
-      }
-  
-      // 3. 중복된 아이디가 있는지 확인
-      let isT = memData.some((v) => v.email === val);
-      console.log("중복 아이디 있나요?", isT);
-  
-      if (isT) {
-        // 중복된 아이디가 있으면 오류 메시지
-        setIdMsg(msgId[1]);
-        setUserIdError(true);
-      } else {
-        // 중복된 아이디가 없으면 성공 메시지
-        setIdMsg(msgId[2]);
-        setUserIdError(false);
-      }
+  let val = e.target.value;
+
+  // 이메일 유효성 검사 정규식
+  const valid =
+    /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+
+  // 1. 이메일 형식 유효성 검사
+  if (valid.test(val)) {
+    console.log("아이디 유효성 검사 통과!");
+
+    // 2. 로컬스토리지에서 mem-data 읽기
+    let memData = localStorage.getItem("mem-data");
+
+    // memData가 null이면 초기화
+    if (!memData) {
+      memData = [];
+      localStorage.setItem("mem-data", JSON.stringify(memData)); // 로컬스토리지에 빈 배열 저장
     } else {
-      // 이메일 형식이 아니면 오류 메시지
-      console.log("이메일 형식 오류");
-      setIdMsg(msgId[0]);
-      setUserIdError(true);
+      memData = JSON.parse(memData); // 데이터 파싱
     }
-  
-    setUserId(val);
-  };
+
+    // 3. 중복된 아이디가 있는지 확인
+    let isT = memData.some((v) => v.email === val);
+    console.log("중복 아이디 있나요?", isT);
+
+    if (isT) {
+      // 중복된 아이디가 있으면 오류 메시지
+      setIdMsg(msgId[1]);
+      setUserIdError(true);
+    } else {
+      // 중복된 아이디가 없으면 성공 메시지
+      setIdMsg(msgId[2]);
+      setUserIdError(false);
+    }
+  } else {
+    // 이메일 형식이 아니면 오류 메시지
+    console.log("이메일 형식 오류");
+    setIdMsg(msgId[0]);
+    setUserIdError(true);
+  }
+
+  setUserId(val);
+};
 
   // 2. 비밀번호 유효성 검사 ///////////
   const changePwd = (e) => {
