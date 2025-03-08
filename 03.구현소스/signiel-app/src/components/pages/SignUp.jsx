@@ -244,7 +244,7 @@ function SignUp(props) {
         {/* <!-- 아이디 --> */}
         <li>
           <label htmlFor="mid" className="itit">
-            *
+            이메일
           </label>
           <input
             type="text"
@@ -294,7 +294,7 @@ function SignUp(props) {
         {/* <!-- 비밀번호 --> */}
         <li className="eyeli">
           <label htmlFor="mpw" className="itit">
-            *
+            비번
           </label>
           <input
             type="password"
@@ -326,7 +326,7 @@ function SignUp(props) {
         {/* <!-- 비밀번호확인 --> */}
         <li>
           <label htmlFor="mpw2" className="itit">
-            *
+            비번 확인
           </label>
           <input
             type="password"
@@ -358,7 +358,7 @@ function SignUp(props) {
         {/* <!-- 이름 --> */}
         <li>
           <label htmlFor="mnm" className="itit">
-            *
+            네임
           </label>
           <input
             type="text"

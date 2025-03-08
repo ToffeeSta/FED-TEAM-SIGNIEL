@@ -201,7 +201,7 @@ function Login() {
         <form method="post" action="process.php">
           <ul>
             <li>
-              <label>ID : </label>
+              <label>이메일 : </label>
               <input
                 id="user-id"
                 type="text"
