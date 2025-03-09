@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
+import { users } from "../../js/data/user.js";
 // 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
 

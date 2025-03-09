@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 // 모듈 CSS 불러오기 : member.scss와 동일
 import "../../css/pages/login.scss";
 
+import { users } from "../../js/data/user.js";
+
 // 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
 
