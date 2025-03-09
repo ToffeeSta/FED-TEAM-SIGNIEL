@@ -137,7 +137,7 @@ function Login() {
         // (1) 아이디 에러메시지 숨기기
         setUserIdError(false);
         // (2) 비밀번호 검사 : 입력비번 == 결과비번
-        if (pwd === result.pwd) {
+        if (pwd === result.password) {
           // 같을 경우 로그인 성공처리
           // alert("Login Success!");
 
