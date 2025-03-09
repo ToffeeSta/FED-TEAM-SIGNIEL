@@ -45,7 +45,7 @@ function Branch(props) {
           </div>
         </div>
         <div className="main_02 main_0">
-          <img src={selData.img01} />
+          <img src={"../../../images/branch/"+local+"/main_02.png"} />
           <div>
             <h1>{selData.tit}</h1>
             <p>{selData.cont}</p>

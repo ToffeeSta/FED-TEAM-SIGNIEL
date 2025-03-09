@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // 모듈 CSS 불러오기 : member.scss와 동일
 import "../../css/pages/login.scss";
 
-import { users } from "../../js/data/user.js";
+import { users, initDatauser } from "../../js/data/user.js";
 
 // 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
@@ -112,6 +112,7 @@ function Login() {
 
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
+      initDatauser();
 
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
@@ -187,6 +188,131 @@ function Login() {
     else {
       alert("Change your input!");
     } //// else ///////////
+
+
+
+
+
+
+
+
+
+    e.preventDefault();
+
+    console.log("최종검사:", totalValid());
+
+    // 2. 유효성검사 전체 통과시
+    if (totalValid()) {
+      console.log("모두통과! 데이터조회!");
+
+      // [회원정보를 로컬스토리지에 저장하기]
+
+      // 1. 로컬스 체크함수호출(없으면 생성!)
+      initData();
+      initDatauser();
+
+      // 2. 로컬스 변수할당
+      let memUsers = localStorage.getItem("users");
+
+      // 3. 로컬스 객체변환
+      memUsers = JSON.parse(memUsers);
+      console.log(memUsers);
+
+      // 4. 아이디 존재 여부 검사하기
+      let result = memUsers.find((v) => {
+        if (v.email === userId) return true;
+      }); /////// find ///////
+      console.log("결과:", result);
+
+      // 4-1. 결과값이 없으면 메시지 보이기
+      if (!result) {
+        // (1) 에러메시지 선택하기
+        setIdMsg(msgId[1]);
+
+        // (2) 에러메시지 보이기
+        setUserIdError(true);
+      } ////////// if ////////
+      // 4-2. 결과값이 있으면 비밀번호검사
+      else {
+        // (1) 아이디 에러메시지 숨기기
+        setUserIdError(false);
+        // (2) 비밀번호 검사 : 입력비번 == 결과비번
+        if (pwd === result.password) {
+          // 같을 경우 로그인 성공처리
+          // alert("Login Success!");
+
+          // ****** [ 로그인 후 셋팅작업 ] ****** //
+          // 1. 로그인한 회원정보를 세션스에 셋팅!
+          // -> 서버 세션을 대신하여 사용함!
+          // -> 결과가 result에 배열로 담김
+          // -> 넣을때는 JSON.stringify()
+          sessionStorage.setItem("minfo", JSON.stringify(result));
+
+          // 2. 컨텍스트 API의 로그인상태 업데이트
+          // myCon.setLoginSts(sessionStorage.getItem("minfo"));
+          // -> 업데이트된 minfo 세션스값을 넣음!
+
+          // 3. 로그인 환영메시지 셋팅함수 호출
+          // myCon.makeMsg(result.unm);
+
+          // 4. 로그인 성공 메시지 버튼에 출력하기
+          document.querySelector(".sbtn").innerText = "넌 로그인 된거야~!";
+
+          // 5. 라우팅 페이지 이동
+          // 1초후 메인 페이지로 이동
+          // setTimeout(() => {
+          //   myCon.goPage("/");
+          // }, 1000);
+        } //// if /////
+        // 로그인 실패시 메시지 출력!
+        else {
+          // (1) 비밀번호 에러메시지 선택하기
+          setPwdMsg(msgPwd[1]);
+          // (2) 비밀번호 에러메시지 보이기
+          setPwdError(true);
+        } ////// else //////
+
+        // -> 원래 비밀번호는 암호화 되어 있으므로
+        // 백엔드 비밀번호 검사 모듈로 대부분 검사한다!
+      } ////// else //////
+
+      // 배열.find() -> 있을 경우 레코드 저장
+      // find는 filter와 달리 배열로 저장하지 않고
+      // 값만 저장함. 그래서 결과값이 없으면
+      // undefined 를 리턴함!
+    } ///////// if /////////
+    // 3. 불통과시 /////
+    else {
+      alert("Change your input!");
+    } //// else ///////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }; /////////// onSubmit 함수 //////////
 
   // 화면랜더링 구역 /////////

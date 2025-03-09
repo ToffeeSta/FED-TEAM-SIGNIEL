@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-import { users } from "../../js/data/user.js";
+import { users, initDatauser } from "../../js/data/user.js";
 // 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
 
@@ -193,6 +193,7 @@ function SignUp(props) {
 
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
+      initDatauser();
 
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
@@ -216,7 +217,7 @@ function SignUp(props) {
       memData.push(newData);
 
       // 6. 로컬스에 반영하기 : 문자화해서 넣어야함!
-      localStorage.setItem("mem-data", JSON.stringify(users));
+      localStorage.setItem("mem-data", JSON.stringify(memData));
 
       // 7. 회원가입 환영메시지 + 로그인 페이지 이동
       // 버튼 텍스트에 환영메시지
