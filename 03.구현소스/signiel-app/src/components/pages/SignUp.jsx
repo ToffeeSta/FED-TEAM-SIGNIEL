@@ -8,9 +8,6 @@ import "../../css/pages/member.scss";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-// 로컬스토리지 생성 JS import //
-import { initData } from "../../js/func/signUp_fn";
-
 function SignUp() {
   const goPage = useNavigate();
 
@@ -49,7 +46,6 @@ function SignUp() {
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
     if (valid.test(val)) {
-      initData();
       let userData = localStorage.getItem("users");
 
       userData = JSON.parse(userData);
@@ -132,7 +128,6 @@ function SignUp() {
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
-      initData();
 
       let userData = localStorage.getItem("users");
 

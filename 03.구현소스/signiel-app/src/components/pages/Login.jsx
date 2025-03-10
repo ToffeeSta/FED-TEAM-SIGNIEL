@@ -4,9 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 // 모듈 CSS 불러오기
 import "../../css/pages/member.scss";
 
-// 로컬스토리지 생성 JS import
-import { initData } from "../../js/func/signUp_fn";
-
 function Login({ setIsLoggedIn }) {
   const goPage = useNavigate();
 
@@ -54,7 +51,6 @@ function Login({ setIsLoggedIn }) {
     e.preventDefault();
 
     if (totalValid()) {
-      initData();
 
       let userData = localStorage.getItem("users");
       userData = JSON.parse(userData);
