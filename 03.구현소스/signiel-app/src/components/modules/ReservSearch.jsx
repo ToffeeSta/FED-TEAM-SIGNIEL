@@ -1,14 +1,21 @@
-import React, { useState } from "react";
-import { rooms } from "../../js/data/rooms";
-import { hotels } from "../../js/data/hotels";
-import { reservations } from "../../js/data/reservations";
+import React, { useState, useEffect } from "react";
 import "../../css/modules/reserv_search.scss";
 
 function ReservSearch({ onSearchChange }) {
+  const [hotels, setHotels] = useState([]);
+  const [rooms, setRooms] = useState([]);
+  const [reservations, setReservations] = useState([]);
+
   const [selectedHotel, setSelectedHotel] = useState("");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guestCount, setGuestCount] = useState(1);
+
+  useEffect(() => {
+    setHotels(JSON.parse(localStorage.getItem("hotels")) || []);
+    setRooms(JSON.parse(localStorage.getItem("rooms")) || []);
+    setReservations(JSON.parse(localStorage.getItem("reservations")) || []);
+  }, []);
 
   const handleSearch = () => {
     if (!selectedHotel || !checkIn || !checkOut) {
@@ -36,14 +43,12 @@ function ReservSearch({ onSearchChange }) {
       (room) => !bookedRooms.includes(room.id) && guestCount <= room.max_guests
     );
 
-    // 몇박인지 계산
     const checkInDate = new Date(checkIn);
     const checkOutDate = new Date(checkOut);
     const stayDuration = Math.ceil(
       (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
     );
 
-    // 검색 결과를 부모 컴포넌트(Reservation)으로 전달
     onSearchChange({
       checkIn,
       checkOut,
@@ -78,6 +83,7 @@ function ReservSearch({ onSearchChange }) {
             type="date"
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
+            min={new Date().toISOString().split("T")[0]}
             max={
               checkOut
                 ? new Date(new Date(checkOut).getTime() - 86400000)
@@ -98,7 +104,7 @@ function ReservSearch({ onSearchChange }) {
                 ? new Date(new Date(checkIn).getTime() + 86400000)
                     .toISOString()
                     .split("T")[0]
-                : undefined
+                : new Date().toISOString().split("T")[0]
             }
           />
         </div>

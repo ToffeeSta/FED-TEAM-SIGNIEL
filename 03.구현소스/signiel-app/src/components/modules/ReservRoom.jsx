@@ -26,3 +26,11 @@ function RoomInfo({ availableRooms,stayDuration }) {
 
 export default RoomInfo;
 
+/* 
+  id: "1-104-2025-03-25",
+  user_id: 7,
+  room_id: "1-104",
+  check_in: "2025-03-25",
+  check_out: "2025-03-28",
+  guest_count: 4
+ */
