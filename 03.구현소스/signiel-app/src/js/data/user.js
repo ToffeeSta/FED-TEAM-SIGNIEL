@@ -1,10 +1,4 @@
-// const initDatauser = () => {
-//   // 만약 로컬스토리지 "users"가 없으면 users 데이터를 저장
-//   if (localStorage.getItem("users") === null) {
-//     localStorage.setItem("users", JSON.stringify(users));
-//     // console.log("로컬스토리지 초기 데이터 저장 확인");
-//   }
-// };
+
 
 
 export const users = [
@@ -53,5 +47,3 @@ export const users = [
   ];
 
 
-
-  // export { initDatauser };
