@@ -57,6 +57,7 @@ function UserReserv() {
               <p>지점: {res.h_name}</p>
               <p>객실: {res.room_num}호</p>
               <p>예약인원: {res.guest_count}명</p>
+              <div className="cancel-btn"><span>취소</span></div>
             </div>
           ))
         ) : (

@@ -14,13 +14,13 @@
     margin-bottom: 20px;
     color: $color-main;
   }
-  .con-wrap{
+  .con-wrap {
     @include flex(space-between, center);
-    span{
+    span {
       font-size: 13px;
     }
   }
-  .sort-options{
+  .sort-options {
     @include flex(flex-end, center);
     gap: 10px;
   }
@@ -29,6 +29,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     .con-card {
+      position: relative;
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 10px;
@@ -48,9 +49,31 @@
       }
       .con-wrap {
         @include flex(space-between, center);
-        &:last-child{
-
+        &:last-child {
           margin-top: 15px;
+        }
+      }
+      .cancel-btn {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 60px;
+        height: 30px;
+        background: $color-main;
+        color: #fff;
+        font-size: 9px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: #424242;
+        }
+        span {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
@@ -61,7 +84,7 @@
       margin-top: 50px;
     }
   }
-  .more-btn{
+  .more-btn {
     position: relative;
     margin-top: 20px;
     width: 140px;
@@ -78,11 +101,11 @@
     &:hover {
       background-color: #424242;
     }
-    span{
+    span {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
     }
   }
 }
