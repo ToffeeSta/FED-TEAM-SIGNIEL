@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-import { users, initDatauser } from "../../js/data/user.js";
+// import { users, initDatauser } from "../../js/data/user.js";
 // 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
 
@@ -193,7 +193,7 @@ function SignUp(props) {
 
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
-      initDatauser();
+      // initDatauser();
 
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
