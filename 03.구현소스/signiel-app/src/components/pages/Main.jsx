@@ -2,12 +2,15 @@
 
 import React from 'react';
 
+import "../../css/pages/main.scss";
+import Banner from '../modules/Banner';
 
-function Main() {
+const Main = () => {
     return (
-        <div>
-           <h1>Main</h1>
-        </div>
+        <>
+            {/* 1. 메인배너 */}
+            <Banner />
+        </>
     );
 };
 
