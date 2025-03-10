@@ -1,0 +1,88 @@
+@import "../common/core";
+@import "../common/variables";
+
+.con-box {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  box-sizing: border-box;
+  h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: $color-main;
+  }
+  .con-wrap{
+    @include flex(space-between, center);
+    span{
+      font-size: 13px;
+    }
+  }
+  .sort-options{
+    @include flex(flex-end, center);
+    gap: 10px;
+  }
+  .con-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    .con-card {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #666;
+        margin-top: 3px;
+      }
+      .con-wrap {
+        @include flex(space-between, center);
+        &:last-child{
+
+          margin-top: 15px;
+        }
+      }
+    }
+    .no-data {
+      text-align: center;
+      color: #888;
+      font-size: 18px;
+      margin-top: 50px;
+    }
+  }
+  .more-btn{
+    position: relative;
+    margin-top: 20px;
+    width: 140px;
+    height: 40px;
+    background: $color-main;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #424242;
+    }
+    span{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}

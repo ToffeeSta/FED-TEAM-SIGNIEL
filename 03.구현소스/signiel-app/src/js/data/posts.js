@@ -61,10 +61,10 @@ export const posts = [
   },
   {
     id: 7,
-    user_id: 7,
+    user_id: 1,
     hotel_id: 3,
     post_type: "review",
-    rating: 5,
+    rating: 4,
     title: "제주도 여행의 완성!",
     content: "바다 전망이 최고였어요.",
     created_at: "2025-03-20"
@@ -91,7 +91,7 @@ export const posts = [
   },
   {
     id: 10,
-    user_id: 3,
+    user_id: 1,
     hotel_id: 1,
     post_type: "Q&A",
     rating: null,
@@ -121,7 +121,7 @@ export const posts = [
   },
   {
     id: 13,
-    user_id: 6,
+    user_id: 1,
     hotel_id: 2,
     post_type: "Q&A",
     rating: null,

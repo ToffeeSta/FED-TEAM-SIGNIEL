@@ -1,0 +1,55 @@
+@import "../common/core";
+@import "../common/variables";
+
+.card {
+  @include borderSet;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #e7ded0;
+  box-sizing: border-box;
+  color: $color-main;
+
+  h2 {
+    font-size: 24px;
+    font-family: "Pretendard-bold";
+    text-align: center;
+  }
+  .inner-con {
+    @include flex(space-between, center);
+    margin-top: 20px;
+    padding: 0 20px;
+
+    .select-wrap {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 16px;
+        font-family: "Pretendard-SemiBold";
+        margin-bottom: 10px;
+      }
+    }
+    .search-btn {
+      position: relative;
+      margin-top: 10px;
+      width: 100px;
+      height: 40px;
+      background: $color-main;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: #424242;
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
