@@ -35,16 +35,14 @@ function UserReserv() {
         <h2 className="tit">예약 내역</h2>
 
         <div className="sort-options">
-    
-            <select
-              id="sortOrder"
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value)}
-            >
-              <option value="desc">최신순</option>
-              <option value="asc">오래된순</option>
-            </select>
-       
+          <select
+            id="sortOrder"
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="desc">최신순</option>
+            <option value="asc">오래된순</option>
+          </select>
         </div>
       </div>
 

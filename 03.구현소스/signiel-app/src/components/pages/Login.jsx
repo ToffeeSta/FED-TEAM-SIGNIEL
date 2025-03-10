@@ -51,7 +51,6 @@ function Login({ setIsLoggedIn }) {
     e.preventDefault();
 
     if (totalValid()) {
-
       let userData = localStorage.getItem("users");
       userData = JSON.parse(userData);
 
