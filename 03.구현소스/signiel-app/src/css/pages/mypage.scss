@@ -1,0 +1,97 @@
+@import "../common/core";
+@import "../common/variables";
+
+.my-page {
+  @include defaultAreaSet;
+
+  .user-Info {
+    @include borderSet;
+    background-color: #e7ded0;
+    h2 {
+      color: $color-main;
+    }
+    ul {
+      padding-top: 20px;
+      li {
+        @include flex();
+        h3 {
+          color: #444;
+          font-family: "Pretenderd-Bold";
+        }
+        p {
+          font-family: "Pretendard-SemiBold";
+          margin-left: 10px;
+          color: #222;
+        }
+      }
+    }
+  }
+}
+
+// pc 미디어쿼리
+@media (min-width: 1024px) {
+  .user-Info {
+    h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    ul {
+      font-size: 22px;
+      .con-wrap {
+        @include flex();
+        gap: 100px;
+      }
+      @include flex();
+      gap: 100px;
+    }
+  }
+  .bottom-con {
+    padding-top: 20px;
+    @include flex(space-between, flex-start);
+    gap: 20px;
+  }
+}
+
+// 태블릿 미디어쿼리
+@media (min-width: 768px) and (max-width: 1023px) {
+  .user-Info {
+    h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+    ul {
+      font-size: 20px;
+      .con-wrap {
+        @include flex();
+        gap: 100px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .bottom-con {
+    padding-top: 20px;
+    @include flex(space-between, flex-start);
+    gap: 20px;
+  }
+}
+
+// 모바일 미디어쿼리
+@media (max-width: 767px) {
+  .user-Info {
+    h2 {
+      font-size: 30px;
+    }
+    ul {
+      font-size: 18px;
+      li {
+        margin-top: 10px;
+      }
+    }
+  }
+  .bottom-con {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

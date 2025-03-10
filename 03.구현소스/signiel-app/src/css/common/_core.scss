@@ -1,26 +1,26 @@
 /* SIGNIEL.com 핵심공통 CSS - core.css */
 
 //폰트
-@font-face{
+@font-face {
   font-family: "Pretendard-Regular";
   font-weight: normal;
   src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
 }
-@font-face{
+@font-face {
   font-family: "Pretendard-Bold";
   font-weight: normal;
   src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
 }
-@font-face{
+@font-face {
   font-family: "Pretendard-SemiBold";
   font-weight: normal;
   src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("truetype");
 }
 
-body{
+body {
   font-family: "Pretendard-Regular";
 }
-.tit{
+.tit {
   font-family: "Pretendard-Bold";
 }
 
@@ -30,4 +30,16 @@ body{
   justify-content: $x;
   align-items: $y;
   @content;
+}
+
+@mixin defaultAreaSet {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin borderSet {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
