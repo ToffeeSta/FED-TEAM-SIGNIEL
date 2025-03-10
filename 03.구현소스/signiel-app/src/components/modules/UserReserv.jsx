@@ -6,6 +6,7 @@ function UserReserv() {
   const [reservations, setReservations] = useState([]);
   const [visibleCount, setVisibleCount] = useState(10);
   const [sortOrder, setSortOrder] = useState("desc");
+
   useEffect(() => {
     const userIdx = JSON.parse(sessionStorage.getItem("users"))?.id;
     if (userIdx) {
@@ -28,6 +29,12 @@ function UserReserv() {
   });
 
   const visibleReservations = sortedReservations.slice(0, visibleCount);
+
+  const handleCancel = (reservNum) => {
+    console.log(reservNum);
+
+    
+  };
 
   return (
     <div className="con-box">
@@ -57,7 +64,12 @@ function UserReserv() {
               <p>지점: {res.h_name}</p>
               <p>객실: {res.room_num}호</p>
               <p>예약인원: {res.guest_count}명</p>
-              <div className="cancel-btn"><span>취소</span></div>
+              <div
+                className="cancel-btn"
+                onClick={() => handleCancel(res.reserv_num)}
+              >
+                <span>취소</span>
+              </div>
             </div>
           ))
         ) : (
