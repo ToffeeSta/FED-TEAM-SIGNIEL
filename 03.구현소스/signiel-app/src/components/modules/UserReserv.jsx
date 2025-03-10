@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../css/modules/cont_card.scss";
 import { userReservData } from "../../js/func/userInfo_fn";
 
@@ -6,6 +6,22 @@ function UserReserv() {
   const [reservations, setReservations] = useState([]);
   const [visibleCount, setVisibleCount] = useState(10);
   const [sortOrder, setSortOrder] = useState("desc");
+  const [force, setForce] = useState(true);
+
+
+
+  const retDate = obj => 
+    obj.getFullYear()+
+  '-'+
+  ((obj.getMonth()+1)<10?'0'+(obj.getMonth()+1):(obj.getMonth()+1))+
+  '-'+
+  (obj.getDate()<10?'0'+obj.getDate():obj.getDate());
+
+  // 오늘날짜 업데이트!
+  const todaySet = useRef('2025-04-30');
+  // const todaySet = useRef(retDate(new Date()));
+  
+  console.log(todaySet.current);
 
   useEffect(() => {
     const userIdx = JSON.parse(sessionStorage.getItem("users"))?.id;
@@ -17,7 +33,7 @@ function UserReserv() {
     if (storedData) {
       setReservations(JSON.parse(storedData));
     }
-  }, []);
+  }, [force]);
 
   // 예약 내역을 선택된 정렬 순서에 맞게 정렬
   const sortedReservations = [...reservations].sort((a, b) => {
@@ -33,7 +49,22 @@ function UserReserv() {
   const handleCancel = (reservNum) => {
     console.log(reservNum);
 
-    
+    let temp = localStorage.getItem("reservations");
+    temp = JSON.parse(temp);
+
+    console.log(1, temp);
+
+    temp.find((v, i) => {
+      if (v.id === reservNum) {
+        temp.splice(i, 1);
+        return true;
+      }
+    });
+    console.log(2, temp);
+
+    localStorage.setItem("reservations", JSON.stringify(temp));
+
+    setForce(!force);
   };
 
   return (
@@ -64,12 +95,23 @@ function UserReserv() {
               <p>지점: {res.h_name}</p>
               <p>객실: {res.room_num}호</p>
               <p>예약인원: {res.guest_count}명</p>
+              {
+                res.check_out > todaySet.current &&
               <div
                 className="cancel-btn"
                 onClick={() => handleCancel(res.reserv_num)}
               >
                 <span>취소</span>
               </div>
+              }
+              {
+                res.check_out <= todaySet.current &&
+              <div
+                className="cancel-btn"
+              >
+                <span>불취소</span>
+              </div>
+              }
             </div>
           ))
         ) : (
