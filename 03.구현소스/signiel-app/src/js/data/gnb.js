@@ -23,7 +23,7 @@ export const menu = [
         ],
     },
     {
-        txt:"예약",
+        txt:"예약하기",
         link:"/reservation",
     },
     {
@@ -31,8 +31,8 @@ export const menu = [
         link:"/post",
     },
     {
-        txt:"회원정보",
-        link:"/user",
+        txt:"마이페이지",
+        link:"/mypage",
     },
     {
         txt:"로그인",
