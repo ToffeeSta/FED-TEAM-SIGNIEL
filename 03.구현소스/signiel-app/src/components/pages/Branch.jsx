@@ -25,7 +25,6 @@ function Branch(props) {
   // 리턴 코드구역 ///////////////
   return (
     <>
-
       <div className="main_01">
         <div>
           <img
@@ -50,13 +49,15 @@ function Branch(props) {
       <div className="main_02 main_0">
         <img src={"../../../images/branch/" + local + "/main_02.png"} />
         <div>
-          <h1>
-            {selData.tit.split("^")[0]}
-            <br />
-            {selData.tit.split("^")[1]}
-          </h1>
-          <p>{selData.cont.split("^")[0]}</p>
-          <p>{selData.cont.split("^")[1]}</p>
+          <div className="txt-inbox">
+            <h1>
+              {selData.tit.split("^")[0]}
+              <br />
+              {selData.tit.split("^")[1]}
+            </h1>
+            <p>{selData.cont.split("^")[0]}</p>
+            <p>{selData.cont.split("^")[1]}</p>
+          </div>
         </div>
       </div>
       <div className="main_03 main_0">
@@ -72,8 +73,10 @@ function Branch(props) {
       </div>
       <div className="main_04 main_0">
         <span>
-          <h1>{selData.tit03}</h1>
-          <p>{selData.cont03}</p>
+          <div className="txt-inbox">
+            <h1>{selData.tit03}</h1>
+            <p>{selData.cont03}</p>
+          </div>
         </span>
         <img
           src={"../../../images/branch/" + local + "/main_04.png"}
@@ -86,56 +89,58 @@ function Branch(props) {
         local === "seoul" && (
           <div className="main_05 main_0">
             <h1>Room Packages & Offers</h1>
-            <ul>
-              <li>
-                <img
-                  src="../../../images/branch/seoul/main_05_01.png"
-                  alt="메인5_1"
-                />
-                <h2>
-                  LOCAL BLISS
-                  <br />
-                  TRIP
-                </h2>
-                <p>
-                  국내여행에서의 특별한 추억을
-                  <br />
-                  롯데호텔과 함께 만들어보세요
-                </p>
-              </li>
-              <li>
-                <img
-                  src="../../../images/branch/seoul/main_05_02.png"
-                  alt="메인5_2"
-                />
-                <h2>
-                  BED & BR /EAKFAST
-                  <br />
-                  PACKAGE
-                </h2>
-                <p>
-                  고객님의 여유로운 호텔스테이를 위해
-                  <br />
-                  조식포함 상품을 준비하였습니다
-                </p>
-              </li>
-              <li>
-                <img
-                  src="../../../images/branch/seoul/main_05_03.png"
-                  alt="메인5_3"
-                />
-                <h2>
-                  LOTTE HOTEL
-                  <br />
-                  REWARDS ONLY
-                </h2>
-                <p>
-                  전 세계 롯데호텔앤리조트의 객실을
-                  <br />
-                  리워즈 회원 전용 가격으로 만나보세요
-                </p>
-              </li>
-            </ul>
+            <div className="main_05_inbox">
+              <ul>
+                <li>
+                  <img
+                    src="../../../images/branch/seoul/main_05_01.png"
+                    alt="메인5_1"
+                  />
+                  <h2>
+                    LOCAL BLISS
+                    <br />
+                    TRIP
+                  </h2>
+                  <p>
+                    국내여행에서의 특별한 추억을
+                    <br />
+                    롯데호텔과 함께 만들어보세요
+                  </p>
+                </li>
+                <li>
+                  <img
+                    src="../../../images/branch/seoul/main_05_02.png"
+                    alt="메인5_2"
+                  />
+                  <h2>
+                    BED & BR /EAKFAST
+                    <br />
+                    PACKAGE
+                  </h2>
+                  <p>
+                    고객님의 여유로운 호텔스테이를 위해
+                    <br />
+                    조식포함 상품을 준비하였습니다
+                  </p>
+                </li>
+                <li>
+                  <img
+                    src="../../../images/branch/seoul/main_05_03.png"
+                    alt="메인5_3"
+                  />
+                  <h2>
+                    LOTTE HOTEL
+                    <br />
+                    REWARDS ONLY
+                  </h2>
+                  <p>
+                    전 세계 롯데호텔앤리조트의 객실을
+                    <br />
+                    리워즈 회원 전용 가격으로 만나보세요
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
         )
       }
