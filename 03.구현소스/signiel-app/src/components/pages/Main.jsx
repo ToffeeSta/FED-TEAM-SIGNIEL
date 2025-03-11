@@ -6,11 +6,10 @@ import "../../css/pages/main.scss";
 import Banner from "../modules/Banner";
 
 // 제이쿼리 불러오기 ////
-import $ from 'jquery';
+import $ from "jquery";
 
 const Main = () => {
-
-    // DOM이 완성되었을때 실행구역 ///////
+  // DOM이 완성되었을때 실행구역 ///////
   useEffect(() => {
     /////////////////////////////////////
     // 스크롤 등장액션 만들기 /////////////
@@ -42,8 +41,9 @@ const Main = () => {
   // 위치값 리턴함수 //////////
   const retClient = (idx) => {
     // console.log(idx);
-    return document.querySelectorAll(".sc-ani")[idx]
-    .getBoundingClientRect().top;
+    return document
+      .querySelectorAll(".sc-ani")
+      [idx].getBoundingClientRect().top;
   }; //////////// retClient함수 /////
 
   // 등장액션 일괄 셋팅 ////////
@@ -66,7 +66,8 @@ const Main = () => {
     <>
       {/* 1. 메인배너 */}
       <Banner />
-      {Array.from({ length: 10 }).map((v, i) => (
+      {/* 테스트 때문에 막아둔거(삭제금지) */}
+      {/* {Array.from({ length: 5 }).map((v, i) => (
         <div
           key={v}
           style={{
@@ -75,9 +76,11 @@ const Main = () => {
             height: "100vh",
           }}
           className="sc-ani sc-ani1"
-        ></div>
+        >
+          Mission Make every moment of life delightful
+        </div>
       ))}
-      {Array.from({ length: 10 }).map((v, i) => (
+      {Array.from({ length: 5 }).map((v, i) => (
         <div
           key={v}
           style={{
@@ -87,7 +90,7 @@ const Main = () => {
           }}
           className="sc-ani sc-ani2"
         ></div>
-      ))}
+      ))} */}
     </>
   );
 };
