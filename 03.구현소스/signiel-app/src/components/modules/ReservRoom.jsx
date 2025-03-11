@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/modules/room_info.scss";
+import "../../css/modules/reserv_room.scss";
 
 function ReservRoom({ availableRooms, stayDuration, checkIn, checkOut, guestCount }) {
 

@@ -8,19 +8,19 @@ function UserReserv() {
   const [sortOrder, setSortOrder] = useState("desc");
   const [force, setForce] = useState(true);
 
-
-
-  const retDate = obj => 
-    obj.getFullYear()+
-  '-'+
-  ((obj.getMonth()+1)<10?'0'+(obj.getMonth()+1):(obj.getMonth()+1))+
-  '-'+
-  (obj.getDate()<10?'0'+obj.getDate():obj.getDate());
+  const retDate = (obj) =>
+    obj.getFullYear() +
+    "-" +
+    (obj.getMonth() + 1 < 10
+      ? "0" + (obj.getMonth() + 1)
+      : obj.getMonth() + 1) +
+    "-" +
+    (obj.getDate() < 10 ? "0" + obj.getDate() : obj.getDate());
 
   // 오늘날짜 업데이트!
-  const todaySet = useRef('2025-04-30');
-  // const todaySet = useRef(retDate(new Date()));
-  
+  // const todaySet = useRef('2025-04-30');
+  const todaySet = useRef(retDate(new Date()));
+
   console.log(todaySet.current);
 
   useEffect(() => {
@@ -95,23 +95,19 @@ function UserReserv() {
               <p>지점: {res.h_name}</p>
               <p>객실: {res.room_num}호</p>
               <p>예약인원: {res.guest_count}명</p>
-              {
-                res.check_out > todaySet.current &&
-              <div
-                className="cancel-btn"
-                onClick={() => handleCancel(res.reserv_num)}
-              >
-                <span>취소</span>
-              </div>
-              }
-              {
-                res.check_out <= todaySet.current &&
-              <div
-                className="cancel-btn"
-              >
-                <span>불취소</span>
-              </div>
-              }
+              {res.check_out > todaySet.current && (
+                <div
+                  className="cancel-btn"
+                  onClick={() => handleCancel(res.reserv_num)}
+                >
+                  <span>취소</span>
+                </div>
+              )}
+              {res.check_in <= todaySet.current && (
+                <div className="dont_can">
+                  <span>취소불가</span>
+                </div>
+              )}
             </div>
           ))
         ) : (

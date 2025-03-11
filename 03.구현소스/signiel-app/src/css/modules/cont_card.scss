@@ -9,6 +9,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   min-height: 400px;
   box-sizing: border-box;
+  
   h2 {
     font-size: 30px;
     margin-bottom: 20px;
@@ -57,11 +58,11 @@
         position: absolute;
         right: 15px;
         bottom: 15px;
-        width: 60px;
+        width: 70px;
         height: 30px;
         background: $color-main;
         color: #fff;
-        font-size: 9px;
+        font-size: 11px;
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -69,6 +70,24 @@
         &:hover {
           background-color: #424242;
         }
+        span {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .dont_can{
+        position: absolute;
+        z-index: 1;
+        right: 15px;
+        bottom: 15px;
+        width: 70px;
+        height: 30px;
+        background: #f9f9f9;
+        color: #000;
+        font-size: 10px;
+        border: none;
         span {
           position: absolute;
           left: 50%;
