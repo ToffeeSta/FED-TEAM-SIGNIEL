@@ -59,6 +59,7 @@ function Branch(props) {
             </h1>
             <p>{selData.cont.split("^")[0]}</p>
             <p>{selData.cont.split("^")[1]}</p>
+            <p>{selData.cont.split("^")[2]}</p>
           </div>
         </div>
       </div>
@@ -69,15 +70,19 @@ function Branch(props) {
         />
 
         <div>
+          <div>
           <h1>{selData.tit02}</h1>
-          <p>{selData.cont02}</p>
+          <p>{selData.cont02.split("^")[0]}</p>
+          <p>{selData.cont02.split("^")[1]}</p>
+          </div>
         </div>
       </div>
       <div className="main_04 main_0">
         <span>
           <div className="txt-inbox">
             <h1>{selData.tit03}</h1>
-            <p>{selData.cont03}</p>
+          <p>{selData.cont03.split("^")[0]}</p>
+          <p>{selData.cont03.split("^")[1]}</p>
           </div>
         </span>
         <img
