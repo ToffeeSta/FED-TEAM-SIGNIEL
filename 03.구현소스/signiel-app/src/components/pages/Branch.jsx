@@ -47,7 +47,9 @@ function Branch(props) {
         </div>
       </div>
       <div className="main_02 main_0">
-        <img src={"../../../images/branch/" + local + "/main_02.png"} />
+        <div>
+          <img src={"../../../images/branch/" + local + "/main_02.png"} />
+        </div>
         <div>
           <div className="txt-inbox">
             <h1>
