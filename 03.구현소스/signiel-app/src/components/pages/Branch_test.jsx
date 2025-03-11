@@ -28,11 +28,13 @@ function Branch(props) {
       <div className="branch-container">
         <div className="branch-banner">
           <div className="banner-img">
-            <img src="../../../images/branch/seoul/main.jpg" alt="배너이미지" />
+            <img src={"../../../images/branch/" + local + "/main.jpg"} />
           </div>
           <div className="banner-text">
-            <p>좌측상단</p>
-            <span>우측하단</span>
+            <p>LOTTE HOTELS & RESORTS</p>
+            <span>HOTEL LOTTE
+호텔롯데는 최상의 Care를
+제공하여 고객의 가치 있는 여정에 함께합니다.</span>
           </div>
         </div>
         {/* max-width 적용 */}
@@ -40,7 +42,7 @@ function Branch(props) {
            {/* 1 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src="" alt="" />
+              <img src={"../../../images/branch/" + local + "/main_02.png"} alt="" />
             </div>
             <div className="text-box">
               <h2>제목</h2>
@@ -50,7 +52,7 @@ function Branch(props) {
           {/* 2 */}
           <div className="con-wrap">
           <div className="img-box">
-              <img src="" alt="" />
+              <img src={"../../../images/branch/" + local + "/main_03.png"} alt="" />
             </div>
             <div className="text-box">
               <h2>제목</h2>
@@ -60,7 +62,7 @@ function Branch(props) {
           {/* 3 */}
           <div className="con-wrap">
           <div className="img-box">
-              <img src="" alt="" />
+              <img src={"../../../images/branch/" + local + "/main_04.png"} alt="" />
             </div>
             <div className="text-box">
               <h2>제목</h2>
@@ -74,7 +76,7 @@ function Branch(props) {
               {/* 1 */}
               <div>
               <div className="slide-img">
-                <img src="" alt="" />
+                <img src={"../../../images/branch/" + local + "/main_05_01.png"} alt="" />
               </div>
               <h2>제목</h2>
               <span className="contents-title"></span>
@@ -82,7 +84,7 @@ function Branch(props) {
             {/* 2 */}
             <div>
               <div className="slide-img">
-                <img src="" alt="" />
+                <img src={"../../../images/branch/" + local + "/main_05_02.png"} alt="" />
               </div>
               <h2>제목</h2>
               <span className="contents-title"></span>
@@ -90,29 +92,80 @@ function Branch(props) {
             {/* 3 */}
             <div>
               <div className="slide-img">
-                <img src="" alt="" />
+                <img src={"../../../images/branch/" + local + "/main_05_03.png"} alt="" />
               </div>
               <h2>제목</h2>
               <span className="contents-title"></span>
             </div>
             </div>
           </div>
-          {/* 5 */}
-          <div className="con-wrap">
-          <div className="branch-info">
-              <div className="slide-img">
-                <img src="" alt="" />
-              </div>
-              <h2>제목</h2>
-            </div>
-            <div className="branch-info">
-              <div className="slide-img">
-                <img src="" alt="" />
-              </div>
-              <h2>제목</h2>
-            </div>
-          </div>
+
+
         </div>
+
+        <div className="con-wrap">
+          <ul>
+            {local !== "seoul" && (
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    // 기본이동막기
+                    e.preventDefault();
+                    goPage("/branch", { state: { local: "seoul" } });
+                  }}
+                >
+                  <img
+                    src="../../../images/branch/seoul/main.jpg"
+                    alt="호텔서울"
+                    title="호텔서울"
+                  />
+                  <p>호텔서울</p>
+                </a>
+              </li>
+            )}
+            {local !== "busan" && (
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    // 기본이동막기
+                    e.preventDefault();
+                    goPage("/branch", { state: { local: "busan" } });
+                  }}
+                >
+                  <img
+                    src="../../../images/branch/busan/hotel_busan.jpg"
+                    alt="호텔부산"
+                    title="호텔부산"
+                  />
+                  <p>호텔부산</p>
+                </a>
+              </li>
+            )}
+            {local !== "jeju" && (
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    // 기본이동막기
+                    e.preventDefault();
+                    goPage("/branch", { state: { local: "jeju" } });
+                  }}
+                >
+                  <img
+                    src="../../../images/branch/jeju/hotel_jeju.jpg"
+                    alt="호텔제주"
+                    title="호텔제주"
+                  />
+                  <p>호텔제주</p>
+                </a>
+              </li>
+            )}
+          </ul>
+        </div>
+
+
       </div>
     </>
   );

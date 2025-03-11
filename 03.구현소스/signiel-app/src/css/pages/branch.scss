@@ -4,16 +4,247 @@
 .branch-container {
     // TODO: 컨테이너 > 배너는 100% 사이즈로 해야함
     width: 100%;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+}
+
+.banner-img {
+    img {
+        width: 100%;
+    }
 }
 
 .branch-banner {
-    
+    position: relative;
+}
+.banner-text {
+    position: absolute;
+}
+.banner-text {
+    top:0;
+    left:0;
+}
+.banner-text {
+    position: absolute;
+}
+.banner-text span {
+    right:0;
+    bottom:0;
 }
 
-
-
 .branch-wrap {
-    max-width: 144rem;
-    height: 500px;
+    max-width: 140rem;
+    // height: 500px;
     background-color: aqua;
+    margin: 0 auto;
+
+}
+
+.con-wrap {
+
+    display: flex;
+}
+
+.con-wrap:nth-of-type(3) {
+    flex-direction: row-reverse;
+}
+
+.img-box {
+    img {
+        width: 90%;
+    }
+}
+
+.text-box {
+    // width: 50%;
+}
+
+.slide-box {
+    display: flex;
+}
+.slide-img {
+    width: 33%;
+    img {
+        width: 100%;
+    }
+}
+
+.slide-box {
+    display: flex;
+    justify-content: space-between; /* 이미지 사이 간격 조정 */
+    gap: 10px; /* 이미지 간 간격 */
+  }
+  
+  .slide-box > div {
+    flex: 1; /* 모든 이미지 컨테이너가 동일한 너비를 가지도록 설정 */
+  }
+  
+  .slide-img {
+    width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
+    height: auto; /* 원본 비율 유지 */
+  }
+  
+  .slide-img img {
+    width: 100%; /* 이미지가 컨테이너에 맞게 확장 */
+    height: auto; /* 비율 유지 */
+    display: block;
+  }
+  .con-wrap ul li {
+    width: 40%;
+  }
+  .con-wrap ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-bottom: 5%;
+    text-align: center;
+    img {
+        width:90%;
+        height: 100%;
+        object-fit: cover;
+    }
+  }
+
+
+
+  .con-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .img-box {
+    flex: 1;
+    width: 50%;
+  }
+  
+  .img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .text-box {
+    flex: 1;
+    padding: 20px;
+  }
+  
+
+
+
+  
+  .banner-img {
+    flex: 1;
+    position: relative;
+  }
+  
+  .banner-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .banner-text {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .banner-text p {
+    position: absolute;
+  }
+  
+  .banner-text span {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+  
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .con-wrap {
+    display: flex;
+    flex-direction: column;
+
+  }
+    .slide-box {
+
+        overflow-x: auto; /* 가로 스크롤 활성화 */
+      }
+      
+.con-wrap:nth-of-type(3) {
+    flex-direction: column;
+}
+      
+      .slide-box > div {
+        flex: 0 0 auto; /* 요소 크기를 자동으로 조절하여 가로 스크롤 유도 */
+        width: 100%; /* 각 이미지 컨테이너 너비 설정 */
+      }
+      
+      
+    // // 스크롤 생기게 ////////
+    // .slide-box {
+    //     display: flex;
+    //     justify-content: space-between; /* 이미지 사이 간격 조정 */
+    //     gap: 10px; /* 이미지 간 간격 */
+    //     margin: 0; /* 외부 여백 제거 */
+    //     padding: 0; /* 내부 여백 제거 */
+    //     overflow-x: auto; /* 가로 스크롤 활성화 */
+    //     white-space: nowrap; /* 요소들이 줄 바꿈되지 않도록 설정 */
+    //   }
+      
+    //   .slide-box > div {
+    //     flex: 0 0 auto; /* 요소 크기를 자동으로 조절하여 가로 스크롤 유도 */
+    //     width: 100%; /* 각 이미지 컨테이너 너비 설정 */
+    //   }
+      
+    //   .slide-img {
+    //     width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
+    //     height: auto; /* 원본 비율 유지 */
+    //   }
+      
+    //   .slide-img img {
+    //     width: 100%; /* 이미지가 컨테이너에 맞게 확장 */
+    //     height: auto; /* 비율 유지 */
+    //     display: block;
+    //   }
+      
+    //   .con-wrap {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     width: 100%;
+    //     margin: 0;
+    //     padding: 0;
+    //   }
+      
+    //   .img-box {
+    //     flex: 1;
+    //     width: 50%;
+    //   }
+      
+    //   .img-box img {
+    //     width: 100%;
+    //     height: auto;
+    //     display: block;
+    //   }
+      
+    //   .text-box {
+    //     flex: 1;
+    //     padding: 20px;
+    //   }
 }
