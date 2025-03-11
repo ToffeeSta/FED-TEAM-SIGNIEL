@@ -26,7 +26,7 @@ function Branch(props) {
   return (
     <>
 
-      <div className="main_01 main_0">
+      <div className="main_01">
         <div>
           <img
             className="maing_img"
