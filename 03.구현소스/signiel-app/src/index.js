@@ -8,7 +8,8 @@ import "./css/index.scss";
 // 컴포넌트 불러오기 ////
 import Layout from './components/layout/Layout';
 import Main from './components/pages/Main';
-import Branch from './components/pages/Branch';
+// import Branch from './components/pages/Branch';
+import Branch from './components/pages/Branch_test';
 import Reservation from './components/pages/Reservation';
 import Post from './components/pages/Post';
 import Login from './components/pages/Login';
@@ -25,7 +26,7 @@ export default function MainComponent(){
         <Routes>
           <Route path="/" element={<Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}>
             <Route index element={<Main />} />
-            <Route path="branch" element={<Branch />} />
+            {<Route path="branch" element={<Branch />} />}
             <Route path="reservation" element={<Reservation />} />
             <Route path="Post" element={<Post />} />
             <Route path="MyPage" element={<MyPage />} />

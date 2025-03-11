@@ -1,0 +1,19 @@
+@import "../common/reset";
+@import "../common/core";
+
+.branch-container {
+    // TODO: 컨테이너 > 배너는 100% 사이즈로 해야함
+    width: 100%;
+}
+
+.branch-banner {
+    
+}
+
+
+
+.branch-wrap {
+    max-width: 144rem;
+    height: 500px;
+    background-color: aqua;
+}
