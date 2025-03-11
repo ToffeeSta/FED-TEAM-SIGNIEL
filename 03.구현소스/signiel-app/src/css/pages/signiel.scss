@@ -1,9 +1,13 @@
 @import "../common/reset";
+@import "../common/core";
 
 body {
   font-size: 22px !important;
 }
+.outbx{
+  @include defaultAreaSet;
 
+}
 main {
   width: 100%;
 }

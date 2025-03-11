@@ -25,9 +25,6 @@ function Branch(props) {
   // 리턴 코드구역 ///////////////
   return (
     <>
-      <div>
-        <h1>Branch {selData.name}</h1>
-      </div>
 
       <div className="main_01 main_0">
         <div>
