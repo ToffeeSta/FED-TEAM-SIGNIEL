@@ -6,6 +6,12 @@ import { branchData } from "../../js/data/branch";
 // 모듈 CSS 불러오기 /////
 import "../../css/pages/branch.scss";
 
+
+// https://swiperjs.com/demos
+// Pagination progress
+// Autoplay progress
+// Rewind
+
 function Branch(props) {
   const { state } = useLocation();
   const { local } = state;
