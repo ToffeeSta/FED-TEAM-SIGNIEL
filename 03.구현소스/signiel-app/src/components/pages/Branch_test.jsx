@@ -5,7 +5,7 @@ import { branchData } from "../../js/data/branch";
 
 // 모듈 CSS 불러오기 /////
 import "../../css/pages/branch.scss";
-
+import SwiperApp from "../plugin/SwiperApp";
 
 // https://swiperjs.com/demos
 // Pagination progress
@@ -32,23 +32,17 @@ function Branch(props) {
   return (
     <>
       <div className="branch-container">
-        <div className="branch-banner">
-          <div className="banner-img">
-            <img src={"../../../images/branch/" + local + "/main.jpg"} />
-          </div>
-          <div className="banner-text">
-            {/* <p>LOTTE HOTELS & RESORTS</p> */}
-            <span>HOTEL LOTTE<br />
-              호텔롯데는 최상의 Care를<br />
-              제공하여 고객의 가치 있는 여정에 함께합니다.</span>
-          </div>
-        </div>
+        <SwiperApp local={local} />
         {/* max-width 적용 */}
         <div className="branch-wrap">
           {/* 1 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_01.png"} alt="메인01" title="메인01" />
+              <img
+                src={"../../../images/branch/" + local + "/main_01.png"}
+                alt="메인01"
+                title="메인01"
+              />
             </div>
             <div className="text-box">
               <div>
@@ -67,7 +61,11 @@ function Branch(props) {
           {/* 2 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_02.png"} alt="메인02" title="메인02" />
+              <img
+                src={"../../../images/branch/" + local + "/main_02.png"}
+                alt="메인02"
+                title="메인02"
+              />
             </div>
             <div className="text-box">
               <div>
@@ -87,7 +85,11 @@ function Branch(props) {
           {/* 3 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_03.png"} alt="메인03" title="메인03" />
+              <img
+                src={"../../../images/branch/" + local + "/main_03.png"}
+                alt="메인03"
+                title="메인03"
+              />
             </div>
             <div className="text-box">
               <div>
@@ -108,12 +110,14 @@ function Branch(props) {
           <div className="con-wrap">
             <h2>Room Packages & Offers</h2>
 
-
             <div className="slide-box">
               {/* 1 */}
               <div>
                 <div className="slide-img">
-                  <img src={"../../../images/branch/" + local + "/main_05_01.png"} alt="" />
+                  <img
+                    src={"../../../images/branch/" + local + "/main_05_01.png"}
+                    alt=""
+                  />
                 </div>
                 <h2>{selData.tit04}</h2>
                 <span className="contents-title">
@@ -124,7 +128,10 @@ function Branch(props) {
               {/* 2 */}
               <div>
                 <div className="slide-img">
-                  <img src={"../../../images/branch/" + local + "/main_05_02.png"} alt="" />
+                  <img
+                    src={"../../../images/branch/" + local + "/main_05_02.png"}
+                    alt=""
+                  />
                 </div>
                 <h2>{selData.tit05}</h2>
                 <span className="contents-title">
@@ -135,7 +142,10 @@ function Branch(props) {
               {/* 3 */}
               <div>
                 <div className="slide-img">
-                  <img src={"../../../images/branch/" + local + "/main_05_03.png"} alt="" />
+                  <img
+                    src={"../../../images/branch/" + local + "/main_05_03.png"}
+                    alt=""
+                  />
                 </div>
                 <h2>{selData.tit06}</h2>
                 <span className="contents-title">
@@ -145,8 +155,6 @@ function Branch(props) {
               </div>
             </div>
           </div>
-
-
         </div>
 
         <div className="con-wrap">
@@ -167,7 +175,10 @@ function Branch(props) {
                     title="호텔서울"
                   />
                   <p>호텔서울</p>
-                  <p>명동, 을지로, 청계천 등 서울의 중심 관광지들로의 접근성이 뛰어나 서울 관광을 위한 최적의 위치를 자랑합니다.</p>
+                  <p>
+                    명동, 을지로, 청계천 등 서울의 중심 관광지들로의 접근성이
+                    뛰어나 서울 관광을 위한 최적의 위치를 자랑합니다.
+                  </p>
                 </a>
               </li>
             )}
@@ -187,7 +198,10 @@ function Branch(props) {
                     title="호텔부산"
                   />
                   <p>호텔부산</p>
-                  <p>시그니엘 부산은 해운대의 랜드마크 '엘시티(LCT)'타워에 위치한 260실 규모의 럭셔리 호텔입니다.</p>
+                  <p>
+                    시그니엘 부산은 해운대의 랜드마크 '엘시티(LCT)'타워에 위치한
+                    260실 규모의 럭셔리 호텔입니다.
+                  </p>
                 </a>
               </li>
             )}
@@ -207,7 +221,10 @@ function Branch(props) {
                     title="호텔제주"
                   />
                   <p>호텔제주</p>
-                  <p>환상의 섬 제주도 중문관광단지에 위치한 롯데호텔 제주는 500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.</p>
+                  <p>
+                    환상의 섬 제주도 중문관광단지에 위치한 롯데호텔 제주는
+                    500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.
+                  </p>
                 </a>
               </li>
             )}
