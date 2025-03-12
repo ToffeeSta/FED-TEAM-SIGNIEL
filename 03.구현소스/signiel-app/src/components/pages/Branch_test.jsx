@@ -95,6 +95,8 @@ function Branch(props) {
           {/* 4 */}
           <div className="con-wrap">
             <h2>제목</h2>
+
+            
             <div className="slide-box">
               {/* 1 */}
               <div>
