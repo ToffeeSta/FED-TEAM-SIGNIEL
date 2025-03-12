@@ -6,6 +6,8 @@
   width: 100%;
   max-width: -moz-fit-content;
   max-width: fit-content;
+
+  font-size: 1.8rem;
 }
 
 .branch-banner {
@@ -14,7 +16,7 @@
 
 .branch-wrap {
   max-width: 140rem;
-  background-color: aqua;
+  // background-color: aqua;
   margin: 0 auto;
 
 }
@@ -50,7 +52,7 @@
   // color: #867868;
   font-weight: 600;
   color: rgb(231, 222, 208);
-  left: 2%;
+  left: 3%;
   top: 2%;
 }
 
@@ -60,7 +62,7 @@
   right: 3%;
   color: #fff;
   text-align: right;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .slide-box {
@@ -122,6 +124,9 @@
 }
 
 
+.con-wrap:nth-of-type(1) .img-box {
+  width: 70%;
+}
 .con-wrap:nth-of-type(2) .img-box {
   padding-left: 10%;
 }
@@ -129,9 +134,14 @@
 .con-wrap:nth-of-type(3) {
   flex-direction: row-reverse;
 }
+.con-wrap:nth-of-type(3) .img-box{
+  width: 70%;
+}
 
 .con-wrap:nth-of-type(3) div {
   width: 100%;
+  text-align: right;
+  border-left: none;
 }
 
 .con-wrap {
@@ -144,7 +154,7 @@
 }
 
 .img-box {
-  flex: 1;
+  // flex: 1;
   width: 50%;
 }
 
@@ -160,8 +170,15 @@
 }
 
 .text-box div {
-  width: 60%;
-  text-align: center;
+  width: 100%;
+  text-align: left;
+
+  border-left: 3px solid #867868;
+  padding-left: 4px;
+}
+.con-wrap:nth-of-type(3) .text-box div{
+  border-right: 3px solid #867868;
+  padding-right: 4px;
 }
 
 .con-wrap:nth-of-type(4) {
@@ -181,11 +198,13 @@
   transform: translate(117%, 0);
   margin: 5px 0;
 }
-
-.contents-title {
+.slide-box .contents-title {
   text-align: center;
 }
-
+.con-wrap ul li p {
+  padding: 10px 25px 0 20px;
+  margin-bottom: 5%;
+}
 
 
 
@@ -213,6 +232,10 @@
   .con-wrap:nth-of-type(3) {
     flex-direction: column;
   }
+  .con-wrap:nth-of-type(3) div {
+    width: 90%;
+  }
+
   .slide-box>div {
     flex: 0 0 auto;
     /* 요소 크기를 자동으로 조절하여 가로 스크롤 유도 */

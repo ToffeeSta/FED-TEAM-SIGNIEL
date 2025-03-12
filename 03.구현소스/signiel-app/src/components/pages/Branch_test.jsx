@@ -37,7 +37,7 @@ function Branch(props) {
             <img src={"../../../images/branch/" + local + "/main.jpg"} />
           </div>
           <div className="banner-text">
-            <p>LOTTE HOTELS & RESORTS</p>
+            {/* <p>LOTTE HOTELS & RESORTS</p> */}
             <span>HOTEL LOTTE<br />
               호텔롯데는 최상의 Care를<br />
               제공하여 고객의 가치 있는 여정에 함께합니다.</span>
@@ -167,6 +167,7 @@ function Branch(props) {
                     title="호텔서울"
                   />
                   <p>호텔서울</p>
+                  <p className="intro">명동, 을지로, 청계천 등 서울의 중심 관광지들로의 접근성이 뛰어나 서울 관광을 위한 최적의 위치를 자랑합니다.</p>
                 </a>
               </li>
             )}
@@ -186,6 +187,7 @@ function Branch(props) {
                     title="호텔부산"
                   />
                   <p>호텔부산</p>
+                  <p className="intro">시그니엘 부산은 해운대의 랜드마크 '엘시티(LCT)'타워에 위치한 260실 규모의 럭셔리 호텔입니다.</p>
                 </a>
               </li>
             )}
@@ -205,6 +207,7 @@ function Branch(props) {
                     title="호텔제주"
                   />
                   <p>호텔제주</p>
+                  <p className="intro">환상의 섬 제주도 중문관광단지에 위치한 롯데호텔 제주는 500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.</p>
                 </a>
               </li>
             )}
