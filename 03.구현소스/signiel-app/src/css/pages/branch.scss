@@ -8,6 +8,13 @@
   max-width: fit-content;
 
   font-size: 1.8rem;
+  line-height: 24px;
+  h2, span {
+    margin-bottom: 2px;
+  }
+}
+.banner-text span {
+  line-height: 4rem;
 }
 
 .branch-banner {
@@ -251,5 +258,14 @@
     display: flex;
     justify-content: center;
     /* 가로 중앙 정렬 */
+
+    width: 60%;
   }
+}
+.text-box div {
+  border: none;
+}
+.con-wrap:nth-of-type(3) .text-box div {
+  border: none;
+  width: 60%;
 }
