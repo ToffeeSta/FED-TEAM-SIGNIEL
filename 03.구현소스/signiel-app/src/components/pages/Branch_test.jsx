@@ -204,8 +204,6 @@ function Branch(props) {
             )}
           </ul>
         </div>
-
-
       </div>
     </>
   );
