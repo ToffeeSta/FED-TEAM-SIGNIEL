@@ -275,6 +275,10 @@ body {
   margin-bottom: 5%;
 }
 
+.con-wrap {
+  padding-bottom: 15%;
+}
+
 @media (max-width: 768px) {
   .banner-text p {
     font-size: 2rem;
