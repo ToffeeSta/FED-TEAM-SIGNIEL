@@ -38,70 +38,70 @@ function Branch(props) {
           </div>
           <div className="banner-text">
             <p>LOTTE HOTELS & RESORTS</p>
-            <span>HOTEL LOTTE
-호텔롯데는 최상의 Care를
-제공하여 고객의 가치 있는 여정에 함께합니다.</span>
+            <span>HOTEL LOTTE<br />
+              호텔롯데는 최상의 Care를<br />
+              제공하여 고객의 가치 있는 여정에 함께합니다.</span>
           </div>
         </div>
         {/* max-width 적용 */}
         <div className="branch-wrap">
-           {/* 1 */}
+          {/* 1 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_01.png"} alt="메인01" title="메인01"/>
+              <img src={"../../../images/branch/" + local + "/main_01.png"} alt="메인01" title="메인01" />
             </div>
             <div className="text-box">
               <div>
-              <h2>
-                {selData.tit.split("^")[0]}
-                {selData.tit.split("^")[1]}
-              </h2>
-              <span className="contents-title">
-                <p>{selData.cont.split("^")[0]}</p>
-                <p>{selData.cont.split("^")[1]}</p>
-                <p>{selData.cont.split("^")[2]}</p>
-              </span>
+                <h2>
+                  {selData.tit.split("^")[0]}
+                  {selData.tit.split("^")[1]}
+                </h2>
+                <span className="contents-title">
+                  <p>{selData.cont.split("^")[0]}</p>
+                  <p>{selData.cont.split("^")[1]}</p>
+                  <p>{selData.cont.split("^")[2]}</p>
+                </span>
               </div>
             </div>
           </div>
           {/* 2 */}
           <div className="con-wrap">
-          <div className="img-box">
+            <div className="img-box">
               <img src={"../../../images/branch/" + local + "/main_02.png"} alt="메인02" title="메인02" />
             </div>
             <div className="text-box">
               <div>
-              <h2>
-                {selData.tit02.split("^")[0]}
-                <br />
-                {selData.tit02.split("^")[1]}
-              </h2>
-              <span className="contents-title">
-                <p>{selData.cont02.split("^")[0]}</p>
-                <p>{selData.cont02.split("^")[1]}</p>
-                <p>{selData.cont02.split("^")[2]}</p>
+                <h2>
+                  {selData.tit02.split("^")[0]}
+                  <br />
+                  {selData.tit02.split("^")[1]}
+                </h2>
+                <span className="contents-title">
+                  <p>{selData.cont02.split("^")[0]}</p>
+                  <p>{selData.cont02.split("^")[1]}</p>
+                  <p>{selData.cont02.split("^")[2]}</p>
                 </span>
-                </div>
+              </div>
             </div>
           </div>
           {/* 3 */}
           <div className="con-wrap">
-          <div className="img-box">
+            <div className="img-box">
               <img src={"../../../images/branch/" + local + "/main_03.png"} alt="메인03" title="메인03" />
             </div>
             <div className="text-box">
               <div>
-              <h2>
-                {selData.tit03.split("^")[0]}
-                <br />
-                {selData.tit03.split("^")[1]}
-              </h2>
-              <span className="contents-title">
-                <p>{selData.cont03.split("^")[0]}</p>
-                <p>{selData.cont03.split("^")[1]}</p>
-                <p>{selData.cont03.split("^")[2]}</p>
+                <h2>
+                  {selData.tit03.split("^")[0]}
+                  <br />
+                  {selData.tit03.split("^")[1]}
+                </h2>
+                <span className="contents-title">
+                  <p>{selData.cont03.split("^")[0]}</p>
+                  <p>{selData.cont03.split("^")[1]}</p>
+                  <p>{selData.cont03.split("^")[2]}</p>
                 </span>
-                </div>
+              </div>
             </div>
           </div>
           {/* 4 */}
@@ -112,37 +112,37 @@ function Branch(props) {
             <div className="slide-box">
               {/* 1 */}
               <div>
-              <div className="slide-img">
-                <img src={"../../../images/branch/" + local + "/main_05_01.png"} alt="" />
-              </div>
-              <h2>{selData.tit04}</h2>
-              <span className="contents-title">
-                <p>{selData.cont04.split("^")[0]}</p>
-                <p>{selData.cont04.split("^")[1]}</p>
-               </span>
-            </div>
-            {/* 2 */}
-            <div>
-              <div className="slide-img">
-                <img src={"../../../images/branch/" + local + "/main_05_02.png"} alt="" />
-              </div>
-              <h2>{selData.tit05}</h2>
-              <span className="contents-title">
-                <p>{selData.cont05.split("^")[0]}</p>
-                <p>{selData.cont05.split("^")[1]}</p>
+                <div className="slide-img">
+                  <img src={"../../../images/branch/" + local + "/main_05_01.png"} alt="" />
+                </div>
+                <h2>{selData.tit04}</h2>
+                <span className="contents-title">
+                  <p>{selData.cont04.split("^")[0]}</p>
+                  <p>{selData.cont04.split("^")[1]}</p>
                 </span>
-            </div>
-            {/* 3 */}
-            <div>
-              <div className="slide-img">
-                <img src={"../../../images/branch/" + local + "/main_05_03.png"} alt="" />
               </div>
-              <h2>{selData.tit06}</h2>
-              <span className="contents-title">
-                <p>{selData.cont06.split("^")[0]}</p>
-                <p>{selData.cont06.split("^")[1]}</p>
+              {/* 2 */}
+              <div>
+                <div className="slide-img">
+                  <img src={"../../../images/branch/" + local + "/main_05_02.png"} alt="" />
+                </div>
+                <h2>{selData.tit05}</h2>
+                <span className="contents-title">
+                  <p>{selData.cont05.split("^")[0]}</p>
+                  <p>{selData.cont05.split("^")[1]}</p>
                 </span>
-            </div>
+              </div>
+              {/* 3 */}
+              <div>
+                <div className="slide-img">
+                  <img src={"../../../images/branch/" + local + "/main_05_03.png"} alt="" />
+                </div>
+                <h2>{selData.tit06}</h2>
+                <span className="contents-title">
+                  <p>{selData.cont06.split("^")[0]}</p>
+                  <p>{selData.cont06.split("^")[1]}</p>
+                </span>
+              </div>
             </div>
           </div>
 

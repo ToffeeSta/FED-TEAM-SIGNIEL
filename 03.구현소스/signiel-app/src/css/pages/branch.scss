@@ -41,11 +41,18 @@
 }
 .banner-text p {
   position: absolute;
+  font-size: 4rem;
+  // color: #867868;
+  font-weight: 600;
+  color: rgb(231,222,208);
 }
 .banner-text span {
   position: absolute;
   bottom: 5%;
-  right: 0px;
+  right: 3%;
+  color: #fff;
+  text-align: right;
+  font-size: 3rem;
 }
 
 .slide-box {
@@ -91,11 +98,14 @@
   }
 
 
-  .con-wrap:nth-of-type(2) .img-box {
+.con-wrap:nth-of-type(2) .img-box {
 padding-left: 10%;
 }
 .con-wrap:nth-of-type(3) {
     flex-direction: row-reverse; 
+}
+.con-wrap:nth-of-type(3) div{
+    width: 100%;
 }
   .con-wrap {
     display: flex;
@@ -154,6 +164,9 @@ padding-left: 10%;
 
         overflow-x: auto; /* 가로 스크롤 활성화 */
       }
+      .con-wrap:nth-of-type(2) .img-box {
+        padding-left: 0%;
+        }
 .con-wrap:nth-of-type(3) {
     flex-direction: column;
 }
