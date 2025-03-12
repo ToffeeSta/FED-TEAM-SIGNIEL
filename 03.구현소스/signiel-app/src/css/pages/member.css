@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* 회원가입 페이지 CSS */
+/* SIGNIEL.com 핵심공통 CSS - core.css */
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("truetype");
+}
+body {
+  font-family: "Pretendard-Regular";
+}
+
+.tit {
+  font-family: "Pretendard-Bold";
+}
+
+/* 최상위 부모박스 */
+/* 전체박스 */
+.outbx {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.outbx .membx {
+  max-width: 700px;
+  min-height: 600px;
+  margin: 0 auto;
+  background-color: #e7ded0;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.outbx .membx h2 {
+  text-align: center;
+  padding: 15px;
+  font-size: 30px;
+  color: #867868;
+}
+.outbx .membx li {
+  position: relative;
+  padding: 25px;
+  color: #867868;
+}
+.outbx .membx label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.outbx .membx input {
+  width: 60%;
+  height: 3vh;
+  margin-left: 5%;
+  font-size: 20px;
+  vertical-align: baseline;
+  border: 0.8px solid #867868;
+  border-radius: 5px;
+}
+.outbx .membx .msg {
+  position: absolute;
+  left: 31%;
+  width: 50%;
+  font-size: 14px;
+  /* outline: 1px dotted red; */
+  padding: 5px 0;
+  font-weight: bold;
+}
+.outbx .membx .sbtn {
+  padding: 17px 30px;
+  background-color: #867868;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.outbx .membx .sbtn:hover {
+  background-color: #555;
+}
+.outbx .membx ul .center {
+  text-align: center;
+  font-size: 13px;
+}
+.outbx .membx ul .center a {
+  margin-left: 10px;
+  color: #0d6efd;
+}
+.outbx .membx ul .center a:hover {
+  color: #867868;
+}/*# sourceMappingURL=member.css.map */

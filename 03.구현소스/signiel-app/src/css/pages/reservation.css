@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* SIGNIEL.com 핵심공통 CSS - core.css */
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("truetype");
+}
+body {
+  font-family: "Pretendard-Regular";
+}
+
+.tit {
+  font-family: "Pretendard-Bold";
+}
+
+.outbx {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.outbx h3 {
+  font-size: 24px;
+  font-family: "Pretendard-bold";
+  text-align: center;
+  color: #867868;
+  margin: 20px;
+}/*# sourceMappingURL=reservation.css.map */

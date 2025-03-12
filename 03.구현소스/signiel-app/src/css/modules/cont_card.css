@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* SIGNIEL.com 핵심공통 CSS - core.css */
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("truetype");
+}
+body {
+  font-family: "Pretendard-Regular";
+}
+
+.tit {
+  font-family: "Pretendard-Bold";
+}
+
+.con-box {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  box-sizing: border-box;
+}
+.con-box h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #867868;
+}
+.con-box .con-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.con-box .con-wrap span {
+  font-size: 13px;
+}
+.con-box .sort-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.con-box .con-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+.con-box .con-list .con-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.con-box .con-list .con-card h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.con-box .con-list .con-card p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 3px;
+}
+.con-box .con-list .con-card .con-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.con-box .con-list .con-card .con-wrap:last-child {
+  margin-top: 15px;
+}
+.con-box .con-list .no-data {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin-top: 50px;
+}
+.con-box .more-btn {
+  position: relative;
+  margin-top: 20px;
+  width: 140px;
+  height: 40px;
+  background: #867868;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.con-box .more-btn:hover {
+  background-color: #424242;
+}
+.con-box .more-btn span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=cont_card.css.map */
