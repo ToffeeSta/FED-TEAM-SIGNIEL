@@ -261,11 +261,11 @@
 
     width: 60%;
   }
-}
-.text-box div {
-  border: none;
-}
-.con-wrap:nth-of-type(3) .text-box div {
-  border: none;
-  width: 60%;
-}
+  .text-box div {
+    border: none;
+  }
+  .con-wrap:nth-of-type(3) .text-box div {
+    border: none;
+    // width: 60%;
+  }
+  }
