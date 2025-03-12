@@ -7,58 +7,59 @@
     max-width: -moz-fit-content;
     max-width: fit-content;
 }
-
 .banner-img {
     img {
         width: 100%;
     }
 }
-
 .branch-banner {
     position: relative;
 }
-.banner-text {
-    position: absolute;
-}
-.banner-text {
-    top:0;
-    left:0;
-}
-.banner-text {
-    position: absolute;
-}
-.banner-text span {
-    right:0;
-    bottom:0;
-}
-
 .branch-wrap {
     max-width: 140rem;
-    // height: 500px;
     background-color: aqua;
     margin: 0 auto;
 
 }
 
-.con-wrap {
 
-    display: flex;
+
+  
+.banner-img {
+  flex: 1;
+  position: relative;
+}
+.banner-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-text {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.banner-text p {
+  position: absolute;
+}
+.banner-text span {
+  position: absolute;
+  bottom: 5%;
+  right: 0px;
 }
 
-.con-wrap:nth-of-type(3) {
-    flex-direction: row-reverse;
-}
+
 
 .img-box {
     img {
         width: 90%;
     }
 }
-
-.text-box {
-    // width: 50%;
-}
-
 .slide-box {
     display: flex;
 }
@@ -68,22 +69,18 @@
         width: 100%;
     }
 }
-
 .slide-box {
     display: flex;
     justify-content: space-between; /* 이미지 사이 간격 조정 */
     gap: 10px; /* 이미지 간 간격 */
   }
-  
   .slide-box > div {
     flex: 1; /* 모든 이미지 컨테이너가 동일한 너비를 가지도록 설정 */
   }
-  
   .slide-img {
     width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
     height: auto; /* 원본 비율 유지 */
   }
-  
   .slide-img img {
     width: 100%; /* 이미지가 컨테이너에 맞게 확장 */
     height: auto; /* 비율 유지 */
@@ -107,12 +104,15 @@
 
 
 
+.con-wrap:nth-of-type(3) {
+    flex-direction: row-reverse;
+}
   .con-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin: 0;
+    margin: 10% 0;
     padding: 0;
   }
   
@@ -120,55 +120,23 @@
     flex: 1;
     width: 50%;
   }
-  
   .img-box img {
     width: 100%;
     height: auto;
     display: block;
   }
-  
   .text-box {
     flex: 1;
     padding: 20px;
   }
   
 
-
-
-  
-  .banner-img {
-    flex: 1;
-    position: relative;
-  }
-  
-  .banner-img img {
-    width: 100%;
-    height: auto;
+  .con-wrap:nth-of-type(4) {
     display: block;
-  }
-  
-  .banner-text {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 10px;
-  }
-  
-  .banner-text p {
-    position: absolute;
-  }
-  
-  .banner-text span {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-  }
-  
+    h2 {
+      text-align: center;
+    }
+}
 
 
 

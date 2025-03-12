@@ -42,31 +42,54 @@ function Branch(props) {
            {/* 1 */}
           <div className="con-wrap">
             <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_02.png"} alt="" />
+              <img src={"../../../images/branch/" + local + "/main_01.png"} alt="메인01" title="메인01"/>
             </div>
             <div className="text-box">
-              <h2>제목</h2>
-              <span className="contents-title">내용</span>
+              <h2>
+                {selData.tit.split("^")[0]}
+                {selData.tit.split("^")[1]}
+              </h2>
+              <span className="contents-title">
+                <p>{selData.cont.split("^")[0]}</p>
+                <p>{selData.cont.split("^")[1]}</p>
+                <p>{selData.cont.split("^")[2]}</p>
+              </span>
             </div>
           </div>
           {/* 2 */}
           <div className="con-wrap">
           <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_03.png"} alt="" />
+              <img src={"../../../images/branch/" + local + "/main_02.png"} alt="메인02" title="메인02" />
             </div>
             <div className="text-box">
-              <h2>제목</h2>
-              <span className="contents-title">내용</span>
+              <h2>
+                {selData.tit02.split("^")[0]}
+                <br />
+                {selData.tit02.split("^")[1]}
+              </h2>
+              <span className="contents-title">
+                <p>{selData.cont02.split("^")[0]}</p>
+                <p>{selData.cont02.split("^")[1]}</p>
+                <p>{selData.cont02.split("^")[2]}</p>
+                </span>
             </div>
           </div>
           {/* 3 */}
           <div className="con-wrap">
           <div className="img-box">
-              <img src={"../../../images/branch/" + local + "/main_04.png"} alt="" />
+              <img src={"../../../images/branch/" + local + "/main_03.png"} alt="메인03" title="메인03" />
             </div>
             <div className="text-box">
-              <h2>제목</h2>
-              <span className="contents-title">내용</span>
+              <h2>
+                {selData.tit03.split("^")[0]}
+                <br />
+                {selData.tit03.split("^")[1]}
+              </h2>
+              <span className="contents-title">
+                <p>{selData.cont03.split("^")[0]}</p>
+                <p>{selData.cont03.split("^")[1]}</p>
+                <p>{selData.cont03.split("^")[2]}</p>
+                </span>
             </div>
           </div>
           {/* 4 */}
