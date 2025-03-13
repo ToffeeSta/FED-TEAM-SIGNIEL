@@ -74,32 +74,24 @@ function Post() {
 
   const selData = [];
   for (let i = initNum; i < limitNum; i++) {
-    // selData.push(posts[i]);
-    selData.push(
-      {
-        id: posts[i].id,
-        // .find((h) => h.id === Number(hotelId))?.name || "알 수 없음",
-        // user_name:
-        //   posts[i].user_id.find((u) => u.id === users.id)?.name || "알 수 없음",
-        // hotel_name:
-        //   posts[i].hotel_id.find((u) => u.id === hotels.id)?.name ||
-        //   "알 수 없음", 
-        post_type: posts[i].post_type,
-        rating: posts[i].rating,
-        title: posts[i].title,
-        content: posts[i].content,
-        created_at: posts[i].created_at,
-      }
-      // posts.id: 1,
-      // user_id: 1, // 유저 이름
-      // hotel_id: 1, // 호텔이름
-      // post_type: "review",
-      // rating: 5,
-      // title: "방이 넓고 깨끗해요!",
-      // content: "서울 호텔 너무 좋았어요!",
-      // created_at: "2025-03-01",
-    );
+    if (!posts[i]) break; // 배열 범위를 초과하는 경우 방지
+  
+    const user = users.find((u) => u.id === posts[i].user_id);
+    const hotel = hotels.find((h) => h.id === posts[i].hotel_id);
+  
+    selData.push({
+      id: posts[i].id,
+      user_name: user ? user.name : "알 수 없음",
+      hotel_name: hotel ? hotel.name : "알 수 없음",
+      post_type: posts[i].post_type,
+      rating: posts[i].rating,
+      title: posts[i].title,
+      content: posts[i].content,
+      created_at: posts[i].created_at,
+    });
   }
+  
+
 
   console.log(selData);
 

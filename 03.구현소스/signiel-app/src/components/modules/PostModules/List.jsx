@@ -72,7 +72,7 @@ function List({ selData, setMode, selRecord, pageNum, setPageNum, unitSize, tota
                   {v.title}
                 </a>
               </td>
-              <td>{v.user_id}</td>
+              <td>{v.user_name}</td>
               <td>{v.created_at}</td>
               <td>{v.rating}</td>
             </tr>
