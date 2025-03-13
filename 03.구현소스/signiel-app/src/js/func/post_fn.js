@@ -13,20 +13,20 @@
 ************************************/
 
 // 기초 데이터 제이슨 불러오기
-import posts from "../data/posts.js";
+import {posts} from "../data/posts.js";
 
 // [ 로컬쓰 클리어 ] /////////
 const clearPostData = () => {
-  localStorage.removeItem("post-data");
+  localStorage.removeItem("posts");
   console.log("게시판 로컬쓰 클리어");
 }; /////////// clearData //////////////
 
 // [ 로컬쓰 초기체크셋팅! ] ////////////
 const initPostData = () => {
   // 만약 로컬스 "mem-data"가 null이면 만들어준다!
-  if (localStorage.getItem("post-data") === null) {
+  if (localStorage.getItem("posts") === null) {
     localStorage.setItem(
-      "post-data",
+      "posts",
       JSON.stringify(posts)
     );
   }

@@ -69,12 +69,12 @@ function List({ selData, setMode, selRecord, pageNum, setPageNum, unitSize, tota
                     selRecord.current = v;
                   }}
                 >
-                  {v.tit}
+                  {v.title}
                 </a>
               </td>
-              <td>{v.unm}</td>
-              <td>{v.date}</td>
-              <td>{v.cnt}</td>
+              <td>{v.user_id}</td>
+              <td>{v.created_at}</td>
+              <td>{v.rating}</td>
             </tr>
           ))}
         </tbody>

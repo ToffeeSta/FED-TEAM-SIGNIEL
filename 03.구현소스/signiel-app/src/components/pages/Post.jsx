@@ -16,7 +16,7 @@ import Write from './../modules/PostModules/Write';
 function Post() {
   // [ 로컬스 데이터 변수할당하기! ] //////
   const baseData = 
-  JSON.parse(localStorage.getItem("post-data"));
+  JSON.parse(localStorage.getItem("posts"));
 
   // [ 후크 상태관리 변수구역 ] ///////////////
   // [1] 기능모드 /////
@@ -77,6 +77,8 @@ function Post() {
   for (let i = initNum; i < limitNum; i++) {
     selData.push(baseData[i]);
   }
+
+  console.log(selData);
 
   // DOM 랜더링 실행구역 ///////
   useEffect(()=>{
