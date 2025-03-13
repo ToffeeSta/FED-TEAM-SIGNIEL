@@ -157,7 +157,7 @@ function Branch(props) {
           </div>
         </div>
 
-        <div className="con-wrap">
+        <div className="con-wrap info">
           <ul>
             {local !== "seoul" && (
               <li>
