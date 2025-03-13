@@ -13,8 +13,8 @@
 export const posts = [
   {
     id: 1,
-    user_id: 1,
-    hotel_id: 1,
+    user_id: 1, // 유저 이름
+    hotel_id: 1, // 호텔이름
     post_type: "review",
     rating: 5,
     title: "방이 넓고 깨끗해요!",
