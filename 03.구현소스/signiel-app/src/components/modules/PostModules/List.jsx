@@ -3,7 +3,15 @@
 import React, { useContext } from "react";
 import { dCon } from "../dCon";
 
-function List({ selData, setMode, selRecord, pageNum, setPageNum, unitSize, totalCount }) {
+function List({
+  selData,
+  setMode,
+  selRecord,
+  pageNum,
+  setPageNum,
+  unitSize,
+  totalCount,
+}) {
   // selData - 선택된 배열데이터 전달
   // setMode - 모든 변경 상태변수 setter
   // selRecord - 선택데이터 참조변수
@@ -32,7 +40,11 @@ function List({ selData, setMode, selRecord, pageNum, setPageNum, unitSize, tota
         </select>
         <input id="stxt" type="text" maxLength="50" />
         <button className="sbtn">Search</button>
-        <select name="sort_cta" id="sort_cta" className="sort_cta">
+        <select
+          name="sort_cta"
+          id="sort_cta"
+          className="sort_cta"
+        >
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
         </select>

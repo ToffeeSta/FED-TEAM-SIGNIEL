@@ -29,7 +29,7 @@ function Read({ setMode, selRecord }) {
                 className="name"
                 size="20"
                 readOnly={true}
-                defaultValue={selData.user_id}
+                defaultValue={selData.user_name}
               />
             </td>
           </tr>
@@ -53,7 +53,7 @@ function Read({ setMode, selRecord }) {
                 cols="60"
                 rows="10"
                 readOnly={true}
-                defaultValue={selData.cont}
+                defaultValue={selData.content}
               ></textarea>
             </td>
           </tr>
