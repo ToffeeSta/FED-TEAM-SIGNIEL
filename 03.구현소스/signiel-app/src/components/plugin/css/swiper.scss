@@ -21,3 +21,12 @@
   height: 100%;
   object-fit: cover;
 }
+
+
+// 기본 스와이퍼 디자인 커스터마이징
+.swiper-button-prev, .swiper-button-next{
+  color: #fff;
+}
+.swiper-pagination-bullet{
+  background-color: #fff;
+}
