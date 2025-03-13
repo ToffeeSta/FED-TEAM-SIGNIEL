@@ -112,6 +112,11 @@
   display: block;
 }
 
+.con-wrap > h2 {
+  font-size: 3rem;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+}
 .con-wrap ul li {
   width: 40%;
 }
@@ -204,9 +209,13 @@
   width: 30%;
   transform: translate(117%, 0);
   margin: 5px 0;
+  padding: 5px 0;
 }
 .slide-box .contents-title {
   text-align: center;
+}
+.slide-box div {
+  margin-bottom: 3%;
 }
 .con-wrap ul li p {
   padding: 10px 25px 0 20px;
@@ -215,7 +224,6 @@
 .con-wrap {
   padding-bottom:15%;
 }
-
 
 
 
@@ -266,6 +274,6 @@
   }
   .con-wrap:nth-of-type(3) .text-box div {
     border: none;
-    // width: 60%;
+    width: 60%;
   }
   }

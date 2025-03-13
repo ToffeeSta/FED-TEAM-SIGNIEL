@@ -11,7 +11,7 @@ export const branchData = {
         main_img:"../../../images/branch/seoul/main.jpg' alt='메인02'",
         name: "서울점",
         img01:"../../../images/branch/seoul/main_02.png' alt='메인02'",
-        tit: "Mission^Make every moment of life delightful",
+        tit: "Mission Make every moment of life delightful",
         cont: "인류의 매 순간을 아름답고 찬란하게 만들어 주는 것이 곳 우리의 사명입니다",
         img02:"../../../images/branch/seoul/main_03.png' alt='메인02'",
         tit02: "LOTTEHOTELS&RESORTS",
