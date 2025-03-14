@@ -1,7 +1,7 @@
 // 게시판 읽기 모듈 - Read.jsx
 
 import React, { useContext } from "react";
-import { dCon } from "../dCon";
+import { sCon } from "../sCon";
 
 function Read({ setMode, selRecord }) {
   // setMode - 모든 변경 상태변수 setter
@@ -11,15 +11,16 @@ function Read({ setMode, selRecord }) {
   const selData = selRecord.current;
 
   // 전역 컨텍스트 API 사용하기!!
-  const myCon = useContext(dCon);
+  const myCon = useContext(sCon);
   // console.log('Read에서 loginSts:',myCon.loginSts);
 
   // 리턴 코드구역 ///////////////////
   return (
     <main className="cont">
-      <h1 className="tit">OPINION</h1>
+      <h1 className="tit">Posts</h1>
+      <h2 className="tit">게시판</h2>
       <table className="dtblview readone">
-        <caption>OPINION : Read</caption>
+        <caption>Post : Read</caption>
         <tbody>
           <tr>
             <td>Name</td>

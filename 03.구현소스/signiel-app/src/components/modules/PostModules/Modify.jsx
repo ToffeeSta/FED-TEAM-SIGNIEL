@@ -113,9 +113,10 @@ function Modify({ setMode, selRecord, totalCount }) {
   // 리턴 코드구역 /////////////////////
   return (
     <main className="cont">
-      <h1 className="tit">OPINION</h1>
+      <h1 className="tit">Posts</h1>
+      <h2 className="tit">게시판</h2>
       <table className="dtblview readone">
-        <caption>OPINION : Modify</caption>
+        <caption>Posts : Modify</caption>
         <tbody>
           <tr>
             <td>Name</td>

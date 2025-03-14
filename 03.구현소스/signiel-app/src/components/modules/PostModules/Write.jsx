@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { dCon } from "../dCon";
+import { sCon } from "../sCon";
 
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
@@ -9,7 +9,7 @@ function Write({ setMode, totalCount }) {
   // totalCount - 전체 개수 참조변수 (글쓰기시 카운트 1증가!)
 
   // 전역 컨텍스트 API 사용하기!!
-  const myCon = useContext(dCon);
+  const myCon = useContext(sCon);
   //   console.log("Write에서 loginSts:", myCon.loginSts);
 
   // 글쓰기 저장 서브밋 함수 //////
@@ -61,8 +61,8 @@ function Write({ setMode, totalCount }) {
       // 3) 입력할 객체 데이터 만들기
       let data = {
         idx: Number(maxIdx) + 1,
-        tit: title,
-        cont: content,
+        title: title,
+        content: content,
         att: "",
         date: today,
         uid: myCon.loginSts.uid,
@@ -88,9 +88,10 @@ function Write({ setMode, totalCount }) {
   // 리턴 코드구역 ///////////////////
   return (
     <main className="cont">
-      <h1 className="tit">OPINION</h1>
+      <h1 className="tit">Posts</h1>
+      <h2 className="tit">게시판</h2>
       <table className="dtblview readone">
-        <caption>OPINION : Write</caption>
+        <caption>Posts : Write</caption>
         <tbody>
           <tr>
             <td>Name</td>

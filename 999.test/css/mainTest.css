@@ -22,12 +22,15 @@ body {
 }
 
 /* 인트로 영역 */
-.intro {
+.intro-1 {
   height: 2500px;
-  /* display: flex; */
+  display: flex;
 }
 
 /* 인트로 이미지 영역 */
+.intro-1 figure{
+  /* width: 70%; */
+}
 
 .intro img{
   width: 100%;
