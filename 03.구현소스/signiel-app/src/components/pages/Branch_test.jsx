@@ -24,6 +24,9 @@ import SwiperApp from "../plugin/SwiperApp";
 
  */}
 
+/* 부산 35.16011, 129.1699 */
+/* 제주 33.49061, 126.4864 */
+
 function Branch(props) {
   const { state } = useLocation();
   const { local } = state;
