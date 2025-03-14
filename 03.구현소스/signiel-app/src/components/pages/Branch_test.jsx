@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { branchData } from "../../js/data/branch";
@@ -6,14 +6,15 @@ import { branchData } from "../../js/data/branch";
 // 모듈 CSS 불러오기 /////
 import "../../css/pages/branch.scss";
 import SwiperApp from "../plugin/SwiperApp";
+import LocalMap from "../modules/LocalMap";
 
 // https://swiperjs.com/demos
 // Pagination progress
 // Autoplay progress
 // Rewind
 
-
-{/* 
+{
+  /* 
 <script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
 </script>
  
@@ -27,8 +28,8 @@ import SwiperApp from "../plugin/SwiperApp";
 <gmp-map center="37.51283, 127.1026" zoom="14" map-id="DEMO_ID">
   <gmp-advanced-marker position="37.51283, 127.1026" title="My location"></gmp-advanced-marker>
 </gmp-map> 
-*/}
-
+*/
+}
 
 /* API 키값 AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU */
 /* 부산 35.16011, 129.1699 */
@@ -50,11 +51,19 @@ function Branch(props) {
   // -> goPage(라우터주소,전달객체)
   // -> 예) goPage('/branch',{state:{local:'seoul'}})
 
+  // 지역별 위도경도값
+  const latLng = useRef({
+    seoul: { lat: 37.51283, lng: 127.1026 },
+    busan: { lat: 35.16011, lng: 129.1699 },
+    jeju: { lat: 33.49061, lng: 126.4864 },
+  });
+
+  // console.log(local,'지역 위도:',latLng.current[local].lat);
+  // console.log(local,'지역 경도:',latLng.current[local].lng);
+
   // 리턴 코드구역 ///////////////
   return (
     <>
-    <script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
-    </script>
       <div className="branch-container">
         <SwiperApp local={local} />
         {/* max-width 적용 */}
@@ -204,6 +213,9 @@ function Branch(props) {
                     뛰어나 서울 관광을 위한 최적의 위치를 자랑합니다.
                   </p>
                 </a>
+                
+                {/* 구글맵 넣기 */}
+                <LocalMap center={latLng.current.seoul} />
               </li>
             )}
             {local !== "busan" && (
@@ -227,6 +239,8 @@ function Branch(props) {
                     260실 규모의 럭셔리 호텔입니다.
                   </p>
                 </a>
+                {/* 구글맵 넣기 */}
+                <LocalMap center={latLng.current.busan} />
               </li>
             )}
             {local !== "jeju" && (
@@ -248,9 +262,10 @@ function Branch(props) {
                   <p>
                     환상의 섬 제주도 중문관광단지에 위치한 롯데호텔 제주는
                     500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.
-                    
                   </p>
                 </a>
+                {/* 구글맵 넣기 */}
+                <LocalMap center={latLng.current.jeju} />
               </li>
             )}
           </ul>
