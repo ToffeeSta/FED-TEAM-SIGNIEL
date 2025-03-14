@@ -1,5 +1,5 @@
 // 구글맵 컴포넌트 - Google Map 
-// 반드시 npm i @react-google-maps/api 로 설치해야함!
+// ★반드시 npm i @react-google-maps/api 로 설치해야함!
 
 import React, { memo } from 'react'
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
@@ -7,7 +7,7 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 const containerStyle = {
   width: '100%',
   height: '400px',
-  padding: '0 20px'
+  // padding: '0 20px'
 };
 
 // const center = {
@@ -25,7 +25,7 @@ function LocalMap({center}) {
             center={center}
             zoom={14}
           >
-            <MarkerF position={center} icon={"./images/logo/logo.png"}></MarkerF>
+            <MarkerF position={center} icon={"./images/logo/marker.png"}></MarkerF>
           </GoogleMap>
         </LoadScript>
       )

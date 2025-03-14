@@ -1,11 +1,4 @@
 // 지점 데이터
-
-
-// 줄바꿈 하니까 에러
-// 어떻게 알아서 순서대로 들어가는지? 부산은 부산 제주는 제주
-// 글자 안에 <br> 같은 태그 어떻게 넣는지
-// user.js 더미데이터로 로그인 어떻게 확인하는지
-
 export const branchData = {
     seoul: {
         main_img:"../../../images/branch/seoul/main.jpg' alt='메인02'",

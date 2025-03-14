@@ -120,6 +120,9 @@
 .con-wrap ul li {
   width: 40%;
 }
+.con-wrap ul li div {
+  margin-left: 0%;
+}
 
 .con-wrap ul {
   display: flex;
@@ -130,7 +133,7 @@
 
   img {
     width: 90%;
-    height: 100%;
+    // height: 100%;
     object-fit: cover;
   }
 }
