@@ -12,6 +12,17 @@ import SwiperApp from "../plugin/SwiperApp";
 // Autoplay progress
 // Rewind
 
+{/* <head>
+<script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
+</script>
+</head>
+
+<body>
+<gmp-map center="37,126" zoom="14" map-id="DEMO_ID">
+  <gmp-advanced-marker position="37,126" title="My location"></gmp-advanced-marker>
+</gmp-map>
+</body> */}
+
 function Branch(props) {
   const { state } = useLocation();
   const { local } = state;
@@ -31,6 +42,8 @@ function Branch(props) {
   // 리턴 코드구역 ///////////////
   return (
     <>
+    <script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
+    </script>
       <div className="branch-container">
         <SwiperApp local={local} />
         {/* max-width 적용 */}
@@ -224,6 +237,7 @@ function Branch(props) {
                   <p>
                     환상의 섬 제주도 중문관광단지에 위치한 롯데호텔 제주는
                     500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.
+                    
                   </p>
                 </a>
               </li>
