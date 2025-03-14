@@ -24,6 +24,7 @@ import SwiperApp from "../plugin/SwiperApp";
 
  */}
 
+/* API 키값 AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU */
 /* 부산 35.16011, 129.1699 */
 /* 제주 33.49061, 126.4864 */
 
