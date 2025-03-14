@@ -12,17 +12,23 @@ import SwiperApp from "../plugin/SwiperApp";
 // Autoplay progress
 // Rewind
 
-{/*
+
+{/* 
 <script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
 </script>
 
-
+<style>
+#map {
+    height: 100vh;
+    width: 100%;
+}
+</style>
 
 <gmp-map center="37.51283, 127.1026" zoom="14" map-id="DEMO_ID">
   <gmp-advanced-marker position="37.51283, 127.1026" title="My location"></gmp-advanced-marker>
-</gmp-map>
+</gmp-map> 
+*/}
 
- */}
 
 /* API 키값 AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU */
 /* 부산 35.16011, 129.1699 */
