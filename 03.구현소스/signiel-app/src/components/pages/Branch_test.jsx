@@ -18,9 +18,10 @@ import SwiperApp from "../plugin/SwiperApp";
 
 
 
-<gmp-map center="37,126" zoom="14" map-id="DEMO_ID">
-  <gmp-advanced-marker position="37,126" title="My location"></gmp-advanced-marker>
+<gmp-map center="37.51283, 127.1026" zoom="14" map-id="DEMO_ID">
+  <gmp-advanced-marker position="37.51283, 127.1026" title="My location"></gmp-advanced-marker>
 </gmp-map>
+
  */}
 
 function Branch(props) {
