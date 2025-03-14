@@ -12,16 +12,16 @@ import SwiperApp from "../plugin/SwiperApp";
 // Autoplay progress
 // Rewind
 
-{/* <head>
+{/*
 <script async src="https://maps.googleapis.com/maps/api/js?key?AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU&callback=console.debug&libraries=maps.marker&v=beta">
 </script>
-</head>
 
-<body>
+
+
 <gmp-map center="37,126" zoom="14" map-id="DEMO_ID">
   <gmp-advanced-marker position="37,126" title="My location"></gmp-advanced-marker>
 </gmp-map>
-</body> */}
+ */}
 
 function Branch(props) {
   const { state } = useLocation();
