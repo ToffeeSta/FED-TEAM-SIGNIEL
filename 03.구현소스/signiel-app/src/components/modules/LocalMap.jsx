@@ -2,7 +2,7 @@
 // 반드시 npm i @react-google-maps/api 로 설치해야함!
 
 import React, { memo } from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -18,14 +18,14 @@ const containerStyle = {
 function LocalMap({center}) {
     return (
         <LoadScript
-          googleMapsApiKey="AIzaSyCTZWygfYuMNSJHOB-p16G3P8OxI3SRUcU"
+          googleMapsApiKey="AIzaSyD-n65kmRFWXHWxvLRIy2nHHcKBoSm09Mg"
         >
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
             zoom={14}
           >
-            <></>
+            <MarkerF position={center} icon={"./images/logo/logo.png"}></MarkerF>
           </GoogleMap>
         </LoadScript>
       )
