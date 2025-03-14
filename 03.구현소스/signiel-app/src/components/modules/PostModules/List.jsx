@@ -19,6 +19,8 @@ function List({
   const myCon = useContext(sCon);
   // console.log('List에서 loginSts:',myCon.loginSts);
 
+  console.log('선택데이터:',selData);
+
   // [ 페이징 관련 변수값 셋팅하기 ] ////
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
@@ -121,6 +123,7 @@ function List({
     if (pgPgNum.current !== pagingCount)
       hcode.push(
         <a
+          key="-2"
           href="#"
           title="Next Paging Section"
           onClick={() => {
@@ -225,7 +228,7 @@ function List({
             <td>
               {
                 // 로그인상태일때만 쓰기버튼 보이기
-                myCon.loginSts && (
+                myCon.isLoggedIn && (
                   <button
                     onClick={() => {
                       // 글쓰기 모드로 변경하기

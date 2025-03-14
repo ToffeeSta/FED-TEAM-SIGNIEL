@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { sCon } from "../sCon";
+import { users } from "../../../js/data/users";
 
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
@@ -10,7 +11,18 @@ function Write({ setMode, totalCount }) {
 
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  //   console.log("Write에서 loginSts:", myCon.loginSts);
+  //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
+
+  
+  const loginUser = JSON.parse(sessionStorage.getItem("users"));
+
+  const selUser = users.find(
+    (u) => u.id === loginUser.id
+  );
+
+  const selUserName = selUser.name;
+
+  // console.log(selUserName,selUser,loginUser);
 
   // 글쓰기 저장 서브밋 함수 //////
   const submitFn = () => {
@@ -31,13 +43,15 @@ function Write({ setMode, totalCount }) {
     else {
       // 1) 글번호 만들기 ////////////
       // 1-1) 로컬스토리지 게시판 데이터 불러오기
-      let localData = localStorage.getItem("board-data");
+      let localData = localStorage.getItem("posts");
 
+      
       // 1-2) JSON.parse()로 배열객체로 변환
       localData = JSON.parse(localData);
+      console.log(localData);
 
       // 1-3) 배열 데이터 idx값 읽어오기
-      let totalIdx = localData.map((v) => v.idx);
+      let totalIdx = localData.map((v) => v.id);
       //   console.log("idx만 배열:", totalIdx);
 
       // 1-4) idx값 중 최대값 구하기 :
@@ -60,14 +74,14 @@ function Write({ setMode, totalCount }) {
 
       // 3) 입력할 객체 데이터 만들기
       let data = {
-        idx: Number(maxIdx) + 1,
+        id: Number(maxIdx) + 1,
         title: title,
         content: content,
-        att: "",
-        date: today,
-        uid: myCon.loginSts.uid,
-        unm: myCon.loginSts.unm,
-        cnt: 0,
+        created_at: today,
+        hotel_id: 1,
+        post_type: "Q&A",
+        rating: null,
+        user_id: selUser.id,
       };
       console.log("입력데이터:", data);
 
@@ -75,7 +89,7 @@ function Write({ setMode, totalCount }) {
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("board-data", JSON.stringify(localData));
+      localStorage.setItem("posts", JSON.stringify(localData));
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
@@ -102,7 +116,7 @@ function Write({ setMode, totalCount }) {
                 size="20"
                 readOnly={true}
                 // 로그인한 사람이름
-                defaultValue={myCon.loginSts.unm}
+                defaultValue={selUserName}
               />
             </td>
           </tr>

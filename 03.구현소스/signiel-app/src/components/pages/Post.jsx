@@ -64,11 +64,11 @@ function Post() {
   posts
     // ((기준1))-> 최신날짜로 내림차순
     .sort((a, b) =>
-      a.date > b.date ? -1 : a.date < b.date ? 1 : 0
+      a.created_at > b.created_at ? -1 : a.created_at < b.created_at ? 1 : 0
     )
     // ((기준2))-> idx로 내림차순
     .sort((a, b) =>
-      a.idx > b.idx ? -1 : a.idx < b.idx ? 1 : 0
+      a.id > b.id ? -1 : a.id < b.id ? 1 : 0
     );
 
   // [ 일부 데이터만 선택하기 ]
