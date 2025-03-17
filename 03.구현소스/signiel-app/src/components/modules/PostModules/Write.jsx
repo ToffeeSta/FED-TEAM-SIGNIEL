@@ -13,9 +13,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
   const myCon = useContext(sCon);
   //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
 
-  const loginUser = JSON.parse(
-    sessionStorage.getItem("users")
-  );
+  const loginUser = JSON.parse(sessionStorage.getItem("users"));
 
   const selUser = users.find((u) => u.id === loginUser.id);
 
@@ -77,7 +75,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
         content: content,
         created_at: today,
         hotel_id: 1,
-        post_type: "Q&A",
+        post_type: document.querySelector('.sel-type').value,
         rating: null,
         user_id: selUser.id,
       };
@@ -87,10 +85,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem(
-        "posts",
-        JSON.stringify(localData)
-      );
+      localStorage.setItem("posts", JSON.stringify(localData));
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
@@ -119,38 +114,32 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
               <input
                 type="text"
                 className="name"
-                size="50"
+                size="20"
                 readOnly={true}
                 // 로그인한 사람이름
                 defaultValue={selUserName}
               />
-            </td>
-            <td>
-              <input
-                type="text"
-                className="subject"
-                size="50"
-              />
+
+              <select
+                name="sel-type"
+                id="sel-type"
+                className="sel-type"
+              >
+                <option value="review">Review</option>
+                <option value="Q&A">Q&amp;A</option>
+              </select>
             </td>
           </tr>
           <tr>
             {/* <td>Title</td> */}
             <td>
-              <input
-                type="text"
-                className="subject"
-                size="60"
-              />
+              <input type="text" className="subject" size="60" />
             </td>
           </tr>
           <tr>
             {/* <td>Content</td> */}
             <td>
-              <textarea
-                className="content"
-                cols="60"
-                rows="10"
-              ></textarea>
+              <textarea className="content" cols="60" rows="10"></textarea>
             </td>
           </tr>
           <tr>

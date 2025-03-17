@@ -13,6 +13,8 @@ function List({
   totalCount, // 전체 개수 참조변수
   pgPgSize, // 페이징의 페이징 개수
   pgPgNum, // 페이징의 페이징 번호
+  type,
+  setType,
 }) {
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
@@ -220,6 +222,21 @@ function List({
         >
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
+        </select>
+        <select
+          name="sel_type"
+          id="sel_type"
+          className="sel_type"
+          defaultValue={type}
+          onChange={e=>{
+            setType(e.target.value);
+            // 기본 데이터 초기화
+            setPageNum(1);
+            pgPgNum.current = 1;
+          }}
+        >
+          <option value="review">호텔리뷰</option>
+          <option value="Q&A">Q &amp; A</option>
         </select>
       </div>
       <table className="dtbl" id="board">

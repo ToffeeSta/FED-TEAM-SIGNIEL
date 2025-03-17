@@ -35,6 +35,9 @@ function Post() {
   // [2] 페이징을 위한 페이지 번호 ////
   const [pageNum, setPageNum] = useState(1);
 
+  // [3] 타입 분류 : 호텔리뷰(review) / 질문답변(Q&A)
+  const [type, setType] = useState("review");
+
   // [ 리액트 참조변수 셋팅구역 ] //////
   // [1] 게시글 선택 데이터 : 글 내용보기시
   const selRecord = useRef(null);
@@ -60,8 +63,16 @@ function Post() {
   // [2] 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
   const pgPgSize = 3;
 
+// 타입별로 원본 데이터 만들기
+  const orgData = posts.filter((v) => v.post_type === type);
+
+  
+  // for문으로 모든 데이터 생성후 그 갯수를 다시 넣음
+  totalCount.current = orgData.length;
+  console.log(orgData);
+
   // [ 데이터 정렬 ] /////////////
-  posts
+  orgData
     // ((기준1))-> 최신날짜로 내림차순
     .sort((a, b) =>
       a.created_at > b.created_at
@@ -99,26 +110,30 @@ function Post() {
     // 데이터 골라담기! ///
     // selData.push(posts[i]);
 
-    const user = users.find(
-      (u) => u.id === posts[i].user_id
-    );
-    const hotel = hotels.find(
-      (h) => h.id === posts[i].hotel_id
-    );
+    console.log(orgData[i].post_type, type);
 
-    selData.push({
-      id: posts[i].id,
-      user_name: user ? user.name : "알 수 없음",
-      hotel_name: hotel ? hotel.name : "알 수 없음",
-      post_type: posts[i].post_type,
-      rating: posts[i].rating,
-      title: posts[i].title,
-      content: posts[i].content,
-      created_at: posts[i].created_at,
-    });
+   
+      const user = users.find(
+        (u) => u.id === orgData[i].user_id
+      );
+      const hotel = hotels.find(
+        (h) => h.id === orgData[i].hotel_id
+      );
+  
+      selData.push({
+        id: orgData[i].id,
+        user_name: user ? user.name : "알 수 없음",
+        hotel_name: hotel ? hotel.name : "알 수 없음",
+        post_type: orgData[i].post_type,
+        rating: orgData[i].rating,
+        title: orgData[i].title,
+        content: orgData[i].content,
+        created_at: orgData[i].created_at,
+      });
+
+  
   } //////////// for : 선택데이터 담기
 
-  // console.log(selData);
 
   // DOM 랜더링 실행구역 ///////
   useEffect(() => {
@@ -143,6 +158,8 @@ function Post() {
             totalCount={totalCount} // 전체 개수 참조변수
             pgPgSize={pgPgSize} // 페이징의 페이징 개수
             pgPgNum={pgPgNum} // 페이징의 페이징 번호
+            type={type} // 타입 분류 getter
+            setType={setType} // 타입 분류 setter
           />
         )
       }
@@ -163,6 +180,8 @@ function Post() {
           <Write
             setMode={setMode} // 모드 상태변수 setter
             totalCount={totalCount} // 전체 개수 참조변수
+            setPageNum={setPageNum} // 리스트 페이지번호 setter
+            pgPgNum={pgPgNum} // 페이징의 페이징 번호
           />
         )
       }

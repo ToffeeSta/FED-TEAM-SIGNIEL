@@ -38,22 +38,17 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       localData = JSON.parse(localData);
 
       // 2) 수정할 현재 데이터 idx값(키값)
-      let currIdx = selData.id;
-      console.log("수정할idx:", currIdx);
+      let currId = selData.id;
+      console.log("수정할id:", currId, localData);
 
       // 3) 로컬스 객체화 데이터 배열을 find로 순회하여
       // 해당 idx만 찾아서 제목과 내용 변경하기
       localData.find((v) => {
-        if (v.id === currIdx) {
+        if (v.id === currId) {
+          console.log('고칠것!',v.id);
           // 제목, 내용변경
-          title = title;
-          content = content;
-          // 원래 DB 스키마에 따라 입력해야하지만
-          // 우리가 사용하는 로컬스토리지 데이터는 배열객체
-          // 이기 때문에 추가 데이터를 넣을 수 있다!
-          // 그래서 수정날짜를 넣어보자!
-          v.mdate = new Date().toJSON().substr(0, 10);
-
+          v.title = title;
+          v.content = content;
           // 해당 데이터를 만나면 빠져나감!
           return true;
         } /// if ///
@@ -142,7 +137,6 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 type="text"
                 className="subject"
                 size="60"
-                readOnly={true}
                 defaultValue={selData.title}
               />
             </td>  
@@ -154,7 +148,6 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 className="content"
                 cols="60"
                 rows="10"
-                readOnly={true}
                 defaultValue={selData.content}
               ></textarea>
             </td>

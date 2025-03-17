@@ -162,7 +162,7 @@ export const posts = [
     created_at: "2025-04-12",
   },
   {
-    id: 1,
+    id: 16,
     user_id: 1, // 유저 이름
     hotel_id: 1, // 호텔이름
     post_type: "review",
@@ -172,7 +172,7 @@ export const posts = [
     created_at: "2025-03-01",
   },
   {
-    id: 2,
+    id: 17,
     user_id: 2,
     hotel_id: 1,
     post_type: "Q&A",
@@ -182,7 +182,7 @@ export const posts = [
     created_at: "2025-03-02",
   },
   {
-    id: 3,
+    id: 18,
     user_id: 3,
     hotel_id: 1,
     post_type: "review",
@@ -192,7 +192,7 @@ export const posts = [
     created_at: "2025-03-05",
   },
   {
-    id: 4,
+    id: 19,
     user_id: 4,
     hotel_id: 2,
     post_type: "review",
@@ -202,7 +202,7 @@ export const posts = [
     created_at: "2025-03-10",
   },
   {
-    id: 5,
+    id: 20,
     user_id: 5,
     hotel_id: 2,
     post_type: "Q&A",
@@ -212,7 +212,7 @@ export const posts = [
     created_at: "2025-03-12",
   },
   {
-    id: 6,
+    id: 21,
     user_id: 6,
     hotel_id: 2,
     post_type: "review",
@@ -222,7 +222,7 @@ export const posts = [
     created_at: "2025-03-15",
   },
   {
-    id: 7,
+    id: 22,
     user_id: 1,
     hotel_id: 3,
     post_type: "review",
@@ -232,7 +232,7 @@ export const posts = [
     created_at: "2025-03-20",
   },
   {
-    id: 8,
+    id: 23,
     user_id: 1,
     hotel_id: 3,
     post_type: "Q&A",
@@ -242,7 +242,7 @@ export const posts = [
     created_at: "2025-03-22",
   },
   {
-    id: 9,
+    id: 24,
     user_id: 2,
     hotel_id: 3,
     post_type: "review",
@@ -252,7 +252,7 @@ export const posts = [
     created_at: "2025-03-25",
   },
   {
-    id: 10,
+    id: 25,
     user_id: 1,
     hotel_id: 1,
     post_type: "Q&A",
@@ -262,7 +262,7 @@ export const posts = [
     created_at: "2025-03-28",
   },
   {
-    id: 11,
+    id: 26,
     user_id: 4,
     hotel_id: 1,
     post_type: "review",
@@ -272,7 +272,7 @@ export const posts = [
     created_at: "2025-04-01",
   },
   {
-    id: 12,
+    id: 27,
     user_id: 5,
     hotel_id: 2,
     post_type: "review",
@@ -282,7 +282,7 @@ export const posts = [
     created_at: "2025-04-05",
   },
   {
-    id: 13,
+    id: 28,
     user_id: 1,
     hotel_id: 2,
     post_type: "Q&A",
@@ -292,7 +292,7 @@ export const posts = [
     created_at: "2025-04-07",
   },
   {
-    id: 14,
+    id: 29,
     user_id: 7,
     hotel_id: 3,
     post_type: "review",
@@ -302,7 +302,7 @@ export const posts = [
     created_at: "2025-04-10",
   },
   {
-    id: 15,
+    id: 30,
     user_id: 1,
     hotel_id: 3,
     post_type: "Q&A",
