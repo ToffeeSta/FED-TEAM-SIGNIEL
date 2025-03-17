@@ -1,7 +1,7 @@
 @import "../common/reset";
-// body {
-//   font-size: 10px;
-// }
+body {
+  font-size: 10px;
+}
 // main {
 //   width: 100%;
 // }
@@ -72,7 +72,7 @@
 
 .selbx {
   max-width: 90%;
-  width: 950px;
+  width: 1400px;
   margin: 0 auto;
   padding: 20px 10px 10px;
   box-sizing: border-box;
@@ -89,7 +89,7 @@
   font-size: 14px;
   border-collapse: collapse;
   max-width: 90%;
-  width: 950px;
+  width: 1400px;
   margin: 0 auto;
 }
 
@@ -105,7 +105,7 @@
 
 .dtbl a {
   text-decoration: none;
-  color: #666;
+  color: #765e3b;
 }
 
 .btngrp td {
@@ -116,7 +116,7 @@
 .dtbl td,
 .dtbl th {
   /*여러개를 설정할때 컴마(,) 사용*/
-  padding: 10px;
+  padding: 15px 10px;
   /*위아래, 양쪽*/
   /*
 		padding은 안쪽 공간-> 기존박스가 커짐
@@ -125,6 +125,10 @@
 		padding: 위아래 오른왼;(2개)
 		padding: 모든방향;(1개)
 	*/
+}
+
+.tbody {
+  border-bottom: 1px solid #765e3b;
 }
 
 /* 보드 메인리스트 a요소 말줄임표시하기 */
@@ -137,39 +141,51 @@
   width: min(361px, 40vw);
 }
 
+#board tbody tr td {
+  color: #765e3b;
+}
 /*각 th별 가로크기지정 */
+// number
 .dtbl th:nth-child(1) {
   width: 5%;
 }
+// title
 .dtbl th:nth-child(2) {
   width: 40%;
 }
+// writer
 .dtbl th:nth-child(3) {
-  width: 30%;
+  width: 10%;
 }
+// date
 .dtbl th:nth-child(4) {
-  width: 15%;
+  width: 10%;
 }
+// rank
 .dtbl th:nth-child(5) {
   width: 5%;
 }
-
-.dtbl tbody tr td {
-  /*본문 td 밑줄*/
-  border-bottom: 1px solid #ccc;
-  /*두종색*/
+// type
+.dtbl th:nth-child(6) {
+  width: 5%;
+}
+// hotel
+.dtbl th:nth-child(7) {
+  width: 10%;
 }
 
 .dtbl thead tr th {
   /*머리줄 th 윗줄*/
-  border-top: 2px solid #999;
+  border-top: 2px solid #765e3b;
   /*두종색*/
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #765e3b;
+  background-color: #e0d8c6;
+  color: #765e3b;
 }
 
 .dtbl tbody tr:last-child td {
   /*테이블본문의 마지막 줄 tr 의 td 밑줄변경*/
-  border-bottom: 2px solid #999;
+  border-bottom: 1px solid #765e3b;
 }
 .dtbl tbody tr td:nth-child(2) {
   text-align: left;
@@ -203,27 +219,27 @@
   border-collapse: collapse;
   width: 750px;
   margin: 20px auto;
-  border-top: 2px solid #999;
-  /*두종색*/
-  border-bottom: 2px solid #999;
+  // border-top: 2px solid #765e3b;
+  // /*두종색*/
+  // border-bottom: 2px solid #765e3b;
 }
 /*첫째열*/
 .dtblview td:first-child {
-  width: 100px;
+  // width: 100px;
 }
 /*둘째열*/
 .dtblview td:last-child {
-  width: 650px;
+  // width: 650px;
 }
 
 .dtblview td {
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #765e3b;
   padding: 8px;
 }
 
 .dtblview td:first-child {
-  width: 200px;
-  background-color: #e0e0e0;
+  // width: 200px;
+  // background-color: #e0d8c6;
   text-align: center;
 }
 
@@ -232,7 +248,7 @@
 .dtblview td b {
   font-size: 20px;
   text-decoration: none;
-  color: #000;
+  color: #998465;
 }
 .dtblview td a:hover {
   text-decoration: underline;
@@ -244,19 +260,19 @@
   border-radius: 25px;
   padding: 8px 40px;
   background-color: #fff;
-  color: #000;
+  color: #765e3b;
   font-weight: bold;
   font-size: 15px;
   transition: 0.3s;
   margin-top: 20px;
   cursor: pointer;
   border: none;
-  border: 1px solid #000;
+  border: 2px solid #765e3b;
   margin: 5px;
 
   // 버튼 오버시 ///
   &:hover {
-    background-color: #0074e8;
+    background-color: #ad9e87;
     color: #fff;
   }
 }

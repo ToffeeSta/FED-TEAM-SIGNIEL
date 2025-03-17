@@ -56,7 +56,7 @@ function Post() {
 
   // [ 일반변수 셋팅구역 : 매번 같은 값을 유지해야하는 변수들 ]
   // [1] 페이지당 개수 : 페이지당 레코드수
-  const unitSize = 10;
+  const unitSize = 5;
   // [2] 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
   const pgPgSize = 3;
 
@@ -64,7 +64,11 @@ function Post() {
   posts
     // ((기준1))-> 최신날짜로 내림차순
     .sort((a, b) =>
-      a.created_at > b.created_at ? -1 : a.created_at < b.created_at ? 1 : 0
+      a.created_at > b.created_at
+        ? -1
+        : a.created_at < b.created_at
+        ? 1
+        : 0
     )
     // ((기준2))-> idx로 내림차순
     .sort((a, b) =>
@@ -95,23 +99,23 @@ function Post() {
     // 데이터 골라담기! ///
     // selData.push(posts[i]);
 
-      const user = users.find(
-        (u) => u.id === posts[i].user_id
-      );
-      const hotel = hotels.find(
-        (h) => h.id === posts[i].hotel_id
-      );
+    const user = users.find(
+      (u) => u.id === posts[i].user_id
+    );
+    const hotel = hotels.find(
+      (h) => h.id === posts[i].hotel_id
+    );
 
-      selData.push({
-        id: posts[i].id,
-        user_name: user ? user.name : "알 수 없음",
-        hotel_name: hotel ? hotel.name : "알 수 없음",
-        post_type: posts[i].post_type,
-        rating: posts[i].rating,
-        title: posts[i].title,
-        content: posts[i].content,
-        created_at: posts[i].created_at,
-      });
+    selData.push({
+      id: posts[i].id,
+      user_name: user ? user.name : "알 수 없음",
+      hotel_name: hotel ? hotel.name : "알 수 없음",
+      post_type: posts[i].post_type,
+      rating: posts[i].rating,
+      title: posts[i].title,
+      content: posts[i].content,
+      created_at: posts[i].created_at,
+    });
   } //////////// for : 선택데이터 담기
 
   // console.log(selData);

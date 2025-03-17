@@ -5,7 +5,7 @@ import { users } from "../../../js/data/users";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function Write({ setMode, totalCount }) {
+function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
   // setMode - 모든 변경 상태변수 setter
   // totalCount - 전체 개수 참조변수 (글쓰기시 카운트 1증가!)
 
@@ -13,12 +13,11 @@ function Write({ setMode, totalCount }) {
   const myCon = useContext(sCon);
   //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
 
-  
-  const loginUser = JSON.parse(sessionStorage.getItem("users"));
-
-  const selUser = users.find(
-    (u) => u.id === loginUser.id
+  const loginUser = JSON.parse(
+    sessionStorage.getItem("users")
   );
+
+  const selUser = users.find((u) => u.id === loginUser.id);
 
   const selUserName = selUser.name;
 
@@ -35,7 +34,7 @@ function Write({ setMode, totalCount }) {
     // (1) 공통 유효성검사
     // - 제목, 내용 모두 비었으면 리턴!
     if (title === "" || content === "") {
-      alert("Insert title and content!");
+      alert("제목과 내용을 입력해주세요");
       return;
     } /// if /////
 
@@ -45,7 +44,6 @@ function Write({ setMode, totalCount }) {
       // 1-1) 로컬스토리지 게시판 데이터 불러오기
       let localData = localStorage.getItem("posts");
 
-      
       // 1-2) JSON.parse()로 배열객체로 변환
       localData = JSON.parse(localData);
       console.log(localData);
@@ -89,12 +87,21 @@ function Write({ setMode, totalCount }) {
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
 
-      // 7) 리스트 이동을 위해 모드 변경하기
+      // 7) 페이지 번호 초기화
+      setPageNum(1);
+
+      // 8) 페이징 구역 번호 초기화
+      pgPgNum.current = 1;
+
+      // 9) 리스트 이동을 위해 모드 변경하기
       setMode("L");
     } /// else /////
   }; ////////// submitFn 함수 //////////////
@@ -105,31 +112,45 @@ function Write({ setMode, totalCount }) {
       <h1 className="tit">Posts</h1>
       <h2 className="tit">게시판</h2>
       <table className="dtblview readone">
-        <caption>Posts : Write</caption>
         <tbody>
           <tr>
-            <td>Name</td>
+            {/* <td>Name</td> */}
             <td>
               <input
                 type="text"
                 className="name"
-                size="20"
+                size="50"
                 readOnly={true}
                 // 로그인한 사람이름
                 defaultValue={selUserName}
               />
             </td>
-          </tr>
-          <tr>
-            <td>Title</td>
             <td>
-              <input type="text" className="subject" size="60" />
+              <input
+                type="text"
+                className="subject"
+                size="50"
+              />
             </td>
           </tr>
           <tr>
-            <td>Content</td>
+            {/* <td>Title</td> */}
             <td>
-              <textarea className="content" cols="60" rows="10"></textarea>
+              <input
+                type="text"
+                className="subject"
+                size="60"
+              />
+            </td>
+          </tr>
+          <tr>
+            {/* <td>Content</td> */}
+            <td>
+              <textarea
+                className="content"
+                cols="60"
+                rows="10"
+              ></textarea>
             </td>
           </tr>
           <tr>

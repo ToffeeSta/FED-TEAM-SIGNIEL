@@ -20,10 +20,9 @@ function Read({ setMode, selRecord }) {
       <h1 className="tit">Posts</h1>
       <h2 className="tit">게시판</h2>
       <table className="dtblview readone">
-        <caption>Post : Read</caption>
         <tbody>
           <tr>
-            <td>Name</td>
+            {/* <td>Name</td> */}
             <td>
               <input
                 type="text"
@@ -33,9 +32,19 @@ function Read({ setMode, selRecord }) {
                 defaultValue={selData.user_name}
               />
             </td>
+            {/* <td>Kategorie</td> */}
+            <td>
+              <input
+                type="text"
+                className="kategorie"
+                size="20"
+                readOnly={true}
+                defaultValue={selData.post_type}
+              />
+            </td>
           </tr>
           <tr>
-            <td>Title</td>
+            {/* <td>Title</td> */}
             <td>
               <input
                 type="text"
@@ -47,7 +56,7 @@ function Read({ setMode, selRecord }) {
             </td>
           </tr>
           <tr>
-            <td>Content</td>
+            {/* <td>Content</td> */}
             <td>
               <textarea
                 className="content"
@@ -59,7 +68,7 @@ function Read({ setMode, selRecord }) {
             </td>
           </tr>
           <tr>
-            <td>Attachment</td>
+            {/* <td>Attachment</td> */}
             <td></td>
           </tr>
         </tbody>
@@ -80,16 +89,18 @@ function Read({ setMode, selRecord }) {
               {
                 // 로그인한 사용자가 글쓴이와 같은 아이디일 경우
                 // 수정버튼 보이기
-                myCon.loginSts && myCon.loginSts.uid === selData.uid && (
-                  <button
-                    onClick={() => {
-                      // 수정모드로 변경하기
-                      setMode("M");
-                    }}
-                  >
-                    Modify
-                  </button>
-                )
+                myCon.isLoggedIn &&
+                  myCon.isLoggedIn.user_id ===
+                    selData.user_id && (
+                    <button
+                      onClick={() => {
+                        // 수정모드로 변경하기
+                        setMode("M");
+                      }}
+                    >
+                      Modify
+                    </button>
+                  )
               }
             </td>
           </tr>
