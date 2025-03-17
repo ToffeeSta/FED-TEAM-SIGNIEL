@@ -93,7 +93,7 @@ function Branch(props) {
             </div>
           </div>
           {/* 3 */}
-          <div className="con-wrap">
+          <div className="con-wrap reverse">
             <div className="img-box">
               <img
                 src={"../../../images/branch/" + local + "/main_03.png"}
@@ -168,6 +168,20 @@ function Branch(props) {
         </div>
 
         <div className="con-wrap info">
+        {local === "seoul" && (
+                <LocalMap center={latLng.current.seoul} />
+            )}
+        {local === "busan" && (
+                <LocalMap center={latLng.current.busan} />
+            )}
+        {local === "jeju" && (
+                <LocalMap center={latLng.current.jeju} />
+            )}
+
+
+
+
+
           <ul>
             {local !== "seoul" && (
               <li>
@@ -192,7 +206,7 @@ function Branch(props) {
                 </a>
                 
                 {/* 구글맵 넣기 */}
-                <LocalMap center={latLng.current.seoul} />
+                {/* <LocalMap center={latLng.current.seoul} /> */}
               </li>
             )}
             {local !== "busan" && (
@@ -217,7 +231,7 @@ function Branch(props) {
                   </p>
                 </a>
                 {/* 구글맵 넣기 */}
-                <LocalMap center={latLng.current.busan} />
+                {/* <LocalMap center={latLng.current.busan} /> */}
               </li>
             )}
             {local !== "jeju" && (
@@ -242,7 +256,7 @@ function Branch(props) {
                   </p>
                 </a>
                 {/* 구글맵 넣기 */}
-                <LocalMap center={latLng.current.jeju} />
+                {/* <LocalMap center={latLng.current.jeju} /> */}
               </li>
             )}
           </ul>
