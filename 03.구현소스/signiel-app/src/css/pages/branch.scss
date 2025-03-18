@@ -190,12 +190,16 @@
   text-align: left;
 
   border-left: 3px solid #867868;
-  padding-left: 5%;
+  // padding-left: 5%;
+  padding: 15% 0 15% 5%;
 }
 .text-box div h2 {
   font-size: 3rem;
-  line-height: 3rem;
+  line-height: 3.5rem;
   margin-bottom: 3%;
+}
+.contents-title {
+  line-height: 3rem;
 }
 .text-box div h2, .branch-container span{
   padding-right: 7%;
@@ -205,6 +209,7 @@
 .con-wrap:nth-of-type(3) .text-box div{
   border-right: 3px solid #867868;
   padding-right: 4px;
+  padding: 65px 0;
 }
 
 .con-wrap:nth-of-type(4) {
