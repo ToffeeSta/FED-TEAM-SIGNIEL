@@ -12,6 +12,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
   // 선택된 참조변수 데이터 넣기
   const selData = selRecord.current;
+  console.log(selData);
 
   // 글쓰기 저장 서브밋 함수 //////
   const submitFn = () => {

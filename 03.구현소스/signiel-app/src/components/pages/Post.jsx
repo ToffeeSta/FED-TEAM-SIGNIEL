@@ -146,6 +146,7 @@ function Post() {
         title: orgData[i].title,
         content: orgData[i].content,
         created_at: orgData[i].created_at,
+        user_id: orgData[i].user_id
       });
 
   

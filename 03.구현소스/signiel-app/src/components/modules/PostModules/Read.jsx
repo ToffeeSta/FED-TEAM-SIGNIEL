@@ -9,10 +9,11 @@ function Read({ setMode, selRecord }) {
 
   // 선택된 참조변수 데이터 넣기
   const selData = selRecord.current;
+  console.log(selData);
 
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  // console.log('Read에서 loginSts:',myCon.loginSts);
+  console.log('Read에서 loginSts:',myCon.loginSts);
 
   // 리턴 코드구역 ///////////////////
   return (
@@ -87,8 +88,8 @@ function Read({ setMode, selRecord }) {
               {
                 // 로그인한 사용자가 글쓴이와 같은 아이디일 경우
                 // 수정버튼 보이기
-                myCon.isLoggedIn &&
-                  myCon.isLoggedIn.user_id ===
+                myCon.isLoggedIn && 
+                  JSON.parse(sessionStorage.getItem('users')).id ===
                     selData.user_id && (
                     <button
                       onClick={() => {
@@ -97,6 +98,7 @@ function Read({ setMode, selRecord }) {
                       }}
                     >
                       Modify
+                      {console.log(selData.user_id)}
                     </button>
                   )
               }

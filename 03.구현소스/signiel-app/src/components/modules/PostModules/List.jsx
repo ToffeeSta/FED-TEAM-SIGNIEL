@@ -25,7 +25,7 @@ function List({
 }) {
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  // console.log('List에서 loginSts:',myCon.loginSts);
+  console.log('List에서 isLoggedIn:',myCon.isLoggedIn);
 
   // console.log('선택데이터:',selData);
 
