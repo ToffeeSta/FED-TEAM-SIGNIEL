@@ -27,7 +27,6 @@ function Read({ setMode, selRecord }) {
               <input
                 type="text"
                 className="name"
-                size="20"
                 readOnly={true}
                 defaultValue={selData.user_name}
               />
@@ -37,7 +36,6 @@ function Read({ setMode, selRecord }) {
               <input
                 type="text"
                 className="kategorie"
-                size="20"
                 readOnly={true}
                 defaultValue={selData.post_type}
               />

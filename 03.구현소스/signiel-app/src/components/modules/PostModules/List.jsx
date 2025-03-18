@@ -15,6 +15,13 @@ function List({
   pgPgNum, // 페이징의 페이징 번호
   type,
   setType,
+  searchFn, // 검색함수
+  keyword, // 검색어 상태변수 getter
+  setKeyword, // 검색어 상태변수 setter
+  order, // 정렬 상태변수
+  setOrder, // 정렬 상태변수 setter
+  sortCta, // 정렬기준 상태변수 getter
+  setSortCta, // 정렬기준 상태변수 setter
 }) {
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
@@ -201,17 +208,13 @@ function List({
   // 리턴 코드구역 ////////////////////
   return (
     <main className="cont">
-      <h1 className="tit">Posts</h1>
+      {/* <h1 className="tit">Posts</h1> */}
       <h2 className="tit">게시판</h2>
-      <div className="selbx">
+      <div className="selbx list">
         <select name="cta" id="cta" className="cta">
           <option value="tit">Title</option>
           <option value="cont">Contents</option>
           <option value="unm">Writer</option>
-        </select>
-        <select name="sel" id="sel" className="sel">
-          <option value="0">Descending</option>
-          <option value="1">Ascending</option>
         </select>
         <input id="stxt" type="text" maxLength="50" />
         <button className="sbtn">Search</button>
@@ -228,7 +231,7 @@ function List({
           id="sel_type"
           className="sel_type"
           defaultValue={type}
-          onChange={e=>{
+          onChange={(e) => {
             setType(e.target.value);
             // 기본 데이터 초기화
             setPageNum(1);

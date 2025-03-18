@@ -104,47 +104,45 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
   // 리턴 코드구역 ///////////////////
   return (
     <main className="cont">
-      <h1 className="tit">Posts</h1>
-      <h2 className="tit">게시판</h2>
+      <h2 className="tit">게시물 작성</h2>
       <table className="dtblview readone">
         <tbody>
           <tr>
             {/* <td>Name</td> */}
-            <td>
-              <input
-                type="text"
-                className="name"
-                size="20"
-                readOnly={true}
-                // 로그인한 사람이름
-                defaultValue={selUserName}
-              />
-
-              <select
-                name="sel-type"
-                id="sel-type"
-                className="sel-type"
-              >
-                <option value="review">Review</option>
-                <option value="Q&A">Q&amp;A</option>
-              </select>
+            <td className="name-type-box">
+              <div>
+                <input
+                  type="text"
+                  className="name"
+                  readOnly={true}
+                  // 로그인한 사람이름
+                  defaultValue={selUserName}
+                />
+              </div>
+              <div className="selbox write">
+                <select
+                  name="sel-type"
+                  id="sel-type"
+                  className="sel-type"
+                  
+                >
+                  <option value="review">Review</option>
+                  <option value="Q&A">Q&amp;A</option>
+                </select>
+              </div>
             </td>
           </tr>
           <tr>
             {/* <td>Title</td> */}
             <td>
-              <input type="text" className="subject" size="60" />
+              <input type="text" className="subject" placeholder="제목을 입력해주세요"/>
             </td>
           </tr>
           <tr>
             {/* <td>Content</td> */}
             <td>
-              <textarea className="content" cols="60" rows="10"></textarea>
+              <textarea className="content" placeholder ="게시물을 작성해주세요"></textarea>
             </td>
-          </tr>
-          <tr>
-            <td>Attachment</td>
-            <td></td>
           </tr>
         </tbody>
       </table>
@@ -152,15 +150,15 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
       <table className="dtbl btngrp">
         <tbody>
           <tr>
-            <td>
-              <button onClick={submitFn}>Submit</button>
+            <td className="write-page-button">
+              <button onClick={submitFn}>등록하기</button>
               <button
                 onClick={() => {
                   // 리스트 모드('L')로 변경하기
                   setMode("L");
                 }}
               >
-                List
+                돌아가기
               </button>
             </td>
           </tr>

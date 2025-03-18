@@ -1,16 +1,38 @@
-@import "../common/reset";
+@import "../common/_reset.scss";
+@import "../common/_core.scss";
+@import "../common/variables.scss";
+
+html,
 body {
   font-size: 10px;
 }
-// main {
-//   width: 100%;
-// }
-// main > div {
-//   overflow: hidden;
+main {
+  width: 100%;
+}
 
-//   max-width: 1400px;
-//   margin: 0 auto;
-// }
+main > div {
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+main.cont {
+  min-height: calc(100vh - 58px - 210px);
+  // position: relative;
+}
+
+.cont {
+  // height: 600px;
+  top: 2vh;
+  margin: 0 auto;
+}
+
+h2.tit {
+  text-align: center;
+  padding-top: 5vh;
+  color: #765e3b;
+  font-size: 2em;
+}
 
 // .post {
 //     color: #998465;
@@ -71,9 +93,9 @@ body {
 //   }
 
 .selbx {
-  max-width: 90%;
+  // max-width: 100%;
   width: 1400px;
-  margin: 0 auto;
+  font-size: 1em;
   padding: 20px 10px 10px;
   box-sizing: border-box;
 }
@@ -88,21 +110,12 @@ body {
   /*텍스트 가로 중앙*/
   font-size: 14px;
   border-collapse: collapse;
-  max-width: 90%;
+  max-width: 100%;
   width: 1400px;
   margin: 0 auto;
 }
 
-.dtbl caption,
-.dtblview caption {
-  /*테이블 타이틀*/
-  font-size: 24px;
-  font-weight: bold;
-  /*글자두께*/
-  color: #333;
-  padding: 10px 0;
-}
-
+// 페이징 숫자
 .dtbl a {
   text-decoration: none;
   color: #765e3b;
@@ -167,7 +180,7 @@ body {
 }
 // type
 .dtbl th:nth-child(6) {
-  width: 5%;
+  width: 8%;
 }
 // hotel
 .dtbl th:nth-child(7) {
@@ -183,12 +196,21 @@ body {
   color: #765e3b;
 }
 
-.dtbl tbody tr:last-child td {
-  /*테이블본문의 마지막 줄 tr 의 td 밑줄변경*/
-  border-bottom: 1px solid #765e3b;
-}
+// .dtbl tbody tr:last-child td {
+//   /*테이블본문의 마지막 줄 tr 의 td 밑줄변경*/
+//   text-align: center;
+//   border-bottom: 1px solid #765e3b;
+// }
+
 .dtbl tbody tr td:nth-child(2) {
   text-align: left;
+  padding-left: 2vw;
+}
+
+td.write-page-button{
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 5vh;
 }
 
 /*
@@ -213,15 +235,39 @@ body {
   /*위아래,우좌 padding설정*/
 }
 
+/////////////////////////////////// 선택박스 디자인 변경 ///////////////////////////////////
+// 게시물 타입 선택박스
+.sel_type {
+  float: right;
+  height: 3vh;
+  width: 8vw;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  color: #765e3b;
+  font-size: 15px;
+}
+
+// 게시물 날짜 정렬 선택박스
+.sort_cta {
+  float: right;
+  translate: 0 5px;
+  // height: 3vh;
+  width: 8vw;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  color: #765e3b;
+  font-size: 15px;
+}
+
 /* 내용보기 */
 .dtblview {
-  font-size: 34px;
   border-collapse: collapse;
-  width: 750px;
+  width: 1400px;
   margin: 20px auto;
-  // border-top: 2px solid #765e3b;
-  // /*두종색*/
-  // border-bottom: 2px solid #765e3b;
+  justify-content: center;
+  text-align: center;
 }
 /*첫째열*/
 .dtblview td:first-child {
@@ -257,14 +303,14 @@ body {
 
 /* 버튼그룹 */
 .btngrp button {
-  border-radius: 25px;
-  padding: 8px 40px;
+  border-radius: 10px;
+  padding: 15px 30px;
   background-color: #fff;
   color: #765e3b;
   font-weight: bold;
   font-size: 15px;
   transition: 0.3s;
-  margin-top: 20px;
+  margin-top: 10px;
   cursor: pointer;
   border: none;
   border: 2px solid #765e3b;
@@ -276,6 +322,83 @@ body {
     color: #fff;
   }
 }
+
+//////////////////////////////// 게시물 공통 ////////////////////////////////
+
+.name-type-box {
+  display: flex;
+  justify-content: center;
+}
+
+.name-type-box div {
+  padding: 0 1vw;
+}
+
+// 유저 이름 박스 영역
+input.name{
+  height: 30px;
+  width: 24vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+}
+
+// 게시물 타입 선택박스 영역
+select.sel-type{
+  height: 36px;
+  width: 24vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+}
+
+// 제목 입력 박스 영역
+td .subject {
+  height: 30px;
+  width: 50vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+}
+
+input::placeholder {
+  padding-left: 5px;
+}
+
+// 게시물 내용 입력 박스 영역
+textarea {
+  height: 400px;
+  width: 50vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+}
+
+textarea::placeholder {
+  padding: 10px;
+}
+//////////////////////////////// 게시물 공통 ////////////////////////////////
+
+//////////////////////////////// 게시물 읽기 ////////////////////////////////
+
+input.kategorie{
+  height: 36px;
+  width: 24vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+}
+
+
+//////////////////////////////// 게시물 읽기 ////////////////////////////////
 
 @media screen and (max-width: 700px) {
   /* 보기 모드 공통 */

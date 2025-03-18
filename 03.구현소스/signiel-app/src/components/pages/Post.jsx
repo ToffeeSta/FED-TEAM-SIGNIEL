@@ -38,6 +38,23 @@ function Post() {
   // [3] 타입 분류 : 호텔리뷰(review) / 질문답변(Q&A)
   const [type, setType] = useState("review");
 
+  // [3] 검색어 저장변수 : 객체 {cta:기준값,kw:검색어}
+  const [keyword, setKeyword] = useState({
+    cta: "tit",
+    kw: "",
+  });
+  console.log("{cta:기준값,kw:검색어}", keyword);
+  // cta - creteria / kw -  keyword
+
+  // [4] 정렬 기준값 상태변수 : 값(asc(-1) / desc(1))
+  const [order, setOrder] = useState(1);
+
+  // [5] 정렬 항목값 상태변수 : 값 -> 정렬할 DB 컬럼명
+  const [sortCta, setSortCta] = useState("created_at");
+  // 초기값은 날짜를 기준한 desc정렬임!
+  // sortCta는 sort Criteria (정렬기준)의 줄임말!
+
+
   // [ 리액트 참조변수 셋팅구역 ] //////
   // [1] 게시글 선택 데이터 : 글 내용보기시
   const selRecord = useRef(null);
@@ -59,9 +76,9 @@ function Post() {
 
   // [ 일반변수 셋팅구역 : 매번 같은 값을 유지해야하는 변수들 ]
   // [1] 페이지당 개수 : 페이지당 레코드수
-  const unitSize = 5;
+  const unitSize = 10;
   // [2] 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
-  const pgPgSize = 3;
+  const pgPgSize = 5;
 
 // 타입별로 원본 데이터 만들기
   const orgData = posts.filter((v) => v.post_type === type);
@@ -134,6 +151,17 @@ function Post() {
   
   } //////////// for : 선택데이터 담기
 
+  /************************************** 
+    함수명 : searchFn
+    기능 : 검색어 넣고 검색을 실행하도록
+      검색어 상태변수값을 업데이트 한다!
+  **************************************/
+      const searchFn = () => {
+        setKeyword({
+          cta: document.querySelector("#cta").value,
+          kw: document.querySelector("#stxt").value,
+        });
+      }; /////// searchFn 함수
 
   // DOM 랜더링 실행구역 ///////
   useEffect(() => {
@@ -158,8 +186,16 @@ function Post() {
             totalCount={totalCount} // 전체 개수 참조변수
             pgPgSize={pgPgSize} // 페이징의 페이징 개수
             pgPgNum={pgPgNum} // 페이징의 페이징 번호
+            // 검색, 정렬 관련 전달속성 셋팅 /////
             type={type} // 타입 분류 getter
             setType={setType} // 타입 분류 setter
+            searchFn={searchFn} // 검색함수
+            keyword={keyword} // 검색어 상태변수 getter
+            setKeyword={setKeyword} // 검색어 상태변수 setter
+            order={order} // 정렬 상태변수
+            setOrder={setOrder} // 정렬 상태변수 setter
+            sortCta={sortCta} // 정렬기준 상태변수 getter
+            setSortCta={setSortCta} // 정렬기준 상태변수 setter
           />
         )
       }
@@ -193,6 +229,8 @@ function Post() {
             setMode={setMode} // 모드 상태변수 setter
             selRecord={selRecord} // 선택데이터 참조변수
             totalCount={totalCount} // 전체 개수 참조변수
+            setPageNum={setPageNum} // 리스트 페이지번호 setter
+            pgPgNum={pgPgNum} // 페이징의 페이징 번호
           />
         )
       }
