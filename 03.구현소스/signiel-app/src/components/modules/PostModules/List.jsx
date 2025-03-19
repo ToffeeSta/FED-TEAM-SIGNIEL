@@ -325,7 +325,7 @@ function List({
                       setMode("W");
                     }}
                   >
-                    Write
+                    게시물 작성
                   </button>
                 )
               }

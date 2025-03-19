@@ -133,6 +133,11 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
             </td>
           </tr>
           <tr>
+            <td>
+              
+            </td>
+          </tr>
+          <tr>
             {/* <td>Title</td> */}
             <td>
               <input type="text" className="subject" placeholder="제목을 입력해주세요"/>

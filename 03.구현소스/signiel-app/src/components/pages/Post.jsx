@@ -76,9 +76,9 @@ function Post() {
 
   // [ 일반변수 셋팅구역 : 매번 같은 값을 유지해야하는 변수들 ]
   // [1] 페이지당 개수 : 페이지당 레코드수
-  const unitSize = 10;
+  const unitSize = 6;
   // [2] 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
-  const pgPgSize = 5;
+  const pgPgSize = 3;
 
 // 타입별로 원본 데이터 만들기
   const orgData = posts.filter((v) => v.post_type === type);

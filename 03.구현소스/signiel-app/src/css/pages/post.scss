@@ -94,7 +94,7 @@ h2.tit {
 
 .selbx {
   // max-width: 100%;
-  width: 1400px;
+  // width: 1400px;
   font-size: 1em;
   padding: 20px 10px 10px;
   box-sizing: border-box;
@@ -272,7 +272,7 @@ td.write-page-button {
 /* 내용보기 */
 .dtblview {
   border-collapse: collapse;
-  width: 1400px;
+  // width: 1400px;
   margin: 20px auto;
   justify-content: center;
   text-align: center;
@@ -382,6 +382,18 @@ input.sel-type {
   font-family: "Pretendard-Regular";
   color: #765e3b;
 }
+
+input.sel-type{
+  height: 30px;
+  width: 24vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+}
+
+
 
 // 제목 입력 박스 영역
 td .subject {
