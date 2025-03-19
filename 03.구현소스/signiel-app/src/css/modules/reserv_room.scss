@@ -5,16 +5,15 @@
   @include borderSet;
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
   background-color: #eee;
   box-sizing: border-box;
   color: $color-main;
   margin-bottom: 10px;
-  @include flex(space-between, center);
+  @include flex(center, center);
+  gap: 50px;
   
   p {
     font-size: 15px;
-    width: calc(100%/6);
     padding: 0 20px;
   }
   .reserv-btn {

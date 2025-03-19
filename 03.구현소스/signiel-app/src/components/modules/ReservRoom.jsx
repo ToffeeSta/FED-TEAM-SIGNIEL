@@ -1,10 +1,54 @@
 import React from "react";
-import "../../css/modules/room_info.scss";
+import "../../css/modules/reserv_room.scss";
 
-function RoomInfo({ availableRooms,stayDuration }) {
+function ReservRoom({ availableRooms, stayDuration, checkIn, checkOut, guestCount }) {
+
+  const handleReservation = (room) => {
+    const user = JSON.parse(sessionStorage.getItem("users"));
+    const user_id = user ? user.id : null;
+
+    if (!user_id) {
+      alert("사용자가 로그인되지 않았습니다.");
+      return;
+    }
+
+    // 예약 확인 창 띄우기
+    const confirmReservation = window.confirm("예약하시겠습니까?");
+    
+    if (!confirmReservation) {
+      return;
+    }
+
+    // 로컬에 이미 예약된 방인지 체크
+    const existingReservations = JSON.parse(localStorage.getItem("reservations")) || [];
+    const isRoomReserved = existingReservations.some(
+      (reservation) => reservation.user_id === user_id && reservation.room_id === room.id && reservation.check_in === checkIn
+    );
+
+    if (isRoomReserved) {
+      alert("이미 예약된 방입니다.");
+      return;
+    }
+
+    // 예약 정보 객체 생성
+    const reservation = {
+      id: `${room.id}-${checkIn}`,
+      user_id: user_id,
+      room_id: room.id,
+      check_in: checkIn,
+      check_out: checkOut,
+      guest_count: guestCount,
+    };
+
+    existingReservations.push(reservation);
+    localStorage.setItem("reservations", JSON.stringify(existingReservations));
+
+    alert("예약하셨습니다.");
+  };
+
   return (
     <div>
-      <ul >
+      <ul>
         {availableRooms.length > 0 ? (
           availableRooms.map((room) => (
             <li className="roominfo-card" key={room.id}>
@@ -13,7 +57,9 @@ function RoomInfo({ availableRooms,stayDuration }) {
               <p>추가가능인원 {room.max_guests - room.base_guests}인</p>
               <p>{room.price_per_night.toLocaleString()}원/박</p>
               <p>{stayDuration}박 : {(room.price_per_night * stayDuration).toLocaleString()}원</p>
-              <div className="reserv-btn"><span>예약하기</span></div>
+              <div className="reserv-btn" onClick={() => handleReservation(room)}>
+                <span>예약하기</span>
+              </div>
             </li>
           ))
         ) : (
@@ -24,13 +70,4 @@ function RoomInfo({ availableRooms,stayDuration }) {
   );
 }
 
-export default RoomInfo;
-
-/* 
-  id: "1-104-2025-03-25",
-  user_id: 7,
-  room_id: "1-104",
-  check_in: "2025-03-25",
-  check_out: "2025-03-28",
-  guest_count: 4
- */
+export default ReservRoom;

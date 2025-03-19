@@ -88,7 +88,7 @@ function UserPost() {
         )}
       </div>
 
-      {/* 10개씩 보이기 버튼 */}
+      {/* 10개씩 more-btn */}
       {visibleCount < filteredPosts.length && (
         <div
           className="more-btn"

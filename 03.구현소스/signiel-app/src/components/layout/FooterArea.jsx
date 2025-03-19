@@ -50,14 +50,18 @@ export default function FooterArea() {
             </div>
             <div className="bottom-nav">
               <ul>
+                {/* 개인정보처리방침 사이트 이용약관 약관 및 정책 쿠키 설정 */}
                 <li>
-                  <a href="">btn1</a>
+                  <a href="">개인정보처리방침</a>
                 </li>
                 <li>
-                  <a href="">btn2</a>
+                  <a href="">사이트 이용약관</a>
                 </li>
                 <li>
-                  <a href="">btn3</a>
+                  <a href="">약관 및 정책</a>
+                </li>
+                <li>
+                  <a href="">쿠키 설정</a>
                 </li>
               </ul>
             </div>
