@@ -78,19 +78,19 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       localData = JSON.parse(localData);
 
       // 2) 수정할 현재 데이터 idx값(키값)
-      let currIdx = selData.idx;
-      console.log("삭제할idx:", currIdx);
+      let currIdx = selData.id;
+      // console.log("삭제할idx:", currIdx);
 
       // 3) 로컬스 객체화 데이터 배열을 some()으로 순회하여
-      // 해당 idx만 삭제 처리한다!
+      // 해당 idx만 삭제 처리한다
       // find()와 달리 some()은 결과값을 boolean값으로 리턴함
-      // 어째든 find()나 some()은 return true하면 순회를 멈춘다!
+      // 어째든 find()나 some()은 return true하면 순회를 멈춘다
       localData.some((v, i) => {
-        if (v.idx === currIdx) {
+        if (v.id === currIdx) {
           // 삭제 처리 : i는 해당 배열순번
           localData.splice(i, 1);
 
-          // 리턴 true할 경우 종료!
+          // 리턴 true할 경우 종료
           return true;
         } /// if ///
       }); ////// some ///////
@@ -115,8 +115,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
   // 리턴 코드구역 /////////////////////
   return (
     <main className="cont">
-      <h1 className="tit">Posts</h1>
-      <h2 className="tit">게시판</h2>
+      <h2 className="tit">게시판 수정</h2>
       <table className="dtblview readone">
       <tbody>
           <tr>
@@ -162,10 +161,6 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 defaultValue={selData.content}
               ></textarea>
             </td>
-          </tr>
-          <tr>
-            {/* <td>Attachment</td> */}
-            <td></td>
           </tr>
         </tbody>
       </table>

@@ -18,8 +18,7 @@ function Read({ setMode, selRecord }) {
   // 리턴 코드구역 ///////////////////
   return (
     <main className="cont">
-      <h1 className="tit">Posts</h1>
-      <h2 className="tit">게시판</h2>
+      <h2 className="tit">게시판 읽기</h2>
       <table className="dtblview readone">
         <tbody>
           <tr>
@@ -68,10 +67,6 @@ function Read({ setMode, selRecord }) {
               ></textarea>
             </td>
           </tr>
-          <tr>
-            {/* <td>Attachment</td> */}
-            <td></td>
-          </tr>
         </tbody>
       </table>
       <br />
@@ -100,7 +95,6 @@ function Read({ setMode, selRecord }) {
                       }}
                     >
                       수정하기
-                      {console.log(selData.user_id)}
                     </button>
                   )
               }

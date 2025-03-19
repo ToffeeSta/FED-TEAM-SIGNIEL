@@ -5,7 +5,12 @@ import { users } from "../../../js/data/users";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
+function Write({
+  setMode,
+  totalCount,
+  setPageNum,
+  pgPgNum,
+}) {
   // setMode - 모든 변경 상태변수 setter
   // totalCount - 전체 개수 참조변수 (글쓰기시 카운트 1증가!)
 
@@ -13,7 +18,9 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
   const myCon = useContext(sCon);
   //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
 
-  const loginUser = JSON.parse(sessionStorage.getItem("users"));
+  const loginUser = JSON.parse(
+    sessionStorage.getItem("users")
+  );
 
   const selUser = users.find((u) => u.id === loginUser.id);
 
@@ -75,7 +82,8 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
         content: content,
         created_at: today,
         hotel_id: 1,
-        post_type: document.querySelector('.sel-type').value,
+        post_type:
+          document.querySelector(".sel-type").value,
         rating: null,
         user_id: selUser.id,
       };
@@ -85,7 +93,10 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
@@ -124,7 +135,6 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
                   name="sel-type"
                   id="sel-type"
                   className="sel-type"
-                  
                 >
                   <option value="review">Review</option>
                   <option value="Q&A">Q&amp;A</option>
@@ -132,21 +142,29 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
               </div>
             </td>
           </tr>
+          {/* 별점 등록 기능 */}
           <tr>
             <td>
-              
+              별점기능 공간
             </td>
           </tr>
           <tr>
             {/* <td>Title</td> */}
             <td>
-              <input type="text" className="subject" placeholder="제목을 입력해주세요"/>
+              <input
+                type="text"
+                className="subject"
+                placeholder="제목을 입력해주세요"
+              />
             </td>
           </tr>
           <tr>
             {/* <td>Content</td> */}
             <td>
-              <textarea className="content" placeholder ="게시물을 작성해주세요"></textarea>
+              <textarea
+                className="content"
+                placeholder="게시물을 작성해주세요"
+              ></textarea>
             </td>
           </tr>
         </tbody>

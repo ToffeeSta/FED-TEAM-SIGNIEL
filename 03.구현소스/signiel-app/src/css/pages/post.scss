@@ -34,64 +34,6 @@ h2.tit {
   font-size: 2em;
 }
 
-// .post {
-//     color: #998465;
-//   }
-//   .post h1 {
-//     font-size: 4rem;
-//   }
-//   .post p {
-//     font-size: 3rem;
-//   }
-//   .post div {
-//     margin: 5% 5%;
-//     font-size: 2.2rem;
-//     display: flex;
-//     position: relative;
-//   }
-//   .post div span:nth-child(2) {
-//     margin-left: 5%;
-//   }
-//   .post div span:nth-child(3) {
-//     height: 1px;
-//     width: 20%;
-//     background-color: #998465;
-//     position: absolute;
-//     bottom: 0;
-//   }
-//   .post div span:nth-child(1)::after {
-//     content: "";
-//     display: block;
-//     width: 100%;
-//     border-bottom: 2px solid;
-//   }
-//   .post table {
-//     font-size: 2.5rem;
-//     margin-left: 5%;
-//     width: 100%;
-//     border-collapse: collapse;
-//   }
-//   .post table tr td:nth-of-type(1) {
-//     width: 20%;
-//   }
-//   .post table tr td:nth-of-type(2) {
-//     width: 40%;
-//   }
-//   .post table tr td:nth-of-type(3) {
-//     width: 20%;
-//   }
-//   .post table tr td:nth-of-type(3) {
-//     width: 20%;
-//   }
-//   .post table td {
-//     border-top: 1px solid #998465;
-//     border-bottom: 1px solid #998465;
-//   }
-//   .post table th {
-//     border-top: 1px solid #5d492c;
-//     background-color: #E0D8C6;
-//   }
-
 .selbx {
   // max-width: 100%;
   // width: 1400px;
@@ -422,6 +364,30 @@ textarea {
 textarea::placeholder {
   padding: 10px;
 }
+
+// 검색과 초기화 버튼
+button.sbtn{
+  color: #765e3b;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0d8c6;
+  font-size: 15px;
+  height: 3.5vh;
+  width: 4.5vw;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+// 검색창
+input.stxt{
+  border: 1.5px solid #765e3b;
+  border-radius: 10px;
+  height: 2.5vh;
+  width: 15vw;
+}
+
 //////////////////////////////// 게시물 공통 ////////////////////////////////
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
@@ -438,6 +404,7 @@ input.kategorie {
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
+//////////////////////////////// 미디어 쿼리 ////////////////////////////////
 @media screen and (max-width: 700px) {
   /* 보기 모드 공통 */
   .cont .dtblview {
@@ -452,3 +419,4 @@ input.kategorie {
     width: calc(90vw - 64px);
   }
 }
+//////////////////////////////// 미디어 쿼리 ////////////////////////////////

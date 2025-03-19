@@ -3,6 +3,9 @@
 import React, { useContext, Fragment } from "react";
 import { sCon } from "../sCon";
 
+// 제이쿼리 불러오기 ///
+import $ from "jquery";
+
 function List({
   selData, // 선택된 배열데이터 전달
   setMode, // 모든 변경 상태변수 setter
@@ -22,23 +25,24 @@ function List({
   setOrder, // 정렬 상태변수 setter
   sortCta, // 정렬기준 상태변수 getter
   setSortCta, // 정렬기준 상태변수 setter
+  initVariables, // 변수초기화함수
 }) {
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  console.log("List에서 isLoggedIn:", myCon.isLoggedIn);
+  // console.log("List에서 isLoggedIn:", myCon.isLoggedIn);
 
   // console.log('선택데이터:',selData);
 
   // [ 페이징 관련 변수값 셋팅하기 ] ////
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
-  // -> 나머지가 있으면 페이지를 하나더해준다!
-  let pagingCount = Math.floor(totalCount.current / unitSize);
-  console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
-  console.log("나머지연산:", totalCount.current % unitSize);
+  let pagingCount = Math.floor(
+    totalCount.current / unitSize
+  );
+  // console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
+  // console.log("나머지연산:", totalCount.current % unitSize);
 
-  // 2. 나머지가 있으면 페이징 개수 1증가!
-  // 앞수 % 뒷수 = 0 이면 나누어 떨어짐!
+  // 2. 나머지가 있으면 페이징 개수 1증가
   if (totalCount.current % unitSize > 0) {
     pagingCount++;
   } /// if ///
@@ -53,15 +57,13 @@ function List({
     pgPgLimit++;
   } /// if ///
 
-  console.log("페이징의 페이징 한계수:", pgPgLimit);
+  // console.log("페이징의 페이징 한계수:", pgPgLimit);
 
   /*********************************** 
         페이징코드 리턴 함수
   ***********************************/
   const pagingCode = () => {
     // [ (1) 리턴 코드 담을 배열변수 ]
-    // -> 배열값으로 JSX문법의 코드가 들어가므로
-    // 배열을 리턴해도 출력되는것은 변환된 코드가 나온다!
     let hcode = [];
 
     // [ (2) 페이징의 페이징for문의 시작값, 한계값 셋팅하기 ]
@@ -71,15 +73,9 @@ function List({
     let limitNum = pgPgSize * pgPgNum.current;
     // 주의:pgPgNum은 참조변수니까 pgPgNum.current로 사용해야함!
 
-    // ((시작값 : 한계값 계산샘플)) : pgPgSize 가 3일 경우
-    // for (let i = 0; i < 3; i++){} -> 1,2,3
-    // for (let i = 3; i < 6; i++){} -> 4,5,6
-    // for (let i = 6; i < 9; i++){} -> 7,8,9
-    // for (let i = 9; i < 12; i++){} -> 10,11,12
-
     // [ (3) 앞번호 앞에 이전 페이징구역 이동버튼 출력하기 ]
-    // 페이징의 페이징번호가 1이 아닐때만 출력하기!!!
-    // pgPgNum은 참조변수니까 current로 읽기!
+    // 페이징의 페이징번호가 1이 아닐때만 출력하기
+    // pgPgNum은 참조변수니까 current로 읽기
     if (pgPgNum.current !== 1)
       hcode.push(
         <Fragment key="-1">
@@ -94,7 +90,7 @@ function List({
               setPageNum(1);
             }}
           >
-            «{"     "}
+            «{" "}
           </a>
           {/* 이전 페이징으로 이동하기 */}
           <a
@@ -115,12 +111,12 @@ function List({
       );
 
     // [ (4) for문으로 페이징 코드 생성하기 ] ////
-    // 반복코드를 생성할 경우 key속성을 셋팅함이 필수임!
-    // 이때 빈태그로는 속성셋팅 안되므로 <Fragment>를 사용!
+    // 반복코드를 생성할 경우 key속성을 셋팅함이 필수
+    // 이때 빈태그로는 속성셋팅 안되므로 <Fragment>를 사용
     for (let i = initNum; i < limitNum; i++) {
       // (( 중요!!! ))
-      // 마지막 한계번호보다 크면 for문을 빠져나가야한다!!!
-      // 즉, pagingCount 가 마지막 페이지 번호다!
+      // 마지막 한계번호보다 크면 for문을 빠져나가야한다
+      // pagingCount 가 마지막 페이지 번호
       if (i + 1 > pagingCount) break;
 
       // 반복코드로 배열에 추가하기 ////
@@ -144,9 +140,11 @@ function List({
             )
           }
           {
-            // 마지막 번호 뒤에 바(|)는 출력안되게함!
-            // 동시에 페이징 마지막 번호가 아닐때만 출력!
-            i < limitNum - 1 && i + 1 !== pagingCount && " | "
+            // 마지막 번호 뒤에 바(|)는 출력X
+            // 동시에 페이징 마지막 번호가 아닐때만 출력
+            i < limitNum - 1 &&
+              i + 1 !== pagingCount &&
+              " | "
           }
         </Fragment>
       );
@@ -203,18 +201,61 @@ function List({
     <main className="cont">
       {/* <h1 className="tit">Posts</h1> */}
       <h2 className="tit">게시판</h2>
+      {/* 검색필터 */}
       <div className="selbx list">
-        <select name="cta" id="cta" className="cta">
+        <select
+          name="cta"
+          id="cta"
+          className="cta"
+          defaultValue={keyword.cta}
+        >
           <option value="tit">Title</option>
           <option value="cont">Contents</option>
           <option value="unm">Writer</option>
         </select>
-        <input id="stxt" type="text" maxLength="50" />
+        
+        {/* 검색창 */}
+        <input
+          id="stxt"
+          className="stxt"
+          type="text"
+          // maxLength="80"
+          defaultValue={keyword.kw}
+          onKeyUp={(e) => {
+            // 엔터를 친 경우 ///
+            if (e.key === "Enter")
+              e.target.nextElementSibling.click();
+            // 다음 형제요소인 버튼 클릭이벤트 발생!
+
+            // 페이지, 페이징 모두 초기화
+            setPageNum(1);
+            pgPgNum.currnt = 1;
+          }}
+        />
+        {/* 검색버튼 */}
         <button className="sbtn">Search</button>
-        <select name="sort_cta" id="sort_cta" className="sort_cta">
+        <select
+          name="sort_cta"
+          id="sort_cta"
+          className="sort_cta"
+        >
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
         </select>
+         {/* 초기화버튼 */}
+         <button
+          className="sbtn"
+          onClick={() => {
+            // 1.검색어 비우기
+            $("#stxt").val("");
+            // 2.검색선택 초기화
+            $("#cta").val("title");
+            // 3.초기화 함수호출
+            initVariables();
+          }}
+        >
+          Reset
+        </button>
         <select
           name="sel_type"
           id="sel_type"
@@ -274,7 +315,11 @@ function List({
                 {[...Array(5)].map((_, i) => {
                   if (i < Math.floor(v.rating)) {
                     return (
-                      <img key={i} src="/images/common/rating.png" alt="별" />
+                      <img
+                        key={i}
+                        src="/images/common/rating.png"
+                        alt="별"
+                      />
                     );
                   } else if (
                     i === Math.floor(v.rating) &&
