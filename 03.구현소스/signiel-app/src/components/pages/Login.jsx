@@ -136,7 +136,7 @@ function Login({ setIsLoggedIn }) {
               <Link to="/signup">회원가입</Link>
             </li>
             <li className="center" style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>
+              <button className="lbtn" onClick={onSubmit}>
                 로그인
               </button>
             </li>

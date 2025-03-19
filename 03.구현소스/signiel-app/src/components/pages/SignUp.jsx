@@ -275,7 +275,7 @@ function SignUp() {
               <Link to="/login">로그인</Link>
             </li>
             <li className="center" style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>
+              <button className="lbtn" onClick={onSubmit}>
                 가입하기
               </button>
             </li>
