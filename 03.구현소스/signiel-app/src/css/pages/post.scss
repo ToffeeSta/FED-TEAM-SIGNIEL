@@ -196,6 +196,15 @@ h2.tit {
   color: #765e3b;
 }
 
+// 별점
+.dtbl tbody .rating {
+  @include flex(center,center);
+  img{
+    width: 15px;
+  }
+
+}
+
 // .dtbl tbody tr:last-child td {
 //   /*테이블본문의 마지막 줄 tr 의 td 밑줄변경*/
 //   text-align: center;

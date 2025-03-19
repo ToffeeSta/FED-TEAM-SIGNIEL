@@ -25,7 +25,7 @@ function List({
 }) {
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  console.log('List에서 isLoggedIn:',myCon.isLoggedIn);
+  console.log("List에서 isLoggedIn:", myCon.isLoggedIn);
 
   // console.log('선택데이터:',selData);
 
@@ -33,13 +33,8 @@ function List({
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
   // -> 나머지가 있으면 페이지를 하나더해준다!
-  let pagingCount = Math.floor(
-    totalCount.current / unitSize
-  );
-  console.log(
-    "전체 레코드수 / 페이지당 개수:",
-    pagingCount
-  );
+  let pagingCount = Math.floor(totalCount.current / unitSize);
+  console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
   console.log("나머지연산:", totalCount.current % unitSize);
 
   // 2. 나머지가 있으면 페이징 개수 1증가!
@@ -151,9 +146,7 @@ function List({
           {
             // 마지막 번호 뒤에 바(|)는 출력안되게함!
             // 동시에 페이징 마지막 번호가 아닐때만 출력!
-            i < limitNum - 1 &&
-              i + 1 !== pagingCount &&
-              " | "
+            i < limitNum - 1 && i + 1 !== pagingCount && " | "
           }
         </Fragment>
       );
@@ -218,11 +211,7 @@ function List({
         </select>
         <input id="stxt" type="text" maxLength="50" />
         <button className="sbtn">Search</button>
-        <select
-          name="sort_cta"
-          id="sort_cta"
-          className="sort_cta"
-        >
+        <select name="sort_cta" id="sort_cta" className="sort_cta">
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
         </select>
@@ -281,7 +270,34 @@ function List({
               </td>
               <td>{v.user_name}</td>
               <td>{v.created_at}</td>
-              <td>{v.rating}</td>
+              <td className="rating">
+                {[...Array(5)].map((_, i) => {
+                  if (i < Math.floor(v.rating)) {
+                    return (
+                      <img key={i} src="/images/common/rating.png" alt="별" />
+                    );
+                  } else if (
+                    i === Math.floor(v.rating) &&
+                    v.rating % 1 >= 0.5
+                  ) {
+                    return (
+                      <img
+                        key={i}
+                        src="/images/common/rating_half.png"
+                        alt="반쪽 별"
+                      />
+                    );
+                  } else {
+                    return (
+                      <img
+                        key={i}
+                        src="/images/common/rating_empty.png"
+                        alt="빈 별"
+                      />
+                    );
+                  }
+                })}
+              </td>
               <td>{v.post_type}</td>
               <td>{v.hotel_name}</td>
             </tr>
