@@ -1,3 +1,76 @@
 // SIGNIEL 배너모듈 CSS - banner.scss
 
+.banner {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  max-width: none;
+}
 
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner aside {
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  text-align: right;
+  line-height: 15vh;
+  margin-right: 4vw;
+  margin-bottom: 5vh;
+}
+
+.banner aside h2 {
+  font-size: 100px;
+  letter-spacing: 5px;
+}
+
+.banner aside h6 {
+  line-height: 6vh;
+  font-size: 30px;
+}
+
+// 테블릿 미디어쿼리
+@media (max-width: 1023px) {
+  .banner aside {
+    bottom: 30vh;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .banner aside h2 {
+    font-size: 60px;
+    line-height: 13vh;
+  }
+
+  .banner aside h6 {
+    line-height: 4vh;
+    font-size: 20px;
+  }
+}
+
+// 모바일 미디어쿼리
+@media (max-width: 414px) {
+  .banner aside {
+    right: 35px;
+    bottom: 35vh;
+    text-align: left;
+    margin-left: 6vw;
+    margin-right: 11vw;
+  }
+
+  .banner aside h2 {
+    font-size: 40px;
+    line-height: 6vh;
+  }
+
+  .banner aside h6 {
+    line-height: 4vh;
+    font-size: 15px;
+  }
+}
