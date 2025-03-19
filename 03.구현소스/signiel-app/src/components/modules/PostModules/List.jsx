@@ -283,7 +283,6 @@ function List({
               type === 'review' &&
             <th>rank</th>
             }
-            <th>type</th>
             <th>Hotel</th>
           </tr>
         </thead>
@@ -349,7 +348,6 @@ function List({
                 })}
               </td>
             }
-              <td>{v.post_type}</td>
               <td>{v.hotel_name}</td>
             </tr>
           ))}
