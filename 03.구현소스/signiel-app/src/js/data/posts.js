@@ -16,7 +16,7 @@ export const posts = [
     user_id: 1, // 유저 이름
     hotel_id: 1, // 호텔이름
     post_type: "review",
-    rating: 5,
+    rating: 4.5,
     title: "방이 넓고 깨끗해요!",
     content: "서울 호텔 너무 좋았어요!",
     created_at: "2025-03-01",

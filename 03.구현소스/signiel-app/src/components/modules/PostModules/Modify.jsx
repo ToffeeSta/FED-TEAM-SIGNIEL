@@ -121,14 +121,24 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       <tbody>
           <tr>
             {/* <td>Name</td> */}
-            <td>
-              <input
-                type="text"
-                className="name"
-                size="20"
-                readOnly={true}
-                defaultValue={selData.user_name}
-              />
+            <td className="name-type-box">
+              <div className="selbox-name">
+                <input
+                  type="text"
+                  className="name"
+                  readOnly={true}
+                  defaultValue={selData.user_name}
+                />
+              </div>
+              <div className="selbox-write">
+                <input
+                  type="text"
+                  id="sel-type"
+                  className="sel-type"
+                  readOnly={true}
+                  defaultValue={selData.post_type}
+                />
+              </div>
             </td>
           </tr>
           <tr>
@@ -163,16 +173,16 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       <table className="dtbl btngrp">
         <tbody>
           <tr>
-            <td>
-              <button onClick={submitFn}>Submit</button>
-              <button onClick={deleteFn}>Delete</button>
+            <td className="write-page-button">
+              <button onClick={submitFn}>수정하기</button>
+              <button onClick={deleteFn}>삭제하기</button>
               <button
                 onClick={() => {
                   // 리스트 모드('L')로 변경하기
                   setMode("L");
                 }}
               >
-                List
+                리스트
               </button>
             </td>
           </tr>

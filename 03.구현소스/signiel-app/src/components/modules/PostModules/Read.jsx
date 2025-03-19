@@ -24,22 +24,24 @@ function Read({ setMode, selRecord }) {
         <tbody>
           <tr>
             {/* <td>Name</td> */}
-            <td>
-              <input
-                type="text"
-                className="name"
-                readOnly={true}
-                defaultValue={selData.user_name}
-              />
-            </td>
-            {/* <td>Kategorie</td> */}
-            <td>
-              <input
-                type="text"
-                className="kategorie"
-                readOnly={true}
-                defaultValue={selData.post_type}
-              />
+            <td className="name-type-box">
+              <div className="selbox-name">
+                <input
+                  type="text"
+                  className="name"
+                  readOnly={true}
+                  defaultValue={selData.user_name}
+                />
+              </div>
+              <div className="selbox-write">
+                <input
+                  type="text"
+                  id="sel-type"
+                  className="sel-type"
+                  readOnly={true}
+                  defaultValue={selData.post_type}
+                />
+              </div>
             </td>
           </tr>
           <tr>
@@ -76,14 +78,14 @@ function Read({ setMode, selRecord }) {
       <table className="dtbl btngrp">
         <tbody>
           <tr>
-            <td>
+            <td className="write-page-button">
               <button
                 onClick={() => {
                   // 리스트 모드('L')로 변경하기
                   setMode("L");
                 }}
               >
-                List
+                리스트
               </button>
               {
                 // 로그인한 사용자가 글쓴이와 같은 아이디일 경우
@@ -97,7 +99,7 @@ function Read({ setMode, selRecord }) {
                         setMode("M");
                       }}
                     >
-                      Modify
+                      수정하기
                       {console.log(selData.user_id)}
                     </button>
                   )

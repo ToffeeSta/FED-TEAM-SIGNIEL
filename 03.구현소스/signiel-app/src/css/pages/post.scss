@@ -198,11 +198,10 @@ h2.tit {
 
 // 별점
 .dtbl tbody .rating {
-  @include flex(center,center);
-  img{
+  @include flex(center, center);
+  img {
     width: 15px;
   }
-
 }
 
 // .dtbl tbody tr:last-child td {
@@ -216,7 +215,7 @@ h2.tit {
   padding-left: 2vw;
 }
 
-td.write-page-button{
+td.write-page-button {
   text-align: center;
   padding-top: 0;
   padding-bottom: 5vh;
@@ -340,12 +339,32 @@ td.write-page-button{
 }
 
 .name-type-box div {
-  padding: 0 1vw;
+  // padding-right: 1vw;
 }
 
 // 유저 이름 박스 영역
-input.name{
+input.name {
   height: 30px;
+  width: 23vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+  padding-right: 1vw;
+}
+
+div.selbox-name {
+  padding-right: 1vw;
+}
+
+div.selbox-write {
+  padding-left: 0.5vw;
+}
+
+// 게시물 타입 선택박스 영역
+select.sel-type {
+  height: 36px;
   width: 24vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
@@ -354,9 +373,8 @@ input.name{
   color: #765e3b;
 }
 
-// 게시물 타입 선택박스 영역
-select.sel-type{
-  height: 36px;
+input.sel-type {
+  height: 30px;
   width: 24vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
@@ -396,7 +414,7 @@ textarea::placeholder {
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
-input.kategorie{
+input.kategorie {
   height: 36px;
   width: 24vw;
   border: 2px solid #9f9587;
@@ -405,7 +423,6 @@ input.kategorie{
   font-family: "Pretendard-Regular";
   color: #765e3b;
 }
-
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 

@@ -110,7 +110,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
           <tr>
             {/* <td>Name</td> */}
             <td className="name-type-box">
-              <div>
+              <div className="selbox-name">
                 <input
                   type="text"
                   className="name"
@@ -119,7 +119,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
                   defaultValue={selUserName}
                 />
               </div>
-              <div className="selbox write">
+              <div className="selbox-write">
                 <select
                   name="sel-type"
                   id="sel-type"
