@@ -5,12 +5,7 @@ import { users } from "../../../js/data/users";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function Write({
-  setMode,
-  totalCount,
-  setPageNum,
-  pgPgNum,
-}) {
+function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
   // setMode - 모든 변경 상태변수 setter
   // totalCount - 전체 개수 참조변수 (글쓰기시 카운트 1증가!)
 
@@ -18,9 +13,7 @@ function Write({
   const myCon = useContext(sCon);
   //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
 
-  const loginUser = JSON.parse(
-    sessionStorage.getItem("users")
-  );
+  const loginUser = JSON.parse(sessionStorage.getItem("users"));
 
   const selUser = users.find((u) => u.id === loginUser.id);
 
@@ -82,9 +75,8 @@ function Write({
         content: content,
         created_at: today,
         hotel_id: 1,
-        post_type:
-          document.querySelector(".sel-type").value,
-        rating: null,
+        post_type: document.querySelector(".sel-type").value,
+        rating: document.querySelector("#sel-star").value,
         user_id: selUser.id,
       };
       console.log("입력데이터:", data);
@@ -93,10 +85,7 @@ function Write({
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem(
-        "posts",
-        JSON.stringify(localData)
-      );
+      localStorage.setItem("posts", JSON.stringify(localData));
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
@@ -135,6 +124,13 @@ function Write({
                   name="sel-type"
                   id="sel-type"
                   className="sel-type"
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    let tgEl = $(".star-section");
+                    if (e.target.value === "Q&A")
+                      tgEl.hide();
+                    else tgEl.show();
+                  }}
                 >
                   <option value="review">Review</option>
                   <option value="Q&A">Q&amp;A</option>
@@ -143,9 +139,28 @@ function Write({
             </td>
           </tr>
           {/* 별점 등록 기능 */}
-          <tr>
+          <tr
+            className="star-section"
+            onLoad={(e) => {
+              let tgEl = document.querySelector(".sel-type");
+              if (tgEl.value === "Q&A") e.tgEl.style.display = "table-row";
+              else e.tgEl.style.display = "none";
+            }}
+          >
             <td>
-              별점기능 공간
+              <label htmlFor="sel-star">별점주기</label>
+              <select name="sel-star" id="sel-star" className="sel-star">
+                <option>0.5</option>
+                <option>1</option>
+                <option>1.5</option>
+                <option>2</option>
+                <option>2.5</option>
+                <option>3</option>
+                <option>3.5</option>
+                <option>4</option>
+                <option>4.5</option>
+                <option>5</option>
+              </select>
             </td>
           </tr>
           <tr>

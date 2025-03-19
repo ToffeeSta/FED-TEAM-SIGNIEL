@@ -279,7 +279,10 @@ function List({
             <th>Title</th>
             <th>Writer</th>
             <th>Date</th>
+            {
+              type === 'review' &&
             <th>rank</th>
+            }
             <th>type</th>
             <th>Hotel</th>
           </tr>
@@ -311,6 +314,8 @@ function List({
               </td>
               <td>{v.user_name}</td>
               <td>{v.created_at}</td>
+              {
+              type === 'review' &&
               <td className="rating">
                 {[...Array(5)].map((_, i) => {
                   if (i < Math.floor(v.rating)) {
@@ -343,6 +348,7 @@ function List({
                   }
                 })}
               </td>
+            }
               <td>{v.post_type}</td>
               <td>{v.hotel_name}</td>
             </tr>

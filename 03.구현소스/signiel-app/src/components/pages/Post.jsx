@@ -207,6 +207,9 @@ function Post() {
           <Read
             setMode={setMode} // 모드 상태변수 setter
             selRecord={selRecord} // 선택데이터 참조변수
+            totalCount={totalCount} // 전체 개수 참조변수
+            setPageNum={setPageNum} // 리스트 페이지번호 setter
+            pgPgNum={pgPgNum} // 페이징의 페이징 번호
           />
         )
       }

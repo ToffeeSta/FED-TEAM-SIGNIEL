@@ -50,6 +50,8 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
           // 제목, 내용변경
           v.title = title;
           v.content = content;
+          // 별점수정하기
+          v.rating = $('#sel-star').val();
           // 해당 데이터를 만나면 빠져나감!
           return true;
         } /// if ///
@@ -138,6 +140,31 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   defaultValue={selData.post_type}
                 />
               </div>
+            </td>
+          </tr>{/* 별점 등록 기능 */}
+          <tr
+            className="star-section"
+            onLoad={(e) => {
+              let tgEl = document.querySelector(".sel-type");
+              if (tgEl.value === "Q&A") e.tgEl.style.display = "table-row";
+              else e.tgEl.style.display = "none";
+            }}
+          >
+            <td>
+              <label htmlFor="sel-star">별점주기</label>
+              <select name="sel-star" id="sel-star" className="sel-star"
+              defaultValue={selData.rating}>
+                <option>0.5</option>
+                <option>1</option>
+                <option>1.5</option>
+                <option>2</option>
+                <option>2.5</option>
+                <option>3</option>
+                <option>3.5</option>
+                <option>4</option>
+                <option>4.5</option>
+                <option>5</option>
+              </select>
             </td>
           </tr>
           <tr>
