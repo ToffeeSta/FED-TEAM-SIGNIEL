@@ -32,12 +32,12 @@
         @include flex(flex-end, center);
         
         ul {
-          @include flex(space-between, center);
+          @include flex(flex-end, center);
           gap: 10px;
           width: 150px;
           li {
             margin-top: 5px;
-            width: 47px;
+            width: 30px;
             img {
               width: 100%;
             }
