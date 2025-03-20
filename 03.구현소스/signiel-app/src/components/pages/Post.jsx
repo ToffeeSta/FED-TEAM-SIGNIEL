@@ -95,7 +95,7 @@ function Post() {
 
   // for문으로 모든 데이터 생성후 그 갯수를 다시 넣음
   totalCount.current = orgData.length;
-  console.log(orgData);
+  // console.log(orgData);
 
   // ★★★★★★★★★★★★★★★★★★★★★★★★ //
   // ★★★★★★ [ 데이터 필터링 하기 ] ★★★★★★ //
@@ -131,7 +131,7 @@ function Post() {
       )
       // 여기부터 검색어로 리스트 만들기
       .filter((v) => {
-        console.log(keyword.cta);
+        // console.log(keyword.cta);
         if (
           v[keyword.cta].toLowerCase().indexOf(keyword.kw.toLowerCase()) !== -1
         )
@@ -190,7 +190,7 @@ function Post() {
     // 데이터 골라담기! ///
     // selData.push(posts[i]);
 
-    console.log(finalData[i].post_type, type);
+    // console.log(finalData[i].post_type, type);
 
     const user = users.find((u) => u.id === finalData[i].user_id);
     const hotel = hotels.find((h) => h.id === finalData[i].hotel_id);

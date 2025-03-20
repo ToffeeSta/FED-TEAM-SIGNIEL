@@ -236,7 +236,7 @@ function List({
           onKeyUp={(e) => {
             // 엔터를 친 경우 ///
             if (e.key === "Enter") {
-              console.log("여기!");
+              // console.log("여기!");
               e.target.nextElementSibling.click();
               // 다음 형제요소인 버튼 클릭이벤트 발생!
 
@@ -307,6 +307,7 @@ function List({
                 <a
                   href="#"
                   onClick={(e) => {
+                    // console.log(e.target);
                     // 기본이동막기
                     e.preventDefault();
                     // 글보기모드('R')로 변경하기

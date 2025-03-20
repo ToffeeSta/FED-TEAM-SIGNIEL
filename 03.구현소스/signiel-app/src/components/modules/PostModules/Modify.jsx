@@ -12,7 +12,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
   // 선택된 참조변수 데이터 넣기
   const selData = selRecord.current;
-  console.log(selData);
+  // console.log(selData);
 
   // 글쓰기 저장 서브밋 함수 //////
   const submitFn = () => {
@@ -41,13 +41,13 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
       // 2) 수정할 현재 데이터 idx값(키값)
       let currId = selData.id;
-      console.log("수정할id:", currId, localData);
+      // console.log("수정할id:", currId, localData);
 
       // 3) 로컬스 객체화 데이터 배열을 find로 순회하여
       // 해당 idx만 찾아서 제목과 내용 변경하기
       localData.find((v) => {
         if (v.id === currId) {
-          console.log('고칠것!',v.id);
+          // console.log('고칠것!',v.id);
           // 제목, 내용변경
           v.title = title;
           v.content = content;
@@ -139,7 +139,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   id="sel-type"
                   className="sel-type"
                   onChange={(e) => {
-                    console.log(e.target.value);
+                    // console.log(e.target.value);
                     let tgEl = $(".star-section");
                     if (e.target.value === "Q&A")
                       tgEl.hide();

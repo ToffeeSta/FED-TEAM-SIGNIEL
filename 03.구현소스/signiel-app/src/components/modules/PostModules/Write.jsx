@@ -44,7 +44,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
 
       // 1-2) JSON.parse()로 배열객체로 변환
       localData = JSON.parse(localData);
-      console.log(localData);
+      // console.log(localData);
 
       // 1-3) 배열 데이터 idx값 읽어오기
       let totalIdx = localData.map((v) => v.id);
@@ -80,7 +80,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
         user_id: selUser.id,
         user_name: selUserName
       };
-      console.log("입력데이터:", data);
+      // console.log("입력데이터:", data);
 
       // 4) 입력 객체를 기존 로컬스 변환 객체에 추가하기
       localData.push(data);
@@ -126,7 +126,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
                   id="sel-type"
                   className="sel-type"
                   onChange={(e) => {
-                    console.log(e.target.value);
+                    // console.log(e.target.value);
                     let tgEl = $(".star-section");
                     if (e.target.value === "Q&A")
                       tgEl.hide();
