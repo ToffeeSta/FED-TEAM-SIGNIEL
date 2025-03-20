@@ -321,7 +321,7 @@ function List({
                     return (
                       <img
                         key={i}
-                        src="/images/common/rating.png"
+                        src={process.env.PUBLIC_URL +"/images/common/rating.png"}
                         alt="별"
                       />
                     );
@@ -332,7 +332,7 @@ function List({
                     return (
                       <img
                         key={i}
-                        src="/images/common/rating_half.png"
+                        src={process.env.PUBLIC_URL +"/images/common/rating_half.png"}
                         alt="반쪽 별"
                       />
                     );
@@ -340,7 +340,7 @@ function List({
                     return (
                       <img
                         key={i}
-                        src="/images/common/rating_empty.png"
+                        src={process.env.PUBLIC_URL +"/images/common/rating_empty.png"}
                         alt="빈 별"
                       />
                     );

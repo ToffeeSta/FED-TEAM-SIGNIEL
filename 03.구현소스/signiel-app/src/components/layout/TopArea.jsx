@@ -30,7 +30,7 @@ export default function TopArea({ isLoggedIn, setIsLoggedIn }) {
           {/* 로고 */}
           <div className="logo">
             <Link to="/">
-              <img src="/images/logo/logo.png" alt="Logo" />
+              <img src={process.env.PUBLIC_URL +"/images/logo/logo.png"} alt="Logo" />
             </Link>
           </div>
 
