@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../../css/modules/reserv_search.scss";
+import DatePicker from "react-datepicker"; // react-datepicker 추가
+import "react-datepicker/dist/react-datepicker.css"; // 스타일 시트 추가
+import { ko } from "date-fns/locale"; // 한국어 로케일 추가
+import { format } from "date-fns"; // date-fns에서 format 함수 가져오기
 
 function ReservSearch({ onSearchChange }) {
   const [hotels, setHotels] = useState([]);
@@ -7,9 +11,9 @@ function ReservSearch({ onSearchChange }) {
   const [reservations, setReservations] = useState([]);
 
   const [selectedHotel, setSelectedHotel] = useState("");
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
-  const [guestCount, setGuestCount] = useState(1);
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
+  const [guestCount, setGuestCount] = useState(1);  // 예약 인원 상태
 
   useEffect(() => {
     setHotels(JSON.parse(localStorage.getItem("hotels")) || []);
@@ -43,15 +47,14 @@ function ReservSearch({ onSearchChange }) {
       (room) => !bookedRooms.includes(room.id) && guestCount <= room.max_guests
     );
 
-    const checkInDate = new Date(checkIn);
-    const checkOutDate = new Date(checkOut);
     const stayDuration = Math.ceil(
-      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+      (new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24)
     );
 
+    // 부모 컴포넌트에 상태 전달 (예약 인원 포함)
     onSearchChange({
-      checkIn,
-      checkOut,
+      checkIn: format(checkIn, "yyyy-MM-dd"),  // checkIn 값을 yyyy-MM-dd 형식으로 변환
+      checkOut: format(checkOut, "yyyy-MM-dd"), // checkOut 값을 yyyy-MM-dd 형식으로 변환
       stayDuration,
       hotel: selectedHotel,
       guests: guestCount,
@@ -77,37 +80,32 @@ function ReservSearch({ onSearchChange }) {
             ))}
           </select>
         </div>
+
         <div className="select-wrap">
           <label>체크인</label>
-          <input
-            type="date"
-            value={checkIn}
-            onChange={(e) => setCheckIn(e.target.value)}
-            min={new Date().toISOString().split("T")[0]}
-            max={
-              checkOut
-                ? new Date(new Date(checkOut).getTime() - 86400000)
-                    .toISOString()
-                    .split("T")[0]
-                : undefined
-            }
+          <DatePicker
+            selected={checkIn}
+            onChange={(date) => setCheckIn(date)}
+            minDate={new Date()}
+            maxDate={checkOut ? new Date(checkOut).setDate(new Date(checkOut).getDate() - 1) : undefined}
+            placeholderText="날짜를 선택하세요"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
           />
         </div>
+
         <div className="select-wrap">
           <label>체크아웃</label>
-          <input
-            type="date"
-            value={checkOut}
-            onChange={(e) => setCheckOut(e.target.value)}
-            min={
-              checkIn
-                ? new Date(new Date(checkIn).getTime() + 86400000)
-                    .toISOString()
-                    .split("T")[0]
-                : new Date().toISOString().split("T")[0]
-            }
+          <DatePicker
+            selected={checkOut}
+            onChange={(date) => setCheckOut(date)}
+            minDate={checkIn ? new Date(checkIn).setDate(new Date(checkIn).getDate() + 1) : new Date()}
+            placeholderText="날짜를 선택하세요"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
           />
         </div>
+
         <div className="select-wrap">
           <label>인원</label>
           <input
@@ -118,6 +116,7 @@ function ReservSearch({ onSearchChange }) {
             onChange={(e) => setGuestCount(Number(e.target.value))}
           />
         </div>
+
         <div className="search-btn" onClick={handleSearch}>
           <span>검색</span>
         </div>

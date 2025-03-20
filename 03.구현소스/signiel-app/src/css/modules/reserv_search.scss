@@ -5,7 +5,6 @@
   @include borderSet;
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
   background-color: #e7ded0;
   box-sizing: border-box;
   color: $color-main;
@@ -16,9 +15,10 @@
     text-align: center;
   }
   .inner-con {
-    @include flex(space-between, center);
+    @include flex(center, center);
     margin-top: 20px;
     padding: 0 20px;
+    gap: 50px;
 
     .select-wrap {
       display: flex;
@@ -27,6 +27,36 @@
         font-size: 16px;
         font-family: "Pretendard-SemiBold";
         margin-bottom: 10px;
+      }
+      .react-datepicker {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);        
+        
+        .react-datepicker__header {
+          background-color: $color-main;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          h2{
+            font-size: 18px;
+            color: white;
+          }
+          div{
+            color:white;
+          }
+        }
+        
+        .react-datepicker__day--selected {
+          background-color: #fdc56a;
+          color: white;
+        }
+        
+        .react-datepicker__day--today {
+          font-weight: bold;
+          background-color: #76afff;
+        }
+      }
+      .react-datepicker__triangle {
+        display: none; /* 삼각형 모양 제거 */
       }
     }
     .search-btn {

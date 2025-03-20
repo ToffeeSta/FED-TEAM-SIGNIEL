@@ -1,0 +1,51 @@
+@import "../common/core";
+@import "../common/variables";
+
+.roominfo-card {
+  @include borderSet;
+  margin: 0 auto;
+  background-color: #eee;
+  box-sizing: border-box;
+  color: $color-main;
+  margin-bottom: 10px;
+
+  .inner-con {
+    @include flex(center, center);
+    width: 95%;
+    margin: 0 auto;
+
+    p {
+      flex: 1;
+      font-size: 15px;
+    }
+    
+    .reserv-btn {
+      position: relative;
+      width: 100px;
+      height: 40px;
+      background: $color-main;
+      color: #fff;
+      font-size: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: #424242;
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.no-room {
+  text-align: center;
+  padding: 50px;
+  font-size: 24px;
+  font-family: "Pretendard-Bold";
+}
