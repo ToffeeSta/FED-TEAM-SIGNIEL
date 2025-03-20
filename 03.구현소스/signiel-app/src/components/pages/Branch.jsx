@@ -29,7 +29,7 @@ function Branch(props) {
         <div>
           <img
             className="maing_img"
-            src={"../../../images/branch/" + local + "/main.jpg"}
+            src={process.env.PUBLIC_URL +"../../../images/branch/" + local + "/main.jpg"}
             alt="메인"
           />
 
@@ -48,7 +48,7 @@ function Branch(props) {
       </div>
       <div className="main_02 main_0">
         <div>
-          <img src={"../../../images/branch/" + local + "/main_02.png"} />
+          <img src={process.env.PUBLIC_URL +"../../../images/branch/" + local + "/main_02.png"} />
         </div>
         <div>
           <div className="txt-inbox">
@@ -65,7 +65,7 @@ function Branch(props) {
       </div>
       <div className="main_03 main_0">
         <img
-          src={"../../../images/branch/" + local + "/main_03.png"}
+          src={process.env.PUBLIC_URL +"../../../images/branch/" + local + "/main_03.png"}
           alt="의자"
         />
 
@@ -86,7 +86,7 @@ function Branch(props) {
           </div>
         </span>
         <img
-          src={"../../../images/branch/" + local + "/main_04.png"}
+          src={process.env.PUBLIC_URL +"../../../images/branch/" + local + "/main_04.png"}
           alt="메인4"
         />
       </div>
@@ -100,7 +100,7 @@ function Branch(props) {
               <ul>
                 <li>
                   <img
-                    src="../../../images/branch/seoul/main_05_01.png"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/seoul/main_05_01.png"}
                     alt="메인5_1"
                   />
                   <h2>
@@ -116,7 +116,7 @@ function Branch(props) {
                 </li>
                 <li>
                   <img
-                    src="../../../images/branch/seoul/main_05_02.png"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/seoul/main_05_02.png"}
                     alt="메인5_2"
                   />
                   <h2>
@@ -132,7 +132,7 @@ function Branch(props) {
                 </li>
                 <li>
                   <img
-                    src="../../../images/branch/seoul/main_05_03.png"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/seoul/main_05_03.png"}
                     alt="메인5_3"
                   />
                   <h2>
@@ -184,7 +184,7 @@ function Branch(props) {
                   }}
                 >
                   <img
-                    src="../../../images/branch/seoul/main.jpg"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/seoul/main.jpg"}
                     alt="호텔서울"
                     title="호텔서울"
                   />
@@ -203,7 +203,7 @@ function Branch(props) {
                   }}
                 >
                   <img
-                    src="../../../images/branch/busan/hotel_busan.jpg"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/busan/hotel_busan.jpg"}
                     alt="호텔부산"
                     title="호텔부산"
                   />
@@ -222,7 +222,7 @@ function Branch(props) {
                   }}
                 >
                   <img
-                    src="../../../images/branch/jeju/hotel_jeju.jpg"
+                    src={process.env.PUBLIC_URL +"../../../images/branch/jeju/hotel_jeju.jpg"}
                     alt="호텔제주"
                     title="호텔제주"
                   />

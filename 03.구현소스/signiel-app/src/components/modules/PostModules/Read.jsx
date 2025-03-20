@@ -99,7 +99,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
               {[...Array(5)].map((_, i) => {
                 if (i < Math.floor(selData.rating)) {
                   return (
-                    <img key={i} src="/images/common/rating.png" alt="별" />
+                    <img key={i} src={process.env.PUBLIC_URL +"/images/common/rating.png"} alt="별" />
                   );
                 } else if (
                   i === Math.floor(selData.rating) &&
@@ -108,7 +108,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   return (
                     <img
                       key={i}
-                      src="/images/common/rating_half.png"
+                      src={process.env.PUBLIC_URL +"/images/common/rating_half.png"}
                       alt="반쪽 별"
                     />
                   );
@@ -116,7 +116,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   return (
                     <img
                       key={i}
-                      src="/images/common/rating_empty.png"
+                      src={process.env.PUBLIC_URL +"/images/common/rating_empty.png"}
                       alt="빈 별"
                     />
                   );

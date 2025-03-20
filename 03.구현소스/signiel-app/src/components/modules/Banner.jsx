@@ -16,7 +16,7 @@ function Banner() {
 
   return (
     <div className="banner">
-      <img src={selData.isrc} alt="배너" />
+      <img src={process.env.PUBLIC_URL +selData.isrc} alt="배너" />
       <aside>
         <h2>{selData.mTit}</h2>
         <h6>

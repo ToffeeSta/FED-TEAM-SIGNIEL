@@ -11,7 +11,7 @@ export default function FooterArea() {
         <div className="bottom-area">
           <div className="left-con">
             <div className="bottom-logo">
-              <img src="/images/logo/footer-logo.png" alt="" />
+              <img src={process.env.PUBLIC_URL +"/images/logo/footer-logo.png"} alt="" />
             </div>
             <div className="info">
               <p>
@@ -28,7 +28,7 @@ export default function FooterArea() {
                 <li>
                   <a href="/">
                     <img
-                      src="/images/logo/instagram_logo.png"
+                      src={process.env.PUBLIC_URL +"/images/logo/instagram_logo.png"}
                       alt="인스타 로고"
                     />
                   </a>
@@ -36,14 +36,14 @@ export default function FooterArea() {
                 <li>
                   <a href="/">
                     <img
-                      src="/images/logo/facebook_logo.png"
+                      src={process.env.PUBLIC_URL +"/images/logo/facebook_logo.png"}
                       alt="페이스북 로고"
                     />
                   </a>
                 </li>
                 <li>
                   <a href="/">
-                    <img src="/images/logo/x_logo.png" alt="X 로고" />
+                    <img src={process.env.PUBLIC_URL +"/images/logo/x_logo.png"} alt="X 로고" />
                   </a>
                 </li>
               </ul>
