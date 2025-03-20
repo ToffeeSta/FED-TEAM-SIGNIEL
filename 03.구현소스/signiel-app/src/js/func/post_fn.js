@@ -13,7 +13,18 @@
 ************************************/
 
 // 기초 데이터 제이슨 불러오기
-import {posts} from "../data/posts.js";
+import { posts } from "../data/posts.js";
+import { users } from "../data/users.js";
+
+// 사람 이름 정보가 직접 있어야 검색도 편하기 때문에
+// users정보에서 같은 id의 사람 이름을 추가로 넣어준다!
+posts.forEach((v) => {
+    v.user_name = users.find((vv) => {
+      if (v.user_id === vv.id) return true;
+    }).name;
+  });
+
+  console.log(posts);
 
 // [ 로컬쓰 클리어 ] /////////
 const clearPostData = () => {
@@ -25,10 +36,7 @@ const clearPostData = () => {
 const initPostData = () => {
   // 만약 로컬스 "mem-data"가 null이면 만들어준다!
   if (localStorage.getItem("posts") === null) {
-    localStorage.setItem(
-      "posts",
-      JSON.stringify(posts)
-    );
+    localStorage.setItem("posts", JSON.stringify(posts));
   }
 }; ///////////// initData /////////////////
 

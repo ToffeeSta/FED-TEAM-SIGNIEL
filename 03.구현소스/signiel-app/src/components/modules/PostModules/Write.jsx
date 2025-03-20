@@ -78,6 +78,7 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
         post_type: document.querySelector(".sel-type").value,
         rating: document.querySelector("#sel-star").value,
         user_id: selUser.id,
+        user_name: selUserName
       };
       console.log("입력데이터:", data);
 

@@ -97,20 +97,74 @@ function Post() {
   totalCount.current = orgData.length;
   console.log(orgData);
 
-  // [ 데이터 정렬 ] /////////////
-  orgData
-    // ((기준1))-> 최신날짜로 내림차순
-    .sort((a, b) =>
-      a.created_at > b.created_at
-        ? -1
-        : a.created_at < b.created_at
-        ? 1
-        : 0
-    )
-    // ((기준2))-> idx로 내림차순
-    .sort((a, b) =>
-      a.id > b.id ? -1 : a.id < b.id ? 1 : 0
-    );
+  // ★★★★★★★★★★★★★★★★★★★★★★★★ //
+  // ★★★★★★ [ 데이터 필터링 하기 ] ★★★★★★ //
+  // ★★★★★★★★★★★★★★★★★★★★★★★★ //
+
+  // 최종 데이터 담을 변수
+  let finalData;
+
+  // [ 전체 데이터 검색 및 정렬 ] /////////////
+  // [1] 검색어가 있는 경우 ////////
+  if (keyword.kw !== "") {
+    finalData = posts
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta] || a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta] || a.id < b.id
+          ? 1 * order
+          : // 하위조건추가 : 두값이 같지않은가?
+          a[sortCta] !== b[sortCta]
+          ? // 같지 않으면 0
+            0
+          : // 그밖에 두 값이 같은경우는?
+          // id항목으로 오름/내림차순정렬
+          a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : 0
+      )
+      // 여기부터 검색어로 리스트 만들기
+      .filter((v) => {
+        console.log(keyword.cta);
+        if (
+          v[keyword.cta].toLowerCase().indexOf(keyword.kw.toLowerCase()) !== -1
+        )
+          return true;
+      }); ////// filter ////////
+  } ///// if : 검색어가 있는 경우 /////////
+  else {
+    finalData = posts
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta]
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : // 하위조건추가 : 두값이 같지않은가?
+          a[sortCta] !== b[sortCta]
+          ? // 같지 않으면 0
+            0
+          : // 그밖에 두 값이 같은경우는?
+          // id항목으로 오름/내림차순정렬
+          a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : 0
+      );
+  } ///// else : 검색어가 없는 경우 ////////
+
+  // 전체 데이터 개수 업데이트 하기 /////
+  totalCount.current = finalData.length;
 
   // [ 일부 데이터만 선택하기 ]
   // -> 정렬후 상위 10개만 선택
@@ -136,98 +190,25 @@ function Post() {
     // 데이터 골라담기! ///
     // selData.push(posts[i]);
 
-    console.log(orgData[i].post_type, type);
+    console.log(finalData[i].post_type, type);
 
-    const user = users.find(
-      (u) => u.id === orgData[i].user_id
-    );
-    const hotel = hotels.find(
-      (h) => h.id === orgData[i].hotel_id
-    );
+    const user = users.find((u) => u.id === finalData[i].user_id);
+    const hotel = hotels.find((h) => h.id === finalData[i].hotel_id);
 
     selData.push({
-      id: orgData[i].id,
+      id: finalData[i].id,
       user_name: user ? user.name : "알 수 없음",
       hotel_name: hotel ? hotel.name : "알 수 없음",
-      post_type: orgData[i].post_type,
-      rating: orgData[i].rating,
-      title: orgData[i].title,
-      content: orgData[i].content,
-      created_at: orgData[i].created_at,
-      user_id: orgData[i].user_id,
+      post_type: finalData[i].post_type,
+      rating: finalData[i].rating,
+      title: finalData[i].title,
+      content: finalData[i].content,
+      created_at: finalData[i].created_at,
+      user_id: finalData[i].user_id,
     });
   } //////////// for : 선택데이터 담기
 
-  // 최종 데이터 담을 변수
-  let finalData;
-
-  // [ 전체 데이터 검색 및 정렬 ] /////////////
-  // [1] 검색어가 있는 경우 ////////
-  if (keyword.kw !== "") {
-    finalData = posts
-      // ((기준1))-> sortCta값에 따른 정렬
-      // 내림차순은 -1 * order변수값이 1일 경우
-      // 오름차순은 -1 * order변수값이 -1일 경우
-      //
-      .sort((a, b) =>
-        a[sortCta] > b[sortCta] || a.idx > b.idx
-          ? -1 * order
-          : a[sortCta] < b[sortCta] || a.idx < b.idx
-          ? 1 * order
-          : // 하위조건추가 : 두값이 같지않은가?
-          a[sortCta] !== b[sortCta]
-          ? // 같지 않으면 0
-            0
-          : // 그밖에 두 값이 같은경우는?
-          // idx항목으로 오름/내림차순정렬
-          a.idx > b.idx
-          ? -1 * order
-          : a[sortCta] < b[sortCta]
-          ? 1 * order
-          : 0
-      )
-      // 여기부터 검색어로 리스트 만들기
-      .filter((v) => {
-        if (
-          v[keyword.cta]
-            .toLowerCase()
-            .indexOf(keyword.kw.toLowerCase()) !== -1
-        )
-          return true;
-      }); ////// filter ////////
-  } ///// if : 검색어가 있는 경우 /////////
-  else {
-    finalData = posts
-      // ((기준1))-> sortCta값에 따른 정렬
-      // 내림차순은 -1 * order변수값이 1일 경우
-      // 오름차순은 -1 * order변수값이 -1일 경우
-      //
-      .sort((a, b) =>
-        a[sortCta] > b[sortCta]
-          ? -1 * order
-          : a[sortCta] < b[sortCta]
-          ? 1 * order
-          : // 하위조건추가 : 두값이 같지않은가?
-          a[sortCta] !== b[sortCta]
-          ? // 같지 않으면 0
-            0
-          : // 그밖에 두 값이 같은경우는?
-          // idx항목으로 오름/내림차순정렬
-          a.idx > b.idx
-          ? -1 * order
-          : a[sortCta] < b[sortCta]
-          ? 1 * order
-          : 0
-      );
-  } ///// else : 검색어가 없는 경우 ////////
-
-  // 전체 데이터 개수 업데이트 하기 /////
-  totalCount.current = finalData.length;
-
   // console.log("slice를 위한 시작값/끝값", initNum, "/", limitNum);
-
-  // [ slice() 배열 메서드를 이용한 부분값 가져오기 ]
-  // const selData = finalData.slice(initNum, limitNum);
 
   /************************************** 
     함수명 : searchFn
