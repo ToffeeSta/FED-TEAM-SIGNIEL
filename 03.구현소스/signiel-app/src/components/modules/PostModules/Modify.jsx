@@ -21,6 +21,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
     // 내용입력항목
     let content = $(".content").val().trim();
     // trim()으로 앞뒤공백 제거후 검사!
+    let post_type = $(".sel-type").val().trim();
 
     // (1) 공통 유효성검사
     // - 제목, 내용 모두 비었으면 리턴!
@@ -50,6 +51,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
           // 제목, 내용변경
           v.title = title;
           v.content = content;
+          v.post_type = post_type;
           // 별점수정하기
           v.rating = $('#sel-star').val();
           // 해당 데이터를 만나면 빠져나감!
@@ -132,13 +134,21 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 />
               </div>
               <div className="selbox-write">
-                <input
-                  type="text"
+                <select
+                  name="sel-type"
                   id="sel-type"
                   className="sel-type"
-                  readOnly={true}
-                  defaultValue={selData.post_type}
-                />
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    let tgEl = $(".star-section");
+                    if (e.target.value === "Q&A")
+                      tgEl.hide();
+                    else tgEl.show();
+                  }}
+                >
+                  <option value="review">Review</option>
+                  <option value="Q&A">Q&amp;A</option>
+                </select>
               </div>
             </td>
           </tr>{/* 별점 등록 기능 */}
