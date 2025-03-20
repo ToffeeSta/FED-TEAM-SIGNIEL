@@ -144,7 +144,7 @@ function List({
             // 동시에 페이징 마지막 번호가 아닐때만 출력
             i < limitNum - 1 &&
               i + 1 !== pagingCount &&
-              " | "
+              "  |  "
           }
         </Fragment>
       );
@@ -213,7 +213,28 @@ function List({
           <option value="cont">Contents</option>
           <option value="unm">Writer</option>
         </select>
-        
+
+        {/* 게시물 정렬 */}
+        <select
+          name="sort_cta"
+          id="sort_cta"
+          className="sort_cta"
+          value={order}
+          onChange={(e) => {
+            // 정렬값 반대로 변경하기
+            setOrder(order * -1);
+            // 변경시 변경한 선택값 반영하기
+            e.target.value = order;
+            // 첫 페이지로 이동
+            setPageNum(1);
+            // 페이징의 페이징구역 초기화
+            pgPgNum.current = 1;
+          }}
+        >
+          <option value="1">내림차순</option>
+          <option value="-1">오름차순</option>
+        </select>
+
         {/* 검색창 */}
         <input
           id="stxt"
@@ -232,18 +253,12 @@ function List({
             pgPgNum.currnt = 1;
           }}
         />
+
         {/* 검색버튼 */}
         <button className="sbtn">Search</button>
-        <select
-          name="sort_cta"
-          id="sort_cta"
-          className="sort_cta"
-        >
-          <option value="idx">Recent</option>
-          <option value="tit">Title</option>
-        </select>
-         {/* 초기화버튼 */}
-         <button
+
+        {/* 초기화버튼 */}
+        <button
           className="sbtn"
           onClick={() => {
             // 1.검색어 비우기
@@ -279,10 +294,7 @@ function List({
             <th>Title</th>
             <th>Writer</th>
             <th>Date</th>
-            {
-              type === 'review' &&
-            <th>rank</th>
-            }
+            {type === "review" && <th>rank</th>}
             <th>Hotel</th>
           </tr>
         </thead>
@@ -313,41 +325,40 @@ function List({
               </td>
               <td>{v.user_name}</td>
               <td>{v.created_at}</td>
-              {
-              type === 'review' &&
-              <td className="rating">
-                {[...Array(5)].map((_, i) => {
-                  if (i < Math.floor(v.rating)) {
-                    return (
-                      <img
-                        key={i}
-                        src="/images/common/rating.png"
-                        alt="별"
-                      />
-                    );
-                  } else if (
-                    i === Math.floor(v.rating) &&
-                    v.rating % 1 >= 0.5
-                  ) {
-                    return (
-                      <img
-                        key={i}
-                        src="/images/common/rating_half.png"
-                        alt="반쪽 별"
-                      />
-                    );
-                  } else {
-                    return (
-                      <img
-                        key={i}
-                        src="/images/common/rating_empty.png"
-                        alt="빈 별"
-                      />
-                    );
-                  }
-                })}
-              </td>
-            }
+              {type === "review" && (
+                <td className="rating">
+                  {[...Array(5)].map((_, i) => {
+                    if (i < Math.floor(v.rating)) {
+                      return (
+                        <img
+                          key={i}
+                          src="/images/common/rating.png"
+                          alt="별"
+                        />
+                      );
+                    } else if (
+                      i === Math.floor(v.rating) &&
+                      v.rating % 1 >= 0.5
+                    ) {
+                      return (
+                        <img
+                          key={i}
+                          src="/images/common/rating_half.png"
+                          alt="반쪽 별"
+                        />
+                      );
+                    } else {
+                      return (
+                        <img
+                          key={i}
+                          src="/images/common/rating_empty.png"
+                          alt="빈 별"
+                        />
+                      );
+                    }
+                  })}
+                </td>
+              )}
               <td>{v.hotel_name}</td>
             </tr>
           ))}

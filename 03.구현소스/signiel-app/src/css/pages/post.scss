@@ -219,14 +219,6 @@ td.write-page-button {
   justify-content: center;
   text-align: center;
 }
-/*첫째열*/
-.dtblview td:first-child {
-  // width: 100px;
-}
-/*둘째열*/
-.dtblview td:last-child {
-  // width: 650px;
-}
 
 .dtblview td {
   // border-bottom: 1px solid #765e3b;
@@ -234,8 +226,6 @@ td.write-page-button {
 }
 
 .dtblview td:first-child {
-  // width: 200px;
-  // background-color: #e0d8c6;
   text-align: center;
 }
 
@@ -286,7 +276,7 @@ td.write-page-button {
 
 // 유저 이름 박스 영역
 input.name {
-  height: 30px;
+  height: 35px;
   width: 23vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
@@ -306,8 +296,8 @@ div.selbox-write {
 
 // 게시물 타입 선택박스 영역
 select.sel-type {
-  height: 36px;
-  width: 24vw;
+  height: 40px;
+  width: 25vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
   font-size: 15px;
@@ -316,7 +306,7 @@ select.sel-type {
 }
 
 input.sel-type {
-  height: 30px;
+  height: 35px;
   width: 24vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
@@ -324,22 +314,11 @@ input.sel-type {
   font-family: "Pretendard-Regular";
   color: #765e3b;
 }
-
-input.sel-type{
-  height: 30px;
-  width: 24vw;
-  border: 2px solid #9f9587;
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: "Pretendard-Regular";
-  color: #765e3b;
-}
-
 
 
 // 제목 입력 박스 영역
 td .subject {
-  height: 30px;
+  height: 35px;
   width: 50vw;
   border: 2px solid #9f9587;
   border-radius: 10px;
@@ -392,14 +371,20 @@ input.stxt{
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
-input.kategorie {
-  height: 36px;
-  width: 24vw;
-  border: 2px solid #9f9587;
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: "Pretendard-Regular";
-  color: #765e3b;
+td.rating img{
+  width: 30px;
+}
+
+.rating{
+  text-align: left !important;
+}
+
+//////////////////////////////// 게시물 읽기 ////////////////////////////////
+
+//////////////////////////////// 게시물 읽기 ////////////////////////////////
+
+.star-section td{
+  text-align: left !important;
 }
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////

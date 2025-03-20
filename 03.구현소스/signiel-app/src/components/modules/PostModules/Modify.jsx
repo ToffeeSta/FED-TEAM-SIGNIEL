@@ -20,7 +20,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
     let title = $(".subject").val().trim();
     // 내용입력항목
     let content = $(".content").val().trim();
-    // trim()으로 앞뒤공백 제거후 검사!
+    // 게시물 타입 항목
     let post_type = $(".sel-type").val().trim();
 
     // (1) 공통 유효성검사

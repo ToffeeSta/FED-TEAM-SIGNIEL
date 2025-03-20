@@ -13,7 +13,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  console.log("Read에서 loginSts:", myCon.loginSts);
+  // console.log("Read에서 loginSts:", myCon.loginSts);
 
   // [ 삭제하는 함수 ] /////
   const deleteFn = () => {
