@@ -107,7 +107,7 @@ function Post() {
   // [ 전체 데이터 검색 및 정렬 ] /////////////
   // [1] 검색어가 있는 경우 ////////
   if (keyword.kw !== "") {
-    finalData = posts
+    finalData = orgData
       // ((기준1))-> sortCta값에 따른 정렬
       // 내림차순은 -1 * order변수값이 1일 경우
       // 오름차순은 -1 * order변수값이 -1일 경우
@@ -139,7 +139,7 @@ function Post() {
       }); ////// filter ////////
   } ///// if : 검색어가 있는 경우 /////////
   else {
-    finalData = posts
+    finalData = orgData
       // ((기준1))-> sortCta값에 따른 정렬
       // 내림차순은 -1 * order변수값이 1일 경우
       // 오름차순은 -1 * order변수값이 -1일 경우

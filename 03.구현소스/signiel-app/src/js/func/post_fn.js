@@ -24,7 +24,7 @@ posts.forEach((v) => {
     }).name;
   });
 
-  console.log(posts);
+  // console.log(posts);
 
 // [ 로컬쓰 클리어 ] /////////
 const clearPostData = () => {
