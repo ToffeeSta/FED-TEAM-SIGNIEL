@@ -2,24 +2,7 @@
 @import "../common/_core.scss";
 @import "../common/variables.scss";
 
-html,
-body {
-  font-size: 10px;
-}
-main {
-  width: 100%;
-}
-
-main > div {
-  overflow: hidden;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-main.cont {
-  min-height: calc(100vh - 58px - 210px);
-  // position: relative;
-}
+.post-cont{
 
 .cont {
   // height: 600px;
@@ -70,16 +53,7 @@ h2.tit {
 
 .dtbl td,
 .dtbl th {
-  /*여러개를 설정할때 컴마(,) 사용*/
   padding: 15px 10px;
-  /*위아래, 양쪽*/
-  /*
-		padding은 안쪽 공간-> 기존박스가 커짐
-		padding: 위 오른 아래 왼;(4개)
-		padding: 위 오른왼 아래;(3개)
-		padding: 위아래 오른왼;(2개)
-		padding: 모든방향;(1개)
-	*/
 }
 
 .tbody {
@@ -146,13 +120,6 @@ h2.tit {
     width: 15px;
   }
 }
-
-// .dtbl tbody tr:last-child td {
-//   /*테이블본문의 마지막 줄 tr 의 td 밑줄변경*/
-//   text-align: center;
-//   border-bottom: 1px solid #765e3b;
-// }
-
 .dtbl tbody tr td:nth-child(2) {
   text-align: left;
   padding-left: 2vw;
@@ -164,16 +131,7 @@ td.write-page-button {
   padding-bottom: 5vh;
 }
 
-/*
-	가상 클래스 중
-	:first-child - 첫번째 자식
-	:last-child - 두번째 자식
-	:nth-child(숫자) - 숫자번째 자식 (짝수 even, 홀수 odd 사용)
-	단, 자식 태그의 종류가 한가지 여야함~!!!!
-*/
-/*짝수번째 배경색 넣기*/
 .dtbl tbody tr:nth-child(even) td {
-  /*even 짝수, odd 홀수*/
   background-color: #f3f3f3;
 }
 
@@ -234,7 +192,7 @@ select.cta {
 
 .dtblview td {
   // border-bottom: 1px solid #765e3b;
-  padding: 8px;
+  padding: 8px 0px;
 }
 
 .dtblview td:first-child {
@@ -268,10 +226,6 @@ select.cta {
 .name-type-box {
   display: flex;
   justify-content: center;
-}
-
-.name-type-box div {
-  // padding-right: 1vw;
 }
 
 // 유저 이름 박스 영역
@@ -413,11 +367,49 @@ td.rating img {
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
+//////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
+@media screen and (max-width: 1023px) {
+  // list
+
+  // read, write, modify
+  td.name-type-box{
+    padding-left: 1vw;
+  }
+  
+  input.name {
+    width: 37vw;
+  }
+
+  select.sel-type {
+    width: 37vw;
+  }
+
+  input.sel-type {
+    width: 37vw;
+  }
+
+  .star-section td{
+    padding-left: 1vw;
+  }
+  select.sel-star {
+    width: 38.5vw;
+  }
+
+  td .subject {
+    width: 75vw;
+  }
+
+  textarea {
+    width: 75vw;
+  }
+}
+//////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
+
 //////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 414px) {
   /* 보기 모드 공통 */
   .cont .dtblview {
-    width: 90vw;
+    // width: 90vw;
   }
   .cont .dtblview td {
     width: auto;
@@ -425,7 +417,8 @@ td.rating img {
   }
   .cont .dtblview input,
   .cont .dtblview textarea {
-    width: calc(90vw - 64px);
+    // width: calc(90vw - 64px);
   }
 }
 //////////////////////////////// 미디어 쿼리 ////////////////////////////////
+}
