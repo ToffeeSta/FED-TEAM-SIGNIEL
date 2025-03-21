@@ -13,8 +13,8 @@
   background-color: #fff;
   transition: 0.5s;
   border-bottom: .7px solid #c1c1c1;
+
   .top-area {
-    width: 100%;
     @include flex(space-between, center);
     max-width: 1400px;
     padding: 0 15px;
@@ -132,6 +132,7 @@
 
     .top-area {
       position: relative;
+      height: 100%;
 
       .logo {
         position: absolute;
