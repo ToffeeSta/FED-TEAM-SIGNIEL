@@ -5,15 +5,33 @@ import { users } from "../../../js/data/users";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
+// 폰트 어썸 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
+
+function Write({
+  setMode,
+  totalCount,
+  setPageNum,
+  pgPgNum,
+}) {
   // setMode - 모든 변경 상태변수 setter
   // totalCount - 전체 개수 참조변수 (글쓰기시 카운트 1증가!)
+
+  // 폰트어썸 별모양
+  const element = (
+    <div>
+      <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B",}} />
+    </div>
+  );
 
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
   //   console.log("Write에서 isLoggedIn:", myCon.isLoggedIn);
 
-  const loginUser = JSON.parse(sessionStorage.getItem("users"));
+  const loginUser = JSON.parse(
+    sessionStorage.getItem("users")
+  );
 
   const selUser = users.find((u) => u.id === loginUser.id);
 
@@ -75,10 +93,11 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
         content: content,
         created_at: today,
         hotel_id: 1,
-        post_type: document.querySelector(".sel-type").value,
+        post_type:
+          document.querySelector(".sel-type").value,
         rating: document.querySelector("#sel-star").value,
         user_id: selUser.id,
-        user_name: selUserName
+        user_name: selUserName,
       };
       // console.log("입력데이터:", data);
 
@@ -86,7 +105,10 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
       localData.push(data);
 
       // 5) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 6) 전체 개수 참조변수 1증가하기
       totalCount.current++;
@@ -143,14 +165,20 @@ function Write({ setMode, totalCount, setPageNum, pgPgNum }) {
           <tr
             className="star-section"
             onLoad={(e) => {
-              let tgEl = document.querySelector(".sel-type");
-              if (tgEl.value === "Q&A") e.tgEl.style.display = "table-row";
+              let tgEl =
+                document.querySelector(".sel-type");
+              if (tgEl.value === "Q&A")
+                e.tgEl.style.display = "table-row";
               else e.tgEl.style.display = "none";
             }}
           >
             <td>
-              <label htmlFor="sel-star">별점주기</label>
-              <select name="sel-star" id="sel-star" className="sel-star">
+              <select
+                name="sel-star"
+                id="sel-star"
+                className="sel-star"
+              >
+                <option selected="#" value="0">별점을 선택해주세요</option>
                 <option>0.5</option>
                 <option>1</option>
                 <option>1.5</option>

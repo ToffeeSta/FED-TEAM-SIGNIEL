@@ -98,6 +98,7 @@ h2.tit {
 
 #board tbody tr td {
   color: #765e3b;
+  white-space: nowrap;
 }
 /*각 th별 가로크기지정 */
 // number
@@ -110,11 +111,11 @@ h2.tit {
 }
 // writer
 .dtbl th:nth-child(3) {
-  width: 10%;
+  width: 5%;
 }
 // date
 .dtbl th:nth-child(4) {
-  width: 10%;
+  width: 5%;
 }
 // rank
 .dtbl th:nth-child(5) {
@@ -122,12 +123,12 @@ h2.tit {
 }
 // type
 .dtbl th:nth-child(6) {
-  width: 8%;
+  width: 5%;
 }
 // hotel
-.dtbl th:nth-child(7) {
-  width: 10%;
-}
+// .dtbl th:nth-child(7) {
+//   width: 10%;
+// }
 
 .dtbl thead tr th {
   /*머리줄 th 윗줄*/
@@ -211,6 +212,17 @@ td.write-page-button {
   font-size: 15px;
 }
 
+select.cta {
+  width: 8vw;
+  height: 3vh;
+  font-weight: bold;
+  border: 1px solid #765e3b;
+  border-radius: 10px;
+  text-align: center;
+  color: #765e3b;
+  font-size: 15px;
+}
+
 /* 내용보기 */
 .dtblview {
   border-collapse: collapse;
@@ -227,18 +239,6 @@ td.write-page-button {
 
 .dtblview td:first-child {
   text-align: center;
-}
-
-/* 추가 첨부파일링크 */
-.dtblview td a,
-.dtblview td b {
-  font-size: 20px;
-  text-decoration: none;
-  color: #998465;
-}
-.dtblview td a:hover {
-  text-decoration: underline;
-  color: #f00;
 }
 
 /* 버튼그룹 */
@@ -287,7 +287,7 @@ input.name {
 }
 
 div.selbox-name {
-  padding-right: 1vw;
+  padding-right: 0.5vw;
 }
 
 div.selbox-write {
@@ -314,7 +314,6 @@ input.sel-type {
   font-family: "Pretendard-Regular";
   color: #765e3b;
 }
-
 
 // 제목 입력 박스 영역
 td .subject {
@@ -345,7 +344,7 @@ textarea::placeholder {
 }
 
 // 검색과 초기화 버튼
-button.sbtn{
+button.sbtn {
   color: #765e3b;
   border: none;
   border-radius: 10px;
@@ -360,22 +359,47 @@ button.sbtn{
 }
 
 // 검색창
-input.stxt{
+input.stxt {
   border: 1.5px solid #765e3b;
   border-radius: 10px;
   height: 2.5vh;
   width: 15vw;
 }
 
+// 별점
+label.sel-star {
+  padding-right: 10px;
+  font-size: 17px;
+  color: #765e3b;
+}
+
+td.rating {
+  border-spacing: 0px;
+  border-style: none;
+}
+
+select.sel-star {
+  height: 40px;
+  width: 24.5vw;
+  border: 2px solid #9f9587;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "Pretendard-Regular";
+  color: #765e3b;
+}
+
+select {
+  font-family: "FontAwesome", "Font Awesome 5 Free";
+}
 //////////////////////////////// 게시물 공통 ////////////////////////////////
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
-td.rating img{
+td.rating img {
   width: 30px;
 }
 
-.rating{
+.rating {
   text-align: left !important;
 }
 
@@ -383,13 +407,13 @@ td.rating img{
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
-.star-section td{
+.star-section td {
   text-align: left !important;
 }
 
 //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
-//////////////////////////////// 미디어 쿼리 ////////////////////////////////
+//////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
 @media screen and (max-width: 700px) {
   /* 보기 모드 공통 */
   .cont .dtblview {
