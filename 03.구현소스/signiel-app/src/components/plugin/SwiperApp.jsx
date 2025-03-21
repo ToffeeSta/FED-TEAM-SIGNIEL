@@ -49,7 +49,7 @@ export default function SwiperApp({local}) {
             <SwiperSlide key={i}>
               <div className="branch-banner">
                 <div className="banner-img">
-                  <img src={"../../../images/branch/"+local+"/banner/main"+(i+1)+".jpg"} />
+                  <img src={process.env.PUBLIC_URL+"/images/branch/"+local+"/banner/main"+(i+1)+".jpg"} />
                 </div>
                 <div className="banner-text">
                   <span>
