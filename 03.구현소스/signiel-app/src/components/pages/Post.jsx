@@ -3,6 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 // 제이쿼리 불러오기 ///
 import $ from "jquery";
 
+// 폰트 어썸 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // 게시판용 CSS 불러오기 ////
 import "../../css/pages/post.scss";
 
