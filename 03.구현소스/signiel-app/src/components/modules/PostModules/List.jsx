@@ -36,9 +36,7 @@ function List({
   // [ 페이징 관련 변수값 셋팅하기 ] ////
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
-  let pagingCount = Math.floor(
-    totalCount.current / unitSize
-  );
+  let pagingCount = Math.floor(totalCount.current / unitSize);
   // console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
   // console.log("나머지연산:", totalCount.current % unitSize);
 
@@ -142,9 +140,7 @@ function List({
           {
             // 마지막 번호 뒤에 바(|)는 출력X
             // 동시에 페이징 마지막 번호가 아닐때만 출력
-            i < limitNum - 1 &&
-              i + 1 !== pagingCount &&
-              " | "
+            i < limitNum - 1 && i + 1 !== pagingCount && "  |  "
           }
         </Fragment>
       );
@@ -203,17 +199,33 @@ function List({
       <h2 className="tit">게시판</h2>
       {/* 검색필터 */}
       <div className="selbx list">
-        <select
-          name="cta"
-          id="cta"
-          className="cta"
-          defaultValue={keyword.cta}
-        >
-          <option value="tit">Title</option>
-          <option value="cont">Contents</option>
-          <option value="unm">Writer</option>
+        <select name="cta" id="cta" className="cta" defaultValue={keyword.cta}>
+          <option value="title">Title</option>
+          <option value="content">Contents</option>
+          <option value="user_name">Writer</option>
         </select>
-        
+
+        {/* 게시물 정렬 */}
+        <select
+          name="sort_cta"
+          id="sort_cta"
+          className="sort_cta"
+          value={order}
+          onChange={(e) => {
+            // 정렬값 반대로 변경하기
+            setOrder(order * -1);
+            // 변경시 변경한 선택값 반영하기
+            e.target.value = order;
+            // 첫 페이지로 이동
+            setPageNum(1);
+            // 페이징의 페이징구역 초기화
+            pgPgNum.current = 1;
+          }}
+        >
+          <option value="1">내림차순</option>
+          <option value="-1">오름차순</option>
+        </select>
+
         {/* 검색창 */}
         <input
           id="stxt"
@@ -223,27 +235,25 @@ function List({
           defaultValue={keyword.kw}
           onKeyUp={(e) => {
             // 엔터를 친 경우 ///
-            if (e.key === "Enter")
+            if (e.key === "Enter") {
+              // console.log("여기!");
               e.target.nextElementSibling.click();
-            // 다음 형제요소인 버튼 클릭이벤트 발생!
+              // 다음 형제요소인 버튼 클릭이벤트 발생!
 
-            // 페이지, 페이징 모두 초기화
-            setPageNum(1);
-            pgPgNum.currnt = 1;
+              // 페이지, 페이징 모두 초기화
+              setPageNum(1);
+              pgPgNum.currnt = 1;
+            }
           }}
         />
+
         {/* 검색버튼 */}
-        <button className="sbtn">Search</button>
-        <select
-          name="sort_cta"
-          id="sort_cta"
-          className="sort_cta"
-        >
-          <option value="idx">Recent</option>
-          <option value="tit">Title</option>
-        </select>
-         {/* 초기화버튼 */}
-         <button
+        <button className="sbtn" onClick={searchFn}>
+          Search
+        </button>
+
+        {/* 초기화버튼 */}
+        <button
           className="sbtn"
           onClick={() => {
             // 1.검색어 비우기
@@ -279,10 +289,7 @@ function List({
             <th>Title</th>
             <th>Writer</th>
             <th>Date</th>
-            {
-              type === 'review' &&
-            <th>rank</th>
-            }
+            {type === "review" && <th>rank</th>}
             <th>Hotel</th>
           </tr>
         </thead>
@@ -300,6 +307,7 @@ function List({
                 <a
                   href="#"
                   onClick={(e) => {
+                    // console.log(e.target);
                     // 기본이동막기
                     e.preventDefault();
                     // 글보기모드('R')로 변경하기

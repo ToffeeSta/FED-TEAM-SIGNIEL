@@ -9,11 +9,11 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
   // 선택된 참조변수 데이터 넣기
   const selData = selRecord.current;
-  console.log(selData);
+  // console.log(selData);
 
   // 전역 컨텍스트 API 사용하기!!
   const myCon = useContext(sCon);
-  console.log("Read에서 loginSts:", myCon.loginSts);
+  // console.log("Read에서 loginSts:", myCon.loginSts);
 
   // [ 삭제하는 함수 ] /////
   const deleteFn = () => {

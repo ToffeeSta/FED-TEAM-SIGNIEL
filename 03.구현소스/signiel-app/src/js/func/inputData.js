@@ -4,6 +4,8 @@ import { hotels } from "../data/hotels";
 import { rooms } from "../data/rooms";
 import { users } from "../data/users";
 
+import { initPostData } from "../../js/func/post_fn";
+
 // [ 로컬스토리지 클리어 ] /////////
 const clearData = () => {
   localStorage.clear();
@@ -15,7 +17,8 @@ const initAllData = () => {
     localStorage.setItem("reservations", JSON.stringify(reservations));
   }
   if (localStorage.getItem("posts") === null) {
-    localStorage.setItem("posts", JSON.stringify(posts));
+    // localStorage.setItem("posts", JSON.stringify(posts));
+    initPostData();
   }
   if (localStorage.getItem("hotels") === null) {
     localStorage.setItem("hotels", JSON.stringify(hotels));

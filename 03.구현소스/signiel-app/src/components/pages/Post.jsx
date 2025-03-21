@@ -40,10 +40,10 @@ function Post() {
 
   // [3] 검색어 저장변수 : 객체 {cta:기준값,kw:검색어}
   const [keyword, setKeyword] = useState({
-    cta: "tit",
+    cta: "title",
     kw: "",
   });
-  console.log("{cta:기준값,kw:검색어}", keyword);
+  // console.log("{cta:기준값,kw:검색어}", keyword);
   // cta - creteria / kw -  keyword
 
   // [4] 정렬 기준값 상태변수 : 값(asc(-1) / desc(1))
@@ -54,7 +54,6 @@ function Post() {
   // 초기값은 날짜를 기준한 desc정렬임!
   // sortCta는 sort Criteria (정렬기준)의 줄임말!
 
-
   // [ 리액트 참조변수 셋팅구역 ] //////
   // [1] 게시글 선택 데이터 : 글 내용보기시
   const selRecord = useRef(null);
@@ -64,15 +63,26 @@ function Post() {
   // [2] 전체 레코드 개수(배열데이터 개수)
   // -> 매번 계산하지 않도록 참조변수로 생성한다!
   const totalCount = useRef(posts.length);
-  // const totalCount = useRef(posts.length);
-  console.log("전체개수:", totalCount);
+  // console.log("전체개수:", totalCount);
 
   // [3] 페이징의 페이징 번호
   const pgPgNum = useRef(1);
   // -> 상태변수로 만들지 않은 이유는?
   // 페이징의 페이징번호가 변경될때 어차피
   // 상태변수인 페이징번호가 업데이트되어서
-  // 전체 리랜더링된다! 따라서 이것은 값만 유지하면 됨!
+  // 전체 리랜더링된다! 따라서 이것은 값만 유지한다
+
+  // [ 변수 초기화 처리함수 ] //////
+  const initVariables = () => {
+    setMode("L");
+    setPageNum(1);
+    setKeyword({ cta: "title", kw: "" });
+    setOrder(1);
+    setSortCta("created_at");
+    // selRecord.current = null;
+    // totalCount.current = posts.length;
+    pgPgNum.current = 1;
+  }; ////////// initVariables 함수 //////
 
   // [ 일반변수 셋팅구역 : 매번 같은 값을 유지해야하는 변수들 ]
   // [1] 페이지당 개수 : 페이지당 레코드수
@@ -80,28 +90,81 @@ function Post() {
   // [2] 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
   const pgPgSize = 3;
 
-// 타입별로 원본 데이터 만들기
+  // 타입별로 원본 데이터 만들기
   const orgData = posts.filter((v) => v.post_type === type);
 
-  
   // for문으로 모든 데이터 생성후 그 갯수를 다시 넣음
   totalCount.current = orgData.length;
-  console.log(orgData);
+  // console.log(orgData);
 
-  // [ 데이터 정렬 ] /////////////
-  orgData
-    // ((기준1))-> 최신날짜로 내림차순
-    .sort((a, b) =>
-      a.created_at > b.created_at
-        ? -1
-        : a.created_at < b.created_at
-        ? 1
-        : 0
-    )
-    // ((기준2))-> idx로 내림차순
-    .sort((a, b) =>
-      a.id > b.id ? -1 : a.id < b.id ? 1 : 0
-    );
+  // ★★★★★★★★★★★★★★★★★★★★★★★★ //
+  // ★★★★★★ [ 데이터 필터링 하기 ] ★★★★★★ //
+  // ★★★★★★★★★★★★★★★★★★★★★★★★ //
+
+  // 최종 데이터 담을 변수
+  let finalData;
+
+  // [ 전체 데이터 검색 및 정렬 ] /////////////
+  // [1] 검색어가 있는 경우 ////////
+  if (keyword.kw !== "") {
+    finalData = orgData
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta] || a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta] || a.id < b.id
+          ? 1 * order
+          : // 하위조건추가 : 두값이 같지않은가?
+          a[sortCta] !== b[sortCta]
+          ? // 같지 않으면 0
+            0
+          : // 그밖에 두 값이 같은경우는?
+          // id항목으로 오름/내림차순정렬
+          a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : 0
+      )
+      // 여기부터 검색어로 리스트 만들기
+      .filter((v) => {
+        // console.log(keyword.cta);
+        if (
+          v[keyword.cta].toLowerCase().indexOf(keyword.kw.toLowerCase()) !== -1
+        )
+          return true;
+      }); ////// filter ////////
+  } ///// if : 검색어가 있는 경우 /////////
+  else {
+    finalData = orgData
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta]
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : // 하위조건추가 : 두값이 같지않은가?
+          a[sortCta] !== b[sortCta]
+          ? // 같지 않으면 0
+            0
+          : // 그밖에 두 값이 같은경우는?
+          // id항목으로 오름/내림차순정렬
+          a.id > b.id
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : 0
+      );
+  } ///// else : 검색어가 없는 경우 ////////
+
+  // 전체 데이터 개수 업데이트 하기 /////
+  totalCount.current = finalData.length;
 
   // [ 일부 데이터만 선택하기 ]
   // -> 정렬후 상위 10개만 선택
@@ -127,42 +190,39 @@ function Post() {
     // 데이터 골라담기! ///
     // selData.push(posts[i]);
 
-    console.log(orgData[i].post_type, type);
+    // console.log(finalData[i].post_type, type);
 
-   
-      const user = users.find(
-        (u) => u.id === orgData[i].user_id
-      );
-      const hotel = hotels.find(
-        (h) => h.id === orgData[i].hotel_id
-      );
-  
-      selData.push({
-        id: orgData[i].id,
-        user_name: user ? user.name : "알 수 없음",
-        hotel_name: hotel ? hotel.name : "알 수 없음",
-        post_type: orgData[i].post_type,
-        rating: orgData[i].rating,
-        title: orgData[i].title,
-        content: orgData[i].content,
-        created_at: orgData[i].created_at,
-        user_id: orgData[i].user_id
-      });
+    const user = users.find((u) => u.id === finalData[i].user_id);
+    const hotel = hotels.find((h) => h.id === finalData[i].hotel_id);
 
-  
+    selData.push({
+      id: finalData[i].id,
+      user_name: user ? user.name : "알 수 없음",
+      hotel_name: hotel ? hotel.name : "알 수 없음",
+      post_type: finalData[i].post_type,
+      rating: finalData[i].rating,
+      title: finalData[i].title,
+      content: finalData[i].content,
+      created_at: finalData[i].created_at,
+      user_id: finalData[i].user_id,
+    });
   } //////////// for : 선택데이터 담기
+
+  // console.log("slice를 위한 시작값/끝값", initNum, "/", limitNum);
 
   /************************************** 
     함수명 : searchFn
     기능 : 검색어 넣고 검색을 실행하도록
       검색어 상태변수값을 업데이트 한다!
   **************************************/
-      const searchFn = () => {
-        setKeyword({
-          cta: document.querySelector("#cta").value,
-          kw: document.querySelector("#stxt").value,
-        });
-      }; /////// searchFn 함수
+  const searchFn = () => {
+    // 검색어 조건과 검색문자열을 담은 상태변수를 업데이트함!
+    // -> 이것을 변경하면 전체가 변경되어 리랜더링된다!
+    setKeyword({
+      cta: $("#cta").val(),
+      kw: $("#stxt").val(),
+    });
+  }; /////// searchFn 함수
 
   // DOM 랜더링 실행구역 ///////
   useEffect(() => {
@@ -197,6 +257,7 @@ function Post() {
             setOrder={setOrder} // 정렬 상태변수 setter
             sortCta={sortCta} // 정렬기준 상태변수 getter
             setSortCta={setSortCta} // 정렬기준 상태변수 setter
+            initVariables={initVariables} // 변수초기화함수
           />
         )
       }
@@ -222,6 +283,7 @@ function Post() {
             totalCount={totalCount} // 전체 개수 참조변수
             setPageNum={setPageNum} // 리스트 페이지번호 setter
             pgPgNum={pgPgNum} // 페이징의 페이징 번호
+            initVariables={initVariables} // 변수초기화함수
           />
         )
       }

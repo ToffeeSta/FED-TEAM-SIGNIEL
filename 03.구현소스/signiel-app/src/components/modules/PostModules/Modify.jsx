@@ -12,7 +12,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
   // 선택된 참조변수 데이터 넣기
   const selData = selRecord.current;
-  console.log(selData);
+  // console.log(selData);
 
   // 글쓰기 저장 서브밋 함수 //////
   const submitFn = () => {
@@ -20,7 +20,8 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
     let title = $(".subject").val().trim();
     // 내용입력항목
     let content = $(".content").val().trim();
-    // trim()으로 앞뒤공백 제거후 검사!
+    // 게시물 타입 항목
+    let post_type = $(".sel-type").val().trim();
 
     // (1) 공통 유효성검사
     // - 제목, 내용 모두 비었으면 리턴!
@@ -40,16 +41,17 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
 
       // 2) 수정할 현재 데이터 idx값(키값)
       let currId = selData.id;
-      console.log("수정할id:", currId, localData);
+      // console.log("수정할id:", currId, localData);
 
       // 3) 로컬스 객체화 데이터 배열을 find로 순회하여
       // 해당 idx만 찾아서 제목과 내용 변경하기
       localData.find((v) => {
         if (v.id === currId) {
-          console.log('고칠것!',v.id);
+          // console.log('고칠것!',v.id);
           // 제목, 내용변경
           v.title = title;
           v.content = content;
+          v.post_type = post_type;
           // 별점수정하기
           v.rating = $('#sel-star').val();
           // 해당 데이터를 만나면 빠져나감!
@@ -132,13 +134,21 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 />
               </div>
               <div className="selbox-write">
-                <input
-                  type="text"
+                <select
+                  name="sel-type"
                   id="sel-type"
                   className="sel-type"
-                  readOnly={true}
-                  defaultValue={selData.post_type}
-                />
+                  onChange={(e) => {
+                    // console.log(e.target.value);
+                    let tgEl = $(".star-section");
+                    if (e.target.value === "Q&A")
+                      tgEl.hide();
+                    else tgEl.show();
+                  }}
+                >
+                  <option value="review">Review</option>
+                  <option value="Q&A">Q&amp;A</option>
+                </select>
               </div>
             </td>
           </tr>{/* 별점 등록 기능 */}
