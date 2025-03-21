@@ -161,6 +161,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
             }}
           >
             <td>
+              <label htmlFor="sel-star">별점주기</label>
               <select name="sel-star" id="sel-star" className="sel-star"
               defaultValue={selData.rating}>
                 <option>0.5</option>

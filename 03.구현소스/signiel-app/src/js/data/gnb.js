@@ -12,7 +12,7 @@ export const menu = [
             {
                 txt: "시그니엘 부산",
                 link: "/branch",
-                local: "pusan",
+                local: "busan",
             },
             {
                 txt: "롯데호텔 제주",

@@ -136,9 +136,7 @@ function Post() {
       .filter((v) => {
         // console.log(keyword.cta);
         if (
-          v[keyword.cta]
-            .toLowerCase()
-            .indexOf(keyword.kw.toLowerCase()) !== -1
+          v[keyword.cta].toLowerCase().indexOf(keyword.kw.toLowerCase()) !== -1
         )
           return true;
       }); ////// filter ////////
@@ -197,12 +195,8 @@ function Post() {
 
     // console.log(finalData[i].post_type, type);
 
-    const user = users.find(
-      (u) => u.id === finalData[i].user_id
-    );
-    const hotel = hotels.find(
-      (h) => h.id === finalData[i].hotel_id
-    );
+    const user = users.find((u) => u.id === finalData[i].user_id);
+    const hotel = hotels.find((h) => h.id === finalData[i].hotel_id);
 
     selData.push({
       id: finalData[i].id,
@@ -242,74 +236,75 @@ function Post() {
   // 리턴 코드구역 /////////////////
   return (
     <>
-      <div className="post-cont">
-        {
-          // [1] 리스트 모드 출력하기 : mode -> "L" ////
-          mode === "L" && (
-            <List
-              selData={selData} // 선택 리스트 배열데이터
-              setMode={setMode} // 모드 상태변수 setter
-              selRecord={selRecord} // 선택데이터 참조변수
-              // 페이징에 필요한 정보들 /////
-              pageNum={pageNum} // 리스트 페이지번호 getter
-              setPageNum={setPageNum} // 리스트 페이지번호 setter
-              unitSize={unitSize} // 페이지당 레코드수
-              totalCount={totalCount} // 전체 개수 참조변수
-              pgPgSize={pgPgSize} // 페이징의 페이징 개수
-              pgPgNum={pgPgNum} // 페이징의 페이징 번호
-              // 검색, 정렬 관련 전달속성 셋팅 /////
-              type={type} // 타입 분류 getter
-              setType={setType} // 타입 분류 setter
-              searchFn={searchFn} // 검색함수
-              keyword={keyword} // 검색어 상태변수 getter
-              setKeyword={setKeyword} // 검색어 상태변수 setter
-              order={order} // 정렬 상태변수
-              setOrder={setOrder} // 정렬 상태변수 setter
-              sortCta={sortCta} // 정렬기준 상태변수 getter
-              setSortCta={setSortCta} // 정렬기준 상태변수 setter
-              initVariables={initVariables} // 변수초기화함수
-            />
-          )
-        }
+    <div className="post-cont">
 
-        {
-          // [2] 보기모드 출력하기 : mode -> "R" ///
-          mode === "R" && (
-            <Read
-              setMode={setMode} // 모드 상태변수 setter
-              selRecord={selRecord} // 선택데이터 참조변수
-              totalCount={totalCount} // 전체 개수 참조변수
-              setPageNum={setPageNum} // 리스트 페이지번호 setter
-              pgPgNum={pgPgNum} // 페이징의 페이징 번호
-            />
-          )
-        }
+      {
+        // [1] 리스트 모드 출력하기 : mode -> "L" ////
+        mode === "L" && (
+          <List
+          selData={selData} // 선택 리스트 배열데이터
+          setMode={setMode} // 모드 상태변수 setter
+          selRecord={selRecord} // 선택데이터 참조변수
+          // 페이징에 필요한 정보들 /////
+          pageNum={pageNum} // 리스트 페이지번호 getter
+          setPageNum={setPageNum} // 리스트 페이지번호 setter
+          unitSize={unitSize} // 페이지당 레코드수
+          totalCount={totalCount} // 전체 개수 참조변수
+          pgPgSize={pgPgSize} // 페이징의 페이징 개수
+          pgPgNum={pgPgNum} // 페이징의 페이징 번호
+          // 검색, 정렬 관련 전달속성 셋팅 /////
+          type={type} // 타입 분류 getter
+          setType={setType} // 타입 분류 setter
+          searchFn={searchFn} // 검색함수
+          keyword={keyword} // 검색어 상태변수 getter
+          setKeyword={setKeyword} // 검색어 상태변수 setter
+          order={order} // 정렬 상태변수
+          setOrder={setOrder} // 정렬 상태변수 setter
+          sortCta={sortCta} // 정렬기준 상태변수 getter
+          setSortCta={setSortCta} // 정렬기준 상태변수 setter
+          initVariables={initVariables} // 변수초기화함수
+          />
+        )
+      }
 
-        {
-          // [3] 쓰기모드 출력하기 : mode -> "W" ///
-          mode === "W" && (
-            <Write
-              setMode={setMode} // 모드 상태변수 setter
-              totalCount={totalCount} // 전체 개수 참조변수
-              setPageNum={setPageNum} // 리스트 페이지번호 setter
-              pgPgNum={pgPgNum} // 페이징의 페이징 번호
-              initVariables={initVariables} // 변수초기화함수
-            />
-          )
-        }
+      {
+        // [2] 보기모드 출력하기 : mode -> "R" ///
+        mode === "R" && (
+          <Read
+          setMode={setMode} // 모드 상태변수 setter
+          selRecord={selRecord} // 선택데이터 참조변수
+          totalCount={totalCount} // 전체 개수 참조변수
+          setPageNum={setPageNum} // 리스트 페이지번호 setter
+          pgPgNum={pgPgNum} // 페이징의 페이징 번호
+          />
+        )
+      }
 
-        {
-          // [4] 수정모드 출력하기 : mode -> "M" ///
-          mode === "M" && (
-            <Modify
-              setMode={setMode} // 모드 상태변수 setter
-              selRecord={selRecord} // 선택데이터 참조변수
-              totalCount={totalCount} // 전체 개수 참조변수
-              setPageNum={setPageNum} // 리스트 페이지번호 setter
-              pgPgNum={pgPgNum} // 페이징의 페이징 번호
-            />
-          )
-        }
+      {
+        // [3] 쓰기모드 출력하기 : mode -> "W" ///
+        mode === "W" && (
+          <Write
+          setMode={setMode} // 모드 상태변수 setter
+          totalCount={totalCount} // 전체 개수 참조변수
+          setPageNum={setPageNum} // 리스트 페이지번호 setter
+          pgPgNum={pgPgNum} // 페이징의 페이징 번호
+          initVariables={initVariables} // 변수초기화함수
+          />
+        )
+      }
+
+      {
+        // [4] 수정모드 출력하기 : mode -> "M" ///
+        mode === "M" && (
+          <Modify
+          setMode={setMode} // 모드 상태변수 setter
+          selRecord={selRecord} // 선택데이터 참조변수
+          totalCount={totalCount} // 전체 개수 참조변수
+          setPageNum={setPageNum} // 리스트 페이지번호 setter
+          pgPgNum={pgPgNum} // 페이징의 페이징 번호
+          />
+        )
+      }
       </div>
     </>
   );
