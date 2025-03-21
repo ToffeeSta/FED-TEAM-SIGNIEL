@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { branchData } from "../../js/data/branch";
 
 // 모듈 CSS 불러오기 /////
+import "../../css/pages/branch.scss";
 
 function Branch(props) {
   const { state } = useLocation();
