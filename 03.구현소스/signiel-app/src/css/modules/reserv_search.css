@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* SIGNIEL.com 핵심공통 CSS - core.css */
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-weight: normal;
+  src: url("../../static/fonts/Pretendard-SemiBold.ttf") format("truetype");
+}
+body {
+  font-family: "Pretendard-Regular";
+}
+
+.tit {
+  font-family: "Pretendard-Bold";
+}
+
+.card {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #e7ded0;
+  box-sizing: border-box;
+  color: #867868;
+}
+.card h2 {
+  font-size: 24px;
+  font-family: "Pretendard-bold";
+  text-align: center;
+}
+.card .inner-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.card .inner-con .select-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.card .inner-con .select-wrap label {
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+  margin-bottom: 10px;
+}
+.card .inner-con .search-btn {
+  position: relative;
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+  background: #867868;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.card .inner-con .search-btn:hover {
+  background-color: #424242;
+}
+.card .inner-con .search-btn span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=reserv_search.css.map */
