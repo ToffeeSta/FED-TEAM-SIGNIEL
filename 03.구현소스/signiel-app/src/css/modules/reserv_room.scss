@@ -13,6 +13,7 @@
     @include flex(center, center);
     width: 95%;
     margin: 0 auto;
+    flex-wrap: wrap;
 
     p {
       flex: 1;
@@ -48,4 +49,80 @@
   padding: 50px;
   font-size: 24px;
   font-family: "Pretendard-Bold";
+}
+
+@media (max-width: 1023px) {
+  .roominfo-card {
+    .inner-con {
+      gap: 10px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .reserv-btn {
+      width: 90px;
+      height: 35px;
+      font-size: 14px;
+    }
+
+    .inner-con > *:nth-child(1),
+    .inner-con > *:nth-child(2),
+    .inner-con > *:nth-child(3) {
+      flex: 1 1 32%; 
+    }
+
+    .inner-con > *:nth-child(4),
+    .inner-con > *:nth-child(5),
+    .inner-con > *:nth-child(6) {
+      flex: 1 1 32%; 
+    }
+  }
+
+  .no-room {
+    font-size: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .roominfo-card {
+    .inner-con {
+      gap: 8px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    .reserv-btn {
+      width: 80px; 
+      height: 30px;
+      font-size: 12px;
+    }
+
+    
+    .inner-con > *:nth-child(1),
+    .inner-con > *:nth-child(2) {
+      flex: 1 1 45%; 
+    }
+
+    .inner-con > *:nth-child(3) {
+      flex: 1 1 100%; 
+    }
+
+    .inner-con > *:nth-child(4),
+    .inner-con > *:nth-child(5) {
+      flex: 1 1 45%; 
+    }
+
+    .inner-con > *:nth-child(6) {
+      flex: 1 1 100%; 
+    }
+  }
+
+  .no-room {
+    font-size: 18px; 
+    padding: 40px;
+  }
 }
