@@ -119,7 +119,7 @@ export const posts = [
     rating: 4,
     title: "친절한 서비스",
     content: "직원들이 매우 친절했어요.",
-    created_at: "2025-04-01",
+    created_at: "2025-03-01",
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ export const posts = [
     rating: 5,
     title: "가족 여행 추천!",
     content: "아이들과 함께 가기 좋은 호텔이에요.",
-    created_at: "2025-04-05",
+    created_at: "2025-03-05",
   },
   {
     id: 13,
@@ -139,7 +139,7 @@ export const posts = [
     rating: null,
     title: "레이트 체크아웃 가능 여부",
     content: "늦은 체크아웃 가능한가요?",
-    created_at: "2025-04-07",
+    created_at: "2025-03-07",
   },
   {
     id: 14,
@@ -149,7 +149,7 @@ export const posts = [
     rating: 4,
     title: "야경이 아름다워요!",
     content: "야경이 너무 멋져서 기억에 남네요.",
-    created_at: "2025-04-10",
+    created_at: "2025-03-10",
   },
   {
     id: 15,
@@ -159,7 +159,7 @@ export const posts = [
     rating: null,
     title: "근처 맛집 추천 부탁드립니다.",
     content: "호텔 근처에 추천할만한 맛집이 있나요?",
-    created_at: "2025-04-12",
+    created_at: "2025-03-12",
   },
   {
     id: 16,
@@ -199,7 +199,7 @@ export const posts = [
     rating: null,
     title: "조식은 몇 시부터인가요?",
     content: "조식 제공 시간이 궁금합니다.",
-    created_at: "2025-03-04",
+    created_at: "2025-03-03",
   },
   {
     id: 20,
@@ -480,7 +480,7 @@ export const posts = [
     rating: 4,
     title: "청결한 방",
     content: "방이 정말 깨끗했어요.",
-    created_at: "2025-04-01",
+    created_at: "2025-03-01",
   },
   {
     id: 48,
@@ -490,7 +490,7 @@ export const posts = [
     rating: null,
     title: "흡연 가능한가요?",
     content: "객실에서 흡연이 가능한지 궁금합니다.",
-    created_at: "2025-04-02",
+    created_at: "2025-03-02",
   },
   {
     id: 49,
@@ -500,7 +500,7 @@ export const posts = [
     rating: 5,
     title: "완벽한 숙박",
     content: "정말 완벽한 숙박이었어요.",
-    created_at: "2025-04-03",
+    created_at: "2025-03-03",
   },
   {
     id: 50,
@@ -510,6 +510,6 @@ export const posts = [
     rating: null,
     title: "이른 체크인 가능한가요?",
     content: "이른 체크인 여부가 궁금합니다.",
-    created_at: "2025-04-04",
+    created_at: "2025-03-04",
   },
 ];

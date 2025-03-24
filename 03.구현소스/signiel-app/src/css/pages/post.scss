@@ -173,7 +173,7 @@
   // 게시물 타입 선택박스
   .sel_type {
     float: right;
-    height: 3vh;
+    height: 30px;
     width: 8vw;
     font-weight: bold;
     border: none;
@@ -185,8 +185,7 @@
   // 게시물 날짜 정렬 선택박스
   .sort_cta {
     float: right;
-    translate: 0 5px;
-    // height: 3vh;
+    height: 30px;
     width: 8vw;
     font-weight: bold;
     border: none;
@@ -196,8 +195,8 @@
   }
 
   select.cta {
-    width: 8vw;
-    height: 3vh;
+    width: 100px;
+    height: 25px;
     font-weight: bold;
     border: 1px solid #765e3b;
     border-radius: 10px;
@@ -333,7 +332,7 @@
     border-radius: 10px;
     background-color: #e0d8c6;
     font-size: 15px;
-    height: 3.5vh;
+    height: 30px;
     width: 80px;
 
     &:hover {
@@ -345,7 +344,7 @@
   input.stxt {
     border: 1.5px solid #765e3b;
     border-radius: 10px;
-    height: 2.5vh;
+    height: 20px;
     width: 15vw;
   }
 
@@ -396,19 +395,113 @@
 
   //////////////////////////////// 게시물 읽기 ////////////////////////////////
 
+  //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
+  @media screen and (max-width: 1023px) {
+    // 공통
+
+    
+
+    // list
+
+    .dtbl td,
+    .dtbl th {
+      padding: 20px 10px;
+    }
+
+    // title
+    .dtbl th:nth-child(2) {
+      width: 20%;
+    }
+
+    // read, write, modify
+    .dtbl th:nth-child(1) {
+      display: none;
+    }
+
+    #board tbody tr td:first-child {
+      display: none;
+    }
+
+    // .dtbl th:nth-child(1) {
+    //   display: none;
+    // }
+
+    // #board tbody tr td:nth-child(5) {
+    //   display: none;
+    // }
+
+    td.name-type-box {
+      padding-left: 1vw;
+    }
+
+    input.name {
+      width: 37vw;
+    }
+
+    select.sel-type {
+      width: 37vw;
+    }
+
+    input.sel-type {
+      width: 37vw;
+    }
+
+    .star-section td {
+      padding-left: 1vw;
+    }
+    select.sel-star {
+      width: 38.5vw;
+    }
+
+    td .subject {
+      width: 75vw;
+    }
+
+    textarea {
+      width: 75vw;
+    }
+
+    .sel_type {
+      width: 100px;
+    }
+
+    .sort_cta {
+      width: 100px;
+    }
+  }
+  //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
+
   //////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
-  @media screen and (max-width: 700px) {
-    /* 보기 모드 공통 */
-    .cont .dtblview {
-      width: 90vw;
+  @media screen and (max-width: 414px) {
+
+    .dtbl thead tr th {
+      font-size: 10px;
     }
-    .cont .dtblview td {
-      width: auto;
-      font-size: 16px;
+
+    // 게시물 정보 폰트 사이즈 조정
+    #board tbody tr td {
+      font-size: 10px;
     }
-    .cont .dtblview input,
-    .cont .dtblview textarea {
-      width: calc(90vw - 64px);
+
+    // 게시글 제목 폰트 사이즈 조정
+    #board tbody td a {
+      font-size: 10px;
+    }
+
+    // 별점 이미지 사이즈 조정
+    .dtbl tbody .rating {
+      @include flex(center, center);
+      img {
+        width: 10px;
+      }
+    }
+
+    .dtbl th:nth-child(1) {
+      display: none;
+    }
+
+    #board tbody tr td:first-child {
+      display: none;
     }
   }
   //////////////////////////////// 미디어 쿼리 ////////////////////////////////

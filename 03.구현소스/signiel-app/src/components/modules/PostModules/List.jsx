@@ -36,7 +36,9 @@ function List({
   // [ 페이징 관련 변수값 셋팅하기 ] ////
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
-  let pagingCount = Math.floor(totalCount.current / unitSize);
+  let pagingCount = Math.floor(
+    totalCount.current / unitSize
+  );
   // console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
   // console.log("나머지연산:", totalCount.current % unitSize);
 
@@ -140,7 +142,9 @@ function List({
           {
             // 마지막 번호 뒤에 바(|)는 출력X
             // 동시에 페이징 마지막 번호가 아닐때만 출력
-            i < limitNum - 1 && i + 1 !== pagingCount && "  |  "
+            i < limitNum - 1 &&
+              i + 1 !== pagingCount &&
+              "  |  "
           }
         </Fragment>
       );
@@ -199,7 +203,12 @@ function List({
       <h2 className="tit">게시판</h2>
       {/* 검색필터 */}
       <div className="selbx list">
-        <select name="cta" id="cta" className="cta" defaultValue={keyword.cta}>
+        <select
+          name="cta"
+          id="cta"
+          className="cta"
+          defaultValue={keyword.cta}
+        >
           <option value="title">Title</option>
           <option value="content">Contents</option>
           <option value="user_name">Writer</option>
@@ -294,76 +303,91 @@ function List({
           </tr>
         </thead>
         <tbody>
-          {selData.map((v, i) => (
-            <tr key={i}>
-              <td>
-                {
-                  // 페이징 시작번호 더하기
-                  // -> 자동순번 + (단위수 * (페이지번호-1))
-                  i + 1 + unitSize * (pageNum - 1)
-                }
-              </td>
-              <td>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    // console.log(e.target);
-                    // 기본이동막기
-                    e.preventDefault();
-                    // 글보기모드('R')로 변경하기
-                    setMode("R");
-                    // 해당 데이터 참조변수에 저장하기
-                    selRecord.current = v;
-                  }}
-                >
-                  {v.title}
-                </a>
-              </td>
-              <td>{v.user_name}</td>
-              <td>{v.created_at}</td>
-              {
-              type === 'review' &&
-              <td className="rating">
-                {[...Array(5)].map((_, i) => {
-                  if (i < Math.floor(v.rating)) {
-                    return (
-                      <img
-                        key={i}
-                        src={process.env.PUBLIC_URL +"/images/common/rating.png"}
-                        alt="별"
-                      />
-                    );
-                  } else if (
-                    i === Math.floor(v.rating) &&
-                    v.rating % 1 >= 0.5
-                  ) {
-                    return (
-                      <img
-                        key={i}
-                        src={process.env.PUBLIC_URL +"/images/common/rating_half.png"}
-                        alt="반쪽 별"
-                      />
-                    );
-                  } else {
-                    return (
-                      <img
-                        key={i}
-                        src={process.env.PUBLIC_URL +"/images/common/rating_empty.png"}
-                        alt="빈 별"
-                      />
-                    );
+          {totalCount.current > 0 ? (
+            selData.map((v, i) => (
+              <tr key={i}>
+                <td>
+                  {
+                    // 페이징 시작번호 더하기
+                    // -> 자동순번 + (단위수 * (페이지번호-1))
+                    i + 1 + unitSize * (pageNum - 1)
                   }
-                })}
-              </td>
-            }
-              <td>{v.hotel_name}</td>
+                </td>
+                <td>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      // console.log(e.target);
+                      // 기본이동막기
+                      e.preventDefault();
+                      // 글보기모드('R')로 변경하기
+                      setMode("R");
+                      // 해당 데이터 참조변수에 저장하기
+                      selRecord.current = v;
+                    }}
+                  >
+                    {v.title}
+                  </a>
+                </td>
+                <td>{v.user_name}</td>
+                <td>{v.created_at}</td>
+                {type === "review" && (
+                  <td className="rating">
+                    {[...Array(5)].map((_, i) => {
+                      if (i < Math.floor(v.rating)) {
+                        return (
+                          <img
+                            key={i}
+                            src={
+                              process.env.PUBLIC_URL +
+                              "/images/common/rating.png"
+                            }
+                            alt="별"
+                          />
+                        );
+                      } else if (
+                        i === Math.floor(v.rating) &&
+                        v.rating % 1 >= 0.5
+                      ) {
+                        return (
+                          <img
+                            key={i}
+                            src={
+                              process.env.PUBLIC_URL +
+                              "/images/common/rating_half.png"
+                            }
+                            alt="반쪽 별"
+                          />
+                        );
+                      } else {
+                        return (
+                          <img
+                            key={i}
+                            src={
+                              process.env.PUBLIC_URL +
+                              "/images/common/rating_empty.png"
+                            }
+                            alt="빈 별"
+                          />
+                        );
+                      }
+                    })}
+                  </td>
+                )}
+                <td>{v.hotel_name}</td>
+              </tr>
+            ))
+          ) : (
+            // 데이터가 0일 경우 출력 ////////////
+            <tr>
+              <td colSpan="6">No search results</td>
             </tr>
-          ))}
+          )}
         </tbody>
         {/* 페이징 하단파트 */}
         <tfoot>
           <tr>
-            <td colSpan="5" className="paging">
+            <td colSpan="6" className="paging">
               {pagingCode()}
             </td>
           </tr>

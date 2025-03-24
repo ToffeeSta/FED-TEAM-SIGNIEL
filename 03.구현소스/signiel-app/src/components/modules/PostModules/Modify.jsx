@@ -161,7 +161,6 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
             }}
           >
             <td>
-              <label htmlFor="sel-star">별점주기</label>
               <select name="sel-star" id="sel-star" className="sel-star"
               defaultValue={selData.rating}>
                 <option>0.5</option>
@@ -206,8 +205,6 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
         <tbody>
           <tr>
             <td className="write-page-button">
-              <button onClick={submitFn}>수정하기</button>
-              <button onClick={deleteFn}>삭제하기</button>
               <button
                 onClick={() => {
                   // 리스트 모드('L')로 변경하기
@@ -216,6 +213,8 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
               >
                 리스트
               </button>
+              <button onClick={submitFn}>수정하기</button>
+              <button onClick={deleteFn}>삭제하기</button>
             </td>
           </tr>
         </tbody>
