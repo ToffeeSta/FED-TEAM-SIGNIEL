@@ -173,7 +173,7 @@
   // 게시물 타입 선택박스
   .sel_type {
     float: right;
-    height: 5vh;
+    height: 30px;
     width: 8vw;
     font-weight: bold;
     border: none;
@@ -185,8 +185,7 @@
   // 게시물 날짜 정렬 선택박스
   .sort_cta {
     float: right;
-    translate: 0 5px;
-    // height: 5vh;
+    height: 30px;
     width: 8vw;
     font-weight: bold;
     border: none;
@@ -196,7 +195,7 @@
   }
 
   select.cta {
-    width: 8vw;
+    width: 100px;
     height: 25px;
     font-weight: bold;
     border: 1px solid #765e3b;
