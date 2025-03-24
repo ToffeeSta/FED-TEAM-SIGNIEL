@@ -446,19 +446,19 @@
 //////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
 @media screen and (max-width: 414px) {
   /* 보기 모드 공통 */
-  .cont .dtblview {
-    width: 90vw;
-    // width: 90vw;
-  }
-  .cont .dtblview td {
-    width: auto;
-    font-size: 16px;
-  }
-  .cont .dtblview input,
-  .cont .dtblview textarea {
-    width: calc(90vw - 64px);
-    // width: calc(90vw - 64px);
-  }
+  // .cont .dtblview {
+  //   width: 90vw;
+  //   // width: 90vw;
+  // }
+  // .cont .dtblview td {
+  //   width: auto;
+  //   font-size: 16px;
+  // }
+  // .cont .dtblview input,
+  // .cont .dtblview textarea {
+  //   width: calc(90vw - 64px);
+  //   // width: calc(90vw - 64px);
+  // }
 }
 //////////////////////////////// 미디어 쿼리 ////////////////////////////////
 }
