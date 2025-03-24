@@ -408,7 +408,7 @@
       padding: 20px 10px;
     }
 
-    // title
+    // 제목
     .dtbl th:nth-child(2) {
       width: 20%;
     }
@@ -472,8 +472,7 @@
   //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
 
   //////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
-  @media screen and (max-width: 414px) {
-
+  @media screen and (max-width: 480px) {
     .dtbl thead tr th {
       font-size: 10px;
     }
