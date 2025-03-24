@@ -380,14 +380,14 @@ function List({
           ) : (
             // 데이터가 0일 경우 출력 ////////////
             <tr>
-              <td colSpan="5">No search results</td>
+              <td colSpan="6">No search results</td>
             </tr>
           )}
         </tbody>
         {/* 페이징 하단파트 */}
         <tfoot>
           <tr>
-            <td colSpan="5" className="paging">
+            <td colSpan="6" className="paging">
               {pagingCode()}
             </td>
           </tr>
