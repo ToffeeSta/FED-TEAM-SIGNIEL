@@ -5,10 +5,11 @@ import React, { memo } from 'react'
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '500px',
+  width: '480px',
   // width: '100%',
   height: '400px',
   // padding: '0 20px'
+  margin:'0 auto'
 };
 
 // const center = {
