@@ -397,6 +397,26 @@
     display: none;
   }
 
+
+///// 리스트 모바일 뷰 모드 숨기기 ////
+.mob-view {
+  display: none;
+}
+.mob-bottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.mob-view:nth-of-type(5) td,
+.mob-view:nth-of-type(6) td,
+.mob-view:nth-of-type(11) td,
+.mob-view:nth-of-type(12) td,
+.mob-view:nth-of-type(17) td,
+.mob-view:nth-of-type(18) td
+{
+  background-color: #e4e4e4 !important;
+}
+
+
   //////////////////////////////// 게시물 읽기 ////////////////////////////////
   @media screen and (max-width: 1450px) {
     .cont {
@@ -428,9 +448,9 @@
       display: none;
     }
 
-    #board tbody tr td:first-child {
-      display: none;
-    }
+    // #board tbody tr td:first-child {
+    //   display: none;
+    // }
 
     // .dtbl th:nth-child(1) {
     //   display: none;
@@ -487,19 +507,31 @@
   //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
   ///
   @media screen and (max-width: 700px) {
-    #board thead tr th:nth-child(5),
-    #board tbody tr td:nth-child(5) {
-      display: none;
-    }
+    // #board thead tr th:nth-child(5),
+    // #board tbody tr td:nth-child(5) {
+    //   display: none;
+    // }
     #sort_cta {
       display: none;
     }
   }
   @media screen and (max-width: 650px) {
-    #board thead tr th:nth-child(6),
-    #board tbody tr td:nth-child(6) {
-      display: none;
-    }
+
+
+///// 리스트 모바일 뷰 모드 숨기기 ////
+.mob-view {
+  display: table-row;
+}
+.dt-view {
+  display: none;
+}
+
+
+
+    // #board thead tr th:nth-child(6),
+    // #board tbody tr td:nth-child(6) {
+    //   display: none;
+    // }
     input.stxt {
       width: 35vw;
   }
@@ -537,9 +569,9 @@
       display: none;
     }
 
-    #board tbody tr td:first-child {
-      display: none;
-    }
+    // #board tbody tr td:first-child {
+    //   display: none;
+    // }
 
     button.sbtn{
       width: 65px;
