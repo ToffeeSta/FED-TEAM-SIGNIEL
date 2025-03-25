@@ -258,14 +258,19 @@
 @media (max-width: 1023px) {
 
   .contents-title p {
-    font-size: 1.9vw;
-    line-height: 2vw;
+    font-size: 18px;
+    line-height: 18px;
     word-break: keep-all;
-  }
+    width: 277px;
+    margin: 0 auto;
 
+  }
   .text-box div h2 {
-    font-size: 3.5vw;
+    font-size: 24px;
     word-break: keep-all;
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 3%;
   }
   .text-box div h2, .branch-container span {
     padding-right: 0 ;
@@ -353,14 +358,30 @@
   @media (max-width: 480px) {
   // 글자크기
 
+  .contents-title p {
+    font-size: 14px;
+    line-height: 16px;
+    word-break: keep-all;
+    width: 250px;
+    margin: 0 auto;
+
+  }
+  .text-box div h2 {
+    font-size: 20px;
+    word-break: keep-all;
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 2%;
+  }
+
     .banner-text span {
       font-size: 1.5rem;
       line-height: 1.5rem;
     }
     .text-box div {
       h2 {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        // font-size: 1.5rem;
+        // line-height: 2rem;
       }
       span {
         font-size: 1rem;
