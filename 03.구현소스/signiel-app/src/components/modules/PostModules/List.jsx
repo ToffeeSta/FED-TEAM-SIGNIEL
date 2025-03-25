@@ -214,6 +214,9 @@ function List({
           <option value="user_name">Writer</option>
         </select>
 
+        <br className="br-set" />
+
+
         {/* 게시물 정렬 */}
         <select
           name="sort_cta"
@@ -256,6 +259,8 @@ function List({
           }}
         />
 
+        {/* <br className="br-set" /> */}
+
         {/* 검색버튼 */}
         <button className="sbtn" onClick={searchFn}>
           Search
@@ -263,7 +268,7 @@ function List({
 
         {/* 초기화버튼 */}
         <button
-          className="sbtn"
+          className="sbtn-reset"
           onClick={() => {
             // 1.검색어 비우기
             $("#stxt").val("");
