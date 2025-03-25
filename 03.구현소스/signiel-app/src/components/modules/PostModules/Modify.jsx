@@ -131,6 +131,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   className="name"
                   readOnly={true}
                   defaultValue={selData.user_name}
+                  disabled
                 />
               </div>
               <div className="selbox-write">
