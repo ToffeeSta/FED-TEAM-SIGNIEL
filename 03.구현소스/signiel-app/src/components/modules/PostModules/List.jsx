@@ -256,6 +256,8 @@ function List({
           }}
         />
 
+        <br className="br-set" />
+
         {/* 검색버튼 */}
         <button className="sbtn" onClick={searchFn}>
           Search

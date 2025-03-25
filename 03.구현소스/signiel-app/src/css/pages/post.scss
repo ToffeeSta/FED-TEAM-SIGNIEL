@@ -393,14 +393,20 @@
     text-align: left !important;
   }
 
+  .br-set {
+    display: none;
+  }
+
   //////////////////////////////// 게시물 읽기 ////////////////////////////////
+  @media screen and (max-width: 1450px) {
+    .cont {
+      padding: 3vh;
+    }
+  }
 
   //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
   @media screen and (max-width: 1023px) {
     // 공통
-
-    
-
     // list
 
     .dtbl td,
@@ -468,24 +474,52 @@
     .sort_cta {
       width: 100px;
     }
+
+    // #board tbody td a{
+    //   width: auto;
+    // }
+    #sort_cta {
+      display: none;
+    }
+
+    .cta,
+    .sort_cta {
+      margin-bottom: 15px;
+    }
   }
   //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
+  ///
+  @media screen and (max-width: 700px) {
+    #board thead tr th:nth-child(5),
+    #board tbody tr td:nth-child(5) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #board thead tr th:nth-child(6),
+    #board tbody tr td:nth-child(6) {
+      display: none;
+    }
+    input.stxt {
+      width: 45vw;
+  }
+
+    .br-set {
+      display: inline;
+    }
+  }
 
   //////////////////////////////// 모바일 미디어 쿼리 ////////////////////////////////
   @media screen and (max-width: 480px) {
-    .dtbl thead tr th {
-      font-size: 10px;
+    .dtbl thead tr th,
+    #board tbody tr td,
+    #board tbody td a {
+      font-size: 3.5vw;
     }
 
     // 게시물 정보 폰트 사이즈 조정
-    #board tbody tr td {
-      font-size: 10px;
-    }
 
     // 게시글 제목 폰트 사이즈 조정
-    #board tbody td a {
-      font-size: 10px;
-    }
 
     // 별점 이미지 사이즈 조정
     .dtbl tbody .rating {
