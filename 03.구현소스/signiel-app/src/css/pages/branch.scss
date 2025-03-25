@@ -260,10 +260,12 @@
   .contents-title p {
     font-size: 1.9vw;
     line-height: 2vw;
+    word-break: keep-all;
   }
 
   .text-box div h2 {
     font-size: 3.5vw;
+    word-break: keep-all;
   }
   .text-box div h2, .branch-container span {
     padding-right: 0 ;
