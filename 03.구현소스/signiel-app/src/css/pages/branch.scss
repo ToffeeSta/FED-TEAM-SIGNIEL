@@ -423,4 +423,22 @@
 
 
 
+  @media (max-width: 368px) {
 
+    .contents-title p {
+      font-size: 12px;
+      line-height: 18px;
+      word-break: keep-all;
+      width: 210px;
+      margin: 0 auto;
+  
+    }
+    .text-box div h2 {
+      font-size: 18px;
+      word-break: keep-all;
+      width: 210px;
+      margin: 0 auto;
+      margin-bottom: 3%;
+    }
+
+  }
