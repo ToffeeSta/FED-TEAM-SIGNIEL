@@ -326,7 +326,7 @@
   }
 
   // 검색과 초기화 버튼
-  button.sbtn {
+  button.sbtn, .sbtn-reset {
     color: #765e3b;
     border: none;
     border-radius: 10px;
@@ -344,7 +344,7 @@
   input.stxt {
     border: 1.5px solid #765e3b;
     border-radius: 10px;
-    height: 20px;
+    height: 25px;
     width: 15vw;
   }
 
@@ -419,6 +419,10 @@
       width: 20%;
     }
 
+    select.cta {
+      width: 90px;
+    }
+
     // read, write, modify
     .dtbl th:nth-child(1) {
       display: none;
@@ -474,14 +478,7 @@
     .sort_cta {
       width: 100px;
     }
-
-    // #board tbody td a{
-    //   width: auto;
-    // }
-    #sort_cta {
-      display: none;
-    }
-
+    
     .cta,
     .sort_cta {
       margin-bottom: 15px;
@@ -494,18 +491,25 @@
     #board tbody tr td:nth-child(5) {
       display: none;
     }
+    #sort_cta {
+      display: none;
+    }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 650px) {
     #board thead tr th:nth-child(6),
     #board tbody tr td:nth-child(6) {
       display: none;
     }
     input.stxt {
-      width: 45vw;
+      width: 35vw;
   }
 
     .br-set {
       display: inline;
+    }
+
+    button.sbtn-reset{
+      display: none;
     }
   }
 
@@ -535,6 +539,10 @@
 
     #board tbody tr td:first-child {
       display: none;
+    }
+
+    button.sbtn{
+      width: 65px;
     }
   }
   //////////////////////////////// 미디어 쿼리 ////////////////////////////////
