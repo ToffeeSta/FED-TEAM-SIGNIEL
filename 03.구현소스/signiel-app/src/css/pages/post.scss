@@ -511,7 +511,7 @@
   }
   //////////////////////////////// 태블릿 미디어 쿼리 ////////////////////////////////
   ///
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 722px) {
     // #board thead tr th:nth-child(5),
     // #board tbody tr td:nth-child(5) {
     //   display: none;
@@ -575,7 +575,7 @@
     .dtbl thead tr th,
     #board tbody tr td,
     #board tbody td a {
-      font-size: 3.5vw;
+      font-size: 17px;
     }
 
     .selbx {

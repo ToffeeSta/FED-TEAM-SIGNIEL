@@ -128,9 +128,6 @@ function Login({ setIsLoggedIn }) {
                 </div>
               )}
             </li>
-            <li>
-              <h2>테스트 계정 id,pw : test</h2>
-            </li>
             <li className="center">
               아직 회원이 아니신가요?
               <Link to="/signup">회원가입</Link>
