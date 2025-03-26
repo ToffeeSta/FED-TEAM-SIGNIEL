@@ -29,6 +29,10 @@
   }
 
   /*테이블 디자인*/
+  // thead.mob-thead {
+  //   display: none;
+  // }
+
   .dtbl {
     /*테이블전체*/
     text-align: center;
@@ -196,7 +200,7 @@
 
   select.cta {
     width: 100px;
-    height: 25px;
+    height: 30px;
     font-weight: bold;
     border: 1px solid #765e3b;
     border-radius: 10px;
@@ -326,7 +330,8 @@
   }
 
   // 검색과 초기화 버튼
-  button.sbtn, .sbtn-reset {
+  button.sbtn,
+  .sbtn-reset {
     color: #765e3b;
     border: none;
     border-radius: 10px;
@@ -397,25 +402,36 @@
     display: none;
   }
 
+  ///// 리스트 모바일 뷰 모드 숨기기 ////
+  .mob-view {
+    display: none;
+  }
+  .mob-bottom {
+    // border-bottom: 1px solid #ccc;
+  }
 
-///// 리스트 모바일 뷰 모드 숨기기 ////
-.mob-view {
-  display: none;
-}
-.mob-bottom {
-  border-bottom: 1px solid #ccc;
-}
+  .mob-view:nth-of-type(5) td,
+  .mob-view:nth-of-type(11) td,
+  .mob-view:nth-of-type(17) td,
+  .mob-view:nth-of-type(23) td,
+  .mob-view:nth-of-type(29) td {
+    background-color: #e9e3d8 !important;
+  }
 
-.mob-view:nth-of-type(5) td,
-.mob-view:nth-of-type(6) td,
-.mob-view:nth-of-type(11) td,
-.mob-view:nth-of-type(12) td,
-.mob-view:nth-of-type(17) td,
-.mob-view:nth-of-type(18) td
-{
-  background-color: #e4e4e4 !important;
-}
+  // .mob-view:nth-of-type() td {
+  //   background-color: #e4e4e4 !important;
+  // }
 
+  // 모바일 게시물 하단 정보
+  td.mob-bottom-info {
+    text-align: left;
+    height: 10px;
+    padding: 0 10px 10px !important;
+  }
+
+  td.mob-bottom-info span {
+    margin-right: 10px;
+  }
 
   //////////////////////////////// 게시물 읽기 ////////////////////////////////
   @media screen and (max-width: 1450px) {
@@ -428,6 +444,9 @@
   @media screen and (max-width: 1023px) {
     // 공통
     // list
+    #board tbody td a {
+      width: auto;
+    }
 
     .dtbl td,
     .dtbl th {
@@ -438,27 +457,6 @@
     .dtbl th:nth-child(2) {
       width: 20%;
     }
-
-    select.cta {
-      width: 90px;
-    }
-
-    // read, write, modify
-    .dtbl th:nth-child(1) {
-      display: none;
-    }
-
-    // #board tbody tr td:first-child {
-    //   display: none;
-    // }
-
-    // .dtbl th:nth-child(1) {
-    //   display: none;
-    // }
-
-    // #board tbody tr td:nth-child(5) {
-    //   display: none;
-    // }
 
     td.name-type-box {
       padding-left: 1vw;
@@ -498,7 +496,7 @@
     .sort_cta {
       width: 100px;
     }
-    
+
     .cta,
     .sort_cta {
       margin-bottom: 15px;
@@ -516,17 +514,37 @@
     }
   }
   @media screen and (max-width: 650px) {
+    .dtbl tbody tr:nth-child(even) td {
+      /*even 짝수, odd 홀수*/
+      background-color: #e9e3d8;
+    }
 
+    ///// 리스트 모바일 뷰 모드 숨기기 ////
 
-///// 리스트 모바일 뷰 모드 숨기기 ////
-.mob-view {
-  display: table-row;
-}
-.dt-view {
-  display: none;
-}
+    // 데스크탑 thead 없애기
+    thead.dt-thead {
+      display: none;
+    }
 
+    // thead.mob-thead {
+    //   display: inline;
+    // }
 
+    .dt-thead th {
+      padding: 15px 10px;
+    }
+
+    .dtbl td,
+    .dtbl th {
+      padding: 15px 10px;
+    }
+
+    .mob-view {
+      display: table-row;
+    }
+    .dt-view {
+      display: none;
+    }
 
     // #board thead tr th:nth-child(6),
     // #board tbody tr td:nth-child(6) {
@@ -534,13 +552,13 @@
     // }
     input.stxt {
       width: 35vw;
-  }
+    }
 
     .br-set {
       display: inline;
     }
 
-    button.sbtn-reset{
+    button.sbtn-reset {
       display: none;
     }
   }
@@ -554,14 +572,14 @@
     }
 
     .selbx {
-      padding: 20px 0px 10px;
+      padding: 20px 0px 15px;
     }
 
     // 별점 이미지 사이즈 조정
     .dtbl tbody .rating {
       @include flex(center, center);
       img {
-        width: 10px;
+        width: 15px;
       }
     }
 
@@ -573,7 +591,7 @@
     //   display: none;
     // }
 
-    button.sbtn{
+    button.sbtn {
       width: 65px;
     }
   }

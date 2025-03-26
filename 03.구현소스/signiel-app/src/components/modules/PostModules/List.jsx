@@ -36,7 +36,9 @@ function List({
   // [ 페이징 관련 변수값 셋팅하기 ] ////
 
   // 1. 페이징 개수 : 전체 레코드수 / 페이지당 개수
-  let pagingCount = Math.floor(totalCount.current / unitSize);
+  let pagingCount = Math.floor(
+    totalCount.current / unitSize
+  );
   // console.log("전체 레코드수 / 페이지당 개수:", pagingCount);
   // console.log("나머지연산:", totalCount.current % unitSize);
 
@@ -140,7 +142,9 @@ function List({
           {
             // 마지막 번호 뒤에 바(|)는 출력X
             // 동시에 페이징 마지막 번호가 아닐때만 출력
-            i < limitNum - 1 && i + 1 !== pagingCount && "  |  "
+            i < limitNum - 1 &&
+              i + 1 !== pagingCount &&
+              "  |  "
           }
         </Fragment>
       );
@@ -199,7 +203,12 @@ function List({
       <h2 className="tit">게시판</h2>
       {/* 검색필터 */}
       <div className="selbx list">
-        <select name="cta" id="cta" className="cta" defaultValue={keyword.cta}>
+        <select
+          name="cta"
+          id="cta"
+          className="cta"
+          defaultValue={keyword.cta}
+        >
           <option value="title">Title</option>
           <option value="content">Contents</option>
           <option value="user_name">Writer</option>
@@ -287,7 +296,7 @@ function List({
         </select>
       </div>
       <table className="dtbl" id="board">
-        <thead>
+        <thead className="dt-thead">
           <tr>
             <th>Number</th>
             <th>Title</th>
@@ -297,6 +306,12 @@ function List({
             <th>Hotel</th>
           </tr>
         </thead>
+        <thead className="mob-thead">
+                  <tr>
+                    {type === "review" && <th>호텔리뷰</th>}
+                    {type === "Q&A" && <th>Q&A</th>}
+                  </tr>
+                </thead>
         <tbody>
           {totalCount.current > 0 ? (
             selData.map((v, i) => (
@@ -376,9 +391,12 @@ function List({
 
                 {/* 모바일 모드용 */}
                 <tr className="mob-view">
-                  <td colSpan="6" style={{backgroundColor:'white'}}>
+                  <td
+                    colSpan="6"
+                    style={{ backgroundColor: "white" }}
+                  >
                     <a
-                      style={{textAlign:'left'}}
+                      style={{ textAlign: "left" }}
                       href="#"
                       onClick={(e) => {
                         // console.log(e.target);
@@ -396,14 +414,19 @@ function List({
                 </tr>
                 {/* 모바일 하단 */}
                 <tr className="mob-view mob-bottom">
-                  <td colSpan="6" style={{
-                    textAlign: 'left', height:'14px', padding:'0 0 10px',backgroundColor:'white'}}>
-                    <span style={{marginRight:"10px"}}>{v.user_name}</span>
+                  <td
+                    className="mob-bottom-info"
+                    colSpan="6"
+                  >
+                    <span>{v.user_name}</span>
                     <span>{v.created_at}</span>
 
                     <span>
                       {type === "review" && (
-                        <span className="rating" style={{display:'inline'}}>
+                        <span
+                          className="rating"
+                          style={{ display: "inline" }}
+                        >
                           {[...Array(5)].map((_, i) => {
                             if (i < Math.floor(v.rating)) {
                               return (
