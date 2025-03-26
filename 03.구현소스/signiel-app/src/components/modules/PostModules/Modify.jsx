@@ -196,6 +196,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 cols="60"
                 rows="10"
                 defaultValue={selData.content}
+                resi
               ></textarea>
             </td>
           </tr>
