@@ -8,8 +8,6 @@ function UserReserv() {
   const [sortOrder, setSortOrder] = useState("desc");
   const [force, setForce] = useState(true);
 
-
-
   const retDate = obj => 
     obj.getFullYear()+
   '-'+
