@@ -575,7 +575,11 @@
     .dtbl thead tr th,
     #board tbody tr td,
     #board tbody td a {
-      font-size: 3.5vw;
+      font-size: 15px;
+    }
+
+    td.mob-bottom-info span {
+      font-size: 13px;
     }
 
     .selbx {
