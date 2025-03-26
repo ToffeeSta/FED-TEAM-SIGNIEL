@@ -105,13 +105,13 @@ function Branch(props) {
   // 지도를 리턴하는 함수 ////////////
   const makeMap = (local, title, zoom) => {
     return (
-      <MapContainer
-        key={local} // key 속성 추가
-        center={latLng.current[local]}
-        zoom={zoom}
-        style={{ height: "400px", width: "500px" }}
-        scrollWheelZoom={false} // 기본적으로 scrollWheelZoom 비활성화
-      >
+<MapContainer
+  key={local}
+  center={latLng.current[local]}
+  zoom={zoom}
+  style={{ height: "400px", width: "500px", position: "relative", zIndex: 0 }} // zIndex 추가
+  className="custom-map"
+>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
