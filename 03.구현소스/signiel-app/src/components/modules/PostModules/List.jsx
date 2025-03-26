@@ -63,6 +63,9 @@ function List({
         페이징코드 리턴 함수
   ***********************************/
   const pagingCode = () => {
+    
+  if(selData.length === 0) return '';
+
     // [ (1) 리턴 코드 담을 배열변수 ]
     let hcode = [];
 
@@ -216,7 +219,6 @@ function List({
 
         <br className="br-set" />
 
-
         {/* 게시물 정렬 */}
         <select
           name="sort_cta"
@@ -297,7 +299,7 @@ function List({
         </select>
       </div>
       <table className="dtbl" id="board">
-        <thead>
+        <thead className="dt-thead">
           <tr>
             <th>Number</th>
             <th>Title</th>
@@ -307,80 +309,173 @@ function List({
             <th>Hotel</th>
           </tr>
         </thead>
+        <thead className="mob-thead">
+                  <tr>
+                    {type === "review" && <th colSpan={6}>호텔리뷰</th>}
+                    {type === "Q&A" && <th colSpan={6}>Q&A</th>}
+                  </tr>
+                </thead>
         <tbody>
           {totalCount.current > 0 ? (
             selData.map((v, i) => (
-              <tr key={i}>
-                <td>
-                  {
-                    // 페이징 시작번호 더하기
-                    // -> 자동순번 + (단위수 * (페이지번호-1))
-                    i + 1 + unitSize * (pageNum - 1)
-                  }
-                </td>
-                <td>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      // console.log(e.target);
-                      // 기본이동막기
-                      e.preventDefault();
-                      // 글보기모드('R')로 변경하기
-                      setMode("R");
-                      // 해당 데이터 참조변수에 저장하기
-                      selRecord.current = v;
-                    }}
-                  >
-                    {v.title}
-                  </a>
-                </td>
-                <td>{v.user_name}</td>
-                <td>{v.created_at}</td>
-                {type === "review" && (
-                  <td className="rating">
-                    {[...Array(5)].map((_, i) => {
-                      if (i < Math.floor(v.rating)) {
-                        return (
-                          <img
-                            key={i}
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/images/common/rating.png"
-                            }
-                            alt="별"
-                          />
-                        );
-                      } else if (
-                        i === Math.floor(v.rating) &&
-                        v.rating % 1 >= 0.5
-                      ) {
-                        return (
-                          <img
-                            key={i}
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/images/common/rating_half.png"
-                            }
-                            alt="반쪽 별"
-                          />
-                        );
-                      } else {
-                        return (
-                          <img
-                            key={i}
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/images/common/rating_empty.png"
-                            }
-                            alt="빈 별"
-                          />
-                        );
-                      }
-                    })}
+              <Fragment key={i}>
+                {/* DT 모드용 */}
+                <tr className="dt-view">
+                  <td>
+                    {
+                      // 페이징 시작번호 더하기
+                      // -> 자동순번 + (단위수 * (페이지번호-1))
+                      i + 1 + unitSize * (pageNum - 1)
+                    }
                   </td>
-                )}
-                <td>{v.hotel_name}</td>
-              </tr>
+                  <td>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        // console.log(e.target);
+                        // 기본이동막기
+                        e.preventDefault();
+                        // 글보기모드('R')로 변경하기
+                        setMode("R");
+                        // 해당 데이터 참조변수에 저장하기
+                        selRecord.current = v;
+                      }}
+                    >
+                      {v.title}
+                    </a>
+                  </td>
+                  <td>{v.user_name}</td>
+                  <td>{v.created_at}</td>
+                  {type === "review" && (
+                    <td className="rating">
+                      {[...Array(5)].map((_, i) => {
+                        if (i < Math.floor(v.rating)) {
+                          return (
+                            <img
+                              key={i}
+                              src={
+                                process.env.PUBLIC_URL +
+                                "/images/common/rating.png"
+                              }
+                              alt="별"
+                            />
+                          );
+                        } else if (
+                          i === Math.floor(v.rating) &&
+                          v.rating % 1 >= 0.5
+                        ) {
+                          return (
+                            <img
+                              key={i}
+                              src={
+                                process.env.PUBLIC_URL +
+                                "/images/common/rating_half.png"
+                              }
+                              alt="반쪽 별"
+                            />
+                          );
+                        } else {
+                          return (
+                            <img
+                              key={i}
+                              src={
+                                process.env.PUBLIC_URL +
+                                "/images/common/rating_empty.png"
+                              }
+                              alt="빈 별"
+                            />
+                          );
+                        }
+                      })}
+                    </td>
+                  )}
+                  <td>{v.hotel_name}</td>
+                </tr>
+
+                {/* 모바일 모드용 */}
+                <tr className="mob-view">
+                  <td
+                    colSpan="6"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    <a
+                      style={{ textAlign: "left" }}
+                      href="#"
+                      onClick={(e) => {
+                        // console.log(e.target);
+                        // 기본이동막기
+                        e.preventDefault();
+                        // 글보기모드('R')로 변경하기
+                        setMode("R");
+                        // 해당 데이터 참조변수에 저장하기
+                        selRecord.current = v;
+                      }}
+                    >
+                      {v.title}
+                    </a>
+                  </td>
+                </tr>
+                {/* 모바일 하단 */}
+                <tr className="mob-view mob-bottom">
+                  <td
+                    className="mob-bottom-info"
+                    colSpan="6"
+                  >
+                    <span>{v.user_name}</span>
+                    <span>{v.created_at}</span>
+
+                    <span>
+                      {type === "review" && (
+                        <span
+                          className="rating"
+                          style={{ display: "inline" }}
+                        >
+                          {[...Array(5)].map((_, i) => {
+                            if (i < Math.floor(v.rating)) {
+                              return (
+                                <img
+                                  key={i}
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/common/rating.png"
+                                  }
+                                  alt="별"
+                                />
+                              );
+                            } else if (
+                              i === Math.floor(v.rating) &&
+                              v.rating % 1 >= 0.5
+                            ) {
+                              return (
+                                <img
+                                  key={i}
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/common/rating_half.png"
+                                  }
+                                  alt="반쪽 별"
+                                />
+                              );
+                            } else {
+                              return (
+                                <img
+                                  key={i}
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/common/rating_empty.png"
+                                  }
+                                  alt="빈 별"
+                                />
+                              );
+                            }
+                          })}
+                        </span>
+                      )}
+                    </span>
+                    <span>{v.hotel_name}</span>
+                  </td>
+                </tr>
+              </Fragment>
             ))
           ) : (
             // 데이터가 0일 경우 출력 ////////////

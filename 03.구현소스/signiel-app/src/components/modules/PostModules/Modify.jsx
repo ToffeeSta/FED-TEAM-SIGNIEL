@@ -131,6 +131,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   className="name"
                   readOnly={true}
                   defaultValue={selData.user_name}
+                  disabled
                 />
               </div>
               <div className="selbox-write">
@@ -195,6 +196,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 cols="60"
                 rows="10"
                 defaultValue={selData.content}
+                resi
               ></textarea>
             </td>
           </tr>
