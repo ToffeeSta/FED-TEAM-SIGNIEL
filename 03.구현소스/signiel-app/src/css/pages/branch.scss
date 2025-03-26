@@ -212,6 +212,9 @@
     border-right: 3px solid #867868;
     padding-right: 4px;
     padding: 8% 0;
+    span p {
+      padding-right: 5%;
+    }
   }
 
   .con-wrap:nth-of-type(4) {
@@ -255,6 +258,14 @@
     flex-direction: column;
     padding-bottom: 0%;
     margin-bottom: 0%;
+  }
+  .con-wrap.info {
+    .leaflet-control-zoom.leaflet-bar.leaflet-control {
+      width: 0;
+      .leaflet-container.leaflet-touch.leaflet-fade-anim {
+        width: 500px;
+      }
+    }
   }
   // //////////////////////////////////////////////////////////////////////////////////////////
   @media (max-width: 1023px) {

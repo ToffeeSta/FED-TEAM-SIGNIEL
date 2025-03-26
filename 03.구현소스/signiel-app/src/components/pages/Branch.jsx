@@ -109,7 +109,7 @@ function Branch(props) {
         key={local} // key 속성 추가
         center={latLng.current[local]}
         zoom={zoom}
-        style={{ height: "400px", width: "100%" }}
+        style={{ height: "400px", width: "500px" }}
         scrollWheelZoom={false} // 기본적으로 scrollWheelZoom 비활성화
       >
         <TileLayer
