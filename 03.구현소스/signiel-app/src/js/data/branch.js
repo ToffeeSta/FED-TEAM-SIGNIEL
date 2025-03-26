@@ -15,9 +15,9 @@ export const branchData = {
 
         tit04: "LOCAL BLISS TRIP",
         cont04: "국내여행에서의 특별한 추억을^롯데호텔과 함께 만들어보세요",
-        tit05: "BED & BR /EAKFAST^PACKAGE",
-        cont05: "고객님의 여유로운 호텔스테이를 위해^조식포함 상품을 준비하였습니다",
-        tit06: "LOTTE HOTEL^REWARDS ONLY",
+        tit05: "BED & BREAKFAST PACKAGE",
+        cont05: "고객님의 여유로운 호텔스테이를 위해 조식포함 상품을 준비하였습니다",
+        tit06: "LOTTE HOTEL REWARDS ONLY",
         cont06: "전 세계 롯데호텔앤리조트의 객실을^리워즈 회원 전용 가격으로 만나보세요"
     },
     busan: {
@@ -34,11 +34,11 @@ export const branchData = {
         cont03: "- 오션뷰의 SPA & FITNESS (스파 & 피트니스), 프라이빗 샤워부스, 다양한 온도의 탕(온탕,열탕, 냉탕), 건/습식 사우나 ^- 체성분 및 체력측정을 통한 과학적이고 체계적인 맞춤 프로그램",
         
         tit04: "Timeless Moments",
-        cont04: "24시간의 완벽한 여유, 짧은 일상에서 벗어나^당신의 하루를 더욱 특별하게 만들어 보세요.",
+        cont04: "24시간의 완벽한 여유, 짧은 일상에서 벗어나 당신의 하루를 더욱 특별하게 만들어 보세요.",
         tit05: "SIGNIEL COLLECTION",
-        cont05: "2025년 1월 1일 시그니엘 부산 프리미엄^멤버십 '시그니엘 컬렉션'을 통해 최고의^혜택을 경험해 보세요.",
+        cont05: "2025년 1월 1일 시그니엘 부산 프리미엄 멤버십 '시그니엘 컬렉션'을 통해 최고의 혜택을 경험해 보세요.",
         tit06: "Wave of retreat SIGNIEL",
-        cont06: "달콤한 초콜릿의 매력, 부드러운 초콜릿이^주는 특별한 힐링을 경험하세요.  "
+        cont06: "달콤한 초콜릿의 매력, 부드러운 초콜릿이 주는 특별한 힐링을 경험하세요.  "
     },
     jeju: {
         main_img:"../../../images/branch/jeju/main.jpg' alt='메인02'",
@@ -54,10 +54,10 @@ export const branchData = {
         cont03: "- 로맨틱하고 환상적인 분위기의 사계절 럭셔리 야외 스파 & 가든 해온(he:on) ^- 가족단위 여행객을 위한 어린이 멀티 체험 놀이공간, 키즈월드",
         
         tit04: "25 Years Together in Jeju_Spring",
-        cont04: "롯데호텔제주 25주년 생일 맞이 봄 프로모션,^따뜻한 봄날을 롯데호텔 제주와 함께 보내는^건 어떠신가요?",
+        cont04: "롯데호텔제주 25주년 생일 맞이 봄 프로모션, 따뜻한 봄날을 롯데호텔 제주와 함께 보내는^건 어떠신가요?",
         tit05: "Blossom Season Promotion",
-        cont05: "따스한 봄 내음 가득한날^롯데호텔 제주와 함께 봄의 향기를^만끽해 보세요.",
+        cont05: "따스한 봄 내음 가득한날 롯데호텔 제주와 함께 봄의 향기를 만끽해 보세요.",
         tit06: "Relaxing Getaway to V Spa",
-        cont06: "꽃 피는 봄,^롯데호텔 제주에서 즐기는 천상의 휴식"
+        cont06: "꽃 피는 봄, 롯데호텔 제주에서 즐기는 천상의 휴식"
     },
 };
