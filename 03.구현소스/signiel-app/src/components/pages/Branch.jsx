@@ -117,13 +117,13 @@ function Branch(props) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={latLng.current[local]}>
-          <Popup>
+          {/* <Popup>
             <div style={{ width: "200px" }}>
               <b>{title} 지점</b>
               <br />
               시그니엘 호텔
             </div>
-          </Popup>
+          </Popup> */}
           <OpenPopupOnLoad markerRef={markerRef} />
         </Marker>
 
