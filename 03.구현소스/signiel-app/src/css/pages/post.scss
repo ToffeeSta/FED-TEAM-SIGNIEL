@@ -29,9 +29,9 @@
   }
 
   /*테이블 디자인*/
-  // thead.mob-thead {
-  //   display: none;
-  // }
+  thead.mob-thead {
+    display: none;
+  }
 
   .dtbl {
     /*테이블전체*/
@@ -42,6 +42,9 @@
     max-width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+  }
+  .dtbl:first-of-type tbody{
+    border-bottom: 2px solid #765e3b;
   }
 
   // 페이징 숫자
@@ -526,9 +529,9 @@
       display: none;
     }
 
-    // thead.mob-thead {
-    //   display: inline;
-    // }
+    thead.mob-thead {
+      display: table-row-group;
+    }
 
     .dt-thead th {
       padding: 15px 10px;
@@ -583,9 +586,9 @@
       }
     }
 
-    .dtbl th:nth-child(1) {
-      display: none;
-    }
+    // .dtbl th:nth-child(1) {
+    //   display: none;
+    // }
 
     // #board tbody tr td:first-child {
     //   display: none;

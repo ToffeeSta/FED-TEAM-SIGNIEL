@@ -63,6 +63,9 @@ function List({
         페이징코드 리턴 함수
   ***********************************/
   const pagingCode = () => {
+    
+  if(selData.length === 0) return '';
+
     // [ (1) 리턴 코드 담을 배열변수 ]
     let hcode = [];
 
@@ -308,8 +311,8 @@ function List({
         </thead>
         <thead className="mob-thead">
                   <tr>
-                    {type === "review" && <th>호텔리뷰</th>}
-                    {type === "Q&A" && <th>Q&A</th>}
+                    {type === "review" && <th colSpan={6}>호텔리뷰</th>}
+                    {type === "Q&A" && <th colSpan={6}>Q&A</th>}
                   </tr>
                 </thead>
         <tbody>
