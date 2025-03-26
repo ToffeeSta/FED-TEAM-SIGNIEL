@@ -109,7 +109,7 @@ export const posts = [
     rating: null,
     title: "무료 주차 가능 여부",
     content: "주차장이 무료인가요?",
-    created_at: "2025-03-28",
+    created_at: "2025-01-28",
   },
   {
     id: 11,
@@ -430,7 +430,7 @@ export const posts = [
     rating: 3,
     title: "보통이었어요",
     content: "특별한 점은 없었어요.",
-    created_at: "2025-03-27",
+    created_at: "2025-02-27",
   },
   {
     id: 43,
@@ -440,7 +440,7 @@ export const posts = [
     rating: 5,
     title: "친절한 직원들",
     content: "직원들이 매우 친절했어요.",
-    created_at: "2025-03-28",
+    created_at: "2025-01-28",
   },
   {
     id: 44,
@@ -450,7 +450,7 @@ export const posts = [
     rating: null,
     title: "사우나는 있나요?",
     content: "호텔에 사우나가 있는지 궁금합니다.",
-    created_at: "2025-03-29",
+    created_at: "2025-02-29",
   },
   {
     id: 45,
@@ -460,7 +460,7 @@ export const posts = [
     rating: 3,
     title: "조금 시끄러웠어요",
     content: "밤에 소음이 좀 있었어요.",
-    created_at: "2025-03-30",
+    created_at: "2025-02-26",
   },
   {
     id: 46,
@@ -470,7 +470,7 @@ export const posts = [
     rating: null,
     title: "세탁 서비스는 제공되나요?",
     content: "세탁 서비스 제공 여부가 궁금합니다.",
-    created_at: "2025-03-31",
+    created_at: "2025-01-31",
   },
   {
     id: 47,
@@ -504,6 +504,506 @@ export const posts = [
   },
   {
     id: 50,
+    user_id: 1,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "조식은 몇 시부터 제공되나요?",
+    content: "저녁 늦게 도착할 예정인데, 혹시 수영장이 몇 시까지 운영되는지 알고 싶습니다.",
+    created_at: "2025-03-16"
+  },
+  {
+    id: 51,
+    user_id: 5,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 2.5,
+    title: "완벽한 휴가를 보냈어요!",
+    content: "최신 시설 덕분에 편하게 머물렀어요. 수영장도 깨끗하고 전반적으로 만족스러웠습니다.",
+    created_at: "2025-02-09"
+  },
+  {
+    id: 52,
+    user_id: 2,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "조식은 몇 시부터 제공되나요?",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-03-26"
+  },
+  {
+    id: 53,
+    user_id: 2,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 2,
+    title: "시설이 최신식이라 좋았어요",
+    content: "최신 시설 덕분에 편하게 머물렀어요. 수영장도 깨끗하고 전반적으로 만족스러웠습니다.",
+    created_at: "2025-02-28"
+  },
+  {
+    id: 54,
+    user_id: 1,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 5,
+    title: "완벽한 휴가를 보냈어요!",
+    content: "호텔 위치는 매우 좋았지만, 객실 청결 상태가 기대 이하여서 조금 실망했습니다. 직원 응대는 친절했습니다.",
+    created_at: "2025-02-27"
+  },
+  {
+    id: 55,
+    user_id: 7,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "수영장은 몇 시까지 운영하나요?",
+    content: "체크아웃을 늦게 하고 싶은데 추가 요금이 있는지 궁금합니다.",
+    created_at: "2025-01-08"
+  },
+  {
+    id: 56,
+    user_id: 4,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "이른 체크인 가능한가요?",
+    content: "조식 제공 시간이 어떻게 되는지 궁금합니다. 늦게까지 제공되나요?",
+    created_at: "2025-03-13"
+  },
+  {
+    id: 57,
+    user_id: 6,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 4.5,
+    title: "전반적으로 만족스러웠어요",
+    content: "최신 시설 덕분에 편하게 머물렀어요. 수영장도 깨끗하고 전반적으로 만족스러웠습니다.",
+    created_at: "2025-02-22"
+  },
+  {
+    id: 58,
+    user_id: 4,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "객실 내 어메니티 종류가 궁금합니다.",
+    content: "객실 내에 어떤 어메니티가 준비되어 있는지 알고 싶습니다.",
+    created_at: "2025-01-12"
+  },
+  {
+    id: 59,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "객실 내 어메니티 종류가 궁금합니다.",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-01-09"
+  },
+  {
+    id: 60,
+    user_id: 4,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "수영장은 몇 시까지 운영하나요?",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-01-17"
+  },
+  {
+    id: 61,
+    user_id: 3,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-03-13"
+  },
+  {
+    id: 62,
+    user_id: 7,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 4.5,
+    title: "위치는 좋지만 아쉬운 점이 있어요",
+    content: "가족과 함께 이용했는데, 아이들이 좋아할 시설이 많아서 즐겁게 보냈어요. 다음에도 이용할 생각입니다.",
+    created_at: "2025-02-03"
+  },
+  {
+    id: 63,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 4,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "직원들이 정말 친절했고 객실도 깔끔했어요. 조식도 맛있었고, 다시 방문하고 싶습니다!",
+    created_at: "2025-03-25"
+  },
+  {
+    id: 64,
+    user_id: 5,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "객실 내 어메니티 종류가 궁금합니다.",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-01-02"
+  },
+  {
+    id: 65,
+    user_id: 3,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-01-08"
+  },
+  {
+    id: 66,
+    user_id: 1,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 4,
+    title: "위치는 좋지만 아쉬운 점이 있어요",
+    content: "시설이 최신식이고 직원들이 너무 친절했어요. 특히 루프탑 바에서 본 야경이 정말 인상적이었습니다. 다시 방문하고 싶어요!",
+    created_at: "2025-01-21"
+  },
+  {
+    id: 67,
+    user_id: 1,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 1.5,
+    title: "완벽한 휴가를 보냈어요!",
+    content: "직원들이 정말 친절했고 객실도 깔끔했어요. 조식도 맛있었고, 다시 방문하고 싶습니다!",
+    created_at: "2025-02-19"
+  },
+  {
+    id: 68,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 1.5,
+    title: "전반적으로 만족스러웠어요",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-01-24"
+  },
+  {
+    id: 69,
+    user_id: 7,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 2,
+    title: "전반적으로 만족스러웠어요",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-01-07"
+  },
+  {
+    id: 70,
+    user_id: 4,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 4,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-03-10"
+  },
+  {
+    id: 71,
+    user_id: 7,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "조식은 몇 시부터 제공되나요?",
+    content: "체크아웃을 늦게 하고 싶은데 추가 요금이 있는지 궁금합니다.",
+    created_at: "2025-03-06"
+  },
+  {
+    id: 72,
+    user_id: 2,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "객실 내 어메니티 종류가 궁금합니다.",
+    content: "객실 내에 어떤 어메니티가 준비되어 있는지 알고 싶습니다.",
+    created_at: "2025-03-21"
+  },
+  {
+    id: 73,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 1.5,
+    title: "전반적으로 만족스러웠어요",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-03-06"
+  },
+  {
+    id: 74,
+    user_id: 5,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 1,
+    title: "시설이 최신식이라 좋았어요",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-03-11"
+  },
+  {
+    id: 75,
+    user_id: 5,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "저녁 늦게 도착할 예정인데, 혹시 수영장이 몇 시까지 운영되는지 알고 싶습니다.",
+    created_at: "2025-03-17"
+  },
+  {
+    id: 76,
+    user_id: 5,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-02-09"
+  },
+  {
+    id: 77,
+    user_id: 3,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 1,
+    title: "시설이 최신식이라 좋았어요",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-01-28"
+  },
+  {
+    id: 78,
+    user_id: 2,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 5,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
+    created_at: "2025-02-12"
+  },
+  {
+    id: 79,
+    user_id: 5,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "객실 내 어메니티 종류가 궁금합니다.",
+    content: "체크아웃을 늦게 하고 싶은데 추가 요금이 있는지 궁금합니다.",
+    created_at: "2025-01-21"
+  },
+  {
+    id: 80,
+    user_id: 6,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-02-17"
+  },
+  {
+    id: 81,
+    user_id: 1,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "조식은 몇 시부터 제공되나요?",
+    content: "저녁 늦게 도착할 예정인데, 혹시 수영장이 몇 시까지 운영되는지 알고 싶습니다.",
+    created_at: "2025-02-01"
+  },
+  {
+    id: 82,
+    user_id: 3,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 5,
+    title: "전반적으로 만족스러웠어요",
+    content: "가족과 함께 이용했는데, 아이들이 좋아할 시설이 많아서 즐겁게 보냈어요. 다음에도 이용할 생각입니다.",
+    created_at: "2025-01-13"
+  },
+  {
+    id: 83,
+    user_id: 6,
+    hotel_id: 2,
+    post_type: "review",
+    rating: 2,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "시설이 최신식이고 직원들이 너무 친절했어요. 특히 루프탑 바에서 본 야경이 정말 인상적이었습니다. 다시 방문하고 싶어요!",
+    created_at: "2025-03-25"
+  },
+  {
+    id: 84,
+    user_id: 7,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 2,
+    title: "전반적으로 만족스러웠어요",
+    content: "최신 시설 덕분에 편하게 머물렀어요. 수영장도 깨끗하고 전반적으로 만족스러웠습니다.",
+    created_at: "2025-03-21"
+  },
+  {
+    id: 85,
+    user_id: 4,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "주차장은 무료인가요?",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-01-20"
+  },
+  {
+    id: 86,
+    user_id: 2,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "이른 체크인 가능한가요?",
+    content: "저녁 늦게 도착할 예정인데, 혹시 수영장이 몇 시까지 운영되는지 알고 싶습니다.",
+    created_at: "2025-03-04"
+  },
+  {
+    id: 87,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "수영장은 몇 시까지 운영하나요?",
+    content: "이른 체크인을 하고 싶은데 가능한지 궁금합니다. 추가 요금이 발생하는지도 알려주세요.",
+    created_at: "2025-01-06"
+  },
+  {
+    id: 88,
+    user_id: 4,
+    hotel_id: 1,
+    post_type: "review",
+    rating: 3,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "시설이 최신식이고 직원들이 너무 친절했어요. 특히 루프탑 바에서 본 야경이 정말 인상적이었습니다. 다시 방문하고 싶어요!",
+    created_at: "2025-01-24"
+  },
+  {
+    id: 89,
+    user_id: 4,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "주차장은 무료인가요?",
+    content: "체크아웃을 늦게 하고 싶은데 추가 요금이 있는지 궁금합니다.",
+    created_at: "2025-01-02"
+  },
+  {
+    id: 90,
+    user_id: 7,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "주차장은 무료인가요?",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-03-20"
+  },
+  {
+    id: 91,
+    user_id: 5,
+    hotel_id: 2,
+    post_type: "Q&A",
+    rating: null,
+    title: "조식은 몇 시부터 제공되나요?",
+    content: "체크아웃을 늦게 하고 싶은데 추가 요금이 있는지 궁금합니다.",
+    created_at: "2025-02-25"
+  },
+  {
+    id: 92,
+    user_id: 4,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "이른 체크인 가능한가요?",
+    content: "조식 제공 시간이 어떻게 되는지 궁금합니다. 늦게까지 제공되나요?",
+    created_at: "2025-03-04"
+  },
+  {
+    id: 93,
+    user_id: 3,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "수영장은 몇 시까지 운영하나요?",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-02-10"
+  },
+  {
+    id: 94,
+    user_id: 6,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 2,
+    title: "완벽한 휴가를 보냈어요!",
+    content: "직원들이 정말 친절했고 객실도 깔끔했어요. 조식도 맛있었고, 다시 방문하고 싶습니다!",
+    created_at: "2025-03-24"
+  },
+  {
+    id: 95,
+    user_id: 7,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 4,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "호텔 위치는 매우 좋았지만, 객실 청결 상태가 기대 이하여서 조금 실망했습니다. 직원 응대는 친절했습니다.",
+    created_at: "2025-02-11"
+  },
+  {
+    id: 96,
+    user_id: 3,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "숙박 기간 동안 주차장을 이용하려고 하는데, 무료로 제공되나요?",
+    created_at: "2025-01-25"
+  },
+  {
+    id: 97,
+    user_id: 6,
+    hotel_id: 1,
+    post_type: "Q&A",
+    rating: null,
+    title: "체크아웃 연장 비용이 궁금합니다.",
+    content: "조식 제공 시간이 어떻게 되는지 궁금합니다. 늦게까지 제공되나요?",
+    created_at: "2025-03-05"
+  },
+  {
+    id: 98,
+    user_id: 6,
+    hotel_id: 3,
+    post_type: "Q&A",
+    rating: null,
+    title: "이른 체크인 가능한가요?",
+    content: "저녁 늦게 도착할 예정인데, 혹시 수영장이 몇 시까지 운영되는지 알고 싶습니다.",
+    created_at: "2025-01-16"
+  },
+  {
+    id: 99,
+    user_id: 5,
+    hotel_id: 3,
+    post_type: "review",
+    rating: 1,
+    title: "가족 여행으로 다녀왔습니다",
+    content: "시설이 최신식이고 직원들이 너무 친절했어요. 특히 루프탑 바에서 본 야경이 정말 인상적이었습니다. 다시 방문하고 싶어요!",
+    created_at: "2025-01-26"
+  },
+  {
+    id: 100,
     user_id: 5,
     hotel_id: 2,
     post_type: "Q&A",

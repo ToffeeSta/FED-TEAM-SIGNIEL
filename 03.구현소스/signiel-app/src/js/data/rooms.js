@@ -44,6 +44,51 @@ export const rooms = [
     base_guests: 2,
     max_guests: 3
   },
+  {
+    id: "1-201",
+    hotel_id: 1,
+    room_num: 201,
+    room_type: "스탠다드",
+    price_per_night: 120000,
+    base_guests: 2,
+    max_guests: 3
+  },
+  {
+    id: "1-102",
+    hotel_id: 1,
+    room_num: 102,
+    room_type: "디럭스",
+    price_per_night: 150000,
+    base_guests: 2,
+    max_guests: 4
+  },
+  {
+    id: "1-103",
+    hotel_id: 1,
+    room_num: 103,
+    room_type: "스위트",
+    price_per_night: 200000,
+    base_guests: 2,
+    max_guests: 5
+  },
+  {
+    id: "1-104",
+    hotel_id: 1,
+    room_num: 104,
+    room_type: "패밀리",
+    price_per_night: 180000,
+    base_guests: 3,
+    max_guests: 6
+  },
+  {
+    id: "1-105",
+    hotel_id: 1,
+    room_num: 105,
+    room_type: "스탠다드",
+    price_per_night: 110000,
+    base_guests: 2,
+    max_guests: 3
+  },
 
   {
     id: "2-101",
