@@ -146,6 +146,10 @@
   .con-wrap:nth-of-type(3) {
     flex-direction: row-reverse;
   }
+
+  .con-wrap.info{
+    flex-direction: column;
+  }
   .con-wrap:nth-of-type(3) .img-box {
     width: 70%;
   }
@@ -341,14 +345,14 @@
       justify-content: center;
       /* 가로 중앙 정렬 */
 
-      width: 60%;
+      width: 85%;
     }
     .text-box div {
       border: none;
     }
     .con-wrap:nth-of-type(3) .text-box div {
       border: none;
-      width: 60%;
+      width: 100%;
     }
   }
   @media (max-width: 480px) {
