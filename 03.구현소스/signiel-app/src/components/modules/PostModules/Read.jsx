@@ -79,6 +79,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   className="name"
                   readOnly={true}
                   defaultValue={selData.user_name}
+                  disabled
                 />
               </div>
               <div className="selbox-write">
@@ -88,6 +89,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   className="sel-type"
                   readOnly={true}
                   defaultValue={selData.post_type}
+                  disabled
                 />
               </div>
             </td>
@@ -134,6 +136,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 size="60"
                 readOnly={true}
                 defaultValue={selData.title}
+                disabled
               />
             </td>
           </tr>
@@ -146,6 +149,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 rows="10"
                 readOnly={true}
                 defaultValue={selData.content}
+                disabled
               ></textarea>
             </td>
           </tr>
