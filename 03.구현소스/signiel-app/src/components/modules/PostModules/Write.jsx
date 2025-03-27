@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { sCon } from "../sCon";
-import { users } from "../../../js/data/users";
+// import { users } from "../../../js/data/users";
 
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
@@ -33,11 +33,16 @@ function Write({
     sessionStorage.getItem("users")
   );
 
+  // ★★★★★★★ 반드시 로컬스 사용자정보를 가져와야 함!!!!!
+  // 기존의 제이슨 파일을 읽어오면 반드시 새로운 가입자가 없어서 
+  // 에러가 예정됨!!! ★★★★★★★★★★★★★★★★★★★★
+  const users = JSON.parse(localStorage.getItem("users"));
+
   const selUser = users.find((u) => u.id === loginUser.id);
 
   const selUserName = selUser.name;
 
-  // console.log(selUserName,selUser,loginUser);
+  console.log(selUserName,selUser,loginUser);
 
   // 글쓰기 저장 서브밋 함수 //////
   const submitFn = () => {
@@ -99,7 +104,7 @@ function Write({
         user_id: selUser.id,
         user_name: selUserName,
       };
-      // console.log("입력데이터:", data);
+      console.log("입력데이터:", data);
 
       // 4) 입력 객체를 기존 로컬스 변환 객체에 추가하기
       localData.push(data);

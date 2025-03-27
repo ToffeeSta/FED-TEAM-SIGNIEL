@@ -208,6 +208,8 @@ function Post() {
       content: finalData[i].content,
       created_at: finalData[i].created_at,
       user_id: finalData[i].user_id,
+      // ★사용자 이름 데이터 항목 추가!!!
+      user_name: finalData[i].user_name,
     });
   } //////////// for : 선택데이터 담기
 
