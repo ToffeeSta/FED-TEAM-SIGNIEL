@@ -490,21 +490,28 @@
     }
 
     input.name {
-      width: 37vw;
+      width: 25vw;
     }
 
     select.sel-type {
-      width: 37vw;
+      width: 25vw;
+    }
+
+    select.sel-hotel {
+      width: 23vw;
     }
 
     input.sel-type {
+      width: 37vw;
+    }
+    input.name-2 {
       width: 37vw;
     }
 
     .star-section td {
       padding-left: 1vw;
     }
-    select.sel-star, select.sel-hotel {
+    select.sel-star {
       width: 38.5vw;
     }
 
