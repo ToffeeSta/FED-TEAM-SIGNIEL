@@ -266,7 +266,17 @@
   // 유저 이름 박스 영역
   input.name {
     height: 35px;
-    width: 23vw;
+    width: 16vw;
+    border: 2px solid #9f9587;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Pretendard-Regular";
+    color: #765e3b;
+    padding-right: 1vw;
+  }
+  input.name-2 {
+    height: 35px;
+    width: 24vw;
     border: 2px solid #9f9587;
     border-radius: 10px;
     font-size: 15px;
@@ -280,13 +290,13 @@
   }
 
   div.selbox-write {
-    padding-left: 0.5vw;
+    padding-right: 0.5vw;
   }
 
   // 게시물 타입 선택박스 영역
   select.sel-type {
     height: 40px;
-    width: 25vw;
+    width: 16vw;
     border: 2px solid #9f9587;
     border-radius: 10px;
     font-size: 15px;
@@ -366,6 +376,16 @@
   td.rating {
     border-spacing: 0px;
     border-style: none;
+  }
+
+  select.sel-hotel{
+    height: 40px;
+    width: 16vw;
+    border: 2px solid #9f9587;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Pretendard-Regular";
+    color: #765e3b;
   }
 
   select.sel-star {
@@ -484,7 +504,7 @@
     .star-section td {
       padding-left: 1vw;
     }
-    select.sel-star {
+    select.sel-star, select.sel-hotel {
       width: 38.5vw;
     }
 

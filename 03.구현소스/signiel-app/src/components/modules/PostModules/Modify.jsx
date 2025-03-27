@@ -5,7 +5,13 @@ import React from "react";
 // 제이쿼리 불러오기 ////
 import $ from "jquery";
 
-function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
+function Modify({
+  setMode,
+  selRecord,
+  totalCount,
+  setPageNum,
+  pgPgNum,
+}) {
   // setMode - 모든 변경 상태변수 setter
   // selRecord - 선택데이터 참조변수
   // totalCount - 전체 개수 참조변수 (글삭제시 카운트 1감소!)
@@ -22,6 +28,10 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
     let content = $(".content").val().trim();
     // 게시물 타입 항목
     let post_type = $(".sel-type").val().trim();
+    // 호텔 타입
+    let cvthotel_id = $(".sel-hotel").val().trim();
+
+    let hotel_id = Number(cvthotel_id);
 
     // (1) 공통 유효성검사
     // - 제목, 내용 모두 비었으면 리턴!
@@ -53,14 +63,18 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
           v.content = content;
           v.post_type = post_type;
           // 별점수정하기
-          v.rating = $('#sel-star').val();
+          v.rating = $("#sel-star").val();
           // 해당 데이터를 만나면 빠져나감!
+          v.hotel_id = hotel_id;
           return true;
         } /// if ///
       }); /// find ///
 
       // 4) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 5) 리스트 이동을 위해 모드 변경하기
       setMode("L");
@@ -100,10 +114,13 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       }); ////// some ///////
 
       // 4) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 5) 전체 개수 1감소하기 ////
-      totalCount.current--;      
+      totalCount.current--;
 
       // 6) 페이지 번호 초기화
       setPageNum(1);
@@ -121,7 +138,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
     <main className="cont">
       <h2 className="tit">게시판 수정</h2>
       <table className="dtblview readone">
-      <tbody>
+        <tbody>
           <tr>
             {/* <td>Name</td> */}
             <td className="name-type-box">
@@ -151,19 +168,37 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   <option value="Q&A">Q&amp;A</option>
                 </select>
               </div>
+              <div className="selbox-hotel">
+                <select
+                  name="sel-hotel"
+                  id="sel-hotel"
+                  className="sel-hotel"
+                >
+                  <option value="1">시그니엘 서울</option>
+                  <option value="2">시그니엘 부산</option>
+                  <option value="3">롯데호텔 제주</option>
+                </select>
+              </div>
             </td>
-          </tr>{/* 별점 등록 기능 */}
+          </tr>
+          {/* 별점 등록 기능 */}
           <tr
             className="star-section"
             onLoad={(e) => {
-              let tgEl = document.querySelector(".sel-type");
-              if (tgEl.value === "Q&A") e.tgEl.style.display = "table-row";
+              let tgEl =
+                document.querySelector(".sel-type");
+              if (tgEl.value === "Q&A")
+                e.tgEl.style.display = "table-row";
               else e.tgEl.style.display = "none";
             }}
           >
             <td>
-              <select name="sel-star" id="sel-star" className="sel-star"
-              defaultValue={selData.rating}>
+              <select
+                name="sel-star"
+                id="sel-star"
+                className="sel-star"
+                defaultValue={selData.rating}
+              >
                 <option>0.5</option>
                 <option>1</option>
                 <option>1.5</option>
@@ -186,7 +221,7 @@ function Modify({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 size="60"
                 defaultValue={selData.title}
               />
-            </td>  
+            </td>
           </tr>
           <tr>
             {/* <td>Content</td> */}

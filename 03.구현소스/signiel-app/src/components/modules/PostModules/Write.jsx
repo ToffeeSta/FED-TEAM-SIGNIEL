@@ -7,7 +7,10 @@ import $ from "jquery";
 
 // 폰트 어썸 불러오기
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faStarHalf,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Write({
   setMode,
@@ -21,7 +24,10 @@ function Write({
   // 폰트어썸 별모양
   const element = (
     <div>
-      <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B",}} />
+      <FontAwesomeIcon
+        icon={faStar}
+        style={{ color: "#FFD43B" }}
+      />
     </div>
   );
 
@@ -86,13 +92,17 @@ function Write({
       // 만약 문자형숫자일 경우를 대비하여
       // Number() 숫자형변환함!
 
+      // 벨류값 저장
+      let cvthotel_id= document.querySelector(".sel-hotel").value;
+
       // 3) 입력할 객체 데이터 만들기
       let data = {
         id: Number(maxIdx) + 1,
         title: title,
         content: content,
         created_at: today,
-        hotel_id: 1,
+        // 저장된 벨류값 숫자형으로 변환
+        hotel_id: Number(cvthotel_id),
         post_type:
           document.querySelector(".sel-type").value,
         rating: document.querySelector("#sel-star").value,
@@ -159,6 +169,17 @@ function Write({
                   <option value="Q&A">Q&amp;A</option>
                 </select>
               </div>
+              <div className="selbox-hotel">
+                <select
+                  name="sel-hotel"
+                  id="sel-hotel"
+                  className="sel-hotel"
+                >
+                  <option value="1">시그니엘 서울</option>
+                  <option value="2">시그니엘 부산</option>
+                  <option value="3">롯데호텔 제주</option>
+                </select>
+              </div>
             </td>
           </tr>
           {/* 별점 등록 기능 */}
@@ -178,7 +199,9 @@ function Write({
                 id="sel-star"
                 className="sel-star"
               >
-                <option selected="#" value="0">별점을 선택해주세요</option>
+                <option selected="#" value="0">
+                  별점을 선택해주세요
+                </option>
                 <option>0.5</option>
                 <option>1</option>
                 <option>1.5</option>
