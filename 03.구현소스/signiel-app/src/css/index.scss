@@ -1,11 +1,17 @@
 // SIGNIEL.com 전체 공통 CSS - index.scss //////
 
 // 공통모듈 CSS 불러오기 ///
-@import '../css/common/variables';
-@import '../css/common/reset';
-@import '../css/common/core';
+@import "../css/common/variables";
+@import "../css/common/reset";
+@import "../css/common/core";
 
-main.cont{
-    min-height: 
-    calc(100vh - $top-area-height - $footer-area-height);
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+main.cont {
+  min-height: calc(100vh - $top-area-height - $footer-area-height);
 }
