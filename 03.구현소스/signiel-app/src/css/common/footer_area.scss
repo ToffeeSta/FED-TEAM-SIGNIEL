@@ -30,7 +30,7 @@
       .sns-wrap {
         height: 60px;
         @include flex(flex-end, center);
-        
+
         ul {
           @include flex(flex-end, center);
           gap: 5px;
@@ -56,6 +56,40 @@
             a {
               color: #c8c8c8;
               font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  #footer {
+    .bottom-area {
+      .left-con {
+        padding-top: 15px;
+        .bottom-logo {
+          img {
+            height: 80px;
+          }
+        }
+        .info {
+          padding-bottom: 15px;
+          font-size: 12px;
+          text-align: left;
+          color: #efefef;
+        }
+      }
+      .right-con {
+        .bottom-nav {
+          ul {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+            li {
+              a {
+                font-size: 10px;
+              }
             }
           }
         }

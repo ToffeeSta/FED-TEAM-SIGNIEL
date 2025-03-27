@@ -46,7 +46,7 @@ export const posts = [
     user_id: 4,
     hotel_id: 2,
     post_type: "review",
-    rating: 5,
+    rating: 4.5,
     title: "부산 최고의 호텔",
     content: "뷰가 너무 좋았어요!",
     created_at: "2025-03-10",
@@ -787,7 +787,7 @@ export const posts = [
     user_id: 2,
     hotel_id: 2,
     post_type: "review",
-    rating: 5,
+    rating: 4.5,
     title: "가족 여행으로 다녀왔습니다",
     content: "객실이 깔끔하고 직원들이 친절했습니다. 위치도 좋고 조식도 훌륭했어요. 다만 방음이 조금 아쉬웠어요.",
     created_at: "2025-02-12"
@@ -947,7 +947,7 @@ export const posts = [
     user_id: 6,
     hotel_id: 3,
     post_type: "review",
-    rating: 2,
+    rating: 4.5,
     title: "완벽한 휴가를 보냈어요!",
     content: "직원들이 정말 친절했고 객실도 깔끔했어요. 조식도 맛있었고, 다시 방문하고 싶습니다!",
     created_at: "2025-03-24"
@@ -957,7 +957,7 @@ export const posts = [
     user_id: 7,
     hotel_id: 3,
     post_type: "review",
-    rating: 4,
+    rating: 3.5,
     title: "가족 여행으로 다녀왔습니다",
     content: "호텔 위치는 매우 좋았지만, 객실 청결 상태가 기대 이하여서 조금 실망했습니다. 직원 응대는 친절했습니다.",
     created_at: "2025-02-11"
@@ -997,7 +997,7 @@ export const posts = [
     user_id: 5,
     hotel_id: 3,
     post_type: "review",
-    rating: 1,
+    rating: 4.5,
     title: "가족 여행으로 다녀왔습니다",
     content: "시설이 최신식이고 직원들이 너무 친절했어요. 특히 루프탑 바에서 본 야경이 정말 인상적이었습니다. 다시 방문하고 싶어요!",
     created_at: "2025-01-26"

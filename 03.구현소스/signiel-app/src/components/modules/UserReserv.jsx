@@ -8,8 +8,6 @@ function UserReserv() {
   const [sortOrder, setSortOrder] = useState("desc");
   const [force, setForce] = useState(true);
 
-
-
   const retDate = obj => 
     obj.getFullYear()+
   '-'+
@@ -47,25 +45,23 @@ function UserReserv() {
   const visibleReservations = sortedReservations.slice(0, visibleCount);
 
   const handleCancel = (reservNum) => {
-    console.log(reservNum);
-
+    if (!window.confirm("예약을 취소하시겠습니까?")) return;
+  
     let temp = localStorage.getItem("reservations");
     temp = JSON.parse(temp);
-
-    console.log(1, temp);
-
+  
     temp.find((v, i) => {
       if (v.id === reservNum) {
         temp.splice(i, 1);
         return true;
       }
     });
-    console.log(2, temp);
-
+  
     localStorage.setItem("reservations", JSON.stringify(temp));
-
+  
     setForce(!force);
   };
+  
 
   return (
     <div className="con-box">
