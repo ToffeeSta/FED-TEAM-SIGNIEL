@@ -3,7 +3,13 @@
 import React, { useContext } from "react";
 import { sCon } from "../sCon";
 
-function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
+function Read({
+  setMode,
+  selRecord,
+  totalCount,
+  setPageNum,
+  pgPgNum,
+}) {
   // setMode - 모든 변경 상태변수 setter
   // selRecord - 선택데이터 참조변수
 
@@ -48,7 +54,10 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
       }); ////// some ///////
 
       // 4) 입력객체를 문자형변환하여 로컬스에 넣기
-      localStorage.setItem("posts", JSON.stringify(localData));
+      localStorage.setItem(
+        "posts",
+        JSON.stringify(localData)
+      );
 
       // 5) 전체 개수 1감소하기 ////
       totalCount.current--;
@@ -76,7 +85,7 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
               <div className="selbox-name">
                 <input
                   type="text"
-                  className="name"
+                  className="name-2"
                   readOnly={true}
                   defaultValue={selData.user_name}
                   disabled
@@ -94,39 +103,51 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
               </div>
             </td>
           </tr>
-          {
-            selData.post_type === 'review' &&
-          <tr>
-            <td className="rating">
-              {[...Array(5)].map((_, i) => {
-                if (i < Math.floor(selData.rating)) {
-                  return (
-                    <img key={i} src={process.env.PUBLIC_URL +"/images/common/rating.png"} alt="별" />
-                  );
-                } else if (
-                  i === Math.floor(selData.rating) &&
-                  selData.rating % 1 >= 0.5
-                ) {
-                  return (
-                    <img
-                      key={i}
-                      src={process.env.PUBLIC_URL +"/images/common/rating_half.png"}
-                      alt="반쪽 별"
-                    />
-                  );
-                } else {
-                  return (
-                    <img
-                      key={i}
-                      src={process.env.PUBLIC_URL +"/images/common/rating_empty.png"}
-                      alt="빈 별"
-                    />
-                  );
-                }
-              })}
-            </td>
-          </tr>
-          }
+          {selData.post_type === "review" && (
+            <tr>
+              <td className="rating">
+                {[...Array(5)].map((_, i) => {
+                  if (i < Math.floor(selData.rating)) {
+                    return (
+                      <img
+                        key={i}
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/images/common/rating.png"
+                        }
+                        alt="별"
+                      />
+                    );
+                  } else if (
+                    i === Math.floor(selData.rating) &&
+                    selData.rating % 1 >= 0.5
+                  ) {
+                    return (
+                      <img
+                        key={i}
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/images/common/rating_half.png"
+                        }
+                        alt="반쪽 별"
+                      />
+                    );
+                  } else {
+                    return (
+                      <img
+                        key={i}
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/images/common/rating_empty.png"
+                        }
+                        alt="빈 별"
+                      />
+                    );
+                  }
+                })}
+              </td>
+            </tr>
+          )}
           <tr>
             {/* <td>Title</td> */}
             <td>
@@ -172,8 +193,9 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                 // 로그인한 사용자가 글쓴이와 같은 아이디일 경우
                 // 수정버튼 보이기
                 myCon.isLoggedIn &&
-                  JSON.parse(sessionStorage.getItem("users")).id ===
-                    selData.user_id && (
+                  JSON.parse(
+                    sessionStorage.getItem("users")
+                  ).id === selData.user_id && (
                     <button
                       onClick={() => {
                         // 수정모드로 변경하기
@@ -185,9 +207,11 @@ function Read({ setMode, selRecord, totalCount, setPageNum, pgPgNum }) {
                   )
               }
               {myCon.isLoggedIn &&
-                JSON.parse(sessionStorage.getItem("users")).id ===
-                  selData.user_id && (
-                  <button onClick={deleteFn}>삭제하기</button>
+                JSON.parse(sessionStorage.getItem("users"))
+                  .id === selData.user_id && (
+                  <button onClick={deleteFn}>
+                    삭제하기
+                  </button>
                 )}
             </td>
           </tr>
